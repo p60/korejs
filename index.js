@@ -1,9 +1,5 @@
-(function(angular, undefined) {
-'use strict';
-// Preload some angular stuff
+(function(exports, angular){
+  'use strict';
   var defs = require('./defs');
-  return angular.module('korejs', ["ng"]).constant('Kore', defs);
-
-  // console.log(defs);
-  // KoreJSModule.constant('Kore', defs);
-});
+  angular.module('korejs', ["ng"]).constant('Kore', defs);
+})(module.exports, window.angular);

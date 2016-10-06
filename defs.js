@@ -1,4 +1,3 @@
-
 module.exports = {
   "Census": {
     "Answer": {
@@ -10646,6 +10645,7 @@ module.exports = {
         "American Samoa",
         "International Date Line West",
         "Midway Island",
+        "Samoa",
         "Hawaii",
         "Alaska",
         "Pacific Time (US & Canada)",
@@ -10790,7 +10790,6 @@ module.exports = {
         "Wellington",
         "Chatham Is.",
         "Nuku'alofa",
-        "Samoa",
         "Tokelau Is."
       ]
     },
@@ -11362,6 +11361,10 @@ module.exports = {
             "see_looks": [
               true,
               false
+            ],
+            "login_to_looker": [
+              true,
+              false
             ]
           }
         }
@@ -11698,6 +11701,8 @@ module.exports = {
       }
     },
     "ReportingSubscription": {
+    },
+    "SendingDomain": {
     },
     "User": {
       "role": {
@@ -16790,46 +16795,6 @@ module.exports = {
             "survey_reminder"
           ]
         }
-      }
-    }
-  },
-  "Peer": {
-    "Task": {
-      "status": {
-        "name": "status",
-        "source": "Peer::Task::Fields::Status",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Peer::Task::Fields::Status::Created",
-            "name": "created",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Peer::Task::Fields::Status::Pending",
-            "name": "pending",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Peer::Task::Fields::Status::Complete",
-            "name": "complete",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "created",
-          "pending",
-          "complete"
-        ]
       }
     }
   },
