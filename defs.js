@@ -2087,12 +2087,21 @@ module.exports = {
             "integer_value": 3,
             "attributes": {
             }
+          },
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Other",
+            "name": "other",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
           }
         ],
         "values": [
           "unknown",
           "male",
-          "female"
+          "female",
+          "other"
         ]
       },
       "locale": {
@@ -2751,12 +2760,21 @@ module.exports = {
             "integer_value": 3,
             "attributes": {
             }
+          },
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Other",
+            "name": "other",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
           }
         ],
         "values": [
           "unknown",
           "male",
-          "female"
+          "female",
+          "other"
         ]
       },
       "role": {
@@ -18476,12 +18494,21 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
               }
+            },
+            {
+              "source": "Kore::Types::Census::Fields::Gender::Other",
+              "name": "other",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
             }
           ],
           "values": [
             "unknown",
             "male",
-            "female"
+            "female",
+            "other"
           ]
         },
         "role": {
