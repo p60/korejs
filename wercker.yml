@@ -1,4 +1,4 @@
-box: node:slim
+box: peer60/ruby-runner
 build:
   after-steps:
     - wantedly/pretty-slack-notify@0.2.10:
