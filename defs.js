@@ -84,7 +84,10 @@ module.exports = {
           "notes": {
             "name": "notes",
             "source": "Census::Answer::Fields::ImportData::Fields::Notes",
-            "type": "array"
+            "type": "array",
+            "default": [
+
+            ]
           },
           "answer_data": {
             "name": "answer_data",
@@ -189,7 +192,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::BooleanAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -291,7 +297,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::MultipleChoiceAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -390,7 +399,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::MultipleChoiceImageAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -489,7 +501,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::MultipleChoiceManyAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -588,7 +603,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::NpsNumberScaleAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -682,7 +700,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::NpsTextAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -776,7 +797,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::NumberScaleAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -874,7 +898,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::PostCaseAreYouSatisfiedAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -973,7 +1000,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::PostCaseWhatCouldWeHaveDoneBetterAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1072,7 +1102,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::PostCaseWhatDidWeDoWellAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1171,7 +1204,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::RankingAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1265,7 +1301,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::TextAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1363,7 +1402,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisLossRateExperienceAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1462,7 +1504,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisLossReasonForNotPurchasingAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1561,7 +1606,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisLossWhichCompetitorWouldYouChooseAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1660,7 +1708,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisWinFeatureExcitementAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1759,7 +1810,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisWinReasonForChoiceOverCompetitionAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1853,7 +1907,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisWinWhoIsBestContactAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1947,7 +2004,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisWonOrLostAnswer::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "answer_data": {
               "name": "answer_data",
@@ -1964,10 +2024,16 @@ module.exports = {
         "name": "custom_fields",
         "type": "struct",
         "fields": {
-          "is_reason_accepted": [
-            true,
-            false
-          ]
+          "is_reason_accepted": {
+            "name": "is_reason_accepted",
+            "source": "Census::Choice::Fields::CustomFields::Fields::IsReasonAccepted",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          }
         }
       },
       "import_data": {
@@ -2673,7 +2739,10 @@ module.exports = {
           "notes": {
             "name": "notes",
             "source": "Census::GlobalParticipant::Fields::ImportData::Fields::Notes",
-            "type": "array"
+            "type": "array",
+            "default": [
+
+            ]
           },
           "user_stream_id": {
             "name": "user_stream_id",
@@ -3038,7 +3107,10 @@ module.exports = {
           "notes": {
             "name": "notes",
             "source": "Census::Participation::Fields::ImportData::Fields::Notes",
-            "type": "array"
+            "type": "array",
+            "default": [
+
+            ]
           },
           "attempt_stream_id": {
             "name": "attempt_stream_id",
@@ -3191,12 +3263,14 @@ module.exports = {
           "introduction": {
             "name": "introduction",
             "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-            "type": "string"
+            "type": "string",
+            "default": ""
           },
           "conclusion": {
             "name": "conclusion",
             "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-            "type": "string"
+            "type": "string",
+            "default": ""
           }
         }
       },
@@ -3213,7 +3287,10 @@ module.exports = {
           "notes": {
             "name": "notes",
             "source": "Census::Question::Fields::ImportData::Fields::Notes",
-            "type": "array"
+            "type": "array",
+            "default": [
+
+            ]
           },
           "question_reaction_id": {
             "name": "question_reaction_id",
@@ -3383,32 +3460,26 @@ module.exports = {
             "true_value_name": {
               "name": "true_value_name",
               "source": "Census::Questions::BooleanQuestion::Fields::CustomFields::Fields::TrueValueName",
-              "type": "string"
+              "type": "string",
+              "default": "Yes"
             },
             "false_value_name": {
               "name": "false_value_name",
               "source": "Census::Questions::BooleanQuestion::Fields::CustomFields::Fields::FalseValueName",
-              "type": "string"
-            },
-            "label_for_true_value": {
-              "name": "label_for_true_value",
-              "source": "Census::Questions::BooleanQuestion::Fields::CustomFields::Fields::LabelForTrueValue",
-              "type": "string"
-            },
-            "label_for_false_value": {
-              "name": "label_for_false_value",
-              "source": "Census::Questions::BooleanQuestion::Fields::CustomFields::Fields::LabelForFalseValue",
-              "type": "string"
+              "type": "string",
+              "default": "No"
             },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -3425,7 +3496,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::BooleanQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -3587,12 +3661,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Questions::MultipleChoiceImageQuestion::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Questions::MultipleChoiceImageQuestion::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -3609,7 +3685,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::MultipleChoiceImageQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -3777,12 +3856,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -3799,7 +3880,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -3962,12 +4046,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -3984,7 +4070,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::MultipleChoiceQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -4149,12 +4238,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Questions::NpsNumberScaleQuestion::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Questions::NpsNumberScaleQuestion::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -4171,7 +4262,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::NpsNumberScaleQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -4329,12 +4423,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Questions::NpsTextQuestion::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Questions::NpsTextQuestion::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -4351,7 +4447,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "detractor_question_reaction_id": {
               "name": "detractor_question_reaction_id",
@@ -4539,32 +4638,38 @@ module.exports = {
             "answer_min_value": {
               "name": "answer_min_value",
               "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMinValue",
-              "type": "integer"
+              "type": "integer",
+              "default": 0
             },
             "answer_max_value": {
               "name": "answer_max_value",
               "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMaxValue",
-              "type": "integer"
+              "type": "integer",
+              "default": 10
             },
             "answer_min_value_label": {
               "name": "answer_min_value_label",
               "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMinValueLabel",
-              "type": "string"
+              "type": "string",
+              "default": "Minimum Value"
             },
             "answer_max_value_label": {
               "name": "answer_max_value_label",
               "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMaxValueLabel",
-              "type": "string"
+              "type": "string",
+              "default": "Maximum Value"
             },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -4581,7 +4686,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::NumberScaleQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -4742,32 +4850,26 @@ module.exports = {
             "true_value_name": {
               "name": "true_value_name",
               "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::CustomFields::Fields::TrueValueName",
-              "type": "string"
+              "type": "string",
+              "default": "Yes"
             },
             "false_value_name": {
               "name": "false_value_name",
               "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::CustomFields::Fields::FalseValueName",
-              "type": "string"
-            },
-            "label_for_true_value": {
-              "name": "label_for_true_value",
-              "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::CustomFields::Fields::LabelForTrueValue",
-              "type": "string"
-            },
-            "label_for_false_value": {
-              "name": "label_for_false_value",
-              "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::CustomFields::Fields::LabelForFalseValue",
-              "type": "string"
+              "type": "string",
+              "default": "No"
             },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -4784,7 +4886,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -4947,12 +5052,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -4969,7 +5076,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -5132,12 +5242,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -5154,7 +5266,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -5317,12 +5432,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -5339,7 +5456,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::RankingQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -5497,17 +5617,20 @@ module.exports = {
             "answer_max_length": {
               "name": "answer_max_length",
               "source": "Census::Questions::TextQuestion::Fields::CustomFields::Fields::AnswerMaxLength",
-              "type": "integer"
+              "type": "integer",
+              "default": 250
             },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -5524,7 +5647,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::TextQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -5686,32 +5812,38 @@ module.exports = {
             "answer_min_value": {
               "name": "answer_min_value",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMinValue",
-              "type": "integer"
+              "type": "integer",
+              "default": 0
             },
             "answer_max_value": {
               "name": "answer_max_value",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMaxValue",
-              "type": "integer"
+              "type": "integer",
+              "default": 10
             },
             "answer_min_value_label": {
               "name": "answer_min_value_label",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMinValueLabel",
-              "type": "string"
+              "type": "string",
+              "default": "Minimum Value"
             },
             "answer_max_value_label": {
               "name": "answer_max_value_label",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMaxValueLabel",
-              "type": "string"
+              "type": "string",
+              "default": "Maximum Value"
             },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -5728,7 +5860,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -5891,12 +6026,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -5913,7 +6050,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -6076,12 +6216,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -6098,7 +6240,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -6261,12 +6406,14 @@ module.exports = {
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -6283,7 +6430,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -6441,17 +6591,20 @@ module.exports = {
             "answer_max_length": {
               "name": "answer_max_length",
               "source": "Census::Questions::WinLossAnalysisWinReasonForChoiceOverCompetitionQuestion::Fields::CustomFields::Fields::AnswerMaxLength",
-              "type": "integer"
+              "type": "integer",
+              "default": 250
             },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -6468,7 +6621,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::WinLossAnalysisWinReasonForChoiceOverCompetitionQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -6626,17 +6782,20 @@ module.exports = {
             "answer_max_length": {
               "name": "answer_max_length",
               "source": "Census::Questions::WinLossAnalysisWinWhoIsBestContactQuestion::Fields::CustomFields::Fields::AnswerMaxLength",
-              "type": "integer"
+              "type": "integer",
+              "default": 250
             },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -6653,7 +6812,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::WinLossAnalysisWinWhoIsBestContactQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -6811,32 +6973,26 @@ module.exports = {
             "true_value_name": {
               "name": "true_value_name",
               "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::CustomFields::Fields::TrueValueName",
-              "type": "string"
+              "type": "string",
+              "default": "Yes"
             },
             "false_value_name": {
               "name": "false_value_name",
               "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::CustomFields::Fields::FalseValueName",
-              "type": "string"
-            },
-            "label_for_true_value": {
-              "name": "label_for_true_value",
-              "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::CustomFields::Fields::LabelForTrueValue",
-              "type": "string"
-            },
-            "label_for_false_value": {
-              "name": "label_for_false_value",
-              "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::CustomFields::Fields::LabelForFalseValue",
-              "type": "string"
+              "type": "string",
+              "default": "No"
             },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
-              "type": "string"
+              "type": "string",
+              "default": ""
             },
             "conclusion": {
               "name": "conclusion",
               "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         },
@@ -6853,7 +7009,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "question_reaction_id": {
               "name": "question_reaction_id",
@@ -7239,10 +7398,16 @@ module.exports = {
         "name": "settings",
         "type": "struct",
         "fields": {
-          "requires_signatures_to_advance": [
-            true,
-            false
-          ],
+          "requires_signatures_to_advance": {
+            "name": "requires_signatures_to_advance",
+            "source": "Census::Survey::Fields::Settings::Fields::RequiresSignaturesToAdvance",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
           "admin_color": {
             "name": "admin_color",
             "source": "Census::Survey::Fields::Settings::Fields::AdminColor",
@@ -7360,7 +7525,9 @@ module.exports = {
               "violet",
               "purple",
               "grey"
-            ]
+            ],
+            "default": {
+            }
           }
         }
       },
@@ -7377,7 +7544,10 @@ module.exports = {
           "notes": {
             "name": "notes",
             "source": "Census::Survey::Fields::ImportData::Fields::Notes",
-            "type": "array"
+            "type": "array",
+            "default": [
+
+            ]
           },
           "survey_reaction_id": {
             "name": "survey_reaction_id",
@@ -7772,10 +7942,16 @@ module.exports = {
           "name": "settings",
           "type": "struct",
           "fields": {
-            "requires_signatures_to_advance": [
-              true,
-              false
-            ],
+            "requires_signatures_to_advance": {
+              "name": "requires_signatures_to_advance",
+              "source": "Census::Surveys::FreeformSurvey::Fields::Settings::Fields::RequiresSignaturesToAdvance",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "admin_color": {
               "name": "admin_color",
               "source": "Census::Surveys::FreeformSurvey::Fields::Settings::Fields::AdminColor",
@@ -7893,7 +8069,9 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey"
-              ]
+              ],
+              "default": {
+              }
             }
           }
         },
@@ -7910,7 +8088,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "survey_reaction_id": {
               "name": "survey_reaction_id",
@@ -8298,10 +8479,16 @@ module.exports = {
           "name": "settings",
           "type": "struct",
           "fields": {
-            "requires_signatures_to_advance": [
-              true,
-              false
-            ],
+            "requires_signatures_to_advance": {
+              "name": "requires_signatures_to_advance",
+              "source": "Census::Surveys::NpsSurvey::Fields::Settings::Fields::RequiresSignaturesToAdvance",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "admin_color": {
               "name": "admin_color",
               "source": "Census::Surveys::NpsSurvey::Fields::Settings::Fields::AdminColor",
@@ -8419,7 +8606,9 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey"
-              ]
+              ],
+              "default": {
+              }
             }
           }
         },
@@ -8436,7 +8625,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "survey_reaction_id": {
               "name": "survey_reaction_id",
@@ -8824,10 +9016,16 @@ module.exports = {
           "name": "settings",
           "type": "struct",
           "fields": {
-            "requires_signatures_to_advance": [
-              true,
-              false
-            ],
+            "requires_signatures_to_advance": {
+              "name": "requires_signatures_to_advance",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::Settings::Fields::RequiresSignaturesToAdvance",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "admin_color": {
               "name": "admin_color",
               "source": "Census::Surveys::PostCaseSurvey::Fields::Settings::Fields::AdminColor",
@@ -8945,7 +9143,9 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey"
-              ]
+              ],
+              "default": {
+              }
             }
           }
         },
@@ -8962,7 +9162,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "survey_reaction_id": {
               "name": "survey_reaction_id",
@@ -9355,10 +9558,16 @@ module.exports = {
           "name": "settings",
           "type": "struct",
           "fields": {
-            "requires_signatures_to_advance": [
-              true,
-              false
-            ],
+            "requires_signatures_to_advance": {
+              "name": "requires_signatures_to_advance",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::Settings::Fields::RequiresSignaturesToAdvance",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "admin_color": {
               "name": "admin_color",
               "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::Settings::Fields::AdminColor",
@@ -9476,7 +9685,9 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey"
-              ]
+              ],
+              "default": {
+              }
             }
           }
         },
@@ -9493,7 +9704,10 @@ module.exports = {
             "notes": {
               "name": "notes",
               "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::Notes",
-              "type": "array"
+              "type": "array",
+              "default": [
+
+              ]
             },
             "survey_reaction_id": {
               "name": "survey_reaction_id",
@@ -9568,10 +9782,16 @@ module.exports = {
         "name": "custom_fields",
         "type": "struct",
         "fields": {
-          "is_active": [
-            true,
-            false
-          ]
+          "is_active": {
+            "name": "is_active",
+            "source": "Client::Account::Fields::CustomFields::Fields::IsActive",
+            "type": "boolean",
+            "default": true,
+            "values": [
+              true,
+              false
+            ]
+          }
         }
       },
       "types": [
@@ -9629,14 +9849,26 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "subaccount_created_successfully": [
-              true,
-              false
-            ],
-            "is_active": [
-              true,
-              false
-            ]
+            "subaccount_created_successfully": {
+              "name": "subaccount_created_successfully",
+              "source": "Client::Accounts::EmailAccount::Fields::CustomFields::Fields::SubaccountCreatedSuccessfully",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "is_active": {
+              "name": "is_active",
+              "source": "Client::Account::Fields::CustomFields::Fields::IsActive",
+              "type": "boolean",
+              "default": true,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       },
@@ -9703,10 +9935,16 @@ module.exports = {
               "source": "Client::Accounts::ReactionAccount::Fields::CustomFields::Fields::EncryptedApiTokenIv",
               "type": "string"
             },
-            "is_active": [
-              true,
-              false
-            ]
+            "is_active": {
+              "name": "is_active",
+              "source": "Client::Account::Fields::CustomFields::Fields::IsActive",
+              "type": "boolean",
+              "default": true,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       },
@@ -9793,19 +10031,31 @@ module.exports = {
               "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::InstanceUrl",
               "type": "string"
             },
-            "include_custom_salesforce_fields": [
-              true,
-              false
-            ],
+            "include_custom_salesforce_fields": {
+              "name": "include_custom_salesforce_fields",
+              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::IncludeCustomSalesforceFields",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "model_schemas": {
               "name": "model_schemas",
               "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::ModelSchemas",
               "type": "array_of"
             },
-            "is_active": [
-              true,
-              false
-            ]
+            "is_active": {
+              "name": "is_active",
+              "source": "Client::Account::Fields::CustomFields::Fields::IsActive",
+              "type": "boolean",
+              "default": true,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       }
@@ -10070,14 +10320,26 @@ module.exports = {
         "name": "general_settings",
         "type": "struct",
         "fields": {
-          "has_translations_enabled": [
-            true,
-            false
-          ],
-          "participant_discovery_enabled": [
-            true,
-            false
-          ]
+          "has_translations_enabled": {
+            "name": "has_translations_enabled",
+            "source": "Client::Organization::Fields::GeneralSettings::Fields::HasTranslationsEnabled",
+            "type": "boolean",
+            "default": true,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "participant_discovery_enabled": {
+            "name": "participant_discovery_enabled",
+            "source": "Client::Organization::Fields::GeneralSettings::Fields::ParticipantDiscoveryEnabled",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          }
         }
       },
       "email_display_settings": {
@@ -10202,7 +10464,8 @@ module.exports = {
               "violet",
               "purple",
               "grey"
-            ]
+            ],
+            "default": "teal"
           },
           "start_button_style": {
             "name": "start_button_style",
@@ -10296,7 +10559,8 @@ module.exports = {
               "second",
               "third",
               "peer60"
-            ]
+            ],
+            "default": "first"
           }
         }
       },
@@ -10422,7 +10686,8 @@ module.exports = {
               "violet",
               "purple",
               "grey"
-            ]
+            ],
+            "default": "green"
           },
           "secondary_palette": {
             "name": "secondary_palette",
@@ -10541,7 +10806,8 @@ module.exports = {
               "violet",
               "purple",
               "grey"
-            ]
+            ],
+            "default": "blue"
           }
         }
       },
@@ -10550,14 +10816,26 @@ module.exports = {
         "name": "ui_settings",
         "type": "struct",
         "fields": {
-          "nps_dashboard_enabled": [
-            true,
-            false
-          ],
-          "response_rate_dashboard_enabled": [
-            true,
-            false
-          ]
+          "nps_dashboard_enabled": {
+            "name": "nps_dashboard_enabled",
+            "source": "Client::Organization::Fields::UiSettings::Fields::NpsDashboardEnabled",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "response_rate_dashboard_enabled": {
+            "name": "response_rate_dashboard_enabled",
+            "source": "Client::Organization::Fields::UiSettings::Fields::ResponseRateDashboardEnabled",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          }
         }
       },
       "supported_locales": {
@@ -10565,98 +10843,236 @@ module.exports = {
         "name": "supported_locales",
         "type": "struct",
         "fields": {
-          "cs": [
-            true,
-            false
-          ],
-          "da": [
-            true,
-            false
-          ],
-          "de": [
-            true,
-            false
-          ],
-          "el": [
-            true,
-            false
-          ],
-          "en": [
-            true,
-            false
-          ],
-          "en_au": [
-            true,
-            false
-          ],
-          "en_ca": [
-            true,
-            false
-          ],
-          "en_gb": [
-            true,
-            false
-          ],
-          "en_us": [
-            true,
-            false
-          ],
-          "es": [
-            true,
-            false
-          ],
-          "et": [
-            true,
-            false
-          ],
-          "fi": [
-            true,
-            false
-          ],
-          "fr": [
-            true,
-            false
-          ],
-          "hu": [
-            true,
-            false
-          ],
-          "is": [
-            true,
-            false
-          ],
-          "it": [
-            true,
-            false
-          ],
-          "nb": [
-            true,
-            false
-          ],
-          "nl": [
-            true,
-            false
-          ],
-          "pl": [
-            true,
-            false
-          ],
-          "pt": [
-            true,
-            false
-          ],
-          "ro": [
-            true,
-            false
-          ],
-          "sk": [
-            true,
-            false
-          ],
-          "sv": [
-            true,
-            false
-          ]
+          "cs": {
+            "name": "cs",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "da": {
+            "name": "da",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "de": {
+            "name": "de",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "el": {
+            "name": "el",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en": {
+            "name": "en",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en_au": {
+            "name": "en_au",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::EnAu",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en_ca": {
+            "name": "en_ca",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::EnCa",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en_gb": {
+            "name": "en_gb",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::EnGb",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en_us": {
+            "name": "en_us",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::EnUs",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "es": {
+            "name": "es",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "et": {
+            "name": "et",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "fi": {
+            "name": "fi",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Fi",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "fr": {
+            "name": "fr",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Fr",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "hu": {
+            "name": "hu",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "is": {
+            "name": "is",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "it": {
+            "name": "it",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::It",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "nb": {
+            "name": "nb",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Nb",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "nl": {
+            "name": "nl",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Nl",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "pl": {
+            "name": "pl",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Pl",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "pt": {
+            "name": "pt",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Pt",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "ro": {
+            "name": "ro",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Ro",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "sk": {
+            "name": "sk",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Sk",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "sv": {
+            "name": "sv",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Sv",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          }
         }
       },
       "timezones": [
@@ -10683,16 +11099,16 @@ module.exports = {
         "Indiana (East)",
         "Lima",
         "Quito",
-        "Caracas",
         "Atlantic Time (Canada)",
+        "Caracas",
         "Georgetown",
         "La Paz",
+        "Santiago",
         "Newfoundland",
         "Brasilia",
         "Buenos Aires",
         "Greenland",
         "Montevideo",
-        "Santiago",
         "Mid-Atlantic",
         "Azores",
         "Cape Verde Is.",
@@ -10793,11 +11209,11 @@ module.exports = {
         "Canberra",
         "Guam",
         "Hobart",
-        "Magadan",
         "Melbourne",
         "Port Moresby",
         "Sydney",
         "Vladivostok",
+        "Magadan",
         "New Caledonia",
         "Solomon Is.",
         "Srednekolymsk",
@@ -10902,22 +11318,46 @@ module.exports = {
         "name": "can",
         "type": "struct",
         "fields": {
-          "create": [
-            true,
-            false
-          ],
-          "read": [
-            true,
-            false
-          ],
-          "update": [
-            true,
-            false
-          ],
-          "delete": [
-            true,
-            false
-          ]
+          "create": {
+            "name": "create",
+            "source": "Client::Permission::Fields::Can::Fields::Create",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "read": {
+            "name": "read",
+            "source": "Client::Permission::Fields::Can::Fields::Read",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "update": {
+            "name": "update",
+            "source": "Client::Permission::Fields::Can::Fields::Update",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "delete": {
+            "name": "delete",
+            "source": "Client::Permission::Fields::Can::Fields::Delete",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          }
         }
       },
       "types": [
@@ -11022,22 +11462,46 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": [
-              true,
-              false
-            ],
-            "read": [
-              true,
-              false
-            ],
-            "update": [
-              true,
-              false
-            ],
-            "delete": [
-              true,
-              false
-            ]
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "read": {
+              "name": "read",
+              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Read",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Update",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Delete",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       },
@@ -11132,22 +11596,46 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": [
-              true,
-              false
-            ],
-            "read": [
-              true,
-              false
-            ],
-            "update": [
-              true,
-              false
-            ],
-            "delete": [
-              true,
-              false
-            ]
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "read": {
+              "name": "read",
+              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Read",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Update",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Delete",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       },
@@ -11242,22 +11730,46 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": [
-              true,
-              false
-            ],
-            "read": [
-              true,
-              false
-            ],
-            "update": [
-              true,
-              false
-            ],
-            "delete": [
-              true,
-              false
-            ]
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "read": {
+              "name": "read",
+              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Read",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Update",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Delete",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       },
@@ -11352,38 +11864,86 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "access_data": [
-              true,
-              false
-            ],
-            "download_with_limit": [
-              true,
-              false
-            ],
-            "download_without_limit": [
-              true,
-              false
-            ],
-            "explore": [
-              true,
-              false
-            ],
-            "see_user_dashboards": [
-              true,
-              false
-            ],
-            "see_lookml_dashboards": [
-              true,
-              false
-            ],
-            "see_looks": [
-              true,
-              false
-            ],
-            "login_to_looker": [
-              true,
-              false
-            ]
+            "access_data": {
+              "name": "access_data",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::AccessData",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "download_with_limit": {
+              "name": "download_with_limit",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::DownloadWithLimit",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "download_without_limit": {
+              "name": "download_without_limit",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::DownloadWithoutLimit",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "explore": {
+              "name": "explore",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::Explore",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "see_user_dashboards": {
+              "name": "see_user_dashboards",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::SeeUserDashboards",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "see_lookml_dashboards": {
+              "name": "see_lookml_dashboards",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::SeeLookmlDashboards",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "see_looks": {
+              "name": "see_looks",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::SeeLooks",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "login_to_looker": {
+              "name": "login_to_looker",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::LoginToLooker",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       },
@@ -11478,22 +12038,46 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": [
-              true,
-              false
-            ],
-            "read": [
-              true,
-              false
-            ],
-            "update": [
-              true,
-              false
-            ],
-            "delete": [
-              true,
-              false
-            ]
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "read": {
+              "name": "read",
+              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Read",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Update",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Delete",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       },
@@ -11588,22 +12172,46 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": [
-              true,
-              false
-            ],
-            "read": [
-              true,
-              false
-            ],
-            "update": [
-              true,
-              false
-            ],
-            "delete": [
-              true,
-              false
-            ]
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "read": {
+              "name": "read",
+              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Read",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Update",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Delete",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       },
@@ -11698,22 +12306,46 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": [
-              true,
-              false
-            ],
-            "read": [
-              true,
-              false
-            ],
-            "update": [
-              true,
-              false
-            ],
-            "delete": [
-              true,
-              false
-            ]
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "read": {
+              "name": "read",
+              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Read",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Update",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Delete",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         }
       }
@@ -17047,7 +17679,8 @@ module.exports = {
             "group_id": {
               "name": "group_id",
               "source": "Portal::Reactions::AddParticipantToGroup::Fields::CustomFields::Fields::GroupId",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         }
@@ -17159,7 +17792,8 @@ module.exports = {
             "email_id": {
               "name": "email_id",
               "source": "Portal::Reactions::CreateEmailForParticipation::Fields::CustomFields::Fields::EmailId",
-              "type": "string"
+              "type": "string",
+              "default": ""
             }
           }
         }
@@ -17439,7 +18073,8 @@ module.exports = {
             "seconds_until_repeat": {
               "name": "seconds_until_repeat",
               "source": "Portal::Triggers::Timer::Fields::CustomFields::Fields::SecondsUntilRepeat",
-              "type": "integer"
+              "type": "integer",
+              "default": 30
             }
           }
         },
@@ -17477,17 +18112,20 @@ module.exports = {
               "default_where_params": {
                 "name": "default_where_params",
                 "source": "Portal::Triggers::Timers::SalesforceCaseClosedTimer::Fields::CustomFields::Fields::DefaultWhereParams",
-                "type": "string"
+                "type": "string",
+                "default": "ClosedDate > {{ trigger.last_success_at | iso8601 }} AND IsClosed = true"
               },
               "additional_where_params": {
                 "name": "additional_where_params",
                 "source": "Portal::Triggers::Timers::SalesforceCaseClosedTimer::Fields::CustomFields::Fields::AdditionalWhereParams",
-                "type": "string"
+                "type": "string",
+                "default": ""
               },
               "seconds_until_repeat": {
                 "name": "seconds_until_repeat",
                 "source": "Portal::Triggers::Timers::SalesforceCaseClosedTimer::Fields::CustomFields::Fields::SecondsUntilRepeat",
-                "type": "integer"
+                "type": "integer",
+                "default": 86400
               }
             }
           }
@@ -18366,98 +19004,236 @@ module.exports = {
         "name": "supported_locales",
         "type": "struct",
         "fields": {
-          "cs": [
-            true,
-            false
-          ],
-          "da": [
-            true,
-            false
-          ],
-          "de": [
-            true,
-            false
-          ],
-          "el": [
-            true,
-            false
-          ],
-          "en": [
-            true,
-            false
-          ],
-          "en_au": [
-            true,
-            false
-          ],
-          "en_ca": [
-            true,
-            false
-          ],
-          "en_gb": [
-            true,
-            false
-          ],
-          "en_us": [
-            true,
-            false
-          ],
-          "es": [
-            true,
-            false
-          ],
-          "et": [
-            true,
-            false
-          ],
-          "fi": [
-            true,
-            false
-          ],
-          "fr": [
-            true,
-            false
-          ],
-          "hu": [
-            true,
-            false
-          ],
-          "is": [
-            true,
-            false
-          ],
-          "it": [
-            true,
-            false
-          ],
-          "nb": [
-            true,
-            false
-          ],
-          "nl": [
-            true,
-            false
-          ],
-          "pl": [
-            true,
-            false
-          ],
-          "pt": [
-            true,
-            false
-          ],
-          "ro": [
-            true,
-            false
-          ],
-          "sk": [
-            true,
-            false
-          ],
-          "sv": [
-            true,
-            false
-          ]
+          "cs": {
+            "name": "cs",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "da": {
+            "name": "da",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "de": {
+            "name": "de",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "el": {
+            "name": "el",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en": {
+            "name": "en",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en_au": {
+            "name": "en_au",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::EnAu",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en_ca": {
+            "name": "en_ca",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::EnCa",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en_gb": {
+            "name": "en_gb",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::EnGb",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en_us": {
+            "name": "en_us",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::EnUs",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "es": {
+            "name": "es",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "et": {
+            "name": "et",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "fi": {
+            "name": "fi",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Fi",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "fr": {
+            "name": "fr",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Fr",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "hu": {
+            "name": "hu",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "is": {
+            "name": "is",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "it": {
+            "name": "it",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::It",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "nb": {
+            "name": "nb",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Nb",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "nl": {
+            "name": "nl",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Nl",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "pl": {
+            "name": "pl",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Pl",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "pt": {
+            "name": "pt",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Pt",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "ro": {
+            "name": "ro",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Ro",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "sk": {
+            "name": "sk",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Sk",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "sv": {
+            "name": "sv",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Sv",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          }
         }
       }
     },
@@ -21162,10 +21938,16 @@ module.exports = {
               "source": "Kore::Types::Salesforce::Fields::Field::Fields::Model",
               "type": "string"
             },
-            "is_custom": [
-              true,
-              false
-            ],
+            "is_custom": {
+              "name": "is_custom",
+              "source": "Kore::Types::Salesforce::Fields::Field::Fields::IsCustom",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "as": {
               "name": "as",
               "source": "Kore::Types::Salesforce::Fields::Field::Fields::As",
@@ -22272,14 +23054,26 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": [
-                true,
-                false
-              ],
-              "explore_builder": [
-                true,
-                false
-              ]
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "explore_builder": {
+                "name": "explore_builder",
+                "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         },
@@ -22428,14 +23222,26 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": [
-                true,
-                false
-              ],
-              "explore_builder": [
-                true,
-                false
-              ]
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "explore_builder": {
+                "name": "explore_builder",
+                "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         },
@@ -22584,14 +23390,26 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": [
-                true,
-                false
-              ],
-              "explore_builder": [
-                true,
-                false
-              ]
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "explore_builder": {
+                "name": "explore_builder",
+                "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         },
@@ -22740,14 +23558,26 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": [
-                true,
-                false
-              ],
-              "explore_builder": [
-                true,
-                false
-              ]
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "explore_builder": {
+                "name": "explore_builder",
+                "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         },
@@ -22896,14 +23726,26 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": [
-                true,
-                false
-              ],
-              "explore_builder": [
-                true,
-                false
-              ]
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "explore_builder": {
+                "name": "explore_builder",
+                "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         },
@@ -23052,14 +23894,26 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": [
-                true,
-                false
-              ],
-              "explore_builder": [
-                true,
-                false
-              ]
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "explore_builder": {
+                "name": "explore_builder",
+                "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         },
@@ -23208,14 +24062,26 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": [
-                true,
-                false
-              ],
-              "explore_builder": [
-                true,
-                false
-              ]
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "explore_builder": {
+                "name": "explore_builder",
+                "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         },
@@ -23364,14 +24230,26 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": [
-                true,
-                false
-              ],
-              "explore_builder": [
-                true,
-                false
-              ]
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "explore_builder": {
+                "name": "explore_builder",
+                "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         }
@@ -23521,10 +24399,16 @@ module.exports = {
           "name": "visible_looks",
           "type": "struct",
           "fields": {
-            "response_rate_dashboard": [
-              true,
-              false
-            ]
+            "response_rate_dashboard": {
+              "name": "response_rate_dashboard",
+              "source": "Warehouse::Pages::SurveyPage::Fields::VisibleLooks::Fields::ResponseRateDashboard",
+              "type": "boolean",
+              "default": true,
+              "values": [
+                true,
+                false
+              ]
+            }
           }
         },
         "types": [
@@ -23678,10 +24562,16 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "response_rate_dashboard": [
-                true,
-                false
-              ]
+              "response_rate_dashboard": {
+                "name": "response_rate_dashboard",
+                "source": "Warehouse::Pages::Surveys::FreeformSurveyPage::Fields::VisibleLooks::Fields::ResponseRateDashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         },
@@ -23830,10 +24720,16 @@ module.exports = {
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "response_rate_dashboard": [
-                true,
-                false
-              ]
+              "response_rate_dashboard": {
+                "name": "response_rate_dashboard",
+                "source": "Warehouse::Pages::Surveys::NpsSurveyPage::Fields::VisibleLooks::Fields::ResponseRateDashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
+              }
             }
           }
         }
@@ -24025,7 +24921,9 @@ module.exports = {
               "violet",
               "purple",
               "grey"
-            ]
+            ],
+            "default": {
+            }
           }
         }
       },
@@ -24250,7 +25148,9 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey"
-              ]
+              ],
+              "default": {
+              }
             }
           }
         }
@@ -24439,7 +25339,9 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey"
-              ]
+              ],
+              "default": {
+              }
             }
           }
         }
