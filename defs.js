@@ -2181,6 +2181,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 1,
             "attributes": {
+              "label": "čeština"
             }
           },
           {
@@ -2189,6 +2190,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 2,
             "attributes": {
+              "label": "Dansk"
             }
           },
           {
@@ -2197,6 +2199,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 3,
             "attributes": {
+              "label": "Deutsch"
             }
           },
           {
@@ -2205,6 +2208,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 4,
             "attributes": {
+              "label": "ελληνικά"
             }
           },
           {
@@ -2213,6 +2217,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 5,
             "attributes": {
+              "label": "English"
             }
           },
           {
@@ -2221,6 +2226,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 6,
             "attributes": {
+              "label": "English (Australia)"
             }
           },
           {
@@ -2229,6 +2235,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 7,
             "attributes": {
+              "label": "English (Canada)"
             }
           },
           {
@@ -2237,6 +2244,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 8,
             "attributes": {
+              "label": "English (United Kingdom)"
             }
           },
           {
@@ -2245,6 +2253,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 9,
             "attributes": {
+              "label": "English (United States)"
             }
           },
           {
@@ -2253,6 +2262,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 10,
             "attributes": {
+              "label": "Español"
             }
           },
           {
@@ -2261,6 +2271,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 11,
             "attributes": {
+              "label": "Eesti Keel"
             }
           },
           {
@@ -2269,6 +2280,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 12,
             "attributes": {
+              "label": "Suomi"
             }
           },
           {
@@ -2277,6 +2289,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 13,
             "attributes": {
+              "label": "Français"
             }
           },
           {
@@ -2285,6 +2298,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 14,
             "attributes": {
+              "label": "Magyar"
             }
           },
           {
@@ -2293,6 +2307,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 15,
             "attributes": {
+              "label": "Islenska"
             }
           },
           {
@@ -2301,6 +2316,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 16,
             "attributes": {
+              "label": "Italiano"
             }
           },
           {
@@ -2309,6 +2325,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 17,
             "attributes": {
+              "label": "Norsk Bokmål"
             }
           },
           {
@@ -2317,6 +2334,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 18,
             "attributes": {
+              "label": "Nederlands"
             }
           },
           {
@@ -2325,6 +2343,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 19,
             "attributes": {
+              "label": "Polski"
             }
           },
           {
@@ -2333,6 +2352,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 20,
             "attributes": {
+              "label": "Português"
             }
           },
           {
@@ -2341,6 +2361,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 21,
             "attributes": {
+              "label": "Română"
             }
           },
           {
@@ -2349,6 +2370,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 22,
             "attributes": {
+              "label": "Slovenčina"
             }
           },
           {
@@ -2357,6 +2379,16 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 23,
             "attributes": {
+              "label": "Svenska"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Ja",
+            "name": "ja",
+            "type": "enum_value",
+            "integer_value": 24,
+            "attributes": {
+              "label": "日本語"
             }
           }
         ],
@@ -2383,7 +2415,8 @@ module.exports = {
           "pt",
           "ro",
           "sk",
-          "sv"
+          "sv",
+          "ja"
         ]
       },
       "clearbit_discovery_status": {
@@ -3123,6 +3156,12 @@ module.exports = {
             "type": "json"
           }
         }
+      }
+    },
+    "Published": {
+      "Question": {
+      },
+      "Survey": {
       }
     },
     "Question": {
@@ -7108,6 +7147,42 @@ module.exports = {
           "deleted"
         ]
       },
+      "participation_creation_method": {
+        "name": "participation_creation_method",
+        "source": "Census::Survey::Fields::ParticipationCreationMethod",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+            "name": "audience",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+            "name": "trigger_based",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+            "name": "contact_registration",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "audience",
+          "trigger_based",
+          "contact_registration"
+        ]
+      },
       "default_locale": {
         "name": "default_locale",
         "source": "Census::Survey::Fields::DefaultLocale",
@@ -7119,6 +7194,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 1,
             "attributes": {
+              "label": "čeština"
             }
           },
           {
@@ -7127,6 +7203,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 2,
             "attributes": {
+              "label": "Dansk"
             }
           },
           {
@@ -7135,6 +7212,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 3,
             "attributes": {
+              "label": "Deutsch"
             }
           },
           {
@@ -7143,6 +7221,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 4,
             "attributes": {
+              "label": "ελληνικά"
             }
           },
           {
@@ -7151,6 +7230,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 5,
             "attributes": {
+              "label": "English"
             }
           },
           {
@@ -7159,6 +7239,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 6,
             "attributes": {
+              "label": "English (Australia)"
             }
           },
           {
@@ -7167,6 +7248,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 7,
             "attributes": {
+              "label": "English (Canada)"
             }
           },
           {
@@ -7175,6 +7257,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 8,
             "attributes": {
+              "label": "English (United Kingdom)"
             }
           },
           {
@@ -7183,6 +7266,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 9,
             "attributes": {
+              "label": "English (United States)"
             }
           },
           {
@@ -7191,6 +7275,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 10,
             "attributes": {
+              "label": "Español"
             }
           },
           {
@@ -7199,6 +7284,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 11,
             "attributes": {
+              "label": "Eesti Keel"
             }
           },
           {
@@ -7207,6 +7293,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 12,
             "attributes": {
+              "label": "Suomi"
             }
           },
           {
@@ -7215,6 +7302,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 13,
             "attributes": {
+              "label": "Français"
             }
           },
           {
@@ -7223,6 +7311,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 14,
             "attributes": {
+              "label": "Magyar"
             }
           },
           {
@@ -7231,6 +7320,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 15,
             "attributes": {
+              "label": "Islenska"
             }
           },
           {
@@ -7239,6 +7329,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 16,
             "attributes": {
+              "label": "Italiano"
             }
           },
           {
@@ -7247,6 +7338,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 17,
             "attributes": {
+              "label": "Norsk Bokmål"
             }
           },
           {
@@ -7255,6 +7347,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 18,
             "attributes": {
+              "label": "Nederlands"
             }
           },
           {
@@ -7263,6 +7356,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 19,
             "attributes": {
+              "label": "Polski"
             }
           },
           {
@@ -7271,6 +7365,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 20,
             "attributes": {
+              "label": "Português"
             }
           },
           {
@@ -7279,6 +7374,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 21,
             "attributes": {
+              "label": "Română"
             }
           },
           {
@@ -7287,6 +7383,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 22,
             "attributes": {
+              "label": "Slovenčina"
             }
           },
           {
@@ -7295,6 +7392,16 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 23,
             "attributes": {
+              "label": "Svenska"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Ja",
+            "name": "ja",
+            "type": "enum_value",
+            "integer_value": 24,
+            "attributes": {
+              "label": "日本語"
             }
           }
         ],
@@ -7321,7 +7428,8 @@ module.exports = {
           "pt",
           "ro",
           "sk",
-          "sv"
+          "sv",
+          "ja"
         ]
       },
       "kind": {
@@ -7647,6 +7755,42 @@ module.exports = {
             "deleted"
           ]
         },
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::FreeformSurvey::Fields::ParticipationCreationMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "audience",
+            "trigger_based",
+            "contact_registration"
+          ]
+        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::FreeformSurvey::Fields::DefaultLocale",
@@ -7658,6 +7802,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
+                "label": "čeština"
               }
             },
             {
@@ -7666,6 +7811,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
+                "label": "Dansk"
               }
             },
             {
@@ -7674,6 +7820,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 3,
               "attributes": {
+                "label": "Deutsch"
               }
             },
             {
@@ -7682,6 +7829,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 4,
               "attributes": {
+                "label": "ελληνικά"
               }
             },
             {
@@ -7690,6 +7838,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 5,
               "attributes": {
+                "label": "English"
               }
             },
             {
@@ -7698,6 +7847,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 6,
               "attributes": {
+                "label": "English (Australia)"
               }
             },
             {
@@ -7706,6 +7856,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 7,
               "attributes": {
+                "label": "English (Canada)"
               }
             },
             {
@@ -7714,6 +7865,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
+                "label": "English (United Kingdom)"
               }
             },
             {
@@ -7722,6 +7874,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 9,
               "attributes": {
+                "label": "English (United States)"
               }
             },
             {
@@ -7730,6 +7883,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 10,
               "attributes": {
+                "label": "Español"
               }
             },
             {
@@ -7738,6 +7892,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 11,
               "attributes": {
+                "label": "Eesti Keel"
               }
             },
             {
@@ -7746,6 +7901,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 12,
               "attributes": {
+                "label": "Suomi"
               }
             },
             {
@@ -7754,6 +7910,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 13,
               "attributes": {
+                "label": "Français"
               }
             },
             {
@@ -7762,6 +7919,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 14,
               "attributes": {
+                "label": "Magyar"
               }
             },
             {
@@ -7770,6 +7928,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 15,
               "attributes": {
+                "label": "Islenska"
               }
             },
             {
@@ -7778,6 +7937,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 16,
               "attributes": {
+                "label": "Italiano"
               }
             },
             {
@@ -7786,6 +7946,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 17,
               "attributes": {
+                "label": "Norsk Bokmål"
               }
             },
             {
@@ -7794,6 +7955,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 18,
               "attributes": {
+                "label": "Nederlands"
               }
             },
             {
@@ -7802,6 +7964,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 19,
               "attributes": {
+                "label": "Polski"
               }
             },
             {
@@ -7810,6 +7973,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 20,
               "attributes": {
+                "label": "Português"
               }
             },
             {
@@ -7818,6 +7982,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 21,
               "attributes": {
+                "label": "Română"
               }
             },
             {
@@ -7826,6 +7991,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 22,
               "attributes": {
+                "label": "Slovenčina"
               }
             },
             {
@@ -7834,6 +8000,16 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 23,
               "attributes": {
+                "label": "Svenska"
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Ja",
+              "name": "ja",
+              "type": "enum_value",
+              "integer_value": 24,
+              "attributes": {
+                "label": "日本語"
               }
             }
           ],
@@ -7860,7 +8036,8 @@ module.exports = {
             "pt",
             "ro",
             "sk",
-            "sv"
+            "sv",
+            "ja"
           ]
         },
         "kind": {
@@ -8184,6 +8361,42 @@ module.exports = {
             "deleted"
           ]
         },
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::NpsSurvey::Fields::ParticipationCreationMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "audience",
+            "trigger_based",
+            "contact_registration"
+          ]
+        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::NpsSurvey::Fields::DefaultLocale",
@@ -8195,6 +8408,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
+                "label": "čeština"
               }
             },
             {
@@ -8203,6 +8417,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
+                "label": "Dansk"
               }
             },
             {
@@ -8211,6 +8426,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 3,
               "attributes": {
+                "label": "Deutsch"
               }
             },
             {
@@ -8219,6 +8435,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 4,
               "attributes": {
+                "label": "ελληνικά"
               }
             },
             {
@@ -8227,6 +8444,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 5,
               "attributes": {
+                "label": "English"
               }
             },
             {
@@ -8235,6 +8453,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 6,
               "attributes": {
+                "label": "English (Australia)"
               }
             },
             {
@@ -8243,6 +8462,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 7,
               "attributes": {
+                "label": "English (Canada)"
               }
             },
             {
@@ -8251,6 +8471,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
+                "label": "English (United Kingdom)"
               }
             },
             {
@@ -8259,6 +8480,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 9,
               "attributes": {
+                "label": "English (United States)"
               }
             },
             {
@@ -8267,6 +8489,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 10,
               "attributes": {
+                "label": "Español"
               }
             },
             {
@@ -8275,6 +8498,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 11,
               "attributes": {
+                "label": "Eesti Keel"
               }
             },
             {
@@ -8283,6 +8507,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 12,
               "attributes": {
+                "label": "Suomi"
               }
             },
             {
@@ -8291,6 +8516,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 13,
               "attributes": {
+                "label": "Français"
               }
             },
             {
@@ -8299,6 +8525,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 14,
               "attributes": {
+                "label": "Magyar"
               }
             },
             {
@@ -8307,6 +8534,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 15,
               "attributes": {
+                "label": "Islenska"
               }
             },
             {
@@ -8315,6 +8543,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 16,
               "attributes": {
+                "label": "Italiano"
               }
             },
             {
@@ -8323,6 +8552,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 17,
               "attributes": {
+                "label": "Norsk Bokmål"
               }
             },
             {
@@ -8331,6 +8561,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 18,
               "attributes": {
+                "label": "Nederlands"
               }
             },
             {
@@ -8339,6 +8570,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 19,
               "attributes": {
+                "label": "Polski"
               }
             },
             {
@@ -8347,6 +8579,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 20,
               "attributes": {
+                "label": "Português"
               }
             },
             {
@@ -8355,6 +8588,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 21,
               "attributes": {
+                "label": "Română"
               }
             },
             {
@@ -8363,6 +8597,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 22,
               "attributes": {
+                "label": "Slovenčina"
               }
             },
             {
@@ -8371,6 +8606,16 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 23,
               "attributes": {
+                "label": "Svenska"
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Ja",
+              "name": "ja",
+              "type": "enum_value",
+              "integer_value": 24,
+              "attributes": {
+                "label": "日本語"
               }
             }
           ],
@@ -8397,7 +8642,8 @@ module.exports = {
             "pt",
             "ro",
             "sk",
-            "sv"
+            "sv",
+            "ja"
           ]
         },
         "kind": {
@@ -8721,6 +8967,42 @@ module.exports = {
             "deleted"
           ]
         },
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::PostCaseSurvey::Fields::ParticipationCreationMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "audience",
+            "trigger_based",
+            "contact_registration"
+          ]
+        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::PostCaseSurvey::Fields::DefaultLocale",
@@ -8732,6 +9014,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
+                "label": "čeština"
               }
             },
             {
@@ -8740,6 +9023,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
+                "label": "Dansk"
               }
             },
             {
@@ -8748,6 +9032,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 3,
               "attributes": {
+                "label": "Deutsch"
               }
             },
             {
@@ -8756,6 +9041,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 4,
               "attributes": {
+                "label": "ελληνικά"
               }
             },
             {
@@ -8764,6 +9050,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 5,
               "attributes": {
+                "label": "English"
               }
             },
             {
@@ -8772,6 +9059,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 6,
               "attributes": {
+                "label": "English (Australia)"
               }
             },
             {
@@ -8780,6 +9068,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 7,
               "attributes": {
+                "label": "English (Canada)"
               }
             },
             {
@@ -8788,6 +9077,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
+                "label": "English (United Kingdom)"
               }
             },
             {
@@ -8796,6 +9086,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 9,
               "attributes": {
+                "label": "English (United States)"
               }
             },
             {
@@ -8804,6 +9095,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 10,
               "attributes": {
+                "label": "Español"
               }
             },
             {
@@ -8812,6 +9104,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 11,
               "attributes": {
+                "label": "Eesti Keel"
               }
             },
             {
@@ -8820,6 +9113,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 12,
               "attributes": {
+                "label": "Suomi"
               }
             },
             {
@@ -8828,6 +9122,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 13,
               "attributes": {
+                "label": "Français"
               }
             },
             {
@@ -8836,6 +9131,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 14,
               "attributes": {
+                "label": "Magyar"
               }
             },
             {
@@ -8844,6 +9140,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 15,
               "attributes": {
+                "label": "Islenska"
               }
             },
             {
@@ -8852,6 +9149,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 16,
               "attributes": {
+                "label": "Italiano"
               }
             },
             {
@@ -8860,6 +9158,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 17,
               "attributes": {
+                "label": "Norsk Bokmål"
               }
             },
             {
@@ -8868,6 +9167,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 18,
               "attributes": {
+                "label": "Nederlands"
               }
             },
             {
@@ -8876,6 +9176,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 19,
               "attributes": {
+                "label": "Polski"
               }
             },
             {
@@ -8884,6 +9185,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 20,
               "attributes": {
+                "label": "Português"
               }
             },
             {
@@ -8892,6 +9194,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 21,
               "attributes": {
+                "label": "Română"
               }
             },
             {
@@ -8900,6 +9203,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 22,
               "attributes": {
+                "label": "Slovenčina"
               }
             },
             {
@@ -8908,6 +9212,16 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 23,
               "attributes": {
+                "label": "Svenska"
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Ja",
+              "name": "ja",
+              "type": "enum_value",
+              "integer_value": 24,
+              "attributes": {
+                "label": "日本語"
               }
             }
           ],
@@ -8934,7 +9248,8 @@ module.exports = {
             "pt",
             "ro",
             "sk",
-            "sv"
+            "sv",
+            "ja"
           ]
         },
         "kind": {
@@ -9258,6 +9573,42 @@ module.exports = {
             "deleted"
           ]
         },
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ParticipationCreationMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "audience",
+            "trigger_based",
+            "contact_registration"
+          ]
+        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::DefaultLocale",
@@ -9269,6 +9620,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
+                "label": "čeština"
               }
             },
             {
@@ -9277,6 +9629,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
+                "label": "Dansk"
               }
             },
             {
@@ -9285,6 +9638,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 3,
               "attributes": {
+                "label": "Deutsch"
               }
             },
             {
@@ -9293,6 +9647,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 4,
               "attributes": {
+                "label": "ελληνικά"
               }
             },
             {
@@ -9301,6 +9656,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 5,
               "attributes": {
+                "label": "English"
               }
             },
             {
@@ -9309,6 +9665,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 6,
               "attributes": {
+                "label": "English (Australia)"
               }
             },
             {
@@ -9317,6 +9674,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 7,
               "attributes": {
+                "label": "English (Canada)"
               }
             },
             {
@@ -9325,6 +9683,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
+                "label": "English (United Kingdom)"
               }
             },
             {
@@ -9333,6 +9692,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 9,
               "attributes": {
+                "label": "English (United States)"
               }
             },
             {
@@ -9341,6 +9701,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 10,
               "attributes": {
+                "label": "Español"
               }
             },
             {
@@ -9349,6 +9710,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 11,
               "attributes": {
+                "label": "Eesti Keel"
               }
             },
             {
@@ -9357,6 +9719,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 12,
               "attributes": {
+                "label": "Suomi"
               }
             },
             {
@@ -9365,6 +9728,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 13,
               "attributes": {
+                "label": "Français"
               }
             },
             {
@@ -9373,6 +9737,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 14,
               "attributes": {
+                "label": "Magyar"
               }
             },
             {
@@ -9381,6 +9746,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 15,
               "attributes": {
+                "label": "Islenska"
               }
             },
             {
@@ -9389,6 +9755,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 16,
               "attributes": {
+                "label": "Italiano"
               }
             },
             {
@@ -9397,6 +9764,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 17,
               "attributes": {
+                "label": "Norsk Bokmål"
               }
             },
             {
@@ -9405,6 +9773,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 18,
               "attributes": {
+                "label": "Nederlands"
               }
             },
             {
@@ -9413,6 +9782,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 19,
               "attributes": {
+                "label": "Polski"
               }
             },
             {
@@ -9421,6 +9791,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 20,
               "attributes": {
+                "label": "Português"
               }
             },
             {
@@ -9429,6 +9800,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 21,
               "attributes": {
+                "label": "Română"
               }
             },
             {
@@ -9437,6 +9809,7 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 22,
               "attributes": {
+                "label": "Slovenčina"
               }
             },
             {
@@ -9445,6 +9818,16 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 23,
               "attributes": {
+                "label": "Svenska"
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Ja",
+              "name": "ja",
+              "type": "enum_value",
+              "integer_value": 24,
+              "attributes": {
+                "label": "日本語"
               }
             }
           ],
@@ -9471,7 +9854,8 @@ module.exports = {
             "pt",
             "ro",
             "sk",
-            "sv"
+            "sv",
+            "ja"
           ]
         },
         "kind": {
@@ -10062,6 +10446,193 @@ module.exports = {
     },
     "EmailConfig": {
     },
+    "Export": {
+      "kind": {
+        "name": "kind",
+        "source": "Client::Export::Fields::Kind",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Client::Export::Fields::Kind::Answers",
+            "name": "answers",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Client::Exports::AnswersExport"
+            }
+          }
+        ],
+        "values": [
+          "answers"
+        ]
+      },
+      "status": {
+        "name": "status",
+        "source": "Client::Export::Fields::Status",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Pending",
+            "name": "pending",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::InProgress",
+            "name": "in_progress",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+            "name": "cancelling",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+            "name": "cancelled",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Success",
+            "name": "success",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Failed",
+            "name": "failed",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "pending",
+          "in_progress",
+          "cancelling",
+          "cancelled",
+          "success",
+          "failed"
+        ]
+      },
+      "custom_fields": {
+        "source": "Client::Export::Fields::CustomFields",
+        "name": "custom_fields",
+        "type": "struct",
+        "fields": {
+        }
+      },
+      "types": [
+        "Client::Exports::AnswersExport"
+      ]
+    },
+    "Exports": {
+      "AnswersExport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Exports::AnswersExport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Export::Fields::Kind::Answers",
+              "name": "answers",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Exports::AnswersExport"
+              }
+            }
+          ],
+          "values": [
+            "answers"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Exports::AnswersExport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "custom_fields": {
+          "source": "Client::Exports::AnswersExport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+          }
+        }
+      }
+    },
     "Organization": {
       "subscription_status": {
         "name": "subscription_status",
@@ -10110,6 +10681,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 1,
             "attributes": {
+              "label": "čeština"
             }
           },
           {
@@ -10118,6 +10690,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 2,
             "attributes": {
+              "label": "Dansk"
             }
           },
           {
@@ -10126,6 +10699,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 3,
             "attributes": {
+              "label": "Deutsch"
             }
           },
           {
@@ -10134,6 +10708,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 4,
             "attributes": {
+              "label": "ελληνικά"
             }
           },
           {
@@ -10142,6 +10717,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 5,
             "attributes": {
+              "label": "English"
             }
           },
           {
@@ -10150,6 +10726,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 6,
             "attributes": {
+              "label": "English (Australia)"
             }
           },
           {
@@ -10158,6 +10735,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 7,
             "attributes": {
+              "label": "English (Canada)"
             }
           },
           {
@@ -10166,6 +10744,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 8,
             "attributes": {
+              "label": "English (United Kingdom)"
             }
           },
           {
@@ -10174,6 +10753,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 9,
             "attributes": {
+              "label": "English (United States)"
             }
           },
           {
@@ -10182,6 +10762,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 10,
             "attributes": {
+              "label": "Español"
             }
           },
           {
@@ -10190,6 +10771,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 11,
             "attributes": {
+              "label": "Eesti Keel"
             }
           },
           {
@@ -10198,6 +10780,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 12,
             "attributes": {
+              "label": "Suomi"
             }
           },
           {
@@ -10206,6 +10789,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 13,
             "attributes": {
+              "label": "Français"
             }
           },
           {
@@ -10214,6 +10798,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 14,
             "attributes": {
+              "label": "Magyar"
             }
           },
           {
@@ -10222,6 +10807,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 15,
             "attributes": {
+              "label": "Islenska"
             }
           },
           {
@@ -10230,6 +10816,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 16,
             "attributes": {
+              "label": "Italiano"
             }
           },
           {
@@ -10238,6 +10825,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 17,
             "attributes": {
+              "label": "Norsk Bokmål"
             }
           },
           {
@@ -10246,6 +10834,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 18,
             "attributes": {
+              "label": "Nederlands"
             }
           },
           {
@@ -10254,6 +10843,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 19,
             "attributes": {
+              "label": "Polski"
             }
           },
           {
@@ -10262,6 +10852,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 20,
             "attributes": {
+              "label": "Português"
             }
           },
           {
@@ -10270,6 +10861,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 21,
             "attributes": {
+              "label": "Română"
             }
           },
           {
@@ -10278,6 +10870,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 22,
             "attributes": {
+              "label": "Slovenčina"
             }
           },
           {
@@ -10286,6 +10879,16 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 23,
             "attributes": {
+              "label": "Svenska"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Ja",
+            "name": "ja",
+            "type": "enum_value",
+            "integer_value": 24,
+            "attributes": {
+              "label": "日本語"
             }
           }
         ],
@@ -10312,7 +10915,8 @@ module.exports = {
           "pt",
           "ro",
           "sk",
-          "sv"
+          "sv",
+          "ja"
         ]
       },
       "general_settings": {
@@ -11072,6 +11676,16 @@ module.exports = {
               true,
               false
             ]
+          },
+          "ja": {
+            "name": "ja",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           }
         }
       },
@@ -11099,16 +11713,16 @@ module.exports = {
         "Indiana (East)",
         "Lima",
         "Quito",
-        "Atlantic Time (Canada)",
         "Caracas",
+        "Atlantic Time (Canada)",
         "Georgetown",
         "La Paz",
-        "Santiago",
         "Newfoundland",
         "Brasilia",
         "Buenos Aires",
         "Greenland",
         "Montevideo",
+        "Santiago",
         "Mid-Atlantic",
         "Azores",
         "Cape Verde Is.",
@@ -11209,11 +11823,11 @@ module.exports = {
         "Canberra",
         "Guam",
         "Hobart",
+        "Magadan",
         "Melbourne",
         "Port Moresby",
         "Sydney",
         "Vladivostok",
-        "Magadan",
         "New Caledonia",
         "Solomon Is.",
         "Srednekolymsk",
@@ -11239,7 +11853,8 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 1,
             "attributes": {
-              "type": "Client::Permissions::ForReporting"
+              "type": "Client::Permissions::ForReporting",
+              "read_only": false
             }
           },
           {
@@ -11249,7 +11864,8 @@ module.exports = {
             "integer_value": 2,
             "attributes": {
               "type": "Client::Permissions::ForReport",
-              "resource_type": "Warehouse::Report"
+              "resource_type": "Warehouse::Report",
+              "read_only": false
             }
           },
           {
@@ -11259,7 +11875,8 @@ module.exports = {
             "integer_value": 3,
             "attributes": {
               "type": "Client::Permissions::ForSurvey",
-              "resource_type": "Census::Survey"
+              "resource_type": "Census::Survey",
+              "read_only": false
             }
           },
           {
@@ -11269,7 +11886,8 @@ module.exports = {
             "integer_value": 4,
             "attributes": {
               "type": "Client::Permissions::ForGroup",
-              "resource_type": "Census::Group"
+              "resource_type": "Census::Group",
+              "read_only": false
             }
           },
           {
@@ -11279,7 +11897,8 @@ module.exports = {
             "integer_value": 5,
             "attributes": {
               "type": "Client::Permissions::ForParticipant",
-              "resource_type": "Census::Participant"
+              "resource_type": "Census::Participant",
+              "read_only": false
             }
           },
           {
@@ -11289,7 +11908,8 @@ module.exports = {
             "integer_value": 6,
             "attributes": {
               "type": "Client::Permissions::ForTrigger",
-              "resource_type": "Portal::Trigger"
+              "resource_type": "Portal::Trigger",
+              "read_only": false
             }
           },
           {
@@ -11299,7 +11919,30 @@ module.exports = {
             "integer_value": 7,
             "attributes": {
               "type": "Client::Permissions::ForUser",
-              "resource_type": "Client::User"
+              "resource_type": "Client::User",
+              "read_only": false
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+            "name": "study",
+            "type": "enum_value",
+            "integer_value": 8,
+            "attributes": {
+              "type": "Client::Permissions::ForStudy",
+              "resource_type": "Warehouse::Reports::Study",
+              "read_only": true
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+            "name": "custom_study",
+            "type": "enum_value",
+            "integer_value": 9,
+            "attributes": {
+              "type": "Client::Permissions::ForCustomStudy",
+              "resource_type": "Warehouse::Reports::CustomStudy",
+              "read_only": false
             }
           }
         ],
@@ -11310,7 +11953,9 @@ module.exports = {
           "group",
           "participant",
           "trigger",
-          "user"
+          "user",
+          "study",
+          "custom_study"
         ]
       },
       "can": {
@@ -11361,16 +12006,183 @@ module.exports = {
         }
       },
       "types": [
+        "Client::Permissions::ForCustomStudy",
         "Client::Permissions::ForGroup",
         "Client::Permissions::ForParticipant",
         "Client::Permissions::ForReport",
         "Client::Permissions::ForReporting",
+        "Client::Permissions::ForStudy",
         "Client::Permissions::ForSurvey",
         "Client::Permissions::ForTrigger",
         "Client::Permissions::ForUser"
       ]
     },
     "Permissions": {
+      "ForCustomStudy": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Permissions::ForCustomStudy::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Reporting",
+              "name": "reporting",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Permissions::ForReporting",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Report",
+              "name": "report",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Permissions::ForReport",
+                "resource_type": "Warehouse::Report",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Survey",
+              "name": "survey",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Permissions::ForSurvey",
+                "resource_type": "Census::Survey",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Group",
+              "name": "group",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Permissions::ForGroup",
+                "resource_type": "Census::Group",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Participant",
+              "name": "participant",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Permissions::ForParticipant",
+                "resource_type": "Census::Participant",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Trigger",
+              "name": "trigger",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Permissions::ForTrigger",
+                "resource_type": "Portal::Trigger",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::User",
+              "name": "user",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Permissions::ForUser",
+                "resource_type": "Client::User",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Permissions::ForStudy",
+                "resource_type": "Warehouse::Reports::Study",
+                "read_only": true
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Permissions::ForCustomStudy",
+                "resource_type": "Warehouse::Reports::CustomStudy",
+                "read_only": false
+              }
+            }
+          ],
+          "values": [
+            "reporting",
+            "report",
+            "survey",
+            "group",
+            "participant",
+            "trigger",
+            "user",
+            "study",
+            "custom_study"
+          ]
+        },
+        "can": {
+          "source": "Client::Permissions::ForCustomStudy::Fields::Can",
+          "name": "can",
+          "type": "struct",
+          "fields": {
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "read": {
+              "name": "read",
+              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Read",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Update",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Delete",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            }
+          }
+        }
+      },
       "ForGroup": {
         "kind": {
           "name": "kind",
@@ -11383,7 +12195,8 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Client::Permissions::ForReporting"
+                "type": "Client::Permissions::ForReporting",
+                "read_only": false
               }
             },
             {
@@ -11393,7 +12206,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Client::Permissions::ForReport",
-                "resource_type": "Warehouse::Report"
+                "resource_type": "Warehouse::Report",
+                "read_only": false
               }
             },
             {
@@ -11403,7 +12217,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
-                "resource_type": "Census::Survey"
+                "resource_type": "Census::Survey",
+                "read_only": false
               }
             },
             {
@@ -11413,7 +12228,8 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
-                "resource_type": "Census::Group"
+                "resource_type": "Census::Group",
+                "read_only": false
               }
             },
             {
@@ -11423,7 +12239,8 @@ module.exports = {
               "integer_value": 5,
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
-                "resource_type": "Census::Participant"
+                "resource_type": "Census::Participant",
+                "read_only": false
               }
             },
             {
@@ -11433,7 +12250,8 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
-                "resource_type": "Portal::Trigger"
+                "resource_type": "Portal::Trigger",
+                "read_only": false
               }
             },
             {
@@ -11443,7 +12261,30 @@ module.exports = {
               "integer_value": 7,
               "attributes": {
                 "type": "Client::Permissions::ForUser",
-                "resource_type": "Client::User"
+                "resource_type": "Client::User",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Permissions::ForStudy",
+                "resource_type": "Warehouse::Reports::Study",
+                "read_only": true
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Permissions::ForCustomStudy",
+                "resource_type": "Warehouse::Reports::CustomStudy",
+                "read_only": false
               }
             }
           ],
@@ -11454,7 +12295,9 @@ module.exports = {
             "group",
             "participant",
             "trigger",
-            "user"
+            "user",
+            "study",
+            "custom_study"
           ]
         },
         "can": {
@@ -11517,7 +12360,8 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Client::Permissions::ForReporting"
+                "type": "Client::Permissions::ForReporting",
+                "read_only": false
               }
             },
             {
@@ -11527,7 +12371,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Client::Permissions::ForReport",
-                "resource_type": "Warehouse::Report"
+                "resource_type": "Warehouse::Report",
+                "read_only": false
               }
             },
             {
@@ -11537,7 +12382,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
-                "resource_type": "Census::Survey"
+                "resource_type": "Census::Survey",
+                "read_only": false
               }
             },
             {
@@ -11547,7 +12393,8 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
-                "resource_type": "Census::Group"
+                "resource_type": "Census::Group",
+                "read_only": false
               }
             },
             {
@@ -11557,7 +12404,8 @@ module.exports = {
               "integer_value": 5,
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
-                "resource_type": "Census::Participant"
+                "resource_type": "Census::Participant",
+                "read_only": false
               }
             },
             {
@@ -11567,7 +12415,8 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
-                "resource_type": "Portal::Trigger"
+                "resource_type": "Portal::Trigger",
+                "read_only": false
               }
             },
             {
@@ -11577,7 +12426,30 @@ module.exports = {
               "integer_value": 7,
               "attributes": {
                 "type": "Client::Permissions::ForUser",
-                "resource_type": "Client::User"
+                "resource_type": "Client::User",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Permissions::ForStudy",
+                "resource_type": "Warehouse::Reports::Study",
+                "read_only": true
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Permissions::ForCustomStudy",
+                "resource_type": "Warehouse::Reports::CustomStudy",
+                "read_only": false
               }
             }
           ],
@@ -11588,7 +12460,9 @@ module.exports = {
             "group",
             "participant",
             "trigger",
-            "user"
+            "user",
+            "study",
+            "custom_study"
           ]
         },
         "can": {
@@ -11651,7 +12525,8 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Client::Permissions::ForReporting"
+                "type": "Client::Permissions::ForReporting",
+                "read_only": false
               }
             },
             {
@@ -11661,7 +12536,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Client::Permissions::ForReport",
-                "resource_type": "Warehouse::Report"
+                "resource_type": "Warehouse::Report",
+                "read_only": false
               }
             },
             {
@@ -11671,7 +12547,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
-                "resource_type": "Census::Survey"
+                "resource_type": "Census::Survey",
+                "read_only": false
               }
             },
             {
@@ -11681,7 +12558,8 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
-                "resource_type": "Census::Group"
+                "resource_type": "Census::Group",
+                "read_only": false
               }
             },
             {
@@ -11691,7 +12569,8 @@ module.exports = {
               "integer_value": 5,
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
-                "resource_type": "Census::Participant"
+                "resource_type": "Census::Participant",
+                "read_only": false
               }
             },
             {
@@ -11701,7 +12580,8 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
-                "resource_type": "Portal::Trigger"
+                "resource_type": "Portal::Trigger",
+                "read_only": false
               }
             },
             {
@@ -11711,7 +12591,30 @@ module.exports = {
               "integer_value": 7,
               "attributes": {
                 "type": "Client::Permissions::ForUser",
-                "resource_type": "Client::User"
+                "resource_type": "Client::User",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Permissions::ForStudy",
+                "resource_type": "Warehouse::Reports::Study",
+                "read_only": true
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Permissions::ForCustomStudy",
+                "resource_type": "Warehouse::Reports::CustomStudy",
+                "read_only": false
               }
             }
           ],
@@ -11722,7 +12625,9 @@ module.exports = {
             "group",
             "participant",
             "trigger",
-            "user"
+            "user",
+            "study",
+            "custom_study"
           ]
         },
         "can": {
@@ -11785,7 +12690,8 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Client::Permissions::ForReporting"
+                "type": "Client::Permissions::ForReporting",
+                "read_only": false
               }
             },
             {
@@ -11795,7 +12701,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Client::Permissions::ForReport",
-                "resource_type": "Warehouse::Report"
+                "resource_type": "Warehouse::Report",
+                "read_only": false
               }
             },
             {
@@ -11805,7 +12712,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
-                "resource_type": "Census::Survey"
+                "resource_type": "Census::Survey",
+                "read_only": false
               }
             },
             {
@@ -11815,7 +12723,8 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
-                "resource_type": "Census::Group"
+                "resource_type": "Census::Group",
+                "read_only": false
               }
             },
             {
@@ -11825,7 +12734,8 @@ module.exports = {
               "integer_value": 5,
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
-                "resource_type": "Census::Participant"
+                "resource_type": "Census::Participant",
+                "read_only": false
               }
             },
             {
@@ -11835,7 +12745,8 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
-                "resource_type": "Portal::Trigger"
+                "resource_type": "Portal::Trigger",
+                "read_only": false
               }
             },
             {
@@ -11845,7 +12756,30 @@ module.exports = {
               "integer_value": 7,
               "attributes": {
                 "type": "Client::Permissions::ForUser",
-                "resource_type": "Client::User"
+                "resource_type": "Client::User",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Permissions::ForStudy",
+                "resource_type": "Warehouse::Reports::Study",
+                "read_only": true
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Permissions::ForCustomStudy",
+                "resource_type": "Warehouse::Reports::CustomStudy",
+                "read_only": false
               }
             }
           ],
@@ -11856,7 +12790,9 @@ module.exports = {
             "group",
             "participant",
             "trigger",
-            "user"
+            "user",
+            "study",
+            "custom_study"
           ]
         },
         "can": {
@@ -11947,6 +12883,171 @@ module.exports = {
           }
         }
       },
+      "ForStudy": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Permissions::ForStudy::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Reporting",
+              "name": "reporting",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Permissions::ForReporting",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Report",
+              "name": "report",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Permissions::ForReport",
+                "resource_type": "Warehouse::Report",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Survey",
+              "name": "survey",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Permissions::ForSurvey",
+                "resource_type": "Census::Survey",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Group",
+              "name": "group",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Permissions::ForGroup",
+                "resource_type": "Census::Group",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Participant",
+              "name": "participant",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Permissions::ForParticipant",
+                "resource_type": "Census::Participant",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Trigger",
+              "name": "trigger",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Permissions::ForTrigger",
+                "resource_type": "Portal::Trigger",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::User",
+              "name": "user",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Permissions::ForUser",
+                "resource_type": "Client::User",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Permissions::ForStudy",
+                "resource_type": "Warehouse::Reports::Study",
+                "read_only": true
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Permissions::ForCustomStudy",
+                "resource_type": "Warehouse::Reports::CustomStudy",
+                "read_only": false
+              }
+            }
+          ],
+          "values": [
+            "reporting",
+            "report",
+            "survey",
+            "group",
+            "participant",
+            "trigger",
+            "user",
+            "study",
+            "custom_study"
+          ]
+        },
+        "can": {
+          "source": "Client::Permissions::ForStudy::Fields::Can",
+          "name": "can",
+          "type": "struct",
+          "fields": {
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "read": {
+              "name": "read",
+              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Read",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Update",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Delete",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            }
+          }
+        }
+      },
       "ForSurvey": {
         "kind": {
           "name": "kind",
@@ -11959,7 +13060,8 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Client::Permissions::ForReporting"
+                "type": "Client::Permissions::ForReporting",
+                "read_only": false
               }
             },
             {
@@ -11969,7 +13071,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Client::Permissions::ForReport",
-                "resource_type": "Warehouse::Report"
+                "resource_type": "Warehouse::Report",
+                "read_only": false
               }
             },
             {
@@ -11979,7 +13082,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
-                "resource_type": "Census::Survey"
+                "resource_type": "Census::Survey",
+                "read_only": false
               }
             },
             {
@@ -11989,7 +13093,8 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
-                "resource_type": "Census::Group"
+                "resource_type": "Census::Group",
+                "read_only": false
               }
             },
             {
@@ -11999,7 +13104,8 @@ module.exports = {
               "integer_value": 5,
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
-                "resource_type": "Census::Participant"
+                "resource_type": "Census::Participant",
+                "read_only": false
               }
             },
             {
@@ -12009,7 +13115,8 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
-                "resource_type": "Portal::Trigger"
+                "resource_type": "Portal::Trigger",
+                "read_only": false
               }
             },
             {
@@ -12019,7 +13126,30 @@ module.exports = {
               "integer_value": 7,
               "attributes": {
                 "type": "Client::Permissions::ForUser",
-                "resource_type": "Client::User"
+                "resource_type": "Client::User",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Permissions::ForStudy",
+                "resource_type": "Warehouse::Reports::Study",
+                "read_only": true
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Permissions::ForCustomStudy",
+                "resource_type": "Warehouse::Reports::CustomStudy",
+                "read_only": false
               }
             }
           ],
@@ -12030,7 +13160,9 @@ module.exports = {
             "group",
             "participant",
             "trigger",
-            "user"
+            "user",
+            "study",
+            "custom_study"
           ]
         },
         "can": {
@@ -12093,7 +13225,8 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Client::Permissions::ForReporting"
+                "type": "Client::Permissions::ForReporting",
+                "read_only": false
               }
             },
             {
@@ -12103,7 +13236,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Client::Permissions::ForReport",
-                "resource_type": "Warehouse::Report"
+                "resource_type": "Warehouse::Report",
+                "read_only": false
               }
             },
             {
@@ -12113,7 +13247,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
-                "resource_type": "Census::Survey"
+                "resource_type": "Census::Survey",
+                "read_only": false
               }
             },
             {
@@ -12123,7 +13258,8 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
-                "resource_type": "Census::Group"
+                "resource_type": "Census::Group",
+                "read_only": false
               }
             },
             {
@@ -12133,7 +13269,8 @@ module.exports = {
               "integer_value": 5,
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
-                "resource_type": "Census::Participant"
+                "resource_type": "Census::Participant",
+                "read_only": false
               }
             },
             {
@@ -12143,7 +13280,8 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
-                "resource_type": "Portal::Trigger"
+                "resource_type": "Portal::Trigger",
+                "read_only": false
               }
             },
             {
@@ -12153,7 +13291,30 @@ module.exports = {
               "integer_value": 7,
               "attributes": {
                 "type": "Client::Permissions::ForUser",
-                "resource_type": "Client::User"
+                "resource_type": "Client::User",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Permissions::ForStudy",
+                "resource_type": "Warehouse::Reports::Study",
+                "read_only": true
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Permissions::ForCustomStudy",
+                "resource_type": "Warehouse::Reports::CustomStudy",
+                "read_only": false
               }
             }
           ],
@@ -12164,7 +13325,9 @@ module.exports = {
             "group",
             "participant",
             "trigger",
-            "user"
+            "user",
+            "study",
+            "custom_study"
           ]
         },
         "can": {
@@ -12227,7 +13390,8 @@ module.exports = {
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Client::Permissions::ForReporting"
+                "type": "Client::Permissions::ForReporting",
+                "read_only": false
               }
             },
             {
@@ -12237,7 +13401,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Client::Permissions::ForReport",
-                "resource_type": "Warehouse::Report"
+                "resource_type": "Warehouse::Report",
+                "read_only": false
               }
             },
             {
@@ -12247,7 +13412,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
-                "resource_type": "Census::Survey"
+                "resource_type": "Census::Survey",
+                "read_only": false
               }
             },
             {
@@ -12257,7 +13423,8 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
-                "resource_type": "Census::Group"
+                "resource_type": "Census::Group",
+                "read_only": false
               }
             },
             {
@@ -12267,7 +13434,8 @@ module.exports = {
               "integer_value": 5,
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
-                "resource_type": "Census::Participant"
+                "resource_type": "Census::Participant",
+                "read_only": false
               }
             },
             {
@@ -12277,7 +13445,8 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
-                "resource_type": "Portal::Trigger"
+                "resource_type": "Portal::Trigger",
+                "read_only": false
               }
             },
             {
@@ -12287,7 +13456,30 @@ module.exports = {
               "integer_value": 7,
               "attributes": {
                 "type": "Client::Permissions::ForUser",
-                "resource_type": "Client::User"
+                "resource_type": "Client::User",
+                "read_only": false
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Permissions::ForStudy",
+                "resource_type": "Warehouse::Reports::Study",
+                "read_only": true
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Permissions::ForCustomStudy",
+                "resource_type": "Warehouse::Reports::CustomStudy",
+                "read_only": false
               }
             }
           ],
@@ -12298,7 +13490,9 @@ module.exports = {
             "group",
             "participant",
             "trigger",
-            "user"
+            "user",
+            "study",
+            "custom_study"
           ]
         },
         "can": {
@@ -12528,6 +13722,19 @@ module.exports = {
       }
     },
     "Location": {
+      "types": [
+        "Geo::Locations::CountryLocation",
+        "Geo::Locations::PostalCodeLocation",
+        "Geo::Locations::RegionLocation"
+      ]
+    },
+    "Locations": {
+      "CountryLocation": {
+      },
+      "PostalCodeLocation": {
+      },
+      "RegionLocation": {
+      }
     }
   },
   "Giza": {
@@ -14924,6 +16131,11 @@ module.exports = {
             "name": "sv",
             "source": "Kore::Types::Fields::Translations::Fields::Sv",
             "type": "string"
+          },
+          "ja": {
+            "name": "ja",
+            "source": "Kore::Types::Fields::Translations::Fields::Ja",
+            "type": "string"
           }
         }
       },
@@ -15045,6 +16257,11 @@ module.exports = {
           "sv": {
             "name": "sv",
             "source": "Kore::Types::Fields::Translations::Fields::Sv",
+            "type": "string"
+          },
+          "ja": {
+            "name": "ja",
+            "source": "Kore::Types::Fields::Translations::Fields::Ja",
             "type": "string"
           }
         }
@@ -15277,6 +16494,11 @@ module.exports = {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
               "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
             }
           }
         },
@@ -15398,6 +16620,11 @@ module.exports = {
             "sv": {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
             }
           }
@@ -15632,6 +16859,11 @@ module.exports = {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
               "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
             }
           }
         },
@@ -15753,6 +16985,11 @@ module.exports = {
             "sv": {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
             }
           }
@@ -15981,6 +17218,11 @@ module.exports = {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
               "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
             }
           }
         },
@@ -16102,6 +17344,11 @@ module.exports = {
             "sv": {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
             }
           }
@@ -16330,6 +17577,11 @@ module.exports = {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
               "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
             }
           }
         },
@@ -16451,6 +17703,11 @@ module.exports = {
             "sv": {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
             }
           }
@@ -16679,6 +17936,11 @@ module.exports = {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
               "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
             }
           }
         },
@@ -16800,6 +18062,11 @@ module.exports = {
             "sv": {
               "name": "sv",
               "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
             }
           }
@@ -18294,6 +19561,11 @@ module.exports = {
             "name": "sv",
             "source": "Kore::Types::Fields::Translations::Fields::Sv",
             "type": "string"
+          },
+          "ja": {
+            "name": "ja",
+            "source": "Kore::Types::Fields::Translations::Fields::Ja",
+            "type": "string"
           }
         }
       }
@@ -18304,6 +19576,69 @@ module.exports = {
     "name": "types",
     "type": "struct",
     "fields": {
+      "action_status": {
+        "name": "action_status",
+        "source": "Kore::Types::Fields::ActionStatus",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Pending",
+            "name": "pending",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::InProgress",
+            "name": "in_progress",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+            "name": "cancelling",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+            "name": "cancelled",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Success",
+            "name": "success",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Failed",
+            "name": "failed",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "pending",
+          "in_progress",
+          "cancelling",
+          "cancelled",
+          "success",
+          "failed"
+        ]
+      },
       "integration": {
         "name": "integration",
         "source": "Kore::Types::Fields::Integration",
@@ -18393,6 +19728,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 1,
             "attributes": {
+              "label": "čeština"
             }
           },
           {
@@ -18401,6 +19737,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 2,
             "attributes": {
+              "label": "Dansk"
             }
           },
           {
@@ -18409,6 +19746,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 3,
             "attributes": {
+              "label": "Deutsch"
             }
           },
           {
@@ -18417,6 +19755,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 4,
             "attributes": {
+              "label": "ελληνικά"
             }
           },
           {
@@ -18425,6 +19764,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 5,
             "attributes": {
+              "label": "English"
             }
           },
           {
@@ -18433,6 +19773,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 6,
             "attributes": {
+              "label": "English (Australia)"
             }
           },
           {
@@ -18441,6 +19782,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 7,
             "attributes": {
+              "label": "English (Canada)"
             }
           },
           {
@@ -18449,6 +19791,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 8,
             "attributes": {
+              "label": "English (United Kingdom)"
             }
           },
           {
@@ -18457,6 +19800,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 9,
             "attributes": {
+              "label": "English (United States)"
             }
           },
           {
@@ -18465,6 +19809,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 10,
             "attributes": {
+              "label": "Español"
             }
           },
           {
@@ -18473,6 +19818,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 11,
             "attributes": {
+              "label": "Eesti Keel"
             }
           },
           {
@@ -18481,6 +19827,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 12,
             "attributes": {
+              "label": "Suomi"
             }
           },
           {
@@ -18489,6 +19836,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 13,
             "attributes": {
+              "label": "Français"
             }
           },
           {
@@ -18497,6 +19845,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 14,
             "attributes": {
+              "label": "Magyar"
             }
           },
           {
@@ -18505,6 +19854,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 15,
             "attributes": {
+              "label": "Islenska"
             }
           },
           {
@@ -18513,6 +19863,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 16,
             "attributes": {
+              "label": "Italiano"
             }
           },
           {
@@ -18521,6 +19872,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 17,
             "attributes": {
+              "label": "Norsk Bokmål"
             }
           },
           {
@@ -18529,6 +19881,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 18,
             "attributes": {
+              "label": "Nederlands"
             }
           },
           {
@@ -18537,6 +19890,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 19,
             "attributes": {
+              "label": "Polski"
             }
           },
           {
@@ -18545,6 +19899,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 20,
             "attributes": {
+              "label": "Português"
             }
           },
           {
@@ -18553,6 +19908,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 21,
             "attributes": {
+              "label": "Română"
             }
           },
           {
@@ -18561,6 +19917,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 22,
             "attributes": {
+              "label": "Slovenčina"
             }
           },
           {
@@ -18569,6 +19926,16 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 23,
             "attributes": {
+              "label": "Svenska"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Ja",
+            "name": "ja",
+            "type": "enum_value",
+            "integer_value": 24,
+            "attributes": {
+              "label": "日本語"
             }
           }
         ],
@@ -18595,7 +19962,8 @@ module.exports = {
           "pt",
           "ro",
           "sk",
-          "sv"
+          "sv",
+          "ja"
         ]
       },
       "operator": {
@@ -18996,6 +20364,11 @@ module.exports = {
             "name": "sv",
             "source": "Kore::Types::Fields::Translations::Fields::Sv",
             "type": "string"
+          },
+          "ja": {
+            "name": "ja",
+            "source": "Kore::Types::Fields::Translations::Fields::Ja",
+            "type": "string"
           }
         }
       },
@@ -19227,6 +20600,16 @@ module.exports = {
           "sv": {
             "name": "sv",
             "source": "Kore::Types::Fields::SupportedLocales::Fields::Sv",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "ja": {
+            "name": "ja",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
             "type": "boolean",
             "default": false,
             "values": [
@@ -19891,6 +21274,42 @@ module.exports = {
               "post_case",
               "win_loss_analysis"
             ]
+          },
+          "participation_creation_method": {
+            "name": "participation_creation_method",
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+                "name": "audience",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+                "name": "trigger_based",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+                "name": "contact_registration",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                }
+              }
+            ],
+            "values": [
+              "audience",
+              "trigger_based",
+              "contact_registration"
+            ]
           }
         }
       }
@@ -19950,6 +21369,32 @@ module.exports = {
           }
         }
       },
+      "Export": {
+        "source": "Kore::Types::Client::Export",
+        "name": "export",
+        "type": "struct",
+        "fields": {
+          "kind": {
+            "name": "kind",
+            "source": "Kore::Types::Client::Export::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Client::Export::Fields::Kind::Answers",
+                "name": "answers",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Client::Exports::AnswersExport"
+                }
+              }
+            ],
+            "values": [
+              "answers"
+            ]
+          }
+        }
+      },
       "Permission": {
         "source": "Kore::Types::Client::Permission",
         "name": "permission",
@@ -19966,7 +21411,8 @@ module.exports = {
                 "type": "enum_value",
                 "integer_value": 1,
                 "attributes": {
-                  "type": "Client::Permissions::ForReporting"
+                  "type": "Client::Permissions::ForReporting",
+                  "read_only": false
                 }
               },
               {
@@ -19976,7 +21422,8 @@ module.exports = {
                 "integer_value": 2,
                 "attributes": {
                   "type": "Client::Permissions::ForReport",
-                  "resource_type": "Warehouse::Report"
+                  "resource_type": "Warehouse::Report",
+                  "read_only": false
                 }
               },
               {
@@ -19986,7 +21433,8 @@ module.exports = {
                 "integer_value": 3,
                 "attributes": {
                   "type": "Client::Permissions::ForSurvey",
-                  "resource_type": "Census::Survey"
+                  "resource_type": "Census::Survey",
+                  "read_only": false
                 }
               },
               {
@@ -19996,7 +21444,8 @@ module.exports = {
                 "integer_value": 4,
                 "attributes": {
                   "type": "Client::Permissions::ForGroup",
-                  "resource_type": "Census::Group"
+                  "resource_type": "Census::Group",
+                  "read_only": false
                 }
               },
               {
@@ -20006,7 +21455,8 @@ module.exports = {
                 "integer_value": 5,
                 "attributes": {
                   "type": "Client::Permissions::ForParticipant",
-                  "resource_type": "Census::Participant"
+                  "resource_type": "Census::Participant",
+                  "read_only": false
                 }
               },
               {
@@ -20016,7 +21466,8 @@ module.exports = {
                 "integer_value": 6,
                 "attributes": {
                   "type": "Client::Permissions::ForTrigger",
-                  "resource_type": "Portal::Trigger"
+                  "resource_type": "Portal::Trigger",
+                  "read_only": false
                 }
               },
               {
@@ -20026,7 +21477,30 @@ module.exports = {
                 "integer_value": 7,
                 "attributes": {
                   "type": "Client::Permissions::ForUser",
-                  "resource_type": "Client::User"
+                  "resource_type": "Client::User",
+                  "read_only": false
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Permission::Fields::Kind::Study",
+                "name": "study",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "type": "Client::Permissions::ForStudy",
+                  "resource_type": "Warehouse::Reports::Study",
+                  "read_only": true
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Permission::Fields::Kind::CustomStudy",
+                "name": "custom_study",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "type": "Client::Permissions::ForCustomStudy",
+                  "resource_type": "Warehouse::Reports::CustomStudy",
+                  "read_only": false
                 }
               }
             ],
@@ -20037,7 +21511,9 @@ module.exports = {
               "group",
               "participant",
               "trigger",
-              "user"
+              "user",
+              "study",
+              "custom_study"
             ]
           }
         }
@@ -22449,11 +23925,31 @@ module.exports = {
                 "attributes": {
                   "type": "Warehouse::Reports::CustomReport"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Report::Fields::Kind::Study",
+                "name": "study",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "type": "Warehouse::Reports::Study"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomStudy",
+                "name": "custom_study",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "type": "Warehouse::Reports::CustomStudy"
+                }
               }
             ],
             "values": [
               "survey_report",
-              "custom_report"
+              "custom_report",
+              "study",
+              "custom_study"
             ]
           },
           "looker_model": {
@@ -24760,11 +26256,31 @@ module.exports = {
             "attributes": {
               "type": "Warehouse::Reports::CustomReport"
             }
+          },
+          {
+            "source": "Kore::Types::Warehouse::Report::Fields::Kind::Study",
+            "name": "study",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "type": "Warehouse::Reports::Study"
+            }
+          },
+          {
+            "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomStudy",
+            "name": "custom_study",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "type": "Warehouse::Reports::CustomStudy"
+            }
           }
         ],
         "values": [
           "survey_report",
-          "custom_report"
+          "custom_report",
+          "study",
+          "custom_study"
         ]
       },
       "looker_model": {
@@ -24928,11 +26444,18 @@ module.exports = {
         }
       },
       "types": [
-        "Warehouse::Reports::CustomReport",
-        "Warehouse::Reports::SurveyReport"
+        "Warehouse::Reports::Study",
+        "Warehouse::Reports::OrganizationReport"
       ]
     },
     "ReportingCategorization": {
+      "types": [
+        "Warehouse::ReportingCategorizations::Study"
+      ]
+    },
+    "ReportingCategorizations": {
+      "Study": {
+      }
     },
     "ReportingCategory": {
       "vertical": {
@@ -24987,11 +26510,31 @@ module.exports = {
               "attributes": {
                 "type": "Warehouse::Reports::CustomReport"
               }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Warehouse::Reports::Study"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomStudy"
+              }
             }
           ],
           "values": [
             "survey_report",
-            "custom_report"
+            "custom_report",
+            "study",
+            "custom_study"
           ]
         },
         "looker_model": {
@@ -25155,6 +26698,860 @@ module.exports = {
           }
         }
       },
+      "CustomStudy": {
+        "kind": {
+          "name": "kind",
+          "source": "Warehouse::Reports::CustomStudy::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::SurveyReport",
+              "name": "survey_report",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Warehouse::Reports::SurveyReport"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomReport",
+              "name": "custom_report",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomReport"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Warehouse::Reports::Study"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomStudy"
+              }
+            }
+          ],
+          "values": [
+            "survey_report",
+            "custom_report",
+            "study",
+            "custom_study"
+          ]
+        },
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::CustomStudy::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
+        "custom_fields": {
+          "source": "Warehouse::Reports::CustomStudy::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "pages_order": {
+              "name": "pages_order",
+              "source": "Warehouse::Reports::CustomStudy::Fields::CustomFields::Fields::PagesOrder",
+              "type": "array"
+            },
+            "admin_color": {
+              "name": "admin_color",
+              "source": "Warehouse::Reports::CustomStudy::Fields::CustomFields::Fields::AdminColor",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey"
+              ],
+              "default": {
+              }
+            }
+          }
+        }
+      },
+      "OrganizationReport": {
+        "kind": {
+          "name": "kind",
+          "source": "Warehouse::Reports::OrganizationReport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::SurveyReport",
+              "name": "survey_report",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Warehouse::Reports::SurveyReport"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomReport",
+              "name": "custom_report",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomReport"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Warehouse::Reports::Study"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomStudy"
+              }
+            }
+          ],
+          "values": [
+            "survey_report",
+            "custom_report",
+            "study",
+            "custom_study"
+          ]
+        },
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::OrganizationReport::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
+        "custom_fields": {
+          "source": "Warehouse::Reports::OrganizationReport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "pages_order": {
+              "name": "pages_order",
+              "source": "Warehouse::Reports::OrganizationReport::Fields::CustomFields::Fields::PagesOrder",
+              "type": "array"
+            },
+            "admin_color": {
+              "name": "admin_color",
+              "source": "Warehouse::Reports::OrganizationReport::Fields::CustomFields::Fields::AdminColor",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey"
+              ],
+              "default": {
+              }
+            }
+          }
+        },
+        "types": [
+          "Warehouse::Reports::CustomReport",
+          "Warehouse::Reports::SurveyReport"
+        ]
+      },
+      "OrganizationStudy": {
+        "kind": {
+          "name": "kind",
+          "source": "Warehouse::Reports::OrganizationStudy::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::SurveyReport",
+              "name": "survey_report",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Warehouse::Reports::SurveyReport"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomReport",
+              "name": "custom_report",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomReport"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Warehouse::Reports::Study"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomStudy"
+              }
+            }
+          ],
+          "values": [
+            "survey_report",
+            "custom_report",
+            "study",
+            "custom_study"
+          ]
+        },
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::OrganizationStudy::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
+        "custom_fields": {
+          "source": "Warehouse::Reports::OrganizationStudy::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "pages_order": {
+              "name": "pages_order",
+              "source": "Warehouse::Reports::OrganizationStudy::Fields::CustomFields::Fields::PagesOrder",
+              "type": "array"
+            },
+            "admin_color": {
+              "name": "admin_color",
+              "source": "Warehouse::Reports::OrganizationStudy::Fields::CustomFields::Fields::AdminColor",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey"
+              ],
+              "default": {
+              }
+            }
+          }
+        },
+        "types": [
+          "Warehouse::Reports::CustomStudy"
+        ]
+      },
+      "Study": {
+        "kind": {
+          "name": "kind",
+          "source": "Warehouse::Reports::Study::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::SurveyReport",
+              "name": "survey_report",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Warehouse::Reports::SurveyReport"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomReport",
+              "name": "custom_report",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomReport"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Warehouse::Reports::Study"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomStudy"
+              }
+            }
+          ],
+          "values": [
+            "survey_report",
+            "custom_report",
+            "study",
+            "custom_study"
+          ]
+        },
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::Study::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
+        "custom_fields": {
+          "source": "Warehouse::Reports::Study::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "pages_order": {
+              "name": "pages_order",
+              "source": "Warehouse::Reports::Study::Fields::CustomFields::Fields::PagesOrder",
+              "type": "array"
+            },
+            "admin_color": {
+              "name": "admin_color",
+              "source": "Warehouse::Reports::Study::Fields::CustomFields::Fields::AdminColor",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey"
+              ],
+              "default": {
+              }
+            }
+          }
+        },
+        "types": [
+          "Warehouse::Reports::OrganizationStudy"
+        ]
+      },
       "SurveyReport": {
         "kind": {
           "name": "kind",
@@ -25178,11 +27575,31 @@ module.exports = {
               "attributes": {
                 "type": "Warehouse::Reports::CustomReport"
               }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::Study",
+              "name": "study",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Warehouse::Reports::Study"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::Kind::CustomStudy",
+              "name": "custom_study",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Warehouse::Reports::CustomStudy"
+              }
             }
           ],
           "values": [
             "survey_report",
-            "custom_report"
+            "custom_report",
+            "study",
+            "custom_study"
           ]
         },
         "looker_model": {
