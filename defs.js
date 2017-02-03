@@ -2806,12 +2806,30 @@ module.exports = {
             "integer_value": 3,
             "attributes": {
             }
+          },
+          {
+            "source": "Census::Participation::Fields::Status::Dismissed",
+            "name": "dismissed",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Census::Participation::Fields::Status::Visited",
+            "name": "visited",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+            }
           }
         ],
         "values": [
           "open",
           "started",
-          "completed"
+          "completed",
+          "dismissed",
+          "visited"
         ]
       },
       "gender": {
@@ -7055,6 +7073,42 @@ module.exports = {
     "SharedVisualization": {
     },
     "Survey": {
+      "participation_creation_method": {
+        "name": "participation_creation_method",
+        "source": "Census::Survey::Fields::ParticipationCreationMethod",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+            "name": "audience",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+            "name": "trigger_based",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+            "name": "contact_registration",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "audience",
+          "trigger_based",
+          "contact_registration"
+        ]
+      },
       "default_locale": {
         "name": "default_locale",
         "source": "Census::Survey::Fields::DefaultLocale",
@@ -7814,6 +7868,42 @@ module.exports = {
     },
     "Surveys": {
       "FreeformSurvey": {
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::FreeformSurvey::Fields::ParticipationCreationMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "audience",
+            "trigger_based",
+            "contact_registration"
+          ]
+        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::FreeformSurvey::Fields::DefaultLocale",
@@ -8571,6 +8661,42 @@ module.exports = {
         }
       },
       "NpsSurvey": {
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::NpsSurvey::Fields::ParticipationCreationMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "audience",
+            "trigger_based",
+            "contact_registration"
+          ]
+        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::NpsSurvey::Fields::DefaultLocale",
@@ -9328,6 +9454,42 @@ module.exports = {
         }
       },
       "PostCaseSurvey": {
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::PostCaseSurvey::Fields::ParticipationCreationMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "audience",
+            "trigger_based",
+            "contact_registration"
+          ]
+        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::PostCaseSurvey::Fields::DefaultLocale",
@@ -10085,6 +10247,42 @@ module.exports = {
         }
       },
       "WinLossAnalysisSurvey": {
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ParticipationCreationMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "audience",
+            "trigger_based",
+            "contact_registration"
+          ]
+        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::DefaultLocale",
@@ -13083,16 +13281,16 @@ module.exports = {
         "Indiana (East)",
         "Lima",
         "Quito",
-        "Atlantic Time (Canada)",
         "Caracas",
+        "Atlantic Time (Canada)",
         "Georgetown",
         "La Paz",
-        "Santiago",
         "Newfoundland",
         "Brasilia",
         "Buenos Aires",
         "Greenland",
         "Montevideo",
+        "Santiago",
         "Mid-Atlantic",
         "Azores",
         "Cape Verde Is.",
@@ -13193,11 +13391,11 @@ module.exports = {
         "Canberra",
         "Guam",
         "Hobart",
+        "Magadan",
         "Melbourne",
         "Port Moresby",
         "Sydney",
         "Vladivostok",
-        "Magadan",
         "New Caledonia",
         "Solomon Is.",
         "Srednekolymsk",
@@ -15032,6 +15230,55 @@ module.exports = {
         }
       }
     },
+    "Comment": {
+      "kind": {
+        "name": "kind",
+        "source": "Cms::Comment::Fields::Kind",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Cms::Comment::Fields::Kind::Text",
+            "name": "text",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Cms::Comments::TextComment"
+            }
+          }
+        ],
+        "values": [
+          "text"
+        ]
+      },
+      "mentioned_ids": null,
+      "types": [
+        "Cms::Comments::TextComment"
+      ]
+    },
+    "Comments": {
+      "TextComment": {
+        "kind": {
+          "name": "kind",
+          "source": "Cms::Comments::TextComment::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Cms::Comment::Fields::Kind::Text",
+              "name": "text",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Cms::Comments::TextComment"
+              }
+            }
+          ],
+          "values": [
+            "text"
+          ]
+        },
+        "mentioned_ids": null
+      }
+    },
     "HelpTopic": {
     },
     "Tag": {
@@ -15515,6 +15762,8 @@ module.exports = {
     "CompanyCategory": {
     },
     "CompanyCategoryMembership": {
+    },
+    "Department": {
     },
     "IndustryClassification": {
       "sector": {
@@ -17276,6 +17525,8 @@ module.exports = {
       }
     },
     "Position": {
+    },
+    "PositionCategory": {
     }
   },
   "Newman": {
@@ -22518,6 +22769,42 @@ module.exports = {
               "post_case",
               "win_loss_analysis"
             ]
+          },
+          "participation_creation_method": {
+            "name": "participation_creation_method",
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+                "name": "audience",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+                "name": "trigger_based",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+                "name": "contact_registration",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                }
+              }
+            ],
+            "values": [
+              "audience",
+              "trigger_based",
+              "contact_registration"
+            ]
           }
         }
       }
@@ -22851,6 +23138,32 @@ module.exports = {
             ],
             "values": [
               "image"
+            ]
+          }
+        }
+      },
+      "Comment": {
+        "source": "Kore::Types::Cms::Comment",
+        "name": "comment",
+        "type": "struct",
+        "fields": {
+          "kind": {
+            "name": "kind",
+            "source": "Kore::Types::Cms::Comment::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Cms::Comment::Fields::Kind::Text",
+                "name": "text",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Cms::Comments::TextComment"
+                }
+              }
+            ],
+            "values": [
+              "text"
             ]
           }
         }
