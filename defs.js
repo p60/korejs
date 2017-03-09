@@ -15244,18 +15244,100 @@ module.exports = {
             "attributes": {
               "type": "Cms::Comments::TextComment"
             }
+          },
+          {
+            "source": "Kore::Types::Cms::Comment::Fields::Kind::File",
+            "name": "file",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "type": "Cms::Comments::FileComment"
+            }
           }
         ],
         "values": [
-          "text"
+          "text",
+          "file"
         ]
       },
       "mentioned_ids": null,
+      "custom_fields": {
+        "source": "Cms::Comment::Fields::CustomFields",
+        "name": "custom_fields",
+        "type": "struct",
+        "fields": {
+        }
+      },
       "types": [
+        "Cms::Comments::FileComment",
         "Cms::Comments::TextComment"
       ]
     },
     "Comments": {
+      "FileComment": {
+        "kind": {
+          "name": "kind",
+          "source": "Cms::Comments::FileComment::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Cms::Comment::Fields::Kind::Text",
+              "name": "text",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Cms::Comments::TextComment"
+              }
+            },
+            {
+              "source": "Kore::Types::Cms::Comment::Fields::Kind::File",
+              "name": "file",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Cms::Comments::FileComment"
+              }
+            }
+          ],
+          "values": [
+            "text",
+            "file"
+          ]
+        },
+        "mentioned_ids": null,
+        "custom_fields": {
+          "source": "Cms::Comments::FileComment::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "file_size": {
+              "name": "file_size",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileSize",
+              "type": "integer"
+            },
+            "file_filename": {
+              "name": "file_filename",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileFilename",
+              "type": "string"
+            },
+            "file_content_type": {
+              "name": "file_content_type",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileContentType",
+              "type": "string"
+            },
+            "file_provided_name": {
+              "name": "file_provided_name",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileProvidedName",
+              "type": "string"
+            },
+            "file_provided_type": {
+              "name": "file_provided_type",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileProvidedType",
+              "type": "string"
+            }
+          }
+        }
+      },
       "TextComment": {
         "kind": {
           "name": "kind",
@@ -15270,14 +15352,34 @@ module.exports = {
               "attributes": {
                 "type": "Cms::Comments::TextComment"
               }
+            },
+            {
+              "source": "Kore::Types::Cms::Comment::Fields::Kind::File",
+              "name": "file",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Cms::Comments::FileComment"
+              }
             }
           ],
           "values": [
-            "text"
+            "text",
+            "file"
           ]
         },
-        "mentioned_ids": null
+        "mentioned_ids": null,
+        "custom_fields": {
+          "source": "Cms::Comments::TextComment::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+          }
+        }
       }
+    },
+    "Discussion": {
+      "follower_ids": null
     },
     "HelpTopic": {
     },
@@ -15418,6 +15520,42 @@ module.exports = {
           "ipo",
           "public",
           "aquired"
+        ]
+      },
+      "profit_status": {
+        "name": "profit_status",
+        "source": "Giza::Company::Fields::ProfitStatus",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Giza::Company::Fields::ProfitStatus::Other",
+            "name": "other",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Giza::Company::Fields::ProfitStatus::ForProfit",
+            "name": "for_profit",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Giza::Company::Fields::ProfitStatus::NonProfit",
+            "name": "non_profit",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "other",
+          "for_profit",
+          "non_profit"
         ]
       },
       "clearbit_discovery_status": {
@@ -17259,23 +17397,23 @@ module.exports = {
             }
           },
           {
-            "source": "Kore::Types::Giza::Place::Fields::Kind::Hospital",
-            "name": "hospital",
+            "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+            "name": "healthcare",
             "type": "enum_value",
             "integer_value": 2,
             "attributes": {
-              "type": "Giza::Places::Hospital"
+              "type": "Giza::Places::Healthcare"
             }
           }
         ],
         "values": [
           "bank",
-          "hospital"
+          "healthcare"
         ]
       },
       "types": [
         "Giza::Places::Bank",
-        "Giza::Places::Hospital"
+        "Giza::Places::Healthcare"
       ]
     },
     "Places": {
@@ -17295,18 +17433,18 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Giza::Place::Fields::Kind::Hospital",
-              "name": "hospital",
+              "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+              "name": "healthcare",
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
-                "type": "Giza::Places::Hospital"
+                "type": "Giza::Places::Healthcare"
               }
             }
           ],
           "values": [
             "bank",
-            "hospital"
+            "healthcare"
           ]
         },
         "custom_fields": {
@@ -17322,10 +17460,10 @@ module.exports = {
           }
         }
       },
-      "Hospital": {
+      "Healthcare": {
         "kind": {
           "name": "kind",
-          "source": "Giza::Places::Hospital::Fields::Kind",
+          "source": "Giza::Places::Healthcare::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -17338,59 +17476,64 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Giza::Place::Fields::Kind::Hospital",
-              "name": "hospital",
+              "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+              "name": "healthcare",
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
-                "type": "Giza::Places::Hospital"
+                "type": "Giza::Places::Healthcare"
               }
             }
           ],
           "values": [
             "bank",
-            "hospital"
+            "healthcare"
           ]
         },
         "custom_fields": {
-          "source": "Giza::Places::Hospital::Fields::CustomFields",
+          "source": "Giza::Places::Healthcare::Fields::CustomFields",
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "hospital_number_of_beds": {
-              "name": "hospital_number_of_beds",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalNumberOfBeds",
+            "idn_name": {
+              "name": "idn_name",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::IdnName",
+              "type": "string"
+            },
+            "bed_count": {
+              "name": "bed_count",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::BedCount",
               "type": "integer"
             },
-            "hospital_number_of_doctors": {
-              "name": "hospital_number_of_doctors",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalNumberOfDoctors",
+            "physician_count": {
+              "name": "physician_count",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PhysicianCount",
               "type": "integer"
             },
-            "hospital_structure": {
-              "name": "hospital_structure",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalStructure",
+            "subtype": {
+              "name": "subtype",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype",
               "type": "enum",
               "choices": [
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalStructure::Other",
-                  "name": "other",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Provider",
+                  "name": "provider",
                   "type": "enum_value",
                   "integer_value": 1,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalStructure::Idn",
-                  "name": "idn",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Payer",
+                  "name": "payer",
                   "type": "enum_value",
                   "integer_value": 2,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalStructure::Independent",
-                  "name": "independent",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Supplier",
+                  "name": "supplier",
                   "type": "enum_value",
                   "integer_value": 3,
                   "attributes": {
@@ -17398,126 +17541,162 @@ module.exports = {
                 }
               ],
               "values": [
-                "other",
-                "idn",
-                "independent"
+                "provider",
+                "payer",
+                "supplier"
               ]
             },
-            "hospital_type": {
-              "name": "hospital_type",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType",
+            "provider_affiliation": {
+              "name": "provider_affiliation",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation",
               "type": "enum",
               "choices": [
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::Other",
-                  "name": "other",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::NotApplicable",
+                  "name": "not_applicable",
                   "type": "enum_value",
                   "integer_value": 1,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::AcademicHospital",
-                  "name": "academic_hospital",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Other",
+                  "name": "other",
                   "type": "enum_value",
                   "integer_value": 2,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::ChildrensHospital",
-                  "name": "childrens_hospital",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Idn",
+                  "name": "idn",
                   "type": "enum_value",
                   "integer_value": 3,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::ImagingCenter",
-                  "name": "imaging_center",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Independent",
+                  "name": "independent",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "not_applicable",
+                "other",
+                "idn",
+                "independent"
+              ]
+            },
+            "provider_subtype": {
+              "name": "provider_subtype",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::NotApplicable",
+                  "name": "not_applicable",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Other",
+                  "name": "other",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Acute",
+                  "name": "acute",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Ambulatory",
+                  "name": "ambulatory",
                   "type": "enum_value",
                   "integer_value": 4,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::TraditionalHospital",
-                  "name": "traditional_hospital",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Government",
+                  "name": "government",
                   "type": "enum_value",
                   "integer_value": 5,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::RehabilitationCenter",
-                  "name": "rehabilitation_center",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::HomeCare",
+                  "name": "home_care",
                   "type": "enum_value",
                   "integer_value": 6,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::Psychiatric",
-                  "name": "psychiatric",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Laboratory",
+                  "name": "laboratory",
                   "type": "enum_value",
                   "integer_value": 7,
                   "attributes": {
                   }
-                }
-              ],
-              "values": [
-                "other",
-                "academic_hospital",
-                "childrens_hospital",
-                "imaging_center",
-                "traditional_hospital",
-                "rehabilitation_center",
-                "psychiatric"
-              ]
-            },
-            "hospital_care_delivery_type": {
-              "name": "hospital_care_delivery_type",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType",
-              "type": "enum",
-              "choices": [
+                },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType::Other",
-                  "name": "other",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::LongTermCare",
+                  "name": "long_term_care",
                   "type": "enum_value",
-                  "integer_value": 1,
+                  "integer_value": 8,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType::Acute",
-                  "name": "acute",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::MentalHealth",
+                  "name": "mental_health",
                   "type": "enum_value",
-                  "integer_value": 2,
+                  "integer_value": 9,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType::Ambulatory",
-                  "name": "ambulatory",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Pharmacy",
+                  "name": "pharmacy",
                   "type": "enum_value",
-                  "integer_value": 3,
+                  "integer_value": 10,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType::Both",
-                  "name": "both",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Research",
+                  "name": "research",
                   "type": "enum_value",
-                  "integer_value": 4,
+                  "integer_value": 11,
                   "attributes": {
                   }
                 }
               ],
               "values": [
+                "not_applicable",
                 "other",
                 "acute",
                 "ambulatory",
-                "both"
+                "government",
+                "home_care",
+                "laboratory",
+                "long_term_care",
+                "mental_health",
+                "pharmacy",
+                "research"
               ]
             }
           }
@@ -17591,15 +17770,6 @@ module.exports = {
         "type": "enum",
         "choices": [
           {
-            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-            "name": "survey_heads_up",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "type": "Newman::Emails::SurveyHeadsUpEmail"
-            }
-          },
-          {
             "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
             "name": "survey_last_call",
             "type": "enum_value",
@@ -17628,7 +17798,6 @@ module.exports = {
           }
         ],
         "values": [
-          "survey_heads_up",
           "survey_last_call",
           "survey_link",
           "survey_reminder"
@@ -17914,15 +18083,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -17951,7 +18111,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -18239,15 +18398,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -18276,7 +18426,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -18558,15 +18707,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -18595,7 +18735,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -18877,15 +19016,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -18914,7 +19044,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -19196,15 +19325,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -19233,7 +19353,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -19545,15 +19664,6 @@ module.exports = {
         "type": "enum",
         "choices": [
           {
-            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-            "name": "survey_heads_up",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "type": "Newman::Messages::SurveyHeadsUpMessage"
-            }
-          },
-          {
             "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
             "name": "survey_last_call",
             "type": "enum_value",
@@ -19582,7 +19692,6 @@ module.exports = {
           }
         ],
         "values": [
-          "survey_heads_up",
           "survey_last_call",
           "survey_link",
           "survey_reminder"
@@ -19683,15 +19792,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -19720,7 +19820,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -19817,15 +19916,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -19854,7 +19944,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -19951,15 +20040,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -19988,7 +20068,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -20085,15 +20164,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -20122,7 +20192,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -20225,15 +20294,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -20262,7 +20322,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -23160,10 +23219,20 @@ module.exports = {
                 "attributes": {
                   "type": "Cms::Comments::TextComment"
                 }
+              },
+              {
+                "source": "Kore::Types::Cms::Comment::Fields::Kind::File",
+                "name": "file",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Cms::Comments::FileComment"
+                }
               }
             ],
             "values": [
-              "text"
+              "text",
+              "file"
             ]
           }
         }
@@ -24671,18 +24740,18 @@ module.exports = {
                 }
               },
               {
-                "source": "Kore::Types::Giza::Place::Fields::Kind::Hospital",
-                "name": "hospital",
+                "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+                "name": "healthcare",
                 "type": "enum_value",
                 "integer_value": 2,
                 "attributes": {
-                  "type": "Giza::Places::Hospital"
+                  "type": "Giza::Places::Healthcare"
                 }
               }
             ],
             "values": [
               "bank",
-              "hospital"
+              "healthcare"
             ]
           }
         }
@@ -24704,15 +24773,6 @@ module.exports = {
             "source": "Kore::Types::Newman::Email::Fields::Kind",
             "type": "enum",
             "choices": [
-              {
-                "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-                "name": "survey_heads_up",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                  "type": "Newman::Emails::SurveyHeadsUpEmail"
-                }
-              },
               {
                 "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
                 "name": "survey_last_call",
@@ -24742,7 +24802,6 @@ module.exports = {
               }
             ],
             "values": [
-              "survey_heads_up",
               "survey_last_call",
               "survey_link",
               "survey_reminder"
@@ -24819,15 +24878,6 @@ module.exports = {
             "type": "enum",
             "choices": [
               {
-                "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-                "name": "survey_heads_up",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                  "type": "Newman::Messages::SurveyHeadsUpMessage"
-                }
-              },
-              {
                 "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
                 "name": "survey_last_call",
                 "type": "enum_value",
@@ -24856,7 +24906,6 @@ module.exports = {
               }
             ],
             "values": [
-              "survey_heads_up",
               "survey_last_call",
               "survey_link",
               "survey_reminder"
