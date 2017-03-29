@@ -3885,6 +3885,16 @@ module.exports = {
               "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "answer_max_choices": {
               "name": "answer_max_choices",
               "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::AnswerMaxChoices",
@@ -4079,6 +4089,16 @@ module.exports = {
               "name": "choices_order",
               "source": "Census::Questions::MultipleChoiceQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
+            },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::MultipleChoiceQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             },
             "introduction": {
               "name": "introduction",
@@ -4684,6 +4704,34 @@ module.exports = {
               "type": "integer",
               "default": 10
             },
+            "display_format": {
+              "name": "display_format",
+              "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::DisplayFormat",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::DisplayFormat::Buttons",
+                  "name": "buttons",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::DisplayFormat::Slider",
+                  "name": "slider",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "buttons",
+                "slider"
+              ],
+              "default": "buttons"
+            },
             "answer_min_value_label": {
               "name": "answer_min_value_label",
               "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMinValueLabel",
@@ -5086,6 +5134,16 @@ module.exports = {
               "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
@@ -5276,6 +5334,16 @@ module.exports = {
               "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
@@ -5465,6 +5533,16 @@ module.exports = {
               "name": "choices_order",
               "source": "Census::Questions::RankingQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
+            },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::RankingQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             },
             "introduction": {
               "name": "introduction",
@@ -5858,6 +5936,34 @@ module.exports = {
               "type": "integer",
               "default": 10
             },
+            "display_format": {
+              "name": "display_format",
+              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::DisplayFormat",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::DisplayFormat::Buttons",
+                  "name": "buttons",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::DisplayFormat::Slider",
+                  "name": "slider",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "buttons",
+                "slider"
+              ],
+              "default": "buttons"
+            },
             "answer_min_value_label": {
               "name": "answer_min_value_label",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMinValueLabel",
@@ -6060,6 +6166,16 @@ module.exports = {
               "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
@@ -6250,6 +6366,16 @@ module.exports = {
               "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
@@ -6439,6 +6565,16 @@ module.exports = {
               "name": "choices_order",
               "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
+            },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             },
             "introduction": {
               "name": "introduction",
@@ -11475,6 +11611,16 @@ module.exports = {
               "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::InstanceUrl",
               "type": "string"
             },
+            "salesforce_organization_id": {
+              "name": "salesforce_organization_id",
+              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::SalesforceOrganizationId",
+              "type": "string"
+            },
+            "salesforce_username": {
+              "name": "salesforce_username",
+              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::SalesforceUsername",
+              "type": "string"
+            },
             "include_custom_salesforce_fields": {
               "name": "include_custom_salesforce_fields",
               "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::IncludeCustomSalesforceFields",
@@ -12040,6 +12186,11 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
+            "looker_render_task_id": {
+              "name": "looker_render_task_id",
+              "source": "Client::Exports::LookExport::Fields::CustomFields::Fields::LookerRenderTaskId",
+              "type": "string"
+            }
           }
         }
       },
