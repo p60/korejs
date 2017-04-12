@@ -2771,9 +2771,115 @@ module.exports = {
       }
     },
     "Group": {
+      "kind": {
+        "name": "kind",
+        "source": "Census::Group::Fields::Kind",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Census::Group::Fields::Kind::Static",
+            "name": "static",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Census::Groups::StaticGroup"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Group::Fields::Kind::Dynamic",
+            "name": "dynamic",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "type": "Census::Groups::DynamicGroup"
+            }
+          }
+        ],
+        "values": [
+          "static",
+          "dynamic"
+        ]
+      },
+      "types": [
+        "Census::Groups::DynamicGroup",
+        "Census::Groups::StaticGroup"
+      ]
+    },
+    "Groups": {
+      "DynamicGroup": {
+        "kind": {
+          "name": "kind",
+          "source": "Census::Groups::DynamicGroup::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Group::Fields::Kind::Static",
+              "name": "static",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Census::Groups::StaticGroup"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Group::Fields::Kind::Dynamic",
+              "name": "dynamic",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Census::Groups::DynamicGroup"
+              }
+            }
+          ],
+          "values": [
+            "static",
+            "dynamic"
+          ]
+        },
+        "filter_conditions": {
+          "name": "filter_conditions",
+          "source": "Census::Groups::DynamicGroup::Fields::FilterConditions",
+          "type": "set"
+        }
+      },
+      "StaticGroup": {
+        "kind": {
+          "name": "kind",
+          "source": "Census::Groups::StaticGroup::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Group::Fields::Kind::Static",
+              "name": "static",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Census::Groups::StaticGroup"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Group::Fields::Kind::Dynamic",
+              "name": "dynamic",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Census::Groups::DynamicGroup"
+              }
+            }
+          ],
+          "values": [
+            "static",
+            "dynamic"
+          ]
+        }
+      }
     },
     "Participant": {
-      "flagged_attributes": null
+      "flagged_attributes": {
+        "name": "flagged_attributes",
+        "source": "Census::Participant::Fields::FlaggedAttributes",
+        "type": "set"
+      }
     },
     "ParticipantGroupMembership": {
     },
@@ -3885,6 +3991,16 @@ module.exports = {
               "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "answer_max_choices": {
               "name": "answer_max_choices",
               "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::AnswerMaxChoices",
@@ -4079,6 +4195,16 @@ module.exports = {
               "name": "choices_order",
               "source": "Census::Questions::MultipleChoiceQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
+            },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::MultipleChoiceQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             },
             "introduction": {
               "name": "introduction",
@@ -4684,6 +4810,34 @@ module.exports = {
               "type": "integer",
               "default": 10
             },
+            "display_format": {
+              "name": "display_format",
+              "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::DisplayFormat",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::DisplayFormat::Buttons",
+                  "name": "buttons",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::DisplayFormat::Slider",
+                  "name": "slider",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "buttons",
+                "slider"
+              ],
+              "default": "buttons"
+            },
             "answer_min_value_label": {
               "name": "answer_min_value_label",
               "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMinValueLabel",
@@ -5086,6 +5240,16 @@ module.exports = {
               "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
@@ -5276,6 +5440,16 @@ module.exports = {
               "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
@@ -5465,6 +5639,16 @@ module.exports = {
               "name": "choices_order",
               "source": "Census::Questions::RankingQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
+            },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::RankingQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             },
             "introduction": {
               "name": "introduction",
@@ -5858,6 +6042,34 @@ module.exports = {
               "type": "integer",
               "default": 10
             },
+            "display_format": {
+              "name": "display_format",
+              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::DisplayFormat",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::DisplayFormat::Buttons",
+                  "name": "buttons",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::DisplayFormat::Slider",
+                  "name": "slider",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "buttons",
+                "slider"
+              ],
+              "default": "buttons"
+            },
             "answer_min_value_label": {
               "name": "answer_min_value_label",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMinValueLabel",
@@ -6060,6 +6272,16 @@ module.exports = {
               "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
@@ -6250,6 +6472,16 @@ module.exports = {
               "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
             },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
@@ -6439,6 +6671,16 @@ module.exports = {
               "name": "choices_order",
               "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::CustomFields::Fields::ChoicesOrder",
               "type": "array"
+            },
+            "randomize_choices": {
+              "name": "randomize_choices",
+              "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             },
             "introduction": {
               "name": "introduction",
@@ -11048,8 +11290,16 @@ module.exports = {
   },
   "Client": {
     "AccessGroup": {
-      "whitelist_user_ids": null,
-      "blacklist_user_ids": null
+      "whitelist_user_ids": {
+        "name": "whitelist_user_ids",
+        "source": "Client::AccessGroup::Fields::WhitelistUserIds",
+        "type": "set"
+      },
+      "blacklist_user_ids": {
+        "name": "blacklist_user_ids",
+        "source": "Client::AccessGroup::Fields::BlacklistUserIds",
+        "type": "set"
+      }
     },
     "Account": {
       "kind": {
@@ -11475,6 +11725,16 @@ module.exports = {
               "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::InstanceUrl",
               "type": "string"
             },
+            "salesforce_organization_id": {
+              "name": "salesforce_organization_id",
+              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::SalesforceOrganizationId",
+              "type": "string"
+            },
+            "salesforce_username": {
+              "name": "salesforce_username",
+              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::SalesforceUsername",
+              "type": "string"
+            },
             "include_custom_salesforce_fields": {
               "name": "include_custom_salesforce_fields",
               "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::IncludeCustomSalesforceFields",
@@ -11674,7 +11934,11 @@ module.exports = {
           "pdf"
         ]
       },
-      "log": null,
+      "log": {
+        "name": "log",
+        "source": "Client::Export::Fields::Log",
+        "type": "set"
+      },
       "custom_fields": {
         "source": "Client::Export::Fields::CustomFields",
         "name": "custom_fields",
@@ -11857,7 +12121,11 @@ module.exports = {
             "pdf"
           ]
         },
-        "log": null,
+        "log": {
+          "name": "log",
+          "source": "Client::Exports::AnswersExport::Fields::Log",
+          "type": "set"
+        },
         "custom_fields": {
           "source": "Client::Exports::AnswersExport::Fields::CustomFields",
           "name": "custom_fields",
@@ -12034,12 +12302,21 @@ module.exports = {
             "pdf"
           ]
         },
-        "log": null,
+        "log": {
+          "name": "log",
+          "source": "Client::Exports::LookExport::Fields::Log",
+          "type": "set"
+        },
         "custom_fields": {
           "source": "Client::Exports::LookExport::Fields::CustomFields",
           "name": "custom_fields",
           "type": "struct",
           "fields": {
+            "looker_render_task_id": {
+              "name": "looker_render_task_id",
+              "source": "Client::Exports::LookExport::Fields::CustomFields::Fields::LookerRenderTaskId",
+              "type": "string"
+            }
           }
         }
       },
@@ -12211,7 +12488,11 @@ module.exports = {
             "pdf"
           ]
         },
-        "log": null,
+        "log": {
+          "name": "log",
+          "source": "Client::Exports::ReportExport::Fields::Log",
+          "type": "set"
+        },
         "custom_fields": {
           "source": "Client::Exports::ReportExport::Fields::CustomFields",
           "name": "custom_fields",
@@ -13261,7 +13542,6 @@ module.exports = {
         "American Samoa",
         "International Date Line West",
         "Midway Island",
-        "Samoa",
         "Hawaii",
         "Alaska",
         "Pacific Time (US & Canada)",
@@ -13406,6 +13686,7 @@ module.exports = {
         "Wellington",
         "Chatham Is.",
         "Nuku'alofa",
+        "Samoa",
         "Tokelau Is."
       ]
     },
@@ -15162,7 +15443,11 @@ module.exports = {
           "super_admin"
         ]
       },
-      "dashboards_order": null
+      "dashboards_order": {
+        "name": "dashboards_order",
+        "source": "Client::User::Fields::DashboardsOrder",
+        "type": "set"
+      }
     }
   },
   "Cms": {
@@ -15244,18 +15529,108 @@ module.exports = {
             "attributes": {
               "type": "Cms::Comments::TextComment"
             }
+          },
+          {
+            "source": "Kore::Types::Cms::Comment::Fields::Kind::File",
+            "name": "file",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "type": "Cms::Comments::FileComment"
+            }
           }
         ],
         "values": [
-          "text"
+          "text",
+          "file"
         ]
       },
-      "mentioned_ids": null,
+      "mentioned_ids": {
+        "name": "mentioned_ids",
+        "source": "Cms::Comment::Fields::MentionedIds",
+        "type": "set"
+      },
+      "custom_fields": {
+        "source": "Cms::Comment::Fields::CustomFields",
+        "name": "custom_fields",
+        "type": "struct",
+        "fields": {
+        }
+      },
       "types": [
+        "Cms::Comments::FileComment",
         "Cms::Comments::TextComment"
       ]
     },
     "Comments": {
+      "FileComment": {
+        "kind": {
+          "name": "kind",
+          "source": "Cms::Comments::FileComment::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Cms::Comment::Fields::Kind::Text",
+              "name": "text",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Cms::Comments::TextComment"
+              }
+            },
+            {
+              "source": "Kore::Types::Cms::Comment::Fields::Kind::File",
+              "name": "file",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Cms::Comments::FileComment"
+              }
+            }
+          ],
+          "values": [
+            "text",
+            "file"
+          ]
+        },
+        "mentioned_ids": {
+          "name": "mentioned_ids",
+          "source": "Cms::Comments::FileComment::Fields::MentionedIds",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Cms::Comments::FileComment::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "file_size": {
+              "name": "file_size",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileSize",
+              "type": "integer"
+            },
+            "file_filename": {
+              "name": "file_filename",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileFilename",
+              "type": "string"
+            },
+            "file_content_type": {
+              "name": "file_content_type",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileContentType",
+              "type": "string"
+            },
+            "file_provided_name": {
+              "name": "file_provided_name",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileProvidedName",
+              "type": "string"
+            },
+            "file_provided_type": {
+              "name": "file_provided_type",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileProvidedType",
+              "type": "string"
+            }
+          }
+        }
+      },
       "TextComment": {
         "kind": {
           "name": "kind",
@@ -15270,13 +15645,41 @@ module.exports = {
               "attributes": {
                 "type": "Cms::Comments::TextComment"
               }
+            },
+            {
+              "source": "Kore::Types::Cms::Comment::Fields::Kind::File",
+              "name": "file",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Cms::Comments::FileComment"
+              }
             }
           ],
           "values": [
-            "text"
+            "text",
+            "file"
           ]
         },
-        "mentioned_ids": null
+        "mentioned_ids": {
+          "name": "mentioned_ids",
+          "source": "Cms::Comments::TextComment::Fields::MentionedIds",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Cms::Comments::TextComment::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+          }
+        }
+      }
+    },
+    "Discussion": {
+      "follower_ids": {
+        "name": "follower_ids",
+        "source": "Cms::Discussion::Fields::FollowerIds",
+        "type": "set"
       }
     },
     "HelpTopic": {
@@ -15420,6 +15823,42 @@ module.exports = {
           "aquired"
         ]
       },
+      "profit_status": {
+        "name": "profit_status",
+        "source": "Giza::Company::Fields::ProfitStatus",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Giza::Company::Fields::ProfitStatus::Other",
+            "name": "other",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Giza::Company::Fields::ProfitStatus::ForProfit",
+            "name": "for_profit",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Giza::Company::Fields::ProfitStatus::NonProfit",
+            "name": "non_profit",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "other",
+          "for_profit",
+          "non_profit"
+        ]
+      },
       "clearbit_discovery_status": {
         "name": "clearbit_discovery_status",
         "source": "Giza::Company::Fields::ClearbitDiscoveryStatus",
@@ -15465,8 +15904,11 @@ module.exports = {
           "pending"
         ]
       },
-      "related_company_ids": null,
-      "name": null,
+      "related_company_ids": {
+        "name": "related_company_ids",
+        "source": "Giza::Company::Fields::RelatedCompanyIds",
+        "type": "set"
+      },
       "domain": null,
       "site": {
         "source": "Giza::Company::Fields::Site",
@@ -17259,23 +17701,23 @@ module.exports = {
             }
           },
           {
-            "source": "Kore::Types::Giza::Place::Fields::Kind::Hospital",
-            "name": "hospital",
+            "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+            "name": "healthcare",
             "type": "enum_value",
             "integer_value": 2,
             "attributes": {
-              "type": "Giza::Places::Hospital"
+              "type": "Giza::Places::Healthcare"
             }
           }
         ],
         "values": [
           "bank",
-          "hospital"
+          "healthcare"
         ]
       },
       "types": [
         "Giza::Places::Bank",
-        "Giza::Places::Hospital"
+        "Giza::Places::Healthcare"
       ]
     },
     "Places": {
@@ -17295,18 +17737,18 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Giza::Place::Fields::Kind::Hospital",
-              "name": "hospital",
+              "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+              "name": "healthcare",
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
-                "type": "Giza::Places::Hospital"
+                "type": "Giza::Places::Healthcare"
               }
             }
           ],
           "values": [
             "bank",
-            "hospital"
+            "healthcare"
           ]
         },
         "custom_fields": {
@@ -17322,10 +17764,10 @@ module.exports = {
           }
         }
       },
-      "Hospital": {
+      "Healthcare": {
         "kind": {
           "name": "kind",
-          "source": "Giza::Places::Hospital::Fields::Kind",
+          "source": "Giza::Places::Healthcare::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -17338,59 +17780,64 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Giza::Place::Fields::Kind::Hospital",
-              "name": "hospital",
+              "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+              "name": "healthcare",
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
-                "type": "Giza::Places::Hospital"
+                "type": "Giza::Places::Healthcare"
               }
             }
           ],
           "values": [
             "bank",
-            "hospital"
+            "healthcare"
           ]
         },
         "custom_fields": {
-          "source": "Giza::Places::Hospital::Fields::CustomFields",
+          "source": "Giza::Places::Healthcare::Fields::CustomFields",
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "hospital_number_of_beds": {
-              "name": "hospital_number_of_beds",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalNumberOfBeds",
+            "idn_name": {
+              "name": "idn_name",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::IdnName",
+              "type": "string"
+            },
+            "bed_count": {
+              "name": "bed_count",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::BedCount",
               "type": "integer"
             },
-            "hospital_number_of_doctors": {
-              "name": "hospital_number_of_doctors",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalNumberOfDoctors",
+            "physician_count": {
+              "name": "physician_count",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PhysicianCount",
               "type": "integer"
             },
-            "hospital_structure": {
-              "name": "hospital_structure",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalStructure",
+            "subtype": {
+              "name": "subtype",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype",
               "type": "enum",
               "choices": [
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalStructure::Other",
-                  "name": "other",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Provider",
+                  "name": "provider",
                   "type": "enum_value",
                   "integer_value": 1,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalStructure::Idn",
-                  "name": "idn",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Payer",
+                  "name": "payer",
                   "type": "enum_value",
                   "integer_value": 2,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalStructure::Independent",
-                  "name": "independent",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Supplier",
+                  "name": "supplier",
                   "type": "enum_value",
                   "integer_value": 3,
                   "attributes": {
@@ -17398,126 +17845,162 @@ module.exports = {
                 }
               ],
               "values": [
-                "other",
-                "idn",
-                "independent"
+                "provider",
+                "payer",
+                "supplier"
               ]
             },
-            "hospital_type": {
-              "name": "hospital_type",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType",
+            "provider_affiliation": {
+              "name": "provider_affiliation",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation",
               "type": "enum",
               "choices": [
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::Other",
-                  "name": "other",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::NotApplicable",
+                  "name": "not_applicable",
                   "type": "enum_value",
                   "integer_value": 1,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::AcademicHospital",
-                  "name": "academic_hospital",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Other",
+                  "name": "other",
                   "type": "enum_value",
                   "integer_value": 2,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::ChildrensHospital",
-                  "name": "childrens_hospital",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Idn",
+                  "name": "idn",
                   "type": "enum_value",
                   "integer_value": 3,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::ImagingCenter",
-                  "name": "imaging_center",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Independent",
+                  "name": "independent",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "not_applicable",
+                "other",
+                "idn",
+                "independent"
+              ]
+            },
+            "provider_subtype": {
+              "name": "provider_subtype",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::NotApplicable",
+                  "name": "not_applicable",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Other",
+                  "name": "other",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Acute",
+                  "name": "acute",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Ambulatory",
+                  "name": "ambulatory",
                   "type": "enum_value",
                   "integer_value": 4,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::TraditionalHospital",
-                  "name": "traditional_hospital",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Government",
+                  "name": "government",
                   "type": "enum_value",
                   "integer_value": 5,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::RehabilitationCenter",
-                  "name": "rehabilitation_center",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::HomeCare",
+                  "name": "home_care",
                   "type": "enum_value",
                   "integer_value": 6,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalType::Psychiatric",
-                  "name": "psychiatric",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Laboratory",
+                  "name": "laboratory",
                   "type": "enum_value",
                   "integer_value": 7,
                   "attributes": {
                   }
-                }
-              ],
-              "values": [
-                "other",
-                "academic_hospital",
-                "childrens_hospital",
-                "imaging_center",
-                "traditional_hospital",
-                "rehabilitation_center",
-                "psychiatric"
-              ]
-            },
-            "hospital_care_delivery_type": {
-              "name": "hospital_care_delivery_type",
-              "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType",
-              "type": "enum",
-              "choices": [
+                },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType::Other",
-                  "name": "other",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::LongTermCare",
+                  "name": "long_term_care",
                   "type": "enum_value",
-                  "integer_value": 1,
+                  "integer_value": 8,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType::Acute",
-                  "name": "acute",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::MentalHealth",
+                  "name": "mental_health",
                   "type": "enum_value",
-                  "integer_value": 2,
+                  "integer_value": 9,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType::Ambulatory",
-                  "name": "ambulatory",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Pharmacy",
+                  "name": "pharmacy",
                   "type": "enum_value",
-                  "integer_value": 3,
+                  "integer_value": 10,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Hospital::Fields::CustomFields::Fields::HospitalCareDeliveryType::Both",
-                  "name": "both",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderSubtype::Research",
+                  "name": "research",
                   "type": "enum_value",
-                  "integer_value": 4,
+                  "integer_value": 11,
                   "attributes": {
                   }
                 }
               ],
               "values": [
+                "not_applicable",
                 "other",
                 "acute",
                 "ambulatory",
-                "both"
+                "government",
+                "home_care",
+                "laboratory",
+                "long_term_care",
+                "mental_health",
+                "pharmacy",
+                "research"
               ]
             }
           }
@@ -17591,15 +18074,6 @@ module.exports = {
         "type": "enum",
         "choices": [
           {
-            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-            "name": "survey_heads_up",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "type": "Newman::Emails::SurveyHeadsUpEmail"
-            }
-          },
-          {
             "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
             "name": "survey_last_call",
             "type": "enum_value",
@@ -17628,7 +18102,6 @@ module.exports = {
           }
         ],
         "values": [
-          "survey_heads_up",
           "survey_last_call",
           "survey_link",
           "survey_reminder"
@@ -17914,15 +18387,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -17951,7 +18415,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -18239,15 +18702,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -18276,7 +18730,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -18558,15 +19011,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -18595,7 +19039,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -18877,15 +19320,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -18914,7 +19348,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -19196,15 +19629,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -19233,7 +19657,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -19545,15 +19968,6 @@ module.exports = {
         "type": "enum",
         "choices": [
           {
-            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-            "name": "survey_heads_up",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "type": "Newman::Messages::SurveyHeadsUpMessage"
-            }
-          },
-          {
             "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
             "name": "survey_last_call",
             "type": "enum_value",
@@ -19582,7 +19996,6 @@ module.exports = {
           }
         ],
         "values": [
-          "survey_heads_up",
           "survey_last_call",
           "survey_link",
           "survey_reminder"
@@ -19683,15 +20096,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -19720,7 +20124,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -19817,15 +20220,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -19854,7 +20248,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -19951,15 +20344,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -19988,7 +20372,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -20085,15 +20468,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -20122,7 +20496,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -20225,15 +20598,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -20262,7 +20626,6 @@ module.exports = {
             }
           ],
           "values": [
-            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -22412,6 +22775,245 @@ module.exports = {
             "manager",
             "none"
           ]
+        },
+        "participant_filter_condition": {
+          "source": "Kore::Types::Census::Fields::ParticipantFilterCondition",
+          "name": "participant_filter_condition",
+          "type": "struct",
+          "fields": {
+            "key": {
+              "name": "key",
+              "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByCompanyNameMatches",
+                  "name": "by_company_name_matches",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "label": "Company Name Contains",
+                    "industry": "none",
+                    "field": "company_name",
+                    "comparison": "matches",
+                    "input_type": "chips"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByCompanyNameDoesNotMatch",
+                  "name": "by_company_name_does_not_match",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "label": "Company Name Does Not Contain",
+                    "industry": "none",
+                    "field": "company_name",
+                    "comparison": "matches",
+                    "input_type": "chips"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByPositionNameMatches",
+                  "name": "by_position_name_matches",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "label": "Position Name Contains",
+                    "industry": "none",
+                    "field": "position_name",
+                    "comparison": "matches",
+                    "input_type": "chips"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByPositionNameDoesNotMatch",
+                  "name": "by_position_name_does_not_match",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "label": "Position Name Does Not Contain",
+                    "industry": "none",
+                    "field": "position_name",
+                    "comparison": "matches",
+                    "input_type": "chips"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByDepartmentNameMatches",
+                  "name": "by_department_name_matches",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "label": "Department Name Contains",
+                    "industry": "none",
+                    "field": "department_name",
+                    "comparison": "matches",
+                    "input_type": "chips"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByDepartmentNameDoesNotMatch",
+                  "name": "by_department_name_does_not_match",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "label": "Department Name Does Not Contain",
+                    "industry": "none",
+                    "field": "department_name",
+                    "comparison": "matches",
+                    "input_type": "chips"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByPositionCategoryNameMatches",
+                  "name": "by_position_category_name_matches",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "label": "Position Category Name Contains",
+                    "industry": "none",
+                    "field": "position_category_name",
+                    "comparison": "matches",
+                    "input_type": "chips"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByPositionCategoryNameDoesNotMatch",
+                  "name": "by_position_category_name_does_not_match",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "label": "Position Category Name Does Not Contain",
+                    "industry": "none",
+                    "field": "position_category_name",
+                    "comparison": "matches",
+                    "input_type": "chips"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByHealthcareBedCountGt",
+                  "name": "by_healthcare_bed_count_gt",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "label": "Bed Count Greater Than",
+                    "industry": "healthcare",
+                    "field": "healthcare_bed_count",
+                    "comparison": "greater_than",
+                    "input_type": "number"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByHealthcareBedCountLt",
+                  "name": "by_healthcare_bed_count_lt",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "label": "Bed Count Less Than",
+                    "industry": "healthcare",
+                    "field": "healthcare_bed_count",
+                    "comparison": "less_than",
+                    "input_type": "number"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByHealthcarePhysicianCountGt",
+                  "name": "by_healthcare_physician_count_gt",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "label": "Physician Count Greater Than",
+                    "industry": "healthcare",
+                    "field": "healthcare_physician_count",
+                    "comparison": "greater_than",
+                    "input_type": "number"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByHealthcarePhysicianCountLt",
+                  "name": "by_healthcare_physician_count_lt",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "label": "Physician Count Less Than",
+                    "industry": "healthcare",
+                    "field": "healthcare_physician_count",
+                    "comparison": "less_than",
+                    "input_type": "number"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByHealthcareProviderAffiliation",
+                  "name": "by_healthcare_provider_affiliation",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "label": "Provider Affiliation",
+                    "industry": "healthcare",
+                    "field": "healthcare_provider_affiliation",
+                    "comparison": "equals",
+                    "input_type": "select_many",
+                    "values_property": "Kore.Giza.Places.Healthcare.custom_fields.fields.provider_affiliation"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByHealthcareSubtype",
+                  "name": "by_healthcare_subtype",
+                  "type": "enum_value",
+                  "integer_value": 14,
+                  "attributes": {
+                    "label": "Subtype",
+                    "industry": "healthcare",
+                    "field": "healthcare_subtype",
+                    "comparison": "equals",
+                    "input_type": "select_many",
+                    "values_property": "Kore.Giza.Places.Healthcare.custom_fields.fields.subtype"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key::ByHealthcareProviderSubtype",
+                  "name": "by_healthcare_provider_subtype",
+                  "type": "enum_value",
+                  "integer_value": 15,
+                  "attributes": {
+                    "label": "Provider Subtype",
+                    "industry": "healthcare",
+                    "field": "healthcare_provider_subtype",
+                    "comparison": "equals",
+                    "input_type": "select_many",
+                    "values_property": "Kore.Giza.Places.Healthcare.custom_fields.fields.provider_subtype"
+                  }
+                }
+              ],
+              "values": [
+                "by_company_name_matches",
+                "by_company_name_does_not_match",
+                "by_position_name_matches",
+                "by_position_name_does_not_match",
+                "by_department_name_matches",
+                "by_department_name_does_not_match",
+                "by_position_category_name_matches",
+                "by_position_category_name_does_not_match",
+                "by_healthcare_bed_count_gt",
+                "by_healthcare_bed_count_lt",
+                "by_healthcare_physician_count_gt",
+                "by_healthcare_physician_count_lt",
+                "by_healthcare_provider_affiliation",
+                "by_healthcare_subtype",
+                "by_healthcare_provider_subtype"
+              ]
+            },
+            "values": {
+              "name": "values",
+              "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Values",
+              "type": "array"
+            }
+          }
+        },
+        "participant_filter_condition_set": {
+          "name": "participant_filter_condition_set",
+          "source": "Kore::Types::Census::Fields::ParticipantFilterConditionSet",
+          "type": "set"
         }
       },
       "FreeformSurvey": {
@@ -22486,6 +23088,42 @@ module.exports = {
               "number_scale",
               "ranking",
               "text"
+            ]
+          }
+        }
+      },
+      "Group": {
+        "source": "Kore::Types::Census::Group",
+        "name": "group",
+        "type": "struct",
+        "fields": {
+          "kind": {
+            "name": "kind",
+            "source": "Kore::Types::Census::Group::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::Group::Fields::Kind::Static",
+                "name": "static",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Census::Groups::StaticGroup"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Group::Fields::Kind::Dynamic",
+                "name": "dynamic",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Census::Groups::DynamicGroup"
+                }
+              }
+            ],
+            "values": [
+              "static",
+              "dynamic"
             ]
           }
         }
@@ -23160,10 +23798,20 @@ module.exports = {
                 "attributes": {
                   "type": "Cms::Comments::TextComment"
                 }
+              },
+              {
+                "source": "Kore::Types::Cms::Comment::Fields::Kind::File",
+                "name": "file",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Cms::Comments::FileComment"
+                }
               }
             ],
             "values": [
-              "text"
+              "text",
+              "file"
             ]
           }
         }
@@ -24671,18 +25319,18 @@ module.exports = {
                 }
               },
               {
-                "source": "Kore::Types::Giza::Place::Fields::Kind::Hospital",
-                "name": "hospital",
+                "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+                "name": "healthcare",
                 "type": "enum_value",
                 "integer_value": 2,
                 "attributes": {
-                  "type": "Giza::Places::Hospital"
+                  "type": "Giza::Places::Healthcare"
                 }
               }
             ],
             "values": [
               "bank",
-              "hospital"
+              "healthcare"
             ]
           }
         }
@@ -24704,15 +25352,6 @@ module.exports = {
             "source": "Kore::Types::Newman::Email::Fields::Kind",
             "type": "enum",
             "choices": [
-              {
-                "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-                "name": "survey_heads_up",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                  "type": "Newman::Emails::SurveyHeadsUpEmail"
-                }
-              },
               {
                 "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
                 "name": "survey_last_call",
@@ -24742,7 +25381,6 @@ module.exports = {
               }
             ],
             "values": [
-              "survey_heads_up",
               "survey_last_call",
               "survey_link",
               "survey_reminder"
@@ -24819,15 +25457,6 @@ module.exports = {
             "type": "enum",
             "choices": [
               {
-                "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-                "name": "survey_heads_up",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                  "type": "Newman::Messages::SurveyHeadsUpMessage"
-                }
-              },
-              {
                 "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
                 "name": "survey_last_call",
                 "type": "enum_value",
@@ -24856,7 +25485,6 @@ module.exports = {
               }
             ],
             "values": [
-              "survey_heads_up",
               "survey_last_call",
               "survey_link",
               "survey_reminder"
@@ -25864,7 +26492,11 @@ module.exports = {
           "ranking_question_page"
         ]
       },
-      "looks_order": null,
+      "looks_order": {
+        "name": "looks_order",
+        "source": "Warehouse::Page::Fields::LooksOrder",
+        "type": "set"
+      },
       "types": [
         "Warehouse::Pages::QuestionPage",
         "Warehouse::Pages::SurveyPage"
@@ -26011,7 +26643,11 @@ module.exports = {
             "ranking_question_page"
           ]
         },
-        "looks_order": null,
+        "looks_order": {
+          "name": "looks_order",
+          "source": "Warehouse::Pages::QuestionPage::Fields::LooksOrder",
+          "type": "set"
+        },
         "types": [
           "Warehouse::Pages::Questions::BooleanQuestionPage",
           "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage",
@@ -26164,7 +26800,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
@@ -26333,7 +26973,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
@@ -26502,7 +27146,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
@@ -26671,7 +27319,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
@@ -26840,7 +27492,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
@@ -27009,7 +27665,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
@@ -27178,7 +27838,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
@@ -27347,7 +28011,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
@@ -27517,7 +28185,11 @@ module.exports = {
             "ranking_question_page"
           ]
         },
-        "looks_order": null,
+        "looks_order": {
+          "name": "looks_order",
+          "source": "Warehouse::Pages::SurveyPage::Fields::LooksOrder",
+          "type": "set"
+        },
         "visible_looks": {
           "source": "Warehouse::Pages::SurveyPage::Fields::VisibleLooks",
           "name": "visible_looks",
@@ -27681,7 +28353,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Surveys::FreeformSurveyPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Surveys::FreeformSurveyPage::Fields::VisibleLooks",
             "name": "visible_looks",
@@ -27840,7 +28516,11 @@ module.exports = {
               "ranking_question_page"
             ]
           },
-          "looks_order": null,
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Surveys::NpsSurveyPage::Fields::LooksOrder",
+            "type": "set"
+          },
           "visible_looks": {
             "source": "Warehouse::Pages::Surveys::NpsSurveyPage::Fields::VisibleLooks",
             "name": "visible_looks",
