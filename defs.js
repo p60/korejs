@@ -2124,6 +2124,173 @@ module.exports = {
         ]
       }
     },
+    "EmailAddress": {
+      "status": {
+        "name": "status",
+        "source": "Census::EmailAddress::Fields::Status",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Status::Deliverable",
+            "name": "deliverable",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Status::Undeliverable",
+            "name": "undeliverable",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Status::Risky",
+            "name": "risky",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Status::Unknown",
+            "name": "unknown",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "deliverable",
+          "undeliverable",
+          "risky",
+          "unknown"
+        ]
+      },
+      "reason": {
+        "name": "reason",
+        "source": "Census::EmailAddress::Fields::Reason",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::InvalidEmail",
+            "name": "invalid_email",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "description": "Specified email is not a valid email address syntax"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::InvalidDomain",
+            "name": "invalid_domain",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "description": "Domain for email does not exist"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::RejectedEmail",
+            "name": "rejected_email",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "description": "Email address was rejected by the SMTP server, email address does not exist"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::AcceptedEmail",
+            "name": "accepted_email",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "description": "Email address was accepted by the SMTP server"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::LowQuality",
+            "name": "low_quality",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+              "description": "Email address has quality issues that may make it a risky or low-value address"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::LowDeliverability",
+            "name": "low_deliverability",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+              "description": "Email address appears to be deliverable, but deliverability cannot be guaranteed"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::NoConnect",
+            "name": "no_connect",
+            "type": "enum_value",
+            "integer_value": 7,
+            "attributes": {
+              "description": "Could not connect to SMTP server"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::Timeout",
+            "name": "timeout",
+            "type": "enum_value",
+            "integer_value": 8,
+            "attributes": {
+              "description": "SMTP session timed out"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::InvalidSmtp",
+            "name": "invalid_smtp",
+            "type": "enum_value",
+            "integer_value": 9,
+            "attributes": {
+              "description": "SMTP server returned an unexpected/invalid response"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::UnavailableSmtp",
+            "name": "unavailable_smtp",
+            "type": "enum_value",
+            "integer_value": 10,
+            "attributes": {
+              "description": "SMTP server was unavailable to process our request"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason::UnexpectedError",
+            "name": "unexpected_error",
+            "type": "enum_value",
+            "integer_value": 11,
+            "attributes": {
+              "description": "An unexpected error has occurred"
+            }
+          }
+        ],
+        "values": [
+          "invalid_email",
+          "invalid_domain",
+          "rejected_email",
+          "accepted_email",
+          "low_quality",
+          "low_deliverability",
+          "no_connect",
+          "timeout",
+          "invalid_smtp",
+          "unavailable_smtp",
+          "unexpected_error"
+        ]
+      },
+      "kickbox_score": null
+    },
     "GlobalParticipant": {
       "gender": {
         "name": "gender",
@@ -2374,6 +2541,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -2396,7 +2573,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "clearbit_discovery_status": {
@@ -5650,6 +5828,11 @@ module.exports = {
                 false
               ]
             },
+            "answer_max_choices": {
+              "name": "answer_max_choices",
+              "source": "Census::Questions::RankingQuestion::Fields::CustomFields::Fields::AnswerMaxChoices",
+              "type": "integer"
+            },
             "introduction": {
               "name": "introduction",
               "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
@@ -7555,6 +7738,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -7577,7 +7770,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "kind": {
@@ -8098,6 +8292,16 @@ module.exports = {
               true,
               false
             ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           }
         }
       },
@@ -8350,6 +8554,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -8372,7 +8586,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -8898,6 +9113,16 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
@@ -9143,6 +9368,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -9165,7 +9400,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -9691,6 +9927,16 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
@@ -9936,6 +10182,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -9958,7 +10214,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -10484,6 +10741,16 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
@@ -10729,6 +10996,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -10751,7 +11028,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -11276,6 +11554,16 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
               "type": "boolean",
               "default": false,
               "values": [
@@ -11948,6 +12236,7 @@ module.exports = {
       },
       "types": [
         "Client::Exports::AnswersExport",
+        "Client::Exports::EmailAddressesExport",
         "Client::Exports::LookExport",
         "Client::Exports::ReportExport"
       ]
@@ -12131,6 +12420,192 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
+          }
+        }
+      },
+      "EmailAddressesExport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Exports::EmailAddressesExport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Export::Fields::Kind::Answers",
+              "name": "answers",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Exports::AnswersExport",
+                "supported_formats": [
+                  "csv",
+                  "xslx"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Export::Fields::Kind::Report",
+              "name": "report",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Exports::ReportExport",
+                "supported_formats": [
+                  "pdf"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Export::Fields::Kind::Look",
+              "name": "look",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Exports::LookExport",
+                "supported_formats": [
+                  "png",
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "answers",
+            "report",
+            "look"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Exports::EmailAddressesExport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Exports::EmailAddressesExport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Export::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Export::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Export::Fields::FileFormat::Png",
+              "name": "png",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Export::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Export::Fields::FileFormat::Pdf",
+              "name": "pdf",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "csv",
+            "xslx",
+            "png",
+            "json",
+            "pdf"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Exports::EmailAddressesExport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Exports::EmailAddressesExport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "import_id": {
+              "name": "import_id",
+              "source": "Client::Exports::EmailAddressesExport::Fields::CustomFields::Fields::ImportId",
+              "type": "string"
+            }
           }
         }
       },
@@ -12512,6 +12987,3342 @@ module.exports = {
         }
       }
     },
+    "Import": {
+      "kind": {
+        "name": "kind",
+        "source": "Client::Import::Fields::Kind",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+            "name": "global_participants",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Client::Imports::GlobalParticipantsImport",
+              "transformer_type": "Client::ParticipantImportHashTransformer",
+              "required_headers": [
+                "email",
+                "first_name",
+                "last_name",
+                "locale",
+                "company_name",
+                "position_name"
+              ],
+              "supported_formats": [
+                "csv"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+            "name": "participants",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "type": "Client::Imports::ParticipantsImport",
+              "transformer_type": "Client::ParticipantImportHashTransformer",
+              "required_headers": [
+                "email",
+                "first_name",
+                "last_name",
+                "locale",
+                "company_name",
+                "position_name"
+              ],
+              "supported_formats": [
+                "csv"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+            "name": "gifted_participants",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "type": "Client::Imports::GiftedParticipantsImport",
+              "transformer_type": "Client::ParticipantImportHashTransformer",
+              "required_headers": [
+                "email",
+                "first_name",
+                "last_name",
+                "locale",
+                "company_name",
+                "position_name"
+              ],
+              "supported_formats": [
+                "csv"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+            "name": "participation_snapshots",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "type": "Client::Imports::ParticipationSnapshotsImport",
+              "transformer_type": "Client::ParticipationImportHashTransformer",
+              "required_headers": [
+                "email",
+                "first_name",
+                "last_name",
+                "company_name",
+                "position_name"
+              ],
+              "supported_formats": [
+                "csv"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+            "name": "participation_dismissals",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+              "type": "Client::Imports::ParticipationDismissalsImport",
+              "transformer_type": "Client::ParticipationImportHashTransformer",
+              "required_headers": [
+                "email"
+              ],
+              "supported_formats": [
+                "csv"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+            "name": "global_unsubscriptions",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+              "type": "Client::Imports::GlobalUnsubscriptionsImport",
+              "transformer_type": "Client::ParticipantImportHashTransformer",
+              "required_headers": [
+                "email"
+              ],
+              "supported_formats": [
+                "csv"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+            "name": "organization_unsubscriptions",
+            "type": "enum_value",
+            "integer_value": 7,
+            "attributes": {
+              "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+              "transformer_type": "Client::ParticipantImportHashTransformer",
+              "required_headers": [
+                "email"
+              ],
+              "supported_formats": [
+                "csv"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+            "name": "company_demographics",
+            "type": "enum_value",
+            "integer_value": 8,
+            "attributes": {
+              "type": "Client::Imports::CompanyDemographicsImport",
+              "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+              "required_headers": [
+                "name"
+              ],
+              "supported_formats": [
+                "csv"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+            "name": "email_addresses",
+            "type": "enum_value",
+            "integer_value": 9,
+            "attributes": {
+              "type": "Client::Imports::EmailAddressesImport",
+              "transformer_type": "Client::ParticipantImportHashTransformer",
+              "required_headers": [
+                "email",
+                "first_name",
+                "last_name",
+                "locale",
+                "company_name",
+                "position_name"
+              ],
+              "supported_formats": [
+                "csv"
+              ]
+            }
+          }
+        ],
+        "values": [
+          "global_participants",
+          "participants",
+          "gifted_participants",
+          "participation_snapshots",
+          "participation_dismissals",
+          "global_unsubscriptions",
+          "organization_unsubscriptions",
+          "company_demographics",
+          "email_addresses"
+        ]
+      },
+      "status": {
+        "name": "status",
+        "source": "Client::Import::Fields::Status",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Pending",
+            "name": "pending",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::InProgress",
+            "name": "in_progress",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+            "name": "cancelling",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+            "name": "cancelled",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Success",
+            "name": "success",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Failed",
+            "name": "failed",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "pending",
+          "in_progress",
+          "cancelling",
+          "cancelled",
+          "success",
+          "failed"
+        ]
+      },
+      "file_format": {
+        "name": "file_format",
+        "source": "Client::Import::Fields::FileFormat",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+            "name": "json",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+            "name": "csv",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+            "name": "xslx",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "json",
+          "csv",
+          "xslx"
+        ]
+      },
+      "log": {
+        "name": "log",
+        "source": "Client::Import::Fields::Log",
+        "type": "set"
+      },
+      "custom_fields": {
+        "source": "Client::Import::Fields::CustomFields",
+        "name": "custom_fields",
+        "type": "struct",
+        "fields": {
+          "md5": {
+            "name": "md5",
+            "source": "Client::Import::Fields::CustomFields::Fields::Md5",
+            "type": "string"
+          },
+          "import_options": {
+            "source": "Client::Import::Fields::CustomFields::Fields::ImportOptions",
+            "name": "import_options",
+            "type": "struct",
+            "fields": {
+            }
+          }
+        }
+      },
+      "types": [
+        "Client::Imports::CompanyDemographicsImport",
+        "Client::Imports::EmailAddressesImport",
+        "Client::Imports::GiftedParticipantsImport",
+        "Client::Imports::GlobalParticipantsImport",
+        "Client::Imports::GlobalUnsubscriptionsImport",
+        "Client::Imports::OrganizationUnsubscriptionsImport",
+        "Client::Imports::ParticipantsImport",
+        "Client::Imports::ParticipationDismissalsImport",
+        "Client::Imports::ParticipationSnapshotsImport"
+      ]
+    },
+    "ImportRow": {
+      "status": {
+        "name": "status",
+        "source": "Client::ImportRow::Fields::Status",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Pending",
+            "name": "pending",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::InProgress",
+            "name": "in_progress",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+            "name": "cancelling",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+            "name": "cancelled",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Success",
+            "name": "success",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Failed",
+            "name": "failed",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "pending",
+          "in_progress",
+          "cancelling",
+          "cancelled",
+          "success",
+          "failed"
+        ]
+      },
+      "custom_fields": {
+        "source": "Client::ImportRow::Fields::CustomFields",
+        "name": "custom_fields",
+        "type": "struct",
+        "fields": {
+          "row_number": {
+            "name": "row_number",
+            "source": "Client::ImportRow::Fields::CustomFields::Fields::RowNumber",
+            "type": "integer"
+          },
+          "import_params": {
+            "name": "import_params",
+            "source": "Client::ImportRow::Fields::CustomFields::Fields::ImportParams",
+            "type": "json"
+          }
+        }
+      }
+    },
+    "Imports": {
+      "CompanyDemographicsImport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Imports::CompanyDemographicsImport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+              "name": "global_participants",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Imports::GlobalParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+              "name": "participants",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Imports::ParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+              "name": "gifted_participants",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Imports::GiftedParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+              "name": "participation_snapshots",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Imports::ParticipationSnapshotsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+              "name": "participation_dismissals",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Imports::ParticipationDismissalsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+              "name": "global_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+              "name": "organization_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+              "name": "company_demographics",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Imports::CompanyDemographicsImport",
+                "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                "required_headers": [
+                  "name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+              "name": "email_addresses",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Imports::EmailAddressesImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "global_participants",
+            "participants",
+            "gifted_participants",
+            "participation_snapshots",
+            "participation_dismissals",
+            "global_unsubscriptions",
+            "organization_unsubscriptions",
+            "company_demographics",
+            "email_addresses"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::CompanyDemographicsImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::CompanyDemographicsImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::CompanyDemographicsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "kind": {
+                  "name": "kind",
+                  "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Kind",
+                  "type": "enum",
+                  "choices": [
+                    {
+                      "source": "Kore::Types::Giza::Place::Fields::Kind::Bank",
+                      "name": "bank",
+                      "type": "enum_value",
+                      "integer_value": 1,
+                      "attributes": {
+                        "type": "Giza::Places::Bank"
+                      }
+                    },
+                    {
+                      "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+                      "name": "healthcare",
+                      "type": "enum_value",
+                      "integer_value": 2,
+                      "attributes": {
+                        "type": "Giza::Places::Healthcare"
+                      }
+                    }
+                  ],
+                  "values": [
+                    "bank",
+                    "healthcare"
+                  ],
+                  "default": "healthcare"
+                }
+              }
+            }
+          }
+        }
+      },
+      "EmailAddressesImport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Imports::EmailAddressesImport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+              "name": "global_participants",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Imports::GlobalParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+              "name": "participants",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Imports::ParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+              "name": "gifted_participants",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Imports::GiftedParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+              "name": "participation_snapshots",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Imports::ParticipationSnapshotsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+              "name": "participation_dismissals",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Imports::ParticipationDismissalsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+              "name": "global_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+              "name": "organization_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+              "name": "company_demographics",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Imports::CompanyDemographicsImport",
+                "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                "required_headers": [
+                  "name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+              "name": "email_addresses",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Imports::EmailAddressesImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "global_participants",
+            "participants",
+            "gifted_participants",
+            "participation_snapshots",
+            "participation_dismissals",
+            "global_unsubscriptions",
+            "organization_unsubscriptions",
+            "company_demographics",
+            "email_addresses"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::EmailAddressesImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::EmailAddressesImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::EmailAddressesImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "score_minimum_threshold": {
+                  "name": "score_minimum_threshold",
+                  "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields::Fields::ImportOptions::Fields::ScoreMinimumThreshold",
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GiftedParticipantsImport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Imports::GiftedParticipantsImport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+              "name": "global_participants",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Imports::GlobalParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+              "name": "participants",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Imports::ParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+              "name": "gifted_participants",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Imports::GiftedParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+              "name": "participation_snapshots",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Imports::ParticipationSnapshotsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+              "name": "participation_dismissals",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Imports::ParticipationDismissalsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+              "name": "global_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+              "name": "organization_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+              "name": "company_demographics",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Imports::CompanyDemographicsImport",
+                "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                "required_headers": [
+                  "name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+              "name": "email_addresses",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Imports::EmailAddressesImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "global_participants",
+            "participants",
+            "gifted_participants",
+            "participation_snapshots",
+            "participation_dismissals",
+            "global_unsubscriptions",
+            "organization_unsubscriptions",
+            "company_demographics",
+            "email_addresses"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::GiftedParticipantsImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::GiftedParticipantsImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::GiftedParticipantsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "group_id": {
+                  "name": "group_id",
+                  "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::GroupId",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GlobalParticipantsImport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Imports::GlobalParticipantsImport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+              "name": "global_participants",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Imports::GlobalParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+              "name": "participants",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Imports::ParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+              "name": "gifted_participants",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Imports::GiftedParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+              "name": "participation_snapshots",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Imports::ParticipationSnapshotsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+              "name": "participation_dismissals",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Imports::ParticipationDismissalsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+              "name": "global_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+              "name": "organization_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+              "name": "company_demographics",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Imports::CompanyDemographicsImport",
+                "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                "required_headers": [
+                  "name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+              "name": "email_addresses",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Imports::EmailAddressesImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "global_participants",
+            "participants",
+            "gifted_participants",
+            "participation_snapshots",
+            "participation_dismissals",
+            "global_unsubscriptions",
+            "organization_unsubscriptions",
+            "company_demographics",
+            "email_addresses"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::GlobalParticipantsImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::GlobalParticipantsImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::GlobalParticipantsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "default_creator_id": {
+                  "name": "default_creator_id",
+                  "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::DefaultCreatorId",
+                  "type": "string"
+                },
+                "update_participation_snapshots": {
+                  "name": "update_participation_snapshots",
+                  "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::UpdateParticipationSnapshots",
+                  "type": "boolean",
+                  "default": false,
+                  "values": [
+                    true,
+                    false
+                  ]
+                },
+                "strategy": {
+                  "name": "strategy",
+                  "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy",
+                  "type": "enum",
+                  "choices": [
+                    {
+                      "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Fill",
+                      "name": "fill",
+                      "type": "enum_value",
+                      "integer_value": 1,
+                      "attributes": {
+                      }
+                    },
+                    {
+                      "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Overwrite",
+                      "name": "overwrite",
+                      "type": "enum_value",
+                      "integer_value": 2,
+                      "attributes": {
+                      }
+                    }
+                  ],
+                  "values": [
+                    "fill",
+                    "overwrite"
+                  ],
+                  "default": "fill"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GlobalUnsubscriptionsImport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+              "name": "global_participants",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Imports::GlobalParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+              "name": "participants",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Imports::ParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+              "name": "gifted_participants",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Imports::GiftedParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+              "name": "participation_snapshots",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Imports::ParticipationSnapshotsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+              "name": "participation_dismissals",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Imports::ParticipationDismissalsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+              "name": "global_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+              "name": "organization_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+              "name": "company_demographics",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Imports::CompanyDemographicsImport",
+                "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                "required_headers": [
+                  "name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+              "name": "email_addresses",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Imports::EmailAddressesImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "global_participants",
+            "participants",
+            "gifted_participants",
+            "participation_snapshots",
+            "participation_dismissals",
+            "global_unsubscriptions",
+            "organization_unsubscriptions",
+            "company_demographics",
+            "email_addresses"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "default_creator_id": {
+                  "name": "default_creator_id",
+                  "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields::Fields::ImportOptions::Fields::DefaultCreatorId",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "OrganizationUnsubscriptionsImport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+              "name": "global_participants",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Imports::GlobalParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+              "name": "participants",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Imports::ParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+              "name": "gifted_participants",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Imports::GiftedParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+              "name": "participation_snapshots",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Imports::ParticipationSnapshotsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+              "name": "participation_dismissals",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Imports::ParticipationDismissalsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+              "name": "global_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+              "name": "organization_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+              "name": "company_demographics",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Imports::CompanyDemographicsImport",
+                "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                "required_headers": [
+                  "name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+              "name": "email_addresses",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Imports::EmailAddressesImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "global_participants",
+            "participants",
+            "gifted_participants",
+            "participation_snapshots",
+            "participation_dismissals",
+            "global_unsubscriptions",
+            "organization_unsubscriptions",
+            "company_demographics",
+            "email_addresses"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+              }
+            }
+          }
+        }
+      },
+      "ParticipantsImport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Imports::ParticipantsImport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+              "name": "global_participants",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Imports::GlobalParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+              "name": "participants",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Imports::ParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+              "name": "gifted_participants",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Imports::GiftedParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+              "name": "participation_snapshots",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Imports::ParticipationSnapshotsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+              "name": "participation_dismissals",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Imports::ParticipationDismissalsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+              "name": "global_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+              "name": "organization_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+              "name": "company_demographics",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Imports::CompanyDemographicsImport",
+                "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                "required_headers": [
+                  "name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+              "name": "email_addresses",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Imports::EmailAddressesImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "global_participants",
+            "participants",
+            "gifted_participants",
+            "participation_snapshots",
+            "participation_dismissals",
+            "global_unsubscriptions",
+            "organization_unsubscriptions",
+            "company_demographics",
+            "email_addresses"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::ParticipantsImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::ParticipantsImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::ParticipantsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::ParticipantsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::ParticipantsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::ParticipantsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "group_id": {
+                  "name": "group_id",
+                  "source": "Client::Imports::ParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::GroupId",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ParticipationDismissalsImport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Imports::ParticipationDismissalsImport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+              "name": "global_participants",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Imports::GlobalParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+              "name": "participants",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Imports::ParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+              "name": "gifted_participants",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Imports::GiftedParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+              "name": "participation_snapshots",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Imports::ParticipationSnapshotsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+              "name": "participation_dismissals",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Imports::ParticipationDismissalsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+              "name": "global_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+              "name": "organization_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+              "name": "company_demographics",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Imports::CompanyDemographicsImport",
+                "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                "required_headers": [
+                  "name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+              "name": "email_addresses",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Imports::EmailAddressesImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "global_participants",
+            "participants",
+            "gifted_participants",
+            "participation_snapshots",
+            "participation_dismissals",
+            "global_unsubscriptions",
+            "organization_unsubscriptions",
+            "company_demographics",
+            "email_addresses"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::ParticipationDismissalsImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::ParticipationDismissalsImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::ParticipationDismissalsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "survey_id": {
+                  "name": "survey_id",
+                  "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields::Fields::ImportOptions::Fields::SurveyId",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ParticipationSnapshotsImport": {
+        "kind": {
+          "name": "kind",
+          "source": "Client::Imports::ParticipationSnapshotsImport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+              "name": "global_participants",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Imports::GlobalParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+              "name": "participants",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Imports::ParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+              "name": "gifted_participants",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Imports::GiftedParticipantsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+              "name": "participation_snapshots",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Imports::ParticipationSnapshotsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+              "name": "participation_dismissals",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Client::Imports::ParticipationDismissalsImport",
+                "transformer_type": "Client::ParticipationImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+              "name": "global_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+              "name": "organization_unsubscriptions",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+              "name": "company_demographics",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Client::Imports::CompanyDemographicsImport",
+                "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                "required_headers": [
+                  "name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+              "name": "email_addresses",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Client::Imports::EmailAddressesImport",
+                "transformer_type": "Client::ParticipantImportHashTransformer",
+                "required_headers": [
+                  "email",
+                  "first_name",
+                  "last_name",
+                  "locale",
+                  "company_name",
+                  "position_name"
+                ],
+                "supported_formats": [
+                  "csv"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "global_participants",
+            "participants",
+            "gifted_participants",
+            "participation_snapshots",
+            "participation_dismissals",
+            "global_unsubscriptions",
+            "organization_unsubscriptions",
+            "company_demographics",
+            "email_addresses"
+          ]
+        },
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::ParticipationSnapshotsImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::ParticipationSnapshotsImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::ParticipationSnapshotsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "survey_id": {
+                  "name": "survey_id",
+                  "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields::Fields::ImportOptions::Fields::SurveyId",
+                  "type": "string"
+                },
+                "strategy": {
+                  "name": "strategy",
+                  "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy",
+                  "type": "enum",
+                  "choices": [
+                    {
+                      "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Fill",
+                      "name": "fill",
+                      "type": "enum_value",
+                      "integer_value": 1,
+                      "attributes": {
+                      }
+                    },
+                    {
+                      "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Overwrite",
+                      "name": "overwrite",
+                      "type": "enum_value",
+                      "integer_value": 2,
+                      "attributes": {
+                      }
+                    }
+                  ],
+                  "values": [
+                    "fill",
+                    "overwrite"
+                  ],
+                  "default": "fill"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "Organization": {
       "subscription_status": {
         "name": "subscription_status",
@@ -12753,6 +16564,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -12775,7 +16596,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "general_settings": {
@@ -13535,6 +17357,16 @@ module.exports = {
               true,
               false
             ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           }
         }
       },
@@ -13561,16 +17393,16 @@ module.exports = {
         "Indiana (East)",
         "Lima",
         "Quito",
-        "Caracas",
         "Atlantic Time (Canada)",
+        "Caracas",
         "Georgetown",
         "La Paz",
+        "Santiago",
         "Newfoundland",
         "Brasilia",
         "Buenos Aires",
         "Greenland",
         "Montevideo",
-        "Santiago",
         "Mid-Atlantic",
         "Azores",
         "Cape Verde Is.",
@@ -13606,7 +17438,6 @@ module.exports = {
         "Cairo",
         "Harare",
         "Helsinki",
-        "Istanbul",
         "Jerusalem",
         "Kaliningrad",
         "Kyiv",
@@ -13616,6 +17447,7 @@ module.exports = {
         "Tallinn",
         "Vilnius",
         "Baghdad",
+        "Istanbul",
         "Kuwait",
         "Minsk",
         "Moscow",
@@ -13644,13 +17476,13 @@ module.exports = {
         "Almaty",
         "Astana",
         "Dhaka",
-        "Novosibirsk",
         "Urumqi",
         "Rangoon",
         "Bangkok",
         "Hanoi",
         "Jakarta",
         "Krasnoyarsk",
+        "Novosibirsk",
         "Beijing",
         "Chongqing",
         "Hong Kong",
@@ -13671,11 +17503,11 @@ module.exports = {
         "Canberra",
         "Guam",
         "Hobart",
-        "Magadan",
         "Melbourne",
         "Port Moresby",
         "Sydney",
         "Vladivostok",
+        "Magadan",
         "New Caledonia",
         "Solomon Is.",
         "Srednekolymsk",
@@ -13703,7 +17535,8 @@ module.exports = {
             "integer_value": 1,
             "attributes": {
               "type": "Client::Permissions::ForReporting",
-              "read_only": false
+              "read_only": false,
+              "alias": "Looker"
             }
           },
           {
@@ -13714,7 +17547,8 @@ module.exports = {
             "attributes": {
               "type": "Client::Permissions::ForReport",
               "resource_type": "Warehouse::Report",
-              "read_only": false
+              "read_only": false,
+              "alias": "Report"
             }
           },
           {
@@ -13725,7 +17559,8 @@ module.exports = {
             "attributes": {
               "type": "Client::Permissions::ForSurvey",
               "resource_type": "Census::Survey",
-              "read_only": false
+              "read_only": false,
+              "alias": "Survey"
             }
           },
           {
@@ -13736,7 +17571,8 @@ module.exports = {
             "attributes": {
               "type": "Client::Permissions::ForGroup",
               "resource_type": "Census::Group",
-              "read_only": false
+              "read_only": false,
+              "alias": "Audience"
             }
           },
           {
@@ -13747,7 +17583,8 @@ module.exports = {
             "attributes": {
               "type": "Client::Permissions::ForParticipant",
               "resource_type": "Census::Participant",
-              "read_only": false
+              "read_only": false,
+              "alias": "Contact"
             }
           },
           {
@@ -13758,7 +17595,8 @@ module.exports = {
             "attributes": {
               "type": "Client::Permissions::ForTrigger",
               "resource_type": "Portal::Trigger",
-              "read_only": false
+              "read_only": false,
+              "alias": "Trigger"
             }
           },
           {
@@ -13769,7 +17607,8 @@ module.exports = {
             "attributes": {
               "type": "Client::Permissions::ForUser",
               "resource_type": "Client::User",
-              "read_only": false
+              "read_only": false,
+              "alias": "User"
             }
           },
           {
@@ -13780,7 +17619,8 @@ module.exports = {
             "attributes": {
               "type": "Client::Permissions::ForStudy",
               "resource_type": "Warehouse::Reports::Study",
-              "read_only": true
+              "read_only": true,
+              "alias": "Study"
             }
           },
           {
@@ -13791,7 +17631,8 @@ module.exports = {
             "attributes": {
               "type": "Client::Permissions::ForCustomStudy",
               "resource_type": "Warehouse::Reports::CustomStudy",
-              "read_only": false
+              "read_only": false,
+              "alias": "Custom Study"
             }
           }
         ],
@@ -13880,7 +17721,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Client::Permissions::ForReporting",
-                "read_only": false
+                "read_only": false,
+                "alias": "Looker"
               }
             },
             {
@@ -13891,7 +17733,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForReport",
                 "resource_type": "Warehouse::Report",
-                "read_only": false
+                "read_only": false,
+                "alias": "Report"
               }
             },
             {
@@ -13902,7 +17745,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
                 "resource_type": "Census::Survey",
-                "read_only": false
+                "read_only": false,
+                "alias": "Survey"
               }
             },
             {
@@ -13913,7 +17757,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
                 "resource_type": "Census::Group",
-                "read_only": false
+                "read_only": false,
+                "alias": "Audience"
               }
             },
             {
@@ -13924,7 +17769,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
                 "resource_type": "Census::Participant",
-                "read_only": false
+                "read_only": false,
+                "alias": "Contact"
               }
             },
             {
@@ -13935,7 +17781,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
                 "resource_type": "Portal::Trigger",
-                "read_only": false
+                "read_only": false,
+                "alias": "Trigger"
               }
             },
             {
@@ -13946,7 +17793,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForUser",
                 "resource_type": "Client::User",
-                "read_only": false
+                "read_only": false,
+                "alias": "User"
               }
             },
             {
@@ -13957,7 +17805,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForStudy",
                 "resource_type": "Warehouse::Reports::Study",
-                "read_only": true
+                "read_only": true,
+                "alias": "Study"
               }
             },
             {
@@ -13968,7 +17817,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForCustomStudy",
                 "resource_type": "Warehouse::Reports::CustomStudy",
-                "read_only": false
+                "read_only": false,
+                "alias": "Custom Study"
               }
             }
           ],
@@ -14045,7 +17895,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Client::Permissions::ForReporting",
-                "read_only": false
+                "read_only": false,
+                "alias": "Looker"
               }
             },
             {
@@ -14056,7 +17907,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForReport",
                 "resource_type": "Warehouse::Report",
-                "read_only": false
+                "read_only": false,
+                "alias": "Report"
               }
             },
             {
@@ -14067,7 +17919,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
                 "resource_type": "Census::Survey",
-                "read_only": false
+                "read_only": false,
+                "alias": "Survey"
               }
             },
             {
@@ -14078,7 +17931,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
                 "resource_type": "Census::Group",
-                "read_only": false
+                "read_only": false,
+                "alias": "Audience"
               }
             },
             {
@@ -14089,7 +17943,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
                 "resource_type": "Census::Participant",
-                "read_only": false
+                "read_only": false,
+                "alias": "Contact"
               }
             },
             {
@@ -14100,7 +17955,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
                 "resource_type": "Portal::Trigger",
-                "read_only": false
+                "read_only": false,
+                "alias": "Trigger"
               }
             },
             {
@@ -14111,7 +17967,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForUser",
                 "resource_type": "Client::User",
-                "read_only": false
+                "read_only": false,
+                "alias": "User"
               }
             },
             {
@@ -14122,7 +17979,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForStudy",
                 "resource_type": "Warehouse::Reports::Study",
-                "read_only": true
+                "read_only": true,
+                "alias": "Study"
               }
             },
             {
@@ -14133,7 +17991,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForCustomStudy",
                 "resource_type": "Warehouse::Reports::CustomStudy",
-                "read_only": false
+                "read_only": false,
+                "alias": "Custom Study"
               }
             }
           ],
@@ -14210,7 +18069,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Client::Permissions::ForReporting",
-                "read_only": false
+                "read_only": false,
+                "alias": "Looker"
               }
             },
             {
@@ -14221,7 +18081,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForReport",
                 "resource_type": "Warehouse::Report",
-                "read_only": false
+                "read_only": false,
+                "alias": "Report"
               }
             },
             {
@@ -14232,7 +18093,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
                 "resource_type": "Census::Survey",
-                "read_only": false
+                "read_only": false,
+                "alias": "Survey"
               }
             },
             {
@@ -14243,7 +18105,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
                 "resource_type": "Census::Group",
-                "read_only": false
+                "read_only": false,
+                "alias": "Audience"
               }
             },
             {
@@ -14254,7 +18117,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
                 "resource_type": "Census::Participant",
-                "read_only": false
+                "read_only": false,
+                "alias": "Contact"
               }
             },
             {
@@ -14265,7 +18129,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
                 "resource_type": "Portal::Trigger",
-                "read_only": false
+                "read_only": false,
+                "alias": "Trigger"
               }
             },
             {
@@ -14276,7 +18141,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForUser",
                 "resource_type": "Client::User",
-                "read_only": false
+                "read_only": false,
+                "alias": "User"
               }
             },
             {
@@ -14287,7 +18153,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForStudy",
                 "resource_type": "Warehouse::Reports::Study",
-                "read_only": true
+                "read_only": true,
+                "alias": "Study"
               }
             },
             {
@@ -14298,7 +18165,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForCustomStudy",
                 "resource_type": "Warehouse::Reports::CustomStudy",
-                "read_only": false
+                "read_only": false,
+                "alias": "Custom Study"
               }
             }
           ],
@@ -14375,7 +18243,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Client::Permissions::ForReporting",
-                "read_only": false
+                "read_only": false,
+                "alias": "Looker"
               }
             },
             {
@@ -14386,7 +18255,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForReport",
                 "resource_type": "Warehouse::Report",
-                "read_only": false
+                "read_only": false,
+                "alias": "Report"
               }
             },
             {
@@ -14397,7 +18267,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
                 "resource_type": "Census::Survey",
-                "read_only": false
+                "read_only": false,
+                "alias": "Survey"
               }
             },
             {
@@ -14408,7 +18279,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
                 "resource_type": "Census::Group",
-                "read_only": false
+                "read_only": false,
+                "alias": "Audience"
               }
             },
             {
@@ -14419,7 +18291,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
                 "resource_type": "Census::Participant",
-                "read_only": false
+                "read_only": false,
+                "alias": "Contact"
               }
             },
             {
@@ -14430,7 +18303,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
                 "resource_type": "Portal::Trigger",
-                "read_only": false
+                "read_only": false,
+                "alias": "Trigger"
               }
             },
             {
@@ -14441,7 +18315,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForUser",
                 "resource_type": "Client::User",
-                "read_only": false
+                "read_only": false,
+                "alias": "User"
               }
             },
             {
@@ -14452,7 +18327,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForStudy",
                 "resource_type": "Warehouse::Reports::Study",
-                "read_only": true
+                "read_only": true,
+                "alias": "Study"
               }
             },
             {
@@ -14463,7 +18339,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForCustomStudy",
                 "resource_type": "Warehouse::Reports::CustomStudy",
-                "read_only": false
+                "read_only": false,
+                "alias": "Custom Study"
               }
             }
           ],
@@ -14540,7 +18417,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Client::Permissions::ForReporting",
-                "read_only": false
+                "read_only": false,
+                "alias": "Looker"
               }
             },
             {
@@ -14551,7 +18429,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForReport",
                 "resource_type": "Warehouse::Report",
-                "read_only": false
+                "read_only": false,
+                "alias": "Report"
               }
             },
             {
@@ -14562,7 +18441,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
                 "resource_type": "Census::Survey",
-                "read_only": false
+                "read_only": false,
+                "alias": "Survey"
               }
             },
             {
@@ -14573,7 +18453,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
                 "resource_type": "Census::Group",
-                "read_only": false
+                "read_only": false,
+                "alias": "Audience"
               }
             },
             {
@@ -14584,7 +18465,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
                 "resource_type": "Census::Participant",
-                "read_only": false
+                "read_only": false,
+                "alias": "Contact"
               }
             },
             {
@@ -14595,7 +18477,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
                 "resource_type": "Portal::Trigger",
-                "read_only": false
+                "read_only": false,
+                "alias": "Trigger"
               }
             },
             {
@@ -14606,7 +18489,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForUser",
                 "resource_type": "Client::User",
-                "read_only": false
+                "read_only": false,
+                "alias": "User"
               }
             },
             {
@@ -14617,7 +18501,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForStudy",
                 "resource_type": "Warehouse::Reports::Study",
-                "read_only": true
+                "read_only": true,
+                "alias": "Study"
               }
             },
             {
@@ -14628,7 +18513,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForCustomStudy",
                 "resource_type": "Warehouse::Reports::CustomStudy",
-                "read_only": false
+                "read_only": false,
+                "alias": "Custom Study"
               }
             }
           ],
@@ -14745,7 +18631,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Client::Permissions::ForReporting",
-                "read_only": false
+                "read_only": false,
+                "alias": "Looker"
               }
             },
             {
@@ -14756,7 +18643,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForReport",
                 "resource_type": "Warehouse::Report",
-                "read_only": false
+                "read_only": false,
+                "alias": "Report"
               }
             },
             {
@@ -14767,7 +18655,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
                 "resource_type": "Census::Survey",
-                "read_only": false
+                "read_only": false,
+                "alias": "Survey"
               }
             },
             {
@@ -14778,7 +18667,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
                 "resource_type": "Census::Group",
-                "read_only": false
+                "read_only": false,
+                "alias": "Audience"
               }
             },
             {
@@ -14789,7 +18679,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
                 "resource_type": "Census::Participant",
-                "read_only": false
+                "read_only": false,
+                "alias": "Contact"
               }
             },
             {
@@ -14800,7 +18691,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
                 "resource_type": "Portal::Trigger",
-                "read_only": false
+                "read_only": false,
+                "alias": "Trigger"
               }
             },
             {
@@ -14811,7 +18703,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForUser",
                 "resource_type": "Client::User",
-                "read_only": false
+                "read_only": false,
+                "alias": "User"
               }
             },
             {
@@ -14822,7 +18715,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForStudy",
                 "resource_type": "Warehouse::Reports::Study",
-                "read_only": true
+                "read_only": true,
+                "alias": "Study"
               }
             },
             {
@@ -14833,7 +18727,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForCustomStudy",
                 "resource_type": "Warehouse::Reports::CustomStudy",
-                "read_only": false
+                "read_only": false,
+                "alias": "Custom Study"
               }
             }
           ],
@@ -14910,7 +18805,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Client::Permissions::ForReporting",
-                "read_only": false
+                "read_only": false,
+                "alias": "Looker"
               }
             },
             {
@@ -14921,7 +18817,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForReport",
                 "resource_type": "Warehouse::Report",
-                "read_only": false
+                "read_only": false,
+                "alias": "Report"
               }
             },
             {
@@ -14932,7 +18829,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
                 "resource_type": "Census::Survey",
-                "read_only": false
+                "read_only": false,
+                "alias": "Survey"
               }
             },
             {
@@ -14943,7 +18841,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
                 "resource_type": "Census::Group",
-                "read_only": false
+                "read_only": false,
+                "alias": "Audience"
               }
             },
             {
@@ -14954,7 +18853,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
                 "resource_type": "Census::Participant",
-                "read_only": false
+                "read_only": false,
+                "alias": "Contact"
               }
             },
             {
@@ -14965,7 +18865,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
                 "resource_type": "Portal::Trigger",
-                "read_only": false
+                "read_only": false,
+                "alias": "Trigger"
               }
             },
             {
@@ -14976,7 +18877,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForUser",
                 "resource_type": "Client::User",
-                "read_only": false
+                "read_only": false,
+                "alias": "User"
               }
             },
             {
@@ -14987,7 +18889,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForStudy",
                 "resource_type": "Warehouse::Reports::Study",
-                "read_only": true
+                "read_only": true,
+                "alias": "Study"
               }
             },
             {
@@ -14998,7 +18901,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForCustomStudy",
                 "resource_type": "Warehouse::Reports::CustomStudy",
-                "read_only": false
+                "read_only": false,
+                "alias": "Custom Study"
               }
             }
           ],
@@ -15075,7 +18979,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Client::Permissions::ForReporting",
-                "read_only": false
+                "read_only": false,
+                "alias": "Looker"
               }
             },
             {
@@ -15086,7 +18991,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForReport",
                 "resource_type": "Warehouse::Report",
-                "read_only": false
+                "read_only": false,
+                "alias": "Report"
               }
             },
             {
@@ -15097,7 +19003,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
                 "resource_type": "Census::Survey",
-                "read_only": false
+                "read_only": false,
+                "alias": "Survey"
               }
             },
             {
@@ -15108,7 +19015,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
                 "resource_type": "Census::Group",
-                "read_only": false
+                "read_only": false,
+                "alias": "Audience"
               }
             },
             {
@@ -15119,7 +19027,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
                 "resource_type": "Census::Participant",
-                "read_only": false
+                "read_only": false,
+                "alias": "Contact"
               }
             },
             {
@@ -15130,7 +19039,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
                 "resource_type": "Portal::Trigger",
-                "read_only": false
+                "read_only": false,
+                "alias": "Trigger"
               }
             },
             {
@@ -15141,7 +19051,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForUser",
                 "resource_type": "Client::User",
-                "read_only": false
+                "read_only": false,
+                "alias": "User"
               }
             },
             {
@@ -15152,7 +19063,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForStudy",
                 "resource_type": "Warehouse::Reports::Study",
-                "read_only": true
+                "read_only": true,
+                "alias": "Study"
               }
             },
             {
@@ -15163,7 +19075,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForCustomStudy",
                 "resource_type": "Warehouse::Reports::CustomStudy",
-                "read_only": false
+                "read_only": false,
+                "alias": "Custom Study"
               }
             }
           ],
@@ -15240,7 +19153,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Client::Permissions::ForReporting",
-                "read_only": false
+                "read_only": false,
+                "alias": "Looker"
               }
             },
             {
@@ -15251,7 +19165,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForReport",
                 "resource_type": "Warehouse::Report",
-                "read_only": false
+                "read_only": false,
+                "alias": "Report"
               }
             },
             {
@@ -15262,7 +19177,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForSurvey",
                 "resource_type": "Census::Survey",
-                "read_only": false
+                "read_only": false,
+                "alias": "Survey"
               }
             },
             {
@@ -15273,7 +19189,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForGroup",
                 "resource_type": "Census::Group",
-                "read_only": false
+                "read_only": false,
+                "alias": "Audience"
               }
             },
             {
@@ -15284,7 +19201,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForParticipant",
                 "resource_type": "Census::Participant",
-                "read_only": false
+                "read_only": false,
+                "alias": "Contact"
               }
             },
             {
@@ -15295,7 +19213,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForTrigger",
                 "resource_type": "Portal::Trigger",
-                "read_only": false
+                "read_only": false,
+                "alias": "Trigger"
               }
             },
             {
@@ -15306,7 +19225,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForUser",
                 "resource_type": "Client::User",
-                "read_only": false
+                "read_only": false,
+                "alias": "User"
               }
             },
             {
@@ -15317,7 +19237,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForStudy",
                 "resource_type": "Warehouse::Reports::Study",
-                "read_only": true
+                "read_only": true,
+                "alias": "Study"
               }
             },
             {
@@ -15328,7 +19249,8 @@ module.exports = {
               "attributes": {
                 "type": "Client::Permissions::ForCustomStudy",
                 "resource_type": "Warehouse::Reports::CustomStudy",
-                "read_only": false
+                "read_only": false,
+                "alias": "Custom Study"
               }
             }
           ],
@@ -15409,6 +19331,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 1,
             "attributes": {
+              "alias": "(Re)Viewer"
             }
           },
           {
@@ -15417,6 +19340,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 2,
             "attributes": {
+              "alias": "Builder"
             }
           },
           {
@@ -15425,6 +19349,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 3,
             "attributes": {
+              "alias": "Organization Admin"
             }
           },
           {
@@ -15433,6 +19358,7 @@ module.exports = {
             "type": "enum_value",
             "integer_value": 4,
             "attributes": {
+              "alias": "Super Admin"
             }
           }
         ],
@@ -15806,8 +19732,8 @@ module.exports = {
             }
           },
           {
-            "source": "Giza::Company::Fields::Status::Aquired",
-            "name": "aquired",
+            "source": "Giza::Company::Fields::Status::Acquired",
+            "name": "acquired",
             "type": "enum_value",
             "integer_value": 6,
             "attributes": {
@@ -15820,7 +19746,7 @@ module.exports = {
           "closed",
           "ipo",
           "public",
-          "aquired"
+          "acquired"
         ]
       },
       "profit_status": {
@@ -17886,13 +21812,22 @@ module.exports = {
                   "integer_value": 4,
                   "attributes": {
                   }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Trust",
+                  "name": "trust",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                  }
                 }
               ],
               "values": [
                 "not_applicable",
                 "other",
                 "idn",
-                "independent"
+                "independent",
+                "trust"
               ]
             },
             "provider_subtype": {
@@ -18211,6 +22146,11 @@ module.exports = {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
             "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
           }
         }
       },
@@ -18317,6 +22257,11 @@ module.exports = {
           "ja": {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
+            "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
             "type": "string"
           }
         }
@@ -18524,6 +22469,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -18630,6 +22580,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -18839,6 +22794,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -18945,6 +22905,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -19148,6 +23113,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -19254,6 +23224,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -19457,6 +23432,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -19563,6 +23543,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -19766,6 +23751,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -19872,6 +23862,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -20001,9 +23996,478 @@ module.exports = {
           "survey_reminder"
         ]
       },
+      "email_service_provider_status": {
+        "name": "email_service_provider_status",
+        "source": "Newman::Message::Fields::EmailServiceProviderStatus",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Processed",
+            "name": "processed",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "description": "Message has been received and is ready to be delivered."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Dropped",
+            "name": "dropped",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "description": "You may see the following drop reasons: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota"
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Delivered",
+            "name": "delivered",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "description": "Message has been successfully delivered to the receiving server."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Deferred",
+            "name": "deferred",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "description": "Recipient’s email server temporarily rejected message."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Bounce",
+            "name": "bounce",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+              "description": "Receiving server could not or would not accept message."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Open",
+            "name": "open",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+              "description": "Recipient has opened the HTML message."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Click",
+            "name": "click",
+            "type": "enum_value",
+            "integer_value": 7,
+            "attributes": {
+              "description": "Recipient clicked on a link within the message."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+            "name": "spamreport",
+            "type": "enum_value",
+            "integer_value": 8,
+            "attributes": {
+              "description": "Recipient marked message as spam."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Unsubscribe",
+            "name": "unsubscribe",
+            "type": "enum_value",
+            "integer_value": 9,
+            "attributes": {
+              "description": "Recipient unsubscribed"
+            }
+          }
+        ],
+        "values": [
+          "processed",
+          "dropped",
+          "delivered",
+          "deferred",
+          "bounce",
+          "open",
+          "click",
+          "spamreport",
+          "unsubscribe"
+        ]
+      },
       "types": [
         "Newman::Messages::SurveyMessage"
       ]
+    },
+    "MessageEvent": {
+      "locale": {
+        "name": "locale",
+        "source": "Newman::MessageEvent::Fields::Locale",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::Locale::Cs",
+            "name": "cs",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "label": "čeština",
+              "englishLabel": "Czech"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Da",
+            "name": "da",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "label": "Dansk",
+              "englishLabel": "Danish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::De",
+            "name": "de",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "label": "Deutsch",
+              "englishLabel": "German"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::El",
+            "name": "el",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "label": "ελληνικά",
+              "englishLabel": "Greek"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::En",
+            "name": "en",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+              "label": "English",
+              "englishLabel": "English"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Es",
+            "name": "es",
+            "type": "enum_value",
+            "integer_value": 10,
+            "attributes": {
+              "label": "Español",
+              "englishLabel": "Spanish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Et",
+            "name": "et",
+            "type": "enum_value",
+            "integer_value": 11,
+            "attributes": {
+              "label": "Eesti Keel",
+              "englishLabel": "Estonian"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Fi",
+            "name": "fi",
+            "type": "enum_value",
+            "integer_value": 12,
+            "attributes": {
+              "label": "Suomi",
+              "englishLabel": "Finnish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Fr",
+            "name": "fr",
+            "type": "enum_value",
+            "integer_value": 13,
+            "attributes": {
+              "label": "Français",
+              "englishLabel": "French"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Hu",
+            "name": "hu",
+            "type": "enum_value",
+            "integer_value": 14,
+            "attributes": {
+              "label": "Magyar",
+              "englishLabel": "Hungarian"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Is",
+            "name": "is",
+            "type": "enum_value",
+            "integer_value": 15,
+            "attributes": {
+              "label": "Islenska",
+              "englishLabel": "Icelandic"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::It",
+            "name": "it",
+            "type": "enum_value",
+            "integer_value": 16,
+            "attributes": {
+              "label": "Italiano",
+              "englishLabel": "Italian"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Nb",
+            "name": "nb",
+            "type": "enum_value",
+            "integer_value": 17,
+            "attributes": {
+              "label": "Norsk Bokmål",
+              "englishLabel": "Norwegion (Bokmål)"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Nl",
+            "name": "nl",
+            "type": "enum_value",
+            "integer_value": 18,
+            "attributes": {
+              "label": "Nederlands",
+              "englishLabel": "Dutch"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Pl",
+            "name": "pl",
+            "type": "enum_value",
+            "integer_value": 19,
+            "attributes": {
+              "label": "Polski",
+              "englishLabel": "Polish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Pt",
+            "name": "pt",
+            "type": "enum_value",
+            "integer_value": 20,
+            "attributes": {
+              "label": "Português",
+              "englishLabel": "Portuguese"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Ro",
+            "name": "ro",
+            "type": "enum_value",
+            "integer_value": 21,
+            "attributes": {
+              "label": "Română",
+              "englishLabel": "Romanian"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Sk",
+            "name": "sk",
+            "type": "enum_value",
+            "integer_value": 22,
+            "attributes": {
+              "label": "Slovenčina",
+              "englishLabel": "Slovak"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Sv",
+            "name": "sv",
+            "type": "enum_value",
+            "integer_value": 23,
+            "attributes": {
+              "label": "Svenska",
+              "englishLabel": "Swedish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Ja",
+            "name": "ja",
+            "type": "enum_value",
+            "integer_value": 24,
+            "attributes": {
+              "label": "日本語",
+              "englishLabel": "Japanese"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
+          }
+        ],
+        "values": [
+          "cs",
+          "da",
+          "de",
+          "el",
+          "en",
+          "es",
+          "et",
+          "fi",
+          "fr",
+          "hu",
+          "is",
+          "it",
+          "nb",
+          "nl",
+          "pl",
+          "pt",
+          "ro",
+          "sk",
+          "sv",
+          "ja",
+          "zh"
+        ]
+      },
+      "service_provider": {
+        "name": "service_provider",
+        "source": "Newman::MessageEvent::Fields::ServiceProvider",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
+            "name": "mandrill",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "mailer_type": "Newman::MandrillMailer"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
+            "name": "send_grid",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "mailer_type": "Newman::SendGridMailer"
+            }
+          }
+        ],
+        "values": [
+          "mandrill",
+          "send_grid"
+        ]
+      },
+      "event_type": {
+        "name": "event_type",
+        "source": "Newman::MessageEvent::Fields::EventType",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Processed",
+            "name": "processed",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "description": "Message has been received and is ready to be delivered."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Dropped",
+            "name": "dropped",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "description": "You may see the following drop reasons: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota"
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Delivered",
+            "name": "delivered",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "description": "Message has been successfully delivered to the receiving server."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Deferred",
+            "name": "deferred",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "description": "Recipient’s email server temporarily rejected message."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Bounce",
+            "name": "bounce",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+              "description": "Receiving server could not or would not accept message."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Open",
+            "name": "open",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+              "description": "Recipient has opened the HTML message."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Click",
+            "name": "click",
+            "type": "enum_value",
+            "integer_value": 7,
+            "attributes": {
+              "description": "Recipient clicked on a link within the message."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+            "name": "spamreport",
+            "type": "enum_value",
+            "integer_value": 8,
+            "attributes": {
+              "description": "Recipient marked message as spam."
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Unsubscribe",
+            "name": "unsubscribe",
+            "type": "enum_value",
+            "integer_value": 9,
+            "attributes": {
+              "description": "Recipient unsubscribed"
+            }
+          }
+        ],
+        "values": [
+          "processed",
+          "dropped",
+          "delivered",
+          "deferred",
+          "bounce",
+          "open",
+          "click",
+          "spamreport",
+          "unsubscribe"
+        ]
+      }
     },
     "Messages": {
       "SurveyHeadsUpMessage": {
@@ -20127,6 +24591,105 @@ module.exports = {
             "survey_last_call",
             "survey_link",
             "survey_reminder"
+          ]
+        },
+        "email_service_provider_status": {
+          "name": "email_service_provider_status",
+          "source": "Newman::Messages::SurveyHeadsUpMessage::Fields::EmailServiceProviderStatus",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Processed",
+              "name": "processed",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "description": "Message has been received and is ready to be delivered."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Dropped",
+              "name": "dropped",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "description": "You may see the following drop reasons: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Delivered",
+              "name": "delivered",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "description": "Message has been successfully delivered to the receiving server."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Deferred",
+              "name": "deferred",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "description": "Recipient’s email server temporarily rejected message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Bounce",
+              "name": "bounce",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "description": "Receiving server could not or would not accept message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Open",
+              "name": "open",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "description": "Recipient has opened the HTML message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Click",
+              "name": "click",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "description": "Recipient clicked on a link within the message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "description": "Recipient marked message as spam."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Unsubscribe",
+              "name": "unsubscribe",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "description": "Recipient unsubscribed"
+              }
+            }
+          ],
+          "values": [
+            "processed",
+            "dropped",
+            "delivered",
+            "deferred",
+            "bounce",
+            "open",
+            "click",
+            "spamreport",
+            "unsubscribe"
           ]
         }
       },
@@ -20252,6 +24815,105 @@ module.exports = {
             "survey_link",
             "survey_reminder"
           ]
+        },
+        "email_service_provider_status": {
+          "name": "email_service_provider_status",
+          "source": "Newman::Messages::SurveyLastCallMessage::Fields::EmailServiceProviderStatus",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Processed",
+              "name": "processed",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "description": "Message has been received and is ready to be delivered."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Dropped",
+              "name": "dropped",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "description": "You may see the following drop reasons: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Delivered",
+              "name": "delivered",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "description": "Message has been successfully delivered to the receiving server."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Deferred",
+              "name": "deferred",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "description": "Recipient’s email server temporarily rejected message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Bounce",
+              "name": "bounce",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "description": "Receiving server could not or would not accept message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Open",
+              "name": "open",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "description": "Recipient has opened the HTML message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Click",
+              "name": "click",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "description": "Recipient clicked on a link within the message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "description": "Recipient marked message as spam."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Unsubscribe",
+              "name": "unsubscribe",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "description": "Recipient unsubscribed"
+              }
+            }
+          ],
+          "values": [
+            "processed",
+            "dropped",
+            "delivered",
+            "deferred",
+            "bounce",
+            "open",
+            "click",
+            "spamreport",
+            "unsubscribe"
+          ]
         }
       },
       "SurveyLinkMessage": {
@@ -20376,6 +25038,105 @@ module.exports = {
             "survey_link",
             "survey_reminder"
           ]
+        },
+        "email_service_provider_status": {
+          "name": "email_service_provider_status",
+          "source": "Newman::Messages::SurveyLinkMessage::Fields::EmailServiceProviderStatus",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Processed",
+              "name": "processed",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "description": "Message has been received and is ready to be delivered."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Dropped",
+              "name": "dropped",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "description": "You may see the following drop reasons: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Delivered",
+              "name": "delivered",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "description": "Message has been successfully delivered to the receiving server."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Deferred",
+              "name": "deferred",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "description": "Recipient’s email server temporarily rejected message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Bounce",
+              "name": "bounce",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "description": "Receiving server could not or would not accept message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Open",
+              "name": "open",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "description": "Recipient has opened the HTML message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Click",
+              "name": "click",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "description": "Recipient clicked on a link within the message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "description": "Recipient marked message as spam."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Unsubscribe",
+              "name": "unsubscribe",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "description": "Recipient unsubscribed"
+              }
+            }
+          ],
+          "values": [
+            "processed",
+            "dropped",
+            "delivered",
+            "deferred",
+            "bounce",
+            "open",
+            "click",
+            "spamreport",
+            "unsubscribe"
+          ]
         }
       },
       "SurveyMessage": {
@@ -20499,6 +25260,105 @@ module.exports = {
             "survey_last_call",
             "survey_link",
             "survey_reminder"
+          ]
+        },
+        "email_service_provider_status": {
+          "name": "email_service_provider_status",
+          "source": "Newman::Messages::SurveyMessage::Fields::EmailServiceProviderStatus",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Processed",
+              "name": "processed",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "description": "Message has been received and is ready to be delivered."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Dropped",
+              "name": "dropped",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "description": "You may see the following drop reasons: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Delivered",
+              "name": "delivered",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "description": "Message has been successfully delivered to the receiving server."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Deferred",
+              "name": "deferred",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "description": "Recipient’s email server temporarily rejected message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Bounce",
+              "name": "bounce",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "description": "Receiving server could not or would not accept message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Open",
+              "name": "open",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "description": "Recipient has opened the HTML message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Click",
+              "name": "click",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "description": "Recipient clicked on a link within the message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "description": "Recipient marked message as spam."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Unsubscribe",
+              "name": "unsubscribe",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "description": "Recipient unsubscribed"
+              }
+            }
+          ],
+          "values": [
+            "processed",
+            "dropped",
+            "delivered",
+            "deferred",
+            "bounce",
+            "open",
+            "click",
+            "spamreport",
+            "unsubscribe"
           ]
         },
         "types": [
@@ -20629,6 +25489,105 @@ module.exports = {
             "survey_last_call",
             "survey_link",
             "survey_reminder"
+          ]
+        },
+        "email_service_provider_status": {
+          "name": "email_service_provider_status",
+          "source": "Newman::Messages::SurveyReminderMessage::Fields::EmailServiceProviderStatus",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Processed",
+              "name": "processed",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "description": "Message has been received and is ready to be delivered."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Dropped",
+              "name": "dropped",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "description": "You may see the following drop reasons: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Delivered",
+              "name": "delivered",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "description": "Message has been successfully delivered to the receiving server."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Deferred",
+              "name": "deferred",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "description": "Recipient’s email server temporarily rejected message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Bounce",
+              "name": "bounce",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "description": "Receiving server could not or would not accept message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Open",
+              "name": "open",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "description": "Recipient has opened the HTML message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Click",
+              "name": "click",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "description": "Recipient clicked on a link within the message."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "description": "Recipient marked message as spam."
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Unsubscribe",
+              "name": "unsubscribe",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "description": "Recipient unsubscribed"
+              }
+            }
+          ],
+          "values": [
+            "processed",
+            "dropped",
+            "delivered",
+            "deferred",
+            "bounce",
+            "open",
+            "click",
+            "spamreport",
+            "unsubscribe"
           ]
         }
       }
@@ -21465,6 +26424,11 @@ module.exports = {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
             "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
           }
         }
       }
@@ -21859,6 +26823,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -21881,7 +26855,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "operator": {
@@ -22267,6 +27242,11 @@ module.exports = {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
             "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
           }
         }
       },
@@ -22468,6 +27448,16 @@ module.exports = {
           "ja": {
             "name": "ja",
             "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
             "type": "boolean",
             "default": false,
             "values": [
@@ -23014,6 +28004,177 @@ module.exports = {
           "name": "participant_filter_condition_set",
           "source": "Kore::Types::Census::Fields::ParticipantFilterConditionSet",
           "type": "set"
+        }
+      },
+      "EmailAddress": {
+        "source": "Kore::Types::Census::EmailAddress",
+        "name": "email_address",
+        "type": "struct",
+        "fields": {
+          "status": {
+            "name": "status",
+            "source": "Kore::Types::Census::EmailAddress::Fields::Status",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Status::Deliverable",
+                "name": "deliverable",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Status::Undeliverable",
+                "name": "undeliverable",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Status::Risky",
+                "name": "risky",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Status::Unknown",
+                "name": "unknown",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                }
+              }
+            ],
+            "values": [
+              "deliverable",
+              "undeliverable",
+              "risky",
+              "unknown"
+            ]
+          },
+          "reason": {
+            "name": "reason",
+            "source": "Kore::Types::Census::EmailAddress::Fields::Reason",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::InvalidEmail",
+                "name": "invalid_email",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "description": "Specified email is not a valid email address syntax"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::InvalidDomain",
+                "name": "invalid_domain",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "description": "Domain for email does not exist"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::RejectedEmail",
+                "name": "rejected_email",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "description": "Email address was rejected by the SMTP server, email address does not exist"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::AcceptedEmail",
+                "name": "accepted_email",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "description": "Email address was accepted by the SMTP server"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::LowQuality",
+                "name": "low_quality",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "description": "Email address has quality issues that may make it a risky or low-value address"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::LowDeliverability",
+                "name": "low_deliverability",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "description": "Email address appears to be deliverable, but deliverability cannot be guaranteed"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::NoConnect",
+                "name": "no_connect",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "description": "Could not connect to SMTP server"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::Timeout",
+                "name": "timeout",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "description": "SMTP session timed out"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::InvalidSmtp",
+                "name": "invalid_smtp",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "description": "SMTP server returned an unexpected/invalid response"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::UnavailableSmtp",
+                "name": "unavailable_smtp",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "description": "SMTP server was unavailable to process our request"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::EmailAddress::Fields::Reason::UnexpectedError",
+                "name": "unexpected_error",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "description": "An unexpected error has occurred"
+                }
+              }
+            ],
+            "values": [
+              "invalid_email",
+              "invalid_domain",
+              "rejected_email",
+              "accepted_email",
+              "low_quality",
+              "low_deliverability",
+              "no_connect",
+              "timeout",
+              "invalid_smtp",
+              "unavailable_smtp",
+              "unexpected_error"
+            ]
+          }
         }
       },
       "FreeformSurvey": {
@@ -23624,6 +28785,235 @@ module.exports = {
           }
         }
       },
+      "Import": {
+        "source": "Kore::Types::Client::Import",
+        "name": "import",
+        "type": "struct",
+        "fields": {
+          "kind": {
+            "name": "kind",
+            "source": "Kore::Types::Client::Import::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Client::Import::Fields::Kind::GlobalParticipants",
+                "name": "global_participants",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Client::Imports::GlobalParticipantsImport",
+                  "transformer_type": "Client::ParticipantImportHashTransformer",
+                  "required_headers": [
+                    "email",
+                    "first_name",
+                    "last_name",
+                    "locale",
+                    "company_name",
+                    "position_name"
+                  ],
+                  "supported_formats": [
+                    "csv"
+                  ]
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::Kind::Participants",
+                "name": "participants",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Client::Imports::ParticipantsImport",
+                  "transformer_type": "Client::ParticipantImportHashTransformer",
+                  "required_headers": [
+                    "email",
+                    "first_name",
+                    "last_name",
+                    "locale",
+                    "company_name",
+                    "position_name"
+                  ],
+                  "supported_formats": [
+                    "csv"
+                  ]
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::Kind::GiftedParticipants",
+                "name": "gifted_participants",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "type": "Client::Imports::GiftedParticipantsImport",
+                  "transformer_type": "Client::ParticipantImportHashTransformer",
+                  "required_headers": [
+                    "email",
+                    "first_name",
+                    "last_name",
+                    "locale",
+                    "company_name",
+                    "position_name"
+                  ],
+                  "supported_formats": [
+                    "csv"
+                  ]
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationSnapshots",
+                "name": "participation_snapshots",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "type": "Client::Imports::ParticipationSnapshotsImport",
+                  "transformer_type": "Client::ParticipationImportHashTransformer",
+                  "required_headers": [
+                    "email",
+                    "first_name",
+                    "last_name",
+                    "company_name",
+                    "position_name"
+                  ],
+                  "supported_formats": [
+                    "csv"
+                  ]
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::Kind::ParticipationDismissals",
+                "name": "participation_dismissals",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "type": "Client::Imports::ParticipationDismissalsImport",
+                  "transformer_type": "Client::ParticipationImportHashTransformer",
+                  "required_headers": [
+                    "email"
+                  ],
+                  "supported_formats": [
+                    "csv"
+                  ]
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::Kind::GlobalUnsubscriptions",
+                "name": "global_unsubscriptions",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "type": "Client::Imports::GlobalUnsubscriptionsImport",
+                  "transformer_type": "Client::ParticipantImportHashTransformer",
+                  "required_headers": [
+                    "email"
+                  ],
+                  "supported_formats": [
+                    "csv"
+                  ]
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::Kind::OrganizationUnsubscriptions",
+                "name": "organization_unsubscriptions",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "type": "Client::Imports::OrganizationUnsubscriptionsImport",
+                  "transformer_type": "Client::ParticipantImportHashTransformer",
+                  "required_headers": [
+                    "email"
+                  ],
+                  "supported_formats": [
+                    "csv"
+                  ]
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::Kind::CompanyDemographics",
+                "name": "company_demographics",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "type": "Client::Imports::CompanyDemographicsImport",
+                  "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
+                  "required_headers": [
+                    "name"
+                  ],
+                  "supported_formats": [
+                    "csv"
+                  ]
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::Kind::EmailAddresses",
+                "name": "email_addresses",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "type": "Client::Imports::EmailAddressesImport",
+                  "transformer_type": "Client::ParticipantImportHashTransformer",
+                  "required_headers": [
+                    "email",
+                    "first_name",
+                    "last_name",
+                    "locale",
+                    "company_name",
+                    "position_name"
+                  ],
+                  "supported_formats": [
+                    "csv"
+                  ]
+                }
+              }
+            ],
+            "values": [
+              "global_participants",
+              "participants",
+              "gifted_participants",
+              "participation_snapshots",
+              "participation_dismissals",
+              "global_unsubscriptions",
+              "organization_unsubscriptions",
+              "company_demographics",
+              "email_addresses"
+            ]
+          },
+          "file_format": {
+            "name": "file_format",
+            "source": "Kore::Types::Client::Import::Fields::FileFormat",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+                "name": "json",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+                "name": "csv",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+                "name": "xslx",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                }
+              }
+            ],
+            "values": [
+              "json",
+              "csv",
+              "xslx"
+            ]
+          }
+        }
+      },
       "Permission": {
         "source": "Kore::Types::Client::Permission",
         "name": "permission",
@@ -23641,7 +29031,8 @@ module.exports = {
                 "integer_value": 1,
                 "attributes": {
                   "type": "Client::Permissions::ForReporting",
-                  "read_only": false
+                  "read_only": false,
+                  "alias": "Looker"
                 }
               },
               {
@@ -23652,7 +29043,8 @@ module.exports = {
                 "attributes": {
                   "type": "Client::Permissions::ForReport",
                   "resource_type": "Warehouse::Report",
-                  "read_only": false
+                  "read_only": false,
+                  "alias": "Report"
                 }
               },
               {
@@ -23663,7 +29055,8 @@ module.exports = {
                 "attributes": {
                   "type": "Client::Permissions::ForSurvey",
                   "resource_type": "Census::Survey",
-                  "read_only": false
+                  "read_only": false,
+                  "alias": "Survey"
                 }
               },
               {
@@ -23674,7 +29067,8 @@ module.exports = {
                 "attributes": {
                   "type": "Client::Permissions::ForGroup",
                   "resource_type": "Census::Group",
-                  "read_only": false
+                  "read_only": false,
+                  "alias": "Audience"
                 }
               },
               {
@@ -23685,7 +29079,8 @@ module.exports = {
                 "attributes": {
                   "type": "Client::Permissions::ForParticipant",
                   "resource_type": "Census::Participant",
-                  "read_only": false
+                  "read_only": false,
+                  "alias": "Contact"
                 }
               },
               {
@@ -23696,7 +29091,8 @@ module.exports = {
                 "attributes": {
                   "type": "Client::Permissions::ForTrigger",
                   "resource_type": "Portal::Trigger",
-                  "read_only": false
+                  "read_only": false,
+                  "alias": "Trigger"
                 }
               },
               {
@@ -23707,7 +29103,8 @@ module.exports = {
                 "attributes": {
                   "type": "Client::Permissions::ForUser",
                   "resource_type": "Client::User",
-                  "read_only": false
+                  "read_only": false,
+                  "alias": "User"
                 }
               },
               {
@@ -23718,7 +29115,8 @@ module.exports = {
                 "attributes": {
                   "type": "Client::Permissions::ForStudy",
                   "resource_type": "Warehouse::Reports::Study",
-                  "read_only": true
+                  "read_only": true,
+                  "alias": "Study"
                 }
               },
               {
@@ -23729,7 +29127,8 @@ module.exports = {
                 "attributes": {
                   "type": "Client::Permissions::ForCustomStudy",
                   "resource_type": "Warehouse::Reports::CustomStudy",
-                  "read_only": false
+                  "read_only": false,
+                  "alias": "Custom Study"
                 }
               }
             ],
@@ -25488,6 +30887,112 @@ module.exports = {
               "survey_last_call",
               "survey_link",
               "survey_reminder"
+            ]
+          }
+        }
+      },
+      "MessageEvent": {
+        "source": "Kore::Types::Newman::MessageEvent",
+        "name": "message_event",
+        "type": "struct",
+        "fields": {
+          "event_type": {
+            "name": "event_type",
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Processed",
+                "name": "processed",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "description": "Message has been received and is ready to be delivered."
+                }
+              },
+              {
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Dropped",
+                "name": "dropped",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "description": "You may see the following drop reasons: Invalid SMTPAPI header, Spam Content (if spam checker app enabled), Unsubscribed Address, Bounced Address, Spam Reporting Address, Invalid, Recipient List over Package Quota"
+                }
+              },
+              {
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Delivered",
+                "name": "delivered",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "description": "Message has been successfully delivered to the receiving server."
+                }
+              },
+              {
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Deferred",
+                "name": "deferred",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "description": "Recipient’s email server temporarily rejected message."
+                }
+              },
+              {
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Bounce",
+                "name": "bounce",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "description": "Receiving server could not or would not accept message."
+                }
+              },
+              {
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Open",
+                "name": "open",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "description": "Recipient has opened the HTML message."
+                }
+              },
+              {
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Click",
+                "name": "click",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "description": "Recipient clicked on a link within the message."
+                }
+              },
+              {
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+                "name": "spamreport",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "description": "Recipient marked message as spam."
+                }
+              },
+              {
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Unsubscribe",
+                "name": "unsubscribe",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "description": "Recipient unsubscribed"
+                }
+              }
+            ],
+            "values": [
+              "processed",
+              "dropped",
+              "delivered",
+              "deferred",
+              "bounce",
+              "open",
+              "click",
+              "spamreport",
+              "unsubscribe"
             ]
           }
         }
