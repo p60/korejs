@@ -2541,6 +2541,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -2563,7 +2573,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "clearbit_discovery_status": {
@@ -7727,6 +7738,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -7749,7 +7770,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "kind": {
@@ -8270,6 +8292,16 @@ module.exports = {
               true,
               false
             ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           }
         }
       },
@@ -8522,6 +8554,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -8544,7 +8586,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -9070,6 +9113,16 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
@@ -9315,6 +9368,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -9337,7 +9400,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -9863,6 +9927,16 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
@@ -10108,6 +10182,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -10130,7 +10214,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -10656,6 +10741,16 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
@@ -10901,6 +10996,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -10923,7 +11028,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -11448,6 +11554,16 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
               "type": "boolean",
               "default": false,
               "values": [
@@ -16448,6 +16564,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -16470,7 +16596,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "general_settings": {
@@ -17230,6 +17357,16 @@ module.exports = {
               true,
               false
             ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           }
         }
       },
@@ -17256,16 +17393,16 @@ module.exports = {
         "Indiana (East)",
         "Lima",
         "Quito",
-        "Caracas",
         "Atlantic Time (Canada)",
+        "Caracas",
         "Georgetown",
         "La Paz",
+        "Santiago",
         "Newfoundland",
         "Brasilia",
         "Buenos Aires",
         "Greenland",
         "Montevideo",
-        "Santiago",
         "Mid-Atlantic",
         "Azores",
         "Cape Verde Is.",
@@ -17301,7 +17438,6 @@ module.exports = {
         "Cairo",
         "Harare",
         "Helsinki",
-        "Istanbul",
         "Jerusalem",
         "Kaliningrad",
         "Kyiv",
@@ -17311,6 +17447,7 @@ module.exports = {
         "Tallinn",
         "Vilnius",
         "Baghdad",
+        "Istanbul",
         "Kuwait",
         "Minsk",
         "Moscow",
@@ -17339,13 +17476,13 @@ module.exports = {
         "Almaty",
         "Astana",
         "Dhaka",
-        "Novosibirsk",
         "Urumqi",
         "Rangoon",
         "Bangkok",
         "Hanoi",
         "Jakarta",
         "Krasnoyarsk",
+        "Novosibirsk",
         "Beijing",
         "Chongqing",
         "Hong Kong",
@@ -17366,11 +17503,11 @@ module.exports = {
         "Canberra",
         "Guam",
         "Hobart",
-        "Magadan",
         "Melbourne",
         "Port Moresby",
         "Sydney",
         "Vladivostok",
+        "Magadan",
         "New Caledonia",
         "Solomon Is.",
         "Srednekolymsk",
@@ -22009,6 +22146,11 @@ module.exports = {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
             "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
           }
         }
       },
@@ -22115,6 +22257,11 @@ module.exports = {
           "ja": {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
+            "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
             "type": "string"
           }
         }
@@ -22322,6 +22469,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -22428,6 +22580,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -22637,6 +22794,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -22743,6 +22905,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -22946,6 +23113,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -23052,6 +23224,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -23255,6 +23432,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -23361,6 +23543,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -23564,6 +23751,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -23670,6 +23862,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -23868,8 +24065,8 @@ module.exports = {
             }
           },
           {
-            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-            "name": "spam_report",
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+            "name": "spamreport",
             "type": "enum_value",
             "integer_value": 8,
             "attributes": {
@@ -23894,7 +24091,7 @@ module.exports = {
           "bounce",
           "open",
           "click",
-          "spam_report",
+          "spamreport",
           "unsubscribe"
         ]
       },
@@ -24107,6 +24304,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -24129,7 +24336,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "service_provider": {
@@ -24230,8 +24438,8 @@ module.exports = {
             }
           },
           {
-            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-            "name": "spam_report",
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+            "name": "spamreport",
             "type": "enum_value",
             "integer_value": 8,
             "attributes": {
@@ -24256,7 +24464,7 @@ module.exports = {
           "bounce",
           "open",
           "click",
-          "spam_report",
+          "spamreport",
           "unsubscribe"
         ]
       }
@@ -24454,8 +24662,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -24480,7 +24688,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         }
@@ -24677,8 +24885,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -24703,7 +24911,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         }
@@ -24900,8 +25108,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -24926,7 +25134,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         }
@@ -25123,8 +25331,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -25149,7 +25357,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         },
@@ -25352,8 +25560,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -25378,7 +25586,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         }
@@ -26216,6 +26424,11 @@ module.exports = {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
             "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
           }
         }
       }
@@ -26610,6 +26823,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -26632,7 +26855,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "operator": {
@@ -27018,6 +27242,11 @@ module.exports = {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
             "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
           }
         }
       },
@@ -27219,6 +27448,16 @@ module.exports = {
           "ja": {
             "name": "ja",
             "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
             "type": "boolean",
             "default": false,
             "values": [
@@ -30726,8 +30965,8 @@ module.exports = {
                 }
               },
               {
-                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-                "name": "spam_report",
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+                "name": "spamreport",
                 "type": "enum_value",
                 "integer_value": 8,
                 "attributes": {
@@ -30752,7 +30991,7 @@ module.exports = {
               "bounce",
               "open",
               "click",
-              "spam_report",
+              "spamreport",
               "unsubscribe"
             ]
           }
