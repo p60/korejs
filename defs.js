@@ -2541,6 +2541,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -2563,7 +2573,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "clearbit_discovery_status": {
@@ -7727,6 +7738,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -7749,7 +7770,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "kind": {
@@ -8270,6 +8292,16 @@ module.exports = {
               true,
               false
             ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           }
         }
       },
@@ -8522,6 +8554,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -8544,7 +8586,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -9070,6 +9113,16 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
@@ -9315,6 +9368,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -9337,7 +9400,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -9863,6 +9927,16 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
@@ -10108,6 +10182,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -10130,7 +10214,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -10656,6 +10741,16 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
@@ -10901,6 +10996,16 @@ module.exports = {
                 "label": "日本語",
                 "englishLabel": "Japanese"
               }
+            },
+            {
+              "source": "Kore::Types::Fields::Locale::Zh",
+              "name": "zh",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "中文",
+                "englishLabel": "Chinese"
+              }
             }
           ],
           "values": [
@@ -10923,7 +11028,8 @@ module.exports = {
             "ro",
             "sk",
             "sv",
-            "ja"
+            "ja",
+            "zh"
           ]
         },
         "kind": {
@@ -11448,6 +11554,16 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
               "type": "boolean",
               "default": false,
               "values": [
@@ -16448,6 +16564,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -16470,7 +16596,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "general_settings": {
@@ -17224,6 +17351,16 @@ module.exports = {
           "ja": {
             "name": "ja",
             "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
             "type": "boolean",
             "default": false,
             "values": [
@@ -22009,6 +22146,11 @@ module.exports = {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
             "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
           }
         }
       },
@@ -22115,6 +22257,11 @@ module.exports = {
           "ja": {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
+            "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
             "type": "string"
           }
         }
@@ -22322,6 +22469,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -22428,6 +22580,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -22637,6 +22794,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -22743,6 +22905,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -22946,6 +23113,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -23052,6 +23224,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -23255,6 +23432,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -23361,6 +23543,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -23564,6 +23751,11 @@ module.exports = {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
               "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
             }
           }
         },
@@ -23670,6 +23862,11 @@ module.exports = {
             "ja": {
               "name": "ja",
               "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -23868,8 +24065,8 @@ module.exports = {
             }
           },
           {
-            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-            "name": "spam_report",
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+            "name": "spamreport",
             "type": "enum_value",
             "integer_value": 8,
             "attributes": {
@@ -23894,7 +24091,7 @@ module.exports = {
           "bounce",
           "open",
           "click",
-          "spam_report",
+          "spamreport",
           "unsubscribe"
         ]
       },
@@ -24107,6 +24304,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -24129,7 +24336,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "service_provider": {
@@ -24230,8 +24438,8 @@ module.exports = {
             }
           },
           {
-            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-            "name": "spam_report",
+            "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+            "name": "spamreport",
             "type": "enum_value",
             "integer_value": 8,
             "attributes": {
@@ -24256,7 +24464,7 @@ module.exports = {
           "bounce",
           "open",
           "click",
-          "spam_report",
+          "spamreport",
           "unsubscribe"
         ]
       }
@@ -24454,8 +24662,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -24480,7 +24688,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         }
@@ -24677,8 +24885,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -24703,7 +24911,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         }
@@ -24900,8 +25108,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -24926,7 +25134,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         }
@@ -25123,8 +25331,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -25149,7 +25357,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         },
@@ -25352,8 +25560,8 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-              "name": "spam_report",
+              "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+              "name": "spamreport",
               "type": "enum_value",
               "integer_value": 8,
               "attributes": {
@@ -25378,7 +25586,7 @@ module.exports = {
             "bounce",
             "open",
             "click",
-            "spam_report",
+            "spamreport",
             "unsubscribe"
           ]
         }
@@ -25415,7 +25623,8 @@ module.exports = {
             "integer_value": 1,
             "attributes": {
               "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
-              "integration": "reaction"
+              "integration": "reaction",
+              "label": "Create Participation"
             }
           },
           {
@@ -25425,7 +25634,8 @@ module.exports = {
             "integer_value": 2,
             "attributes": {
               "type": "Portal::Reactions::CreateEmailForParticipation",
-              "integration": "reaction"
+              "integration": "reaction",
+              "label": "Create Email For Participation"
             }
           },
           {
@@ -25435,7 +25645,8 @@ module.exports = {
             "integer_value": 3,
             "attributes": {
               "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
-              "integration": "reaction"
+              "integration": "reaction",
+              "label": "Create Participant"
             }
           },
           {
@@ -25445,7 +25656,19 @@ module.exports = {
             "integer_value": 4,
             "attributes": {
               "type": "Portal::Reactions::AddParticipantToGroup",
-              "integration": "reaction"
+              "integration": "reaction",
+              "label": "Add Participant To Group"
+            }
+          },
+          {
+            "source": "Portal::Reaction::Fields::Kind::CreateParticipationsFromSalesforceOpportunity",
+            "name": "create_participations_from_salesforce_opportunity",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+              "type": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity",
+              "integration": "reaction",
+              "label": "Create Participations"
             }
           }
         ],
@@ -25453,7 +25676,8 @@ module.exports = {
           "create_participation_from_salesforce_case",
           "create_email_for_participation",
           "create_participant_from_salesforce_case",
-          "add_participant_to_group"
+          "add_participant_to_group",
+          "create_participations_from_salesforce_opportunity"
         ]
       },
       "http_method": {
@@ -25505,7 +25729,8 @@ module.exports = {
         "Portal::Reactions::AddParticipantToGroup",
         "Portal::Reactions::CreateEmailForParticipation",
         "Portal::Reactions::CreateParticipantFromSalesforceCase",
-        "Portal::Reactions::CreateParticipationFromSalesforceCase"
+        "Portal::Reactions::CreateParticipationFromSalesforceCase",
+        "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity"
       ]
     },
     "Reactions": {
@@ -25522,7 +25747,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Participation"
               }
             },
             {
@@ -25532,7 +25758,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Email For Participation"
               }
             },
             {
@@ -25542,7 +25769,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Participant"
               }
             },
             {
@@ -25552,7 +25780,19 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Portal::Reactions::AddParticipantToGroup",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Add Participant To Group"
+              }
+            },
+            {
+              "source": "Portal::Reactions::AddParticipantToGroup::Fields::Kind::CreateParticipationsFromSalesforceOpportunity",
+              "name": "create_participations_from_salesforce_opportunity",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity",
+                "integration": "reaction",
+                "label": "Create Participations"
               }
             }
           ],
@@ -25560,7 +25800,8 @@ module.exports = {
             "create_participation_from_salesforce_case",
             "create_email_for_participation",
             "create_participant_from_salesforce_case",
-            "add_participant_to_group"
+            "add_participant_to_group",
+            "create_participations_from_salesforce_opportunity"
           ]
         },
         "http_method": {
@@ -25635,7 +25876,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Participation"
               }
             },
             {
@@ -25645,7 +25887,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Email For Participation"
               }
             },
             {
@@ -25655,7 +25898,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Participant"
               }
             },
             {
@@ -25665,7 +25909,19 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Portal::Reactions::AddParticipantToGroup",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Add Participant To Group"
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateEmailForParticipation::Fields::Kind::CreateParticipationsFromSalesforceOpportunity",
+              "name": "create_participations_from_salesforce_opportunity",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity",
+                "integration": "reaction",
+                "label": "Create Participations"
               }
             }
           ],
@@ -25673,7 +25929,8 @@ module.exports = {
             "create_participation_from_salesforce_case",
             "create_email_for_participation",
             "create_participant_from_salesforce_case",
-            "add_participant_to_group"
+            "add_participant_to_group",
+            "create_participations_from_salesforce_opportunity"
           ]
         },
         "http_method": {
@@ -25748,7 +26005,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Participation"
               }
             },
             {
@@ -25758,7 +26016,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Email For Participation"
               }
             },
             {
@@ -25768,7 +26027,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Participant"
               }
             },
             {
@@ -25778,7 +26038,19 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Portal::Reactions::AddParticipantToGroup",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Add Participant To Group"
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::Kind::CreateParticipationsFromSalesforceOpportunity",
+              "name": "create_participations_from_salesforce_opportunity",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity",
+                "integration": "reaction",
+                "label": "Create Participations"
               }
             }
           ],
@@ -25786,7 +26058,8 @@ module.exports = {
             "create_participation_from_salesforce_case",
             "create_email_for_participation",
             "create_participant_from_salesforce_case",
-            "add_participant_to_group"
+            "add_participant_to_group",
+            "create_participations_from_salesforce_opportunity"
           ]
         },
         "http_method": {
@@ -25855,7 +26128,8 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Participation"
               }
             },
             {
@@ -25865,7 +26139,8 @@ module.exports = {
               "integer_value": 2,
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Email For Participation"
               }
             },
             {
@@ -25875,7 +26150,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Create Participant"
               }
             },
             {
@@ -25885,7 +26161,19 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Portal::Reactions::AddParticipantToGroup",
-                "integration": "reaction"
+                "integration": "reaction",
+                "label": "Add Participant To Group"
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::Kind::CreateParticipationsFromSalesforceOpportunity",
+              "name": "create_participations_from_salesforce_opportunity",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity",
+                "integration": "reaction",
+                "label": "Create Participations"
               }
             }
           ],
@@ -25893,7 +26181,8 @@ module.exports = {
             "create_participation_from_salesforce_case",
             "create_email_for_participation",
             "create_participant_from_salesforce_case",
-            "add_participant_to_group"
+            "add_participant_to_group",
+            "create_participations_from_salesforce_opportunity"
           ]
         },
         "http_method": {
@@ -25953,6 +26242,134 @@ module.exports = {
             }
           }
         }
+      },
+      "CreateParticipationsFromSalesforceOpportunity": {
+        "kind": {
+          "name": "kind",
+          "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::Kind::CreateParticipationFromSalesforceCase",
+              "name": "create_participation_from_salesforce_case",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
+                "integration": "reaction",
+                "label": "Create Participation"
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::Kind::CreateEmailForParticipation",
+              "name": "create_email_for_participation",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Portal::Reactions::CreateEmailForParticipation",
+                "integration": "reaction",
+                "label": "Create Email For Participation"
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::Kind::CreateParticipantFromSalesforceCase",
+              "name": "create_participant_from_salesforce_case",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
+                "integration": "reaction",
+                "label": "Create Participant"
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::Kind::AddParticipantToGroup",
+              "name": "add_participant_to_group",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Portal::Reactions::AddParticipantToGroup",
+                "integration": "reaction",
+                "label": "Add Participant To Group"
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::Kind::CreateParticipationsFromSalesforceOpportunity",
+              "name": "create_participations_from_salesforce_opportunity",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity",
+                "integration": "reaction",
+                "label": "Create Participations"
+              }
+            }
+          ],
+          "values": [
+            "create_participation_from_salesforce_case",
+            "create_email_for_participation",
+            "create_participant_from_salesforce_case",
+            "add_participant_to_group",
+            "create_participations_from_salesforce_opportunity"
+          ]
+        },
+        "http_method": {
+          "name": "http_method",
+          "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Post",
+              "name": "post",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Put",
+              "name": "put",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Get",
+              "name": "get",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Delete",
+              "name": "delete",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "post",
+            "put",
+            "get",
+            "delete"
+          ]
+        },
+        "custom_fields": {
+          "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "survey_id": {
+              "name": "survey_id",
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::CustomFields::Fields::SurveyId",
+              "type": "string"
+            }
+          }
+        }
       }
     },
     "Trigger": {
@@ -25968,12 +26385,30 @@ module.exports = {
             "integer_value": 1,
             "attributes": {
               "type": "Portal::Triggers::Timers::SalesforceCaseClosedTimer",
-              "integration": "salesforce"
+              "integration": "salesforce",
+              "kinds_of_reactions": [
+                "create_participant_from_salesforce_case",
+                "create_participation_from_salesforce_case"
+              ]
+            }
+          },
+          {
+            "source": "Portal::Trigger::Fields::Kind::SalesforceOpportunityClosedTimer",
+            "name": "salesforce_opportunity_closed_timer",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "type": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer",
+              "integration": "salesforce",
+              "kinds_of_reactions": [
+                "create_participations_from_salesforce_opportunity"
+              ]
             }
           }
         ],
         "values": [
-          "salesforce_case_closed_timer"
+          "salesforce_case_closed_timer",
+          "salesforce_opportunity_closed_timer"
         ]
       },
       "types": [
@@ -25994,12 +26429,30 @@ module.exports = {
               "integer_value": 1,
               "attributes": {
                 "type": "Portal::Triggers::Timers::SalesforceCaseClosedTimer",
-                "integration": "salesforce"
+                "integration": "salesforce",
+                "kinds_of_reactions": [
+                  "create_participant_from_salesforce_case",
+                  "create_participation_from_salesforce_case"
+                ]
+              }
+            },
+            {
+              "source": "Portal::Triggers::Timer::Fields::Kind::SalesforceOpportunityClosedTimer",
+              "name": "salesforce_opportunity_closed_timer",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer",
+                "integration": "salesforce",
+                "kinds_of_reactions": [
+                  "create_participations_from_salesforce_opportunity"
+                ]
               }
             }
           ],
           "values": [
-            "salesforce_case_closed_timer"
+            "salesforce_case_closed_timer",
+            "salesforce_opportunity_closed_timer"
           ]
         },
         "custom_fields": {
@@ -26011,12 +26464,20 @@ module.exports = {
               "name": "seconds_until_repeat",
               "source": "Portal::Triggers::Timer::Fields::CustomFields::Fields::SecondsUntilRepeat",
               "type": "integer",
-              "default": 30
+              "attributes": {
+                "choices": {
+                  "Hour": 3600,
+                  "Day": 86400,
+                  "Week": 604800
+                }
+              },
+              "default": 86400
             }
           }
         },
         "types": [
-          "Portal::Triggers::Timers::SalesforceCaseClosedTimer"
+          "Portal::Triggers::Timers::SalesforceCaseClosedTimer",
+          "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer"
         ]
       },
       "Timers": {
@@ -26033,12 +26494,30 @@ module.exports = {
                 "integer_value": 1,
                 "attributes": {
                   "type": "Portal::Triggers::Timers::SalesforceCaseClosedTimer",
-                  "integration": "salesforce"
+                  "integration": "salesforce",
+                  "kinds_of_reactions": [
+                    "create_participant_from_salesforce_case",
+                    "create_participation_from_salesforce_case"
+                  ]
+                }
+              },
+              {
+                "source": "Portal::Triggers::Timers::SalesforceCaseClosedTimer::Fields::Kind::SalesforceOpportunityClosedTimer",
+                "name": "salesforce_opportunity_closed_timer",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer",
+                  "integration": "salesforce",
+                  "kinds_of_reactions": [
+                    "create_participations_from_salesforce_opportunity"
+                  ]
                 }
               }
             ],
             "values": [
-              "salesforce_case_closed_timer"
+              "salesforce_case_closed_timer",
+              "salesforce_opportunity_closed_timer"
             ]
           },
           "custom_fields": {
@@ -26063,6 +26542,406 @@ module.exports = {
                 "source": "Portal::Triggers::Timers::SalesforceCaseClosedTimer::Fields::CustomFields::Fields::SecondsUntilRepeat",
                 "type": "integer",
                 "default": 86400
+              }
+            }
+          }
+        },
+        "SalesforceOpportunityClosedTimer": {
+          "kind": {
+            "name": "kind",
+            "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::Kind::SalesforceCaseClosedTimer",
+                "name": "salesforce_case_closed_timer",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Portal::Triggers::Timers::SalesforceCaseClosedTimer",
+                  "integration": "salesforce",
+                  "kinds_of_reactions": [
+                    "create_participant_from_salesforce_case",
+                    "create_participation_from_salesforce_case"
+                  ]
+                }
+              },
+              {
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::Kind::SalesforceOpportunityClosedTimer",
+                "name": "salesforce_opportunity_closed_timer",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer",
+                  "integration": "salesforce",
+                  "kinds_of_reactions": [
+                    "create_participations_from_salesforce_opportunity"
+                  ]
+                }
+              }
+            ],
+            "values": [
+              "salesforce_case_closed_timer",
+              "salesforce_opportunity_closed_timer"
+            ]
+          },
+          "custom_fields": {
+            "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields",
+            "name": "custom_fields",
+            "type": "struct",
+            "fields": {
+              "default_where_params": {
+                "name": "default_where_params",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::DefaultWhereParams",
+                "type": "string",
+                "default": "CloseDate > {{ trigger.last_success_at | date: '%Y-%m-%d' }} AND IsClosed = true "
+              },
+              "additional_where_params": {
+                "name": "additional_where_params",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::AdditionalWhereParams",
+                "type": "string",
+                "default": ""
+              },
+              "seconds_until_repeat": {
+                "name": "seconds_until_repeat",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::SecondsUntilRepeat",
+                "type": "integer",
+                "attributes": {
+                  "choices": {
+                    "Day": 86400,
+                    "Week": 604800
+                  }
+                },
+                "default": 86400
+              },
+              "primary_contact_only": {
+                "name": "primary_contact_only",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::PrimaryContactOnly",
+                "type": "boolean",
+                "default": false,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "contact_roles": {
+                "name": "contact_roles",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::ContactRoles",
+                "type": "set",
+                "attributes": {
+                  "choices": [
+                    "Business User",
+                    "Decision Maker",
+                    "Economic Buyer",
+                    "Economic Decision Maker",
+                    "Evaluator",
+                    "Executive Sponsor",
+                    "Influencer",
+                    "Technical Buyer",
+                    "Other"
+                  ]
+                },
+                "default": [
+                  "Decision Maker"
+                ]
+              },
+              "outcome": {
+                "name": "outcome",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::Outcome",
+                "type": "enum",
+                "choices": [
+                  {
+                    "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::Outcome::Win",
+                    "name": "win",
+                    "type": "enum_value",
+                    "integer_value": 1,
+                    "attributes": {
+                      "soql": " AND IsWon = true"
+                    }
+                  },
+                  {
+                    "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::Outcome::Loss",
+                    "name": "loss",
+                    "type": "enum_value",
+                    "integer_value": 2,
+                    "attributes": {
+                      "soql": " AND IsLoss = true"
+                    }
+                  }
+                ],
+                "values": [
+                  "win",
+                  "loss"
+                ],
+                "default": "win"
+              }
+            }
+          },
+          "types": [
+            "Portal::Triggers::Timers::SalesforceOpportunityLostTimer",
+            "Portal::Triggers::Timers::SalesforceOpportunityWonTimer"
+          ]
+        },
+        "SalesforceOpportunityLostTimer": {
+          "kind": {
+            "name": "kind",
+            "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::Kind::SalesforceCaseClosedTimer",
+                "name": "salesforce_case_closed_timer",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Portal::Triggers::Timers::SalesforceCaseClosedTimer",
+                  "integration": "salesforce",
+                  "kinds_of_reactions": [
+                    "create_participant_from_salesforce_case",
+                    "create_participation_from_salesforce_case"
+                  ]
+                }
+              },
+              {
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::Kind::SalesforceOpportunityClosedTimer",
+                "name": "salesforce_opportunity_closed_timer",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer",
+                  "integration": "salesforce",
+                  "kinds_of_reactions": [
+                    "create_participations_from_salesforce_opportunity"
+                  ]
+                }
+              }
+            ],
+            "values": [
+              "salesforce_case_closed_timer",
+              "salesforce_opportunity_closed_timer"
+            ]
+          },
+          "custom_fields": {
+            "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::CustomFields",
+            "name": "custom_fields",
+            "type": "struct",
+            "fields": {
+              "default_where_params": {
+                "name": "default_where_params",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::CustomFields::Fields::DefaultWhereParams",
+                "type": "string",
+                "default": "CloseDate > {{ trigger.last_success_at | date: '%Y-%m-%d' }} AND IsClosed = true "
+              },
+              "additional_where_params": {
+                "name": "additional_where_params",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::CustomFields::Fields::AdditionalWhereParams",
+                "type": "string",
+                "default": ""
+              },
+              "seconds_until_repeat": {
+                "name": "seconds_until_repeat",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::CustomFields::Fields::SecondsUntilRepeat",
+                "type": "integer",
+                "attributes": {
+                  "choices": {
+                    "Day": 86400,
+                    "Week": 604800
+                  }
+                },
+                "default": 86400
+              },
+              "primary_contact_only": {
+                "name": "primary_contact_only",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::CustomFields::Fields::PrimaryContactOnly",
+                "type": "boolean",
+                "default": false,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "contact_roles": {
+                "name": "contact_roles",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::CustomFields::Fields::ContactRoles",
+                "type": "set",
+                "attributes": {
+                  "choices": [
+                    "Business User",
+                    "Decision Maker",
+                    "Economic Buyer",
+                    "Economic Decision Maker",
+                    "Evaluator",
+                    "Executive Sponsor",
+                    "Influencer",
+                    "Technical Buyer",
+                    "Other"
+                  ]
+                },
+                "default": [
+                  "Decision Maker"
+                ]
+              },
+              "outcome": {
+                "name": "outcome",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::CustomFields::Fields::Outcome",
+                "type": "enum",
+                "choices": [
+                  {
+                    "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::CustomFields::Fields::Outcome::Win",
+                    "name": "win",
+                    "type": "enum_value",
+                    "integer_value": 1,
+                    "attributes": {
+                      "soql": " AND IsWon = true"
+                    }
+                  },
+                  {
+                    "source": "Portal::Triggers::Timers::SalesforceOpportunityLostTimer::Fields::CustomFields::Fields::Outcome::Loss",
+                    "name": "loss",
+                    "type": "enum_value",
+                    "integer_value": 2,
+                    "attributes": {
+                      "soql": " AND IsLoss = true"
+                    }
+                  }
+                ],
+                "values": [
+                  "win",
+                  "loss"
+                ],
+                "default": "win"
+              }
+            }
+          }
+        },
+        "SalesforceOpportunityWonTimer": {
+          "kind": {
+            "name": "kind",
+            "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::Kind::SalesforceCaseClosedTimer",
+                "name": "salesforce_case_closed_timer",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Portal::Triggers::Timers::SalesforceCaseClosedTimer",
+                  "integration": "salesforce",
+                  "kinds_of_reactions": [
+                    "create_participant_from_salesforce_case",
+                    "create_participation_from_salesforce_case"
+                  ]
+                }
+              },
+              {
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::Kind::SalesforceOpportunityClosedTimer",
+                "name": "salesforce_opportunity_closed_timer",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer",
+                  "integration": "salesforce",
+                  "kinds_of_reactions": [
+                    "create_participations_from_salesforce_opportunity"
+                  ]
+                }
+              }
+            ],
+            "values": [
+              "salesforce_case_closed_timer",
+              "salesforce_opportunity_closed_timer"
+            ]
+          },
+          "custom_fields": {
+            "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::CustomFields",
+            "name": "custom_fields",
+            "type": "struct",
+            "fields": {
+              "default_where_params": {
+                "name": "default_where_params",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::CustomFields::Fields::DefaultWhereParams",
+                "type": "string",
+                "default": "CloseDate > {{ trigger.last_success_at | date: '%Y-%m-%d' }} AND IsClosed = true "
+              },
+              "additional_where_params": {
+                "name": "additional_where_params",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::CustomFields::Fields::AdditionalWhereParams",
+                "type": "string",
+                "default": ""
+              },
+              "seconds_until_repeat": {
+                "name": "seconds_until_repeat",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::CustomFields::Fields::SecondsUntilRepeat",
+                "type": "integer",
+                "attributes": {
+                  "choices": {
+                    "Day": 86400,
+                    "Week": 604800
+                  }
+                },
+                "default": 86400
+              },
+              "primary_contact_only": {
+                "name": "primary_contact_only",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::CustomFields::Fields::PrimaryContactOnly",
+                "type": "boolean",
+                "default": false,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "contact_roles": {
+                "name": "contact_roles",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::CustomFields::Fields::ContactRoles",
+                "type": "set",
+                "attributes": {
+                  "choices": [
+                    "Business User",
+                    "Decision Maker",
+                    "Economic Buyer",
+                    "Economic Decision Maker",
+                    "Evaluator",
+                    "Executive Sponsor",
+                    "Influencer",
+                    "Technical Buyer",
+                    "Other"
+                  ]
+                },
+                "default": [
+                  "Decision Maker"
+                ]
+              },
+              "outcome": {
+                "name": "outcome",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::CustomFields::Fields::Outcome",
+                "type": "enum",
+                "choices": [
+                  {
+                    "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::CustomFields::Fields::Outcome::Win",
+                    "name": "win",
+                    "type": "enum_value",
+                    "integer_value": 1,
+                    "attributes": {
+                      "soql": " AND IsWon = true"
+                    }
+                  },
+                  {
+                    "source": "Portal::Triggers::Timers::SalesforceOpportunityWonTimer::Fields::CustomFields::Fields::Outcome::Loss",
+                    "name": "loss",
+                    "type": "enum_value",
+                    "integer_value": 2,
+                    "attributes": {
+                      "soql": " AND IsLoss = true"
+                    }
+                  }
+                ],
+                "values": [
+                  "win",
+                  "loss"
+                ],
+                "default": "win"
               }
             }
           }
@@ -26215,6 +27094,11 @@ module.exports = {
           "ja": {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
+            "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
             "type": "string"
           }
         }
@@ -26610,6 +27494,16 @@ module.exports = {
               "label": "日本語",
               "englishLabel": "Japanese"
             }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
           }
         ],
         "values": [
@@ -26632,7 +27526,8 @@ module.exports = {
           "ro",
           "sk",
           "sv",
-          "ja"
+          "ja",
+          "zh"
         ]
       },
       "operator": {
@@ -27018,6 +27913,11 @@ module.exports = {
             "name": "ja",
             "source": "Kore::Types::Fields::Translations::Fields::Ja",
             "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
           }
         }
       },
@@ -27219,6 +28119,16 @@ module.exports = {
           "ja": {
             "name": "ja",
             "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
             "type": "boolean",
             "default": false,
             "values": [
@@ -30496,6 +31406,73 @@ module.exports = {
         }
       }
     },
+    "Kore": {
+      "source": "Kore::Types::Kore",
+      "name": "kore",
+      "type": "struct",
+      "fields": {
+      },
+      "Task": {
+        "source": "Kore::Types::Kore::Task",
+        "name": "task",
+        "type": "struct",
+        "fields": {
+          "kind": {
+            "name": "kind",
+            "source": "Kore::Types::Kore::Task::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Kore::Task::Fields::Kind::CancelPendingDeliveriesForSurvey",
+                "name": "cancel_pending_deliveries_for_survey",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Kore::Tasks::CancelPendingDeliveriesForSurveyTask",
+                  "controller_action": "Admin::Api::Surveys::MessagesController#cancel_pending"
+                }
+              },
+              {
+                "source": "Kore::Types::Kore::Task::Fields::Kind::DestroyCancelledDeliveriesForSurvey",
+                "name": "destroy_cancelled_deliveries_for_survey",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Kore::Tasks::DestroyCancelledDeliveriesForSurveyTask",
+                  "controller_action": "Admin::Api::Surveys::MessagesController#destroy_cancelled"
+                }
+              },
+              {
+                "source": "Kore::Types::Kore::Task::Fields::Kind::CreateDeliveriesForEmail",
+                "name": "create_deliveries_for_email",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "type": "Kore::Tasks::CreateDeliveriesForEmailTask",
+                  "controller_action": "Admin::Api::Surveys::EmailsController#create_deliveries"
+                }
+              },
+              {
+                "source": "Kore::Types::Kore::Task::Fields::Kind::ScheduleDeliveriesForEmail",
+                "name": "schedule_deliveries_for_email",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "type": "Kore::Tasks::ScheduleDeliveriesForEmailTask",
+                  "controller_action": "Admin::Api::Surveys::EmailsController#schedule_deliveries"
+                }
+              }
+            ],
+            "values": [
+              "cancel_pending_deliveries_for_survey",
+              "destroy_cancelled_deliveries_for_survey",
+              "create_deliveries_for_email",
+              "schedule_deliveries_for_email"
+            ]
+          }
+        }
+      }
+    },
     "Newman": {
       "source": "Kore::Types::Newman",
       "name": "newman",
@@ -30726,8 +31703,8 @@ module.exports = {
                 }
               },
               {
-                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::SpamReport",
-                "name": "spam_report",
+                "source": "Kore::Types::Newman::MessageEvent::Fields::EventType::Spamreport",
+                "name": "spamreport",
                 "type": "enum_value",
                 "integer_value": 8,
                 "attributes": {
@@ -30752,7 +31729,7 @@ module.exports = {
               "bounce",
               "open",
               "click",
-              "spam_report",
+              "spamreport",
               "unsubscribe"
             ]
           }
