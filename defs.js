@@ -22009,6 +22009,15 @@ module.exports = {
         "type": "enum",
         "choices": [
           {
+            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
+            "name": "survey_heads_up",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Newman::Emails::SurveyHeadsUpEmail"
+            }
+          },
+          {
             "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
             "name": "survey_last_call",
             "type": "enum_value",
@@ -22037,6 +22046,7 @@ module.exports = {
           }
         ],
         "values": [
+          "survey_heads_up",
           "survey_last_call",
           "survey_link",
           "survey_reminder"
@@ -22332,6 +22342,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Emails::SurveyHeadsUpEmail"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -22360,6 +22379,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -22657,6 +22677,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Emails::SurveyHeadsUpEmail"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -22685,6 +22714,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -22976,6 +23006,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Emails::SurveyHeadsUpEmail"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -23004,6 +23043,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -23295,6 +23335,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Emails::SurveyHeadsUpEmail"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -23323,6 +23372,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -23614,6 +23664,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Emails::SurveyHeadsUpEmail"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -23642,6 +23701,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -23963,6 +24023,15 @@ module.exports = {
         "type": "enum",
         "choices": [
           {
+            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+            "name": "survey_heads_up",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Newman::Messages::SurveyHeadsUpMessage"
+            }
+          },
+          {
             "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
             "name": "survey_last_call",
             "type": "enum_value",
@@ -23991,6 +24060,7 @@ module.exports = {
           }
         ],
         "values": [
+          "survey_heads_up",
           "survey_last_call",
           "survey_link",
           "survey_reminder"
@@ -24560,6 +24630,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -24588,6 +24667,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -24783,6 +24863,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -24811,6 +24900,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -25006,6 +25096,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -25034,6 +25133,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -25229,6 +25329,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -25257,6 +25366,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -25458,6 +25568,15 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
               "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
               "name": "survey_last_call",
               "type": "enum_value",
@@ -25486,6 +25605,7 @@ module.exports = {
             }
           ],
           "values": [
+            "survey_heads_up",
             "survey_last_call",
             "survey_link",
             "survey_reminder"
@@ -31490,6 +31610,15 @@ module.exports = {
             "type": "enum",
             "choices": [
               {
+                "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
+                "name": "survey_heads_up",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Newman::Emails::SurveyHeadsUpEmail"
+                }
+              },
+              {
                 "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
                 "name": "survey_last_call",
                 "type": "enum_value",
@@ -31518,6 +31647,7 @@ module.exports = {
               }
             ],
             "values": [
+              "survey_heads_up",
               "survey_last_call",
               "survey_link",
               "survey_reminder"
@@ -31594,6 +31724,15 @@ module.exports = {
             "type": "enum",
             "choices": [
               {
+                "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+                "name": "survey_heads_up",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Newman::Messages::SurveyHeadsUpMessage"
+                }
+              },
+              {
                 "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
                 "name": "survey_last_call",
                 "type": "enum_value",
@@ -31622,6 +31761,7 @@ module.exports = {
               }
             ],
             "values": [
+              "survey_heads_up",
               "survey_last_call",
               "survey_link",
               "survey_reminder"
