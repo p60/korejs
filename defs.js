@@ -11616,16 +11616,6 @@ module.exports = {
             }
           },
           {
-            "source": "Kore::Types::Client::Account::Fields::Kind::Mandrill",
-            "name": "mandrill",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-              "type": "Client::Accounts::MandrillAccount",
-              "integration": "mandrill"
-            }
-          },
-          {
             "source": "Kore::Types::Client::Account::Fields::Kind::Looker",
             "name": "looker",
             "type": "enum_value",
@@ -11639,7 +11629,6 @@ module.exports = {
         "values": [
           "salesforce",
           "reaction",
-          "mandrill",
           "looker"
         ]
       },
@@ -11695,16 +11684,6 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Client::Account::Fields::Kind::Mandrill",
-              "name": "mandrill",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Client::Accounts::MandrillAccount",
-                "integration": "mandrill"
-              }
-            },
-            {
               "source": "Kore::Types::Client::Account::Fields::Kind::Looker",
               "name": "looker",
               "type": "enum_value",
@@ -11718,7 +11697,6 @@ module.exports = {
           "values": [
             "salesforce",
             "reaction",
-            "mandrill",
             "looker"
           ]
         },
@@ -11777,16 +11755,6 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Client::Account::Fields::Kind::Mandrill",
-              "name": "mandrill",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Client::Accounts::MandrillAccount",
-                "integration": "mandrill"
-              }
-            },
-            {
               "source": "Kore::Types::Client::Account::Fields::Kind::Looker",
               "name": "looker",
               "type": "enum_value",
@@ -11800,7 +11768,6 @@ module.exports = {
           "values": [
             "salesforce",
             "reaction",
-            "mandrill",
             "looker"
           ]
         },
@@ -11859,16 +11826,6 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Client::Account::Fields::Kind::Mandrill",
-              "name": "mandrill",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Client::Accounts::MandrillAccount",
-                "integration": "mandrill"
-              }
-            },
-            {
               "source": "Kore::Types::Client::Account::Fields::Kind::Looker",
               "name": "looker",
               "type": "enum_value",
@@ -11882,7 +11839,6 @@ module.exports = {
           "values": [
             "salesforce",
             "reaction",
-            "mandrill",
             "looker"
           ]
         },
@@ -11946,16 +11902,6 @@ module.exports = {
               }
             },
             {
-              "source": "Kore::Types::Client::Account::Fields::Kind::Mandrill",
-              "name": "mandrill",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Client::Accounts::MandrillAccount",
-                "integration": "mandrill"
-              }
-            },
-            {
               "source": "Kore::Types::Client::Account::Fields::Kind::Looker",
               "name": "looker",
               "type": "enum_value",
@@ -11969,7 +11915,6 @@ module.exports = {
           "values": [
             "salesforce",
             "reaction",
-            "mandrill",
             "looker"
           ]
         },
@@ -16631,15 +16576,6 @@ module.exports = {
             "type": "enum",
             "choices": [
               {
-                "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
-                "name": "mandrill",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                  "mailer_type": "Newman::MandrillMailer"
-                }
-              },
-              {
                 "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
                 "name": "send_grid",
                 "type": "enum_value",
@@ -16650,10 +16586,9 @@ module.exports = {
               }
             ],
             "values": [
-              "mandrill",
               "send_grid"
             ],
-            "default": "mandrill"
+            "default": "send_grid"
           }
         }
       },
@@ -17438,6 +17373,7 @@ module.exports = {
         "Cairo",
         "Harare",
         "Helsinki",
+        "Istanbul",
         "Jerusalem",
         "Kaliningrad",
         "Kyiv",
@@ -17447,7 +17383,6 @@ module.exports = {
         "Tallinn",
         "Vilnius",
         "Baghdad",
-        "Istanbul",
         "Kuwait",
         "Minsk",
         "Moscow",
@@ -17476,13 +17411,13 @@ module.exports = {
         "Almaty",
         "Astana",
         "Dhaka",
+        "Novosibirsk",
         "Urumqi",
         "Rangoon",
         "Bangkok",
         "Hanoi",
         "Jakarta",
         "Krasnoyarsk",
-        "Novosibirsk",
         "Beijing",
         "Chongqing",
         "Hong Kong",
@@ -23940,15 +23875,6 @@ module.exports = {
         "type": "enum",
         "choices": [
           {
-            "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
-            "name": "mandrill",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "mailer_type": "Newman::MandrillMailer"
-            }
-          },
-          {
             "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
             "name": "send_grid",
             "type": "enum_value",
@@ -23959,7 +23885,6 @@ module.exports = {
           }
         ],
         "values": [
-          "mandrill",
           "send_grid"
         ]
       },
@@ -24416,15 +24341,6 @@ module.exports = {
         "type": "enum",
         "choices": [
           {
-            "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
-            "name": "mandrill",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "mailer_type": "Newman::MandrillMailer"
-            }
-          },
-          {
             "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
             "name": "send_grid",
             "type": "enum_value",
@@ -24435,7 +24351,6 @@ module.exports = {
           }
         ],
         "values": [
-          "mandrill",
           "send_grid"
         ]
       },
@@ -24547,15 +24462,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
-              "name": "mandrill",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "mailer_type": "Newman::MandrillMailer"
-              }
-            },
-            {
               "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
               "name": "send_grid",
               "type": "enum_value",
@@ -24566,7 +24472,6 @@ module.exports = {
             }
           ],
           "values": [
-            "mandrill",
             "send_grid"
           ]
         },
@@ -24780,15 +24685,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
-              "name": "mandrill",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "mailer_type": "Newman::MandrillMailer"
-              }
-            },
-            {
               "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
               "name": "send_grid",
               "type": "enum_value",
@@ -24799,7 +24695,6 @@ module.exports = {
             }
           ],
           "values": [
-            "mandrill",
             "send_grid"
           ]
         },
@@ -25013,15 +24908,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
-              "name": "mandrill",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "mailer_type": "Newman::MandrillMailer"
-              }
-            },
-            {
               "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
               "name": "send_grid",
               "type": "enum_value",
@@ -25032,7 +24918,6 @@ module.exports = {
             }
           ],
           "values": [
-            "mandrill",
             "send_grid"
           ]
         },
@@ -25246,15 +25131,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
-              "name": "mandrill",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "mailer_type": "Newman::MandrillMailer"
-              }
-            },
-            {
               "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
               "name": "send_grid",
               "type": "enum_value",
@@ -25265,7 +25141,6 @@ module.exports = {
             }
           ],
           "values": [
-            "mandrill",
             "send_grid"
           ]
         },
@@ -25485,15 +25360,6 @@ module.exports = {
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
-              "name": "mandrill",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "mailer_type": "Newman::MandrillMailer"
-              }
-            },
-            {
               "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
               "name": "send_grid",
               "type": "enum_value",
@@ -25504,7 +25370,6 @@ module.exports = {
             }
           ],
           "values": [
-            "mandrill",
             "send_grid"
           ]
         },
@@ -27317,15 +27182,6 @@ module.exports = {
             }
           },
           {
-            "source": "Kore::Types::Fields::Integration::Mandrill",
-            "name": "mandrill",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-              "account_type": "Client::Accounts::MandrillAccount"
-            }
-          },
-          {
             "source": "Kore::Types::Fields::Integration::Looker",
             "name": "looker",
             "type": "enum_value",
@@ -27338,7 +27194,6 @@ module.exports = {
         "values": [
           "reaction",
           "salesforce",
-          "mandrill",
           "looker"
         ]
       },
@@ -27387,15 +27242,6 @@ module.exports = {
         "type": "enum",
         "choices": [
           {
-            "source": "Kore::Types::Fields::EmailServiceProvider::Mandrill",
-            "name": "mandrill",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "mailer_type": "Newman::MandrillMailer"
-            }
-          },
-          {
             "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
             "name": "send_grid",
             "type": "enum_value",
@@ -27406,7 +27252,6 @@ module.exports = {
           }
         ],
         "values": [
-          "mandrill",
           "send_grid"
         ]
       },
@@ -29436,16 +29281,6 @@ module.exports = {
                 }
               },
               {
-                "source": "Kore::Types::Client::Account::Fields::Kind::Mandrill",
-                "name": "mandrill",
-                "type": "enum_value",
-                "integer_value": 3,
-                "attributes": {
-                  "type": "Client::Accounts::MandrillAccount",
-                  "integration": "mandrill"
-                }
-              },
-              {
                 "source": "Kore::Types::Client::Account::Fields::Kind::Looker",
                 "name": "looker",
                 "type": "enum_value",
@@ -29459,7 +29294,6 @@ module.exports = {
             "values": [
               "salesforce",
               "reaction",
-              "mandrill",
               "looker"
             ]
           }
