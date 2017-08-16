@@ -1,6 +1,6 @@
 {
   "name": "korejs",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Kore JS Definitions",
   "main": "index.js",
   "scripts": {
