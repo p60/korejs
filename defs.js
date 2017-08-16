@@ -25620,7 +25620,7 @@ module.exports = {
             "attributes": {
               "type": "Portal::Reactions::CreateEmailForParticipation",
               "integration": "reaction",
-              "label": "Create and Send Email For Participation"
+              "label": "Schedule Email Delivery For Participation"
             }
           },
           {
@@ -25631,7 +25631,7 @@ module.exports = {
             "attributes": {
               "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
               "integration": "reaction",
-              "label": "Create Contact"
+              "label": "Create Participant"
             }
           },
           {
@@ -25642,7 +25642,7 @@ module.exports = {
             "attributes": {
               "type": "Portal::Reactions::AddParticipantToGroup",
               "integration": "reaction",
-              "label": "Add Contact To Audience"
+              "label": "Add Participant To Audience"
             }
           },
           {
@@ -25744,7 +25744,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create and Send Email For Participation"
+                "label": "Schedule Email Delivery For Participation"
               }
             },
             {
@@ -25755,7 +25755,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact"
+                "label": "Create Participant"
               }
             },
             {
@@ -25766,7 +25766,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::AddParticipantToGroup",
                 "integration": "reaction",
-                "label": "Add Contact To Audience"
+                "label": "Add Participant To Audience"
               }
             },
             {
@@ -25873,7 +25873,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create and Send Email For Participation"
+                "label": "Schedule Email Delivery For Participation"
               }
             },
             {
@@ -25884,7 +25884,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact"
+                "label": "Create Participant"
               }
             },
             {
@@ -25895,7 +25895,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::AddParticipantToGroup",
                 "integration": "reaction",
-                "label": "Add Contact To Audience"
+                "label": "Add Participant To Audience"
               }
             },
             {
@@ -26002,7 +26002,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create and Send Email For Participation"
+                "label": "Schedule Email Delivery For Participation"
               }
             },
             {
@@ -26013,7 +26013,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact"
+                "label": "Create Participant"
               }
             },
             {
@@ -26024,7 +26024,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::AddParticipantToGroup",
                 "integration": "reaction",
-                "label": "Add Contact To Audience"
+                "label": "Add Participant To Audience"
               }
             },
             {
@@ -26125,7 +26125,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create and Send Email For Participation"
+                "label": "Schedule Email Delivery For Participation"
               }
             },
             {
@@ -26136,7 +26136,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact"
+                "label": "Create Participant"
               }
             },
             {
@@ -26147,7 +26147,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::AddParticipantToGroup",
                 "integration": "reaction",
-                "label": "Add Contact To Audience"
+                "label": "Add Participant To Audience"
               }
             },
             {
@@ -26253,7 +26253,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create and Send Email For Participation"
+                "label": "Schedule Email Delivery For Participation"
               }
             },
             {
@@ -26264,7 +26264,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact"
+                "label": "Create Participant"
               }
             },
             {
@@ -26275,7 +26275,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::AddParticipantToGroup",
                 "integration": "reaction",
-                "label": "Add Contact To Audience"
+                "label": "Add Participant To Audience"
               }
             },
             {
