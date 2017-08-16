@@ -25609,8 +25609,7 @@ module.exports = {
             "attributes": {
               "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
               "integration": "reaction",
-              "label": "Create Participation",
-              "ordinal": 2
+              "label": "Create Participation"
             }
           },
           {
@@ -25621,7 +25620,7 @@ module.exports = {
             "attributes": {
               "type": "Portal::Reactions::CreateEmailForParticipation",
               "integration": "reaction",
-              "label": "Create Email For Participation"
+              "label": "Create and Send Email For Participation"
             }
           },
           {
@@ -25632,8 +25631,7 @@ module.exports = {
             "attributes": {
               "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
               "integration": "reaction",
-              "label": "Create Contact",
-              "ordinal": 1
+              "label": "Create Contact"
             }
           },
           {
@@ -25735,8 +25733,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Participation",
-                "ordinal": 2
+                "label": "Create Participation"
               }
             },
             {
@@ -25747,7 +25744,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create Email For Participation"
+                "label": "Create and Send Email For Participation"
               }
             },
             {
@@ -25758,8 +25755,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact",
-                "ordinal": 1
+                "label": "Create Contact"
               }
             },
             {
@@ -25866,8 +25862,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Participation",
-                "ordinal": 2
+                "label": "Create Participation"
               }
             },
             {
@@ -25878,7 +25873,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create Email For Participation"
+                "label": "Create and Send Email For Participation"
               }
             },
             {
@@ -25889,8 +25884,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact",
-                "ordinal": 1
+                "label": "Create Contact"
               }
             },
             {
@@ -25997,8 +25991,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Participation",
-                "ordinal": 2
+                "label": "Create Participation"
               }
             },
             {
@@ -26009,7 +26002,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create Email For Participation"
+                "label": "Create and Send Email For Participation"
               }
             },
             {
@@ -26020,8 +26013,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact",
-                "ordinal": 1
+                "label": "Create Contact"
               }
             },
             {
@@ -26122,8 +26114,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Participation",
-                "ordinal": 2
+                "label": "Create Participation"
               }
             },
             {
@@ -26134,7 +26125,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create Email For Participation"
+                "label": "Create and Send Email For Participation"
               }
             },
             {
@@ -26145,8 +26136,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact",
-                "ordinal": 1
+                "label": "Create Contact"
               }
             },
             {
@@ -26252,8 +26242,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipationFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Participation",
-                "ordinal": 2
+                "label": "Create Participation"
               }
             },
             {
@@ -26264,7 +26253,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateEmailForParticipation",
                 "integration": "reaction",
-                "label": "Create Email For Participation"
+                "label": "Create and Send Email For Participation"
               }
             },
             {
@@ -26275,8 +26264,7 @@ module.exports = {
               "attributes": {
                 "type": "Portal::Reactions::CreateParticipantFromSalesforceCase",
                 "integration": "reaction",
-                "label": "Create Contact",
-                "ordinal": 1
+                "label": "Create Contact"
               }
             },
             {
