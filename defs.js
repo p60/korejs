@@ -8078,6 +8078,16 @@ module.exports = {
                   "hex": "#767676",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Black",
+                "name": "black",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "hex": "#000000",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -8090,10 +8100,278 @@ module.exports = {
               "blue",
               "violet",
               "purple",
-              "grey"
+              "grey",
+              "black"
             ],
             "default": {
             }
+          }
+        }
+      },
+      "display_settings": {
+        "source": "Census::Survey::Fields::DisplaySettings",
+        "name": "display_settings",
+        "type": "struct",
+        "fields": {
+          "primary_palette": {
+            "name": "primary_palette",
+            "source": "Census::Survey::Fields::DisplaySettings::Fields::PrimaryPalette",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Red",
+                "name": "red",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "hex": "#db2828",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Orange",
+                "name": "orange",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "hex": "#f2711c",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                "name": "yellow",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "hex": "#fbbd08",
+                  "contrast": "black"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Olive",
+                "name": "olive",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "hex": "#b5cc18",
+                  "contrast": "black"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Green",
+                "name": "green",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "hex": "#21ba45",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Teal",
+                "name": "teal",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "hex": "#00b5ad",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Blue",
+                "name": "blue",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "hex": "#2185d0",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Violet",
+                "name": "violet",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "hex": "#6435c9",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Purple",
+                "name": "purple",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "hex": "#a333c8",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Grey",
+                "name": "grey",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "hex": "#767676",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Black",
+                "name": "black",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "hex": "#000000",
+                  "contrast": "white"
+                }
+              }
+            ],
+            "values": [
+              "red",
+              "orange",
+              "yellow",
+              "olive",
+              "green",
+              "teal",
+              "blue",
+              "violet",
+              "purple",
+              "grey",
+              "black"
+            ]
+          },
+          "secondary_palette": {
+            "name": "secondary_palette",
+            "source": "Census::Survey::Fields::DisplaySettings::Fields::SecondaryPalette",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Red",
+                "name": "red",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "hex": "#db2828",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Orange",
+                "name": "orange",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "hex": "#f2711c",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                "name": "yellow",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "hex": "#fbbd08",
+                  "contrast": "black"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Olive",
+                "name": "olive",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "hex": "#b5cc18",
+                  "contrast": "black"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Green",
+                "name": "green",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "hex": "#21ba45",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Teal",
+                "name": "teal",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "hex": "#00b5ad",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Blue",
+                "name": "blue",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "hex": "#2185d0",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Violet",
+                "name": "violet",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "hex": "#6435c9",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Purple",
+                "name": "purple",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "hex": "#a333c8",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Grey",
+                "name": "grey",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "hex": "#767676",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Black",
+                "name": "black",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "hex": "#000000",
+                  "contrast": "white"
+                }
+              }
+            ],
+            "values": [
+              "red",
+              "orange",
+              "yellow",
+              "olive",
+              "green",
+              "teal",
+              "blue",
+              "violet",
+              "purple",
+              "grey",
+              "black"
+            ]
           }
         }
       },
@@ -8899,6 +9177,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -8911,10 +9199,278 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
+            }
+          }
+        },
+        "display_settings": {
+          "source": "Census::Surveys::FreeformSurvey::Fields::DisplaySettings",
+          "name": "display_settings",
+          "type": "struct",
+          "fields": {
+            "primary_palette": {
+              "name": "primary_palette",
+              "source": "Census::Surveys::FreeformSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black"
+              ]
+            },
+            "secondary_palette": {
+              "name": "secondary_palette",
+              "source": "Census::Surveys::FreeformSurvey::Fields::DisplaySettings::Fields::SecondaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black"
+              ]
             }
           }
         },
@@ -9713,6 +10269,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -9725,10 +10291,278 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
+            }
+          }
+        },
+        "display_settings": {
+          "source": "Census::Surveys::NpsSurvey::Fields::DisplaySettings",
+          "name": "display_settings",
+          "type": "struct",
+          "fields": {
+            "primary_palette": {
+              "name": "primary_palette",
+              "source": "Census::Surveys::NpsSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black"
+              ]
+            },
+            "secondary_palette": {
+              "name": "secondary_palette",
+              "source": "Census::Surveys::NpsSurvey::Fields::DisplaySettings::Fields::SecondaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black"
+              ]
             }
           }
         },
@@ -10527,6 +11361,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -10539,10 +11383,278 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
+            }
+          }
+        },
+        "display_settings": {
+          "source": "Census::Surveys::PostCaseSurvey::Fields::DisplaySettings",
+          "name": "display_settings",
+          "type": "struct",
+          "fields": {
+            "primary_palette": {
+              "name": "primary_palette",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black"
+              ]
+            },
+            "secondary_palette": {
+              "name": "secondary_palette",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::DisplaySettings::Fields::SecondaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black"
+              ]
             }
           }
         },
@@ -11346,6 +12458,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -11358,10 +12480,278 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
+            }
+          }
+        },
+        "display_settings": {
+          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::DisplaySettings",
+          "name": "display_settings",
+          "type": "struct",
+          "fields": {
+            "primary_palette": {
+              "name": "primary_palette",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black"
+              ]
+            },
+            "secondary_palette": {
+              "name": "secondary_palette",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::DisplaySettings::Fields::SecondaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black"
+              ]
             }
           }
         },
@@ -17003,6 +18393,16 @@ module.exports = {
                   "hex": "#767676",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Black",
+                "name": "black",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "hex": "#000000",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -17015,7 +18415,8 @@ module.exports = {
               "blue",
               "violet",
               "purple",
-              "grey"
+              "grey",
+              "black"
             ],
             "default": "teal"
           },
@@ -17225,6 +18626,16 @@ module.exports = {
                   "hex": "#767676",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Black",
+                "name": "black",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "hex": "#000000",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -17237,7 +18648,8 @@ module.exports = {
               "blue",
               "violet",
               "purple",
-              "grey"
+              "grey",
+              "black"
             ],
             "default": "green"
           },
@@ -17345,6 +18757,16 @@ module.exports = {
                   "hex": "#767676",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Black",
+                "name": "black",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "hex": "#000000",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -17357,7 +18779,8 @@ module.exports = {
               "blue",
               "violet",
               "purple",
-              "grey"
+              "grey",
+              "black"
             ],
             "default": "blue"
           }
@@ -17630,16 +19053,16 @@ module.exports = {
         "Indiana (East)",
         "Lima",
         "Quito",
-        "Caracas",
         "Atlantic Time (Canada)",
+        "Caracas",
         "Georgetown",
         "La Paz",
+        "Santiago",
         "Newfoundland",
         "Brasilia",
         "Buenos Aires",
         "Greenland",
         "Montevideo",
-        "Santiago",
         "Mid-Atlantic",
         "Azores",
         "Cape Verde Is.",
@@ -17675,7 +19098,6 @@ module.exports = {
         "Cairo",
         "Harare",
         "Helsinki",
-        "Istanbul",
         "Jerusalem",
         "Kaliningrad",
         "Kyiv",
@@ -17685,6 +19107,7 @@ module.exports = {
         "Tallinn",
         "Vilnius",
         "Baghdad",
+        "Istanbul",
         "Kuwait",
         "Minsk",
         "Moscow",
@@ -17713,13 +19136,13 @@ module.exports = {
         "Almaty",
         "Astana",
         "Dhaka",
-        "Novosibirsk",
         "Urumqi",
         "Rangoon",
         "Bangkok",
         "Hanoi",
         "Jakarta",
         "Krasnoyarsk",
+        "Novosibirsk",
         "Beijing",
         "Chongqing",
         "Hong Kong",
@@ -17740,11 +19163,11 @@ module.exports = {
         "Canberra",
         "Guam",
         "Hobart",
-        "Magadan",
         "Melbourne",
         "Port Moresby",
         "Sydney",
         "Vladivostok",
+        "Magadan",
         "New Caledonia",
         "Solomon Is.",
         "Srednekolymsk",
@@ -32167,6 +33590,16 @@ module.exports = {
                 "hex": "#767676",
                 "contrast": "white"
               }
+            },
+            {
+              "source": "Kore::Types::Ui::Fields::Color::Black",
+              "name": "black",
+              "type": "enum_value",
+              "integer_value": 11,
+              "attributes": {
+                "hex": "#000000",
+                "contrast": "white"
+              }
             }
           ],
           "values": [
@@ -32179,7 +33612,8 @@ module.exports = {
             "blue",
             "violet",
             "purple",
-            "grey"
+            "grey",
+            "black"
           ]
         },
         "email_start_button_style": {
@@ -35037,6 +36471,16 @@ module.exports = {
                   "hex": "#767676",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Black",
+                "name": "black",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "hex": "#000000",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -35049,7 +36493,8 @@ module.exports = {
               "blue",
               "violet",
               "purple",
-              "grey"
+              "grey",
+              "black"
             ],
             "default": {
             }
@@ -35299,6 +36744,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -35311,7 +36766,8 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
@@ -35518,6 +36974,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -35530,7 +36996,8 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
@@ -35737,6 +37204,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -35749,7 +37226,8 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
@@ -35960,6 +37438,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -35972,7 +37460,8 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
@@ -36182,6 +37671,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -36194,7 +37693,8 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
@@ -36404,6 +37904,16 @@ module.exports = {
                     "hex": "#767676",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -36416,7 +37926,8 @@ module.exports = {
                 "blue",
                 "violet",
                 "purple",
-                "grey"
+                "grey",
+                "black"
               ],
               "default": {
               }
