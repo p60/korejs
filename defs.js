@@ -8088,6 +8088,16 @@ module.exports = {
                   "hex": "#000000",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                "name": "cobalt_blue",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "hex": "#003da5",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -8101,7 +8111,8 @@ module.exports = {
               "violet",
               "purple",
               "grey",
-              "black"
+              "black",
+              "cobalt_blue"
             ],
             "default": {
             }
@@ -8227,6 +8238,16 @@ module.exports = {
                   "hex": "#000000",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                "name": "cobalt_blue",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "hex": "#003da5",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -8240,7 +8261,8 @@ module.exports = {
               "violet",
               "purple",
               "grey",
-              "black"
+              "black",
+              "cobalt_blue"
             ]
           },
           "secondary_palette": {
@@ -8357,6 +8379,16 @@ module.exports = {
                   "hex": "#000000",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                "name": "cobalt_blue",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "hex": "#003da5",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -8370,7 +8402,8 @@ module.exports = {
               "violet",
               "purple",
               "grey",
-              "black"
+              "black",
+              "cobalt_blue"
             ]
           }
         }
@@ -9187,6 +9220,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -9200,7 +9243,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -9326,6 +9370,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -9339,7 +9393,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ]
             },
             "secondary_palette": {
@@ -9456,6 +9511,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -9469,7 +9534,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ]
             }
           }
@@ -10279,6 +10345,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -10292,7 +10368,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -10418,6 +10495,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -10431,7 +10518,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ]
             },
             "secondary_palette": {
@@ -10548,6 +10636,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -10561,7 +10659,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ]
             }
           }
@@ -11371,6 +11470,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -11384,7 +11493,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -11510,6 +11620,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -11523,7 +11643,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ]
             },
             "secondary_palette": {
@@ -11640,6 +11761,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -11653,7 +11784,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ]
             }
           }
@@ -12468,6 +12600,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -12481,7 +12623,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -12607,6 +12750,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -12620,7 +12773,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ]
             },
             "secondary_palette": {
@@ -12737,6 +12891,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -12750,7 +12914,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ]
             }
           }
@@ -14743,7 +14908,8 @@ module.exports = {
               "type": "Client::Imports::CompanyDemographicsImport",
               "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
               "required_headers": [
-                "name"
+                "name",
+                "kind"
               ],
               "supported_formats": [
                 "csv"
@@ -15148,7 +15314,8 @@ module.exports = {
                 "type": "Client::Imports::CompanyDemographicsImport",
                 "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                 "required_headers": [
-                  "name"
+                  "name",
+                  "kind"
                 ],
                 "supported_formats": [
                   "csv"
@@ -15337,6 +15504,34 @@ module.exports = {
                     "healthcare"
                   ],
                   "default": "healthcare"
+                },
+                "strategy": {
+                  "name": "strategy",
+                  "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy",
+                  "type": "enum",
+                  "choices": [
+                    {
+                      "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Fill",
+                      "name": "fill",
+                      "type": "enum_value",
+                      "integer_value": 1,
+                      "attributes": {
+                      }
+                    },
+                    {
+                      "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Overwrite",
+                      "name": "overwrite",
+                      "type": "enum_value",
+                      "integer_value": 2,
+                      "attributes": {
+                      }
+                    }
+                  ],
+                  "values": [
+                    "fill",
+                    "overwrite"
+                  ],
+                  "default": "fill"
                 }
               }
             }
@@ -15489,7 +15684,8 @@ module.exports = {
                 "type": "Client::Imports::CompanyDemographicsImport",
                 "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                 "required_headers": [
-                  "name"
+                  "name",
+                  "kind"
                 ],
                 "supported_formats": [
                   "csv"
@@ -15805,7 +16001,8 @@ module.exports = {
                 "type": "Client::Imports::CompanyDemographicsImport",
                 "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                 "required_headers": [
-                  "name"
+                  "name",
+                  "kind"
                 ],
                 "supported_formats": [
                   "csv"
@@ -16121,7 +16318,8 @@ module.exports = {
                 "type": "Client::Imports::CompanyDemographicsImport",
                 "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                 "required_headers": [
-                  "name"
+                  "name",
+                  "kind"
                 ],
                 "supported_formats": [
                   "csv"
@@ -16475,7 +16673,8 @@ module.exports = {
                 "type": "Client::Imports::CompanyDemographicsImport",
                 "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                 "required_headers": [
-                  "name"
+                  "name",
+                  "kind"
                 ],
                 "supported_formats": [
                   "csv"
@@ -16791,7 +16990,8 @@ module.exports = {
                 "type": "Client::Imports::CompanyDemographicsImport",
                 "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                 "required_headers": [
-                  "name"
+                  "name",
+                  "kind"
                 ],
                 "supported_formats": [
                   "csv"
@@ -17102,7 +17302,8 @@ module.exports = {
                 "type": "Client::Imports::CompanyDemographicsImport",
                 "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                 "required_headers": [
-                  "name"
+                  "name",
+                  "kind"
                 ],
                 "supported_formats": [
                   "csv"
@@ -17418,7 +17619,8 @@ module.exports = {
                 "type": "Client::Imports::CompanyDemographicsImport",
                 "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                 "required_headers": [
-                  "name"
+                  "name",
+                  "kind"
                 ],
                 "supported_formats": [
                   "csv"
@@ -17734,7 +17936,8 @@ module.exports = {
                 "type": "Client::Imports::CompanyDemographicsImport",
                 "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                 "required_headers": [
-                  "name"
+                  "name",
+                  "kind"
                 ],
                 "supported_formats": [
                   "csv"
@@ -18403,6 +18606,16 @@ module.exports = {
                   "hex": "#000000",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                "name": "cobalt_blue",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "hex": "#003da5",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -18416,7 +18629,8 @@ module.exports = {
               "violet",
               "purple",
               "grey",
-              "black"
+              "black",
+              "cobalt_blue"
             ],
             "default": "teal"
           },
@@ -18636,6 +18850,16 @@ module.exports = {
                   "hex": "#000000",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                "name": "cobalt_blue",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "hex": "#003da5",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -18649,7 +18873,8 @@ module.exports = {
               "violet",
               "purple",
               "grey",
-              "black"
+              "black",
+              "cobalt_blue"
             ],
             "default": "green"
           },
@@ -18767,6 +18992,16 @@ module.exports = {
                   "hex": "#000000",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                "name": "cobalt_blue",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "hex": "#003da5",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -18780,7 +19015,8 @@ module.exports = {
               "violet",
               "purple",
               "grey",
-              "black"
+              "black",
+              "cobalt_blue"
             ],
             "default": "blue"
           }
@@ -21136,6 +21372,11 @@ module.exports = {
         "source": "Cms::Comment::Fields::MentionedIds",
         "type": "set"
       },
+      "user_views": {
+        "name": "user_views",
+        "source": "Cms::Comment::Fields::UserViews",
+        "type": "set"
+      },
       "custom_fields": {
         "source": "Cms::Comment::Fields::CustomFields",
         "name": "custom_fields",
@@ -21182,6 +21423,11 @@ module.exports = {
         "mentioned_ids": {
           "name": "mentioned_ids",
           "source": "Cms::Comments::FileComment::Fields::MentionedIds",
+          "type": "set"
+        },
+        "user_views": {
+          "name": "user_views",
+          "source": "Cms::Comments::FileComment::Fields::UserViews",
           "type": "set"
         },
         "custom_fields": {
@@ -21250,6 +21496,11 @@ module.exports = {
         "mentioned_ids": {
           "name": "mentioned_ids",
           "source": "Cms::Comments::TextComment::Fields::MentionedIds",
+          "type": "set"
+        },
+        "user_views": {
+          "name": "user_views",
+          "source": "Cms::Comments::TextComment::Fields::UserViews",
           "type": "set"
         },
         "custom_fields": {
@@ -23301,6 +23552,60 @@ module.exports = {
           "healthcare"
         ]
       },
+      "custom_fields": {
+        "source": "Giza::Place::Fields::CustomFields",
+        "name": "custom_fields",
+        "type": "struct",
+        "fields": {
+          "annual_revenue": {
+            "name": "annual_revenue",
+            "source": "Giza::Place::Fields::CustomFields::Fields::AnnualRevenue",
+            "type": "float"
+          },
+          "annual_studies_count": {
+            "name": "annual_studies_count",
+            "source": "Giza::Place::Fields::CustomFields::Fields::AnnualStudiesCount",
+            "type": "integer"
+          },
+          "it_employee_count": {
+            "name": "it_employee_count",
+            "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeCount",
+            "type": "integer"
+          },
+          "number_of_employees": {
+            "name": "number_of_employees",
+            "source": "Giza::Place::Fields::CustomFields::Fields::NumberOfEmployees",
+            "type": "integer"
+          },
+          "it_employee_affiliation": {
+            "name": "it_employee_affiliation",
+            "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeAffiliation",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeAffiliation::Internal",
+                "name": "internal",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeAffiliation::External",
+                "name": "external",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                }
+              }
+            ],
+            "values": [
+              "internal",
+              "external"
+            ]
+          }
+        }
+      },
       "types": [
         "Giza::Places::Bank",
         "Giza::Places::Healthcare"
@@ -23385,11 +23690,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "idn_name": {
-              "name": "idn_name",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::IdnName",
-              "type": "string"
-            },
             "bed_count": {
               "name": "bed_count",
               "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::BedCount",
@@ -23400,40 +23700,1365 @@ module.exports = {
               "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PhysicianCount",
               "type": "integer"
             },
-            "subtype": {
-              "name": "subtype",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype",
+            "radiologist_count": {
+              "name": "radiologist_count",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::RadiologistCount",
+              "type": "integer"
+            },
+            "ehr_version": {
+              "name": "ehr_version",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVersion",
+              "type": "string"
+            },
+            "idn_name": {
+              "name": "idn_name",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::IdnName",
+              "type": "string"
+            },
+            "pacs_version": {
+              "name": "pacs_version",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVersion",
+              "type": "string"
+            },
+            "ehr_hosting_model": {
+              "name": "ehr_hosting_model",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrHostingModel",
               "type": "enum",
               "choices": [
                 {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Provider",
-                  "name": "provider",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrHostingModel::OnPremises",
+                  "name": "on_premises",
                   "type": "enum_value",
                   "integer_value": 1,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Payer",
-                  "name": "payer",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrHostingModel::Cloud",
+                  "name": "cloud",
                   "type": "enum_value",
                   "integer_value": 2,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Supplier",
-                  "name": "supplier",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrHostingModel::Saas",
+                  "name": "saas",
                   "type": "enum_value",
                   "integer_value": 3,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrHostingModel::Asp",
+                  "name": "asp",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrHostingModel::Connect",
+                  "name": "connect",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrHostingModel::Direct",
+                  "name": "direct",
+                  "type": "enum_value",
+                  "integer_value": 6,
                   "attributes": {
                   }
                 }
               ],
               "values": [
-                "provider",
-                "payer",
-                "supplier"
+                "on_premises",
+                "cloud",
+                "saas",
+                "asp",
+                "connect",
+                "direct"
+              ]
+            },
+            "ehr_vendor": {
+              "name": "ehr_vendor",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Cerner",
+                  "name": "cerner",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Epic",
+                  "name": "epic",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Allscripts",
+                  "name": "allscripts",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Nextgen",
+                  "name": "nextgen",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Athenahealth",
+                  "name": "athenahealth",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::GeHealthcare",
+                  "name": "ge_healthcare",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Eclinicalworks",
+                  "name": "eclinicalworks",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Mckesson",
+                  "name": "mckesson",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Abraxas",
+                  "name": "abraxas",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Proprietary",
+                  "name": "proprietary",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Cpsi",
+                  "name": "cpsi",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::PracticeFusion",
+                  "name": "practice_fusion",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Greenway",
+                  "name": "greenway",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Platinum",
+                  "name": "platinum",
+                  "type": "enum_value",
+                  "integer_value": 14,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Optum",
+                  "name": "optum",
+                  "type": "enum_value",
+                  "integer_value": 15,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Compugroup",
+                  "name": "compugroup",
+                  "type": "enum_value",
+                  "integer_value": 16,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Meditech",
+                  "name": "meditech",
+                  "type": "enum_value",
+                  "integer_value": 17,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Curemd",
+                  "name": "curemd",
+                  "type": "enum_value",
+                  "integer_value": 18,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Aprima",
+                  "name": "aprima",
+                  "type": "enum_value",
+                  "integer_value": 19,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Praxis",
+                  "name": "praxis",
+                  "type": "enum_value",
+                  "integer_value": 20,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::AdvancedDataSystems",
+                  "name": "advanced_data_systems",
+                  "type": "enum_value",
+                  "integer_value": 21,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::EMds",
+                  "name": "e_mds",
+                  "type": "enum_value",
+                  "integer_value": 22,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Nextech",
+                  "name": "nextech",
+                  "type": "enum_value",
+                  "integer_value": 23,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Advancedmd",
+                  "name": "advancedmd",
+                  "type": "enum_value",
+                  "integer_value": 24,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Kareo",
+                  "name": "kareo",
+                  "type": "enum_value",
+                  "integer_value": 25,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Valant",
+                  "name": "valant",
+                  "type": "enum_value",
+                  "integer_value": 26,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Vista",
+                  "name": "vista",
+                  "type": "enum_value",
+                  "integer_value": 27,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Medhost",
+                  "name": "medhost",
+                  "type": "enum_value",
+                  "integer_value": 28,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::ModernizingMedicine",
+                  "name": "modernizing_medicine",
+                  "type": "enum_value",
+                  "integer_value": 29,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::OfficePracticum",
+                  "name": "office_practicum",
+                  "type": "enum_value",
+                  "integer_value": 30,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Paragon",
+                  "name": "paragon",
+                  "type": "enum_value",
+                  "integer_value": 31,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::None",
+                  "name": "none",
+                  "type": "enum_value",
+                  "integer_value": 32,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Quanum",
+                  "name": "quanum",
+                  "type": "enum_value",
+                  "integer_value": 33,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Adp",
+                  "name": "adp",
+                  "type": "enum_value",
+                  "integer_value": 34,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Nuesoft",
+                  "name": "nuesoft",
+                  "type": "enum_value",
+                  "integer_value": 35,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Amazingcharts",
+                  "name": "amazingcharts",
+                  "type": "enum_value",
+                  "integer_value": 36,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Meditab",
+                  "name": "meditab",
+                  "type": "enum_value",
+                  "integer_value": 37,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Flatiron",
+                  "name": "flatiron",
+                  "type": "enum_value",
+                  "integer_value": 38,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Compulink",
+                  "name": "compulink",
+                  "type": "enum_value",
+                  "integer_value": 39,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::WrsHealth",
+                  "name": "wrs_health",
+                  "type": "enum_value",
+                  "integer_value": 40,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Medent",
+                  "name": "medent",
+                  "type": "enum_value",
+                  "integer_value": 41,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Medisys",
+                  "name": "medisys",
+                  "type": "enum_value",
+                  "integer_value": 42,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::NetHealth",
+                  "name": "net_health",
+                  "type": "enum_value",
+                  "integer_value": 43,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::ObjectiveMedicalSystems",
+                  "name": "objective_medical_systems",
+                  "type": "enum_value",
+                  "integer_value": 44,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::EncounterPro",
+                  "name": "encounter_pro",
+                  "type": "enum_value",
+                  "integer_value": 45,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::ElationHealth",
+                  "name": "elation_health",
+                  "type": "enum_value",
+                  "integer_value": 46,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Healthland",
+                  "name": "healthland",
+                  "type": "enum_value",
+                  "integer_value": 47,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::EpowerDoc",
+                  "name": "epower_doc",
+                  "type": "enum_value",
+                  "integer_value": 48,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVendor::Medsphere",
+                  "name": "medsphere",
+                  "type": "enum_value",
+                  "integer_value": 49,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "cerner",
+                "epic",
+                "allscripts",
+                "nextgen",
+                "athenahealth",
+                "ge_healthcare",
+                "eclinicalworks",
+                "mckesson",
+                "abraxas",
+                "proprietary",
+                "cpsi",
+                "practice_fusion",
+                "greenway",
+                "platinum",
+                "optum",
+                "compugroup",
+                "meditech",
+                "curemd",
+                "aprima",
+                "praxis",
+                "advanced_data_systems",
+                "e_mds",
+                "nextech",
+                "advancedmd",
+                "kareo",
+                "valant",
+                "vista",
+                "medhost",
+                "modernizing_medicine",
+                "office_practicum",
+                "paragon",
+                "none",
+                "quanum",
+                "adp",
+                "nuesoft",
+                "amazingcharts",
+                "meditab",
+                "flatiron",
+                "compulink",
+                "wrs_health",
+                "medent",
+                "medisys",
+                "net_health",
+                "objective_medical_systems",
+                "encounter_pro",
+                "elation_health",
+                "healthland",
+                "epower_doc",
+                "medsphere"
+              ]
+            },
+            "facility_type": {
+              "name": "facility_type",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::ImagingCenter",
+                  "name": "imaging_center",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::MultipleSpecialtyClinic",
+                  "name": "multiple_specialty_clinic",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::SpecialtyClinic",
+                  "name": "specialty_clinic",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::AcademicMedicalCenter",
+                  "name": "academic_medical_center",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::ChildrensHospital",
+                  "name": "childrens_hospital",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::CancerHospital",
+                  "name": "cancer_hospital",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::LongTermCare",
+                  "name": "long_term_care",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::HomeHealthHospice",
+                  "name": "home_health_hospice",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::MentalHealth",
+                  "name": "mental_health",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::CriticalAccessHospital",
+                  "name": "critical_access_hospital",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::ReferenceLab",
+                  "name": "reference_lab",
+                  "type": "enum_value",
+                  "integer_value": 16,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::MilitaryHealth",
+                  "name": "military_health",
+                  "type": "enum_value",
+                  "integer_value": 17,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::VaHospital",
+                  "name": "va_hospital",
+                  "type": "enum_value",
+                  "integer_value": 18,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::Idn",
+                  "name": "idn",
+                  "type": "enum_value",
+                  "integer_value": 22,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::CommunityHospital",
+                  "name": "community_hospital",
+                  "type": "enum_value",
+                  "integer_value": 23,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::RetailPharmacy",
+                  "name": "retail_pharmacy",
+                  "type": "enum_value",
+                  "integer_value": 24,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::FamilyPractice",
+                  "name": "family_practice",
+                  "type": "enum_value",
+                  "integer_value": 25,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::RehabilitationHospital",
+                  "name": "rehabilitation_hospital",
+                  "type": "enum_value",
+                  "integer_value": 26,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "imaging_center",
+                "multiple_specialty_clinic",
+                "specialty_clinic",
+                "academic_medical_center",
+                "childrens_hospital",
+                "cancer_hospital",
+                "long_term_care",
+                "home_health_hospice",
+                "mental_health",
+                "critical_access_hospital",
+                "reference_lab",
+                "military_health",
+                "va_hospital",
+                "idn",
+                "community_hospital",
+                "retail_pharmacy",
+                "family_practice",
+                "rehabilitation_hospital"
+              ]
+            },
+            "pacs_hosting_model": {
+              "name": "pacs_hosting_model",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsHostingModel",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsHostingModel::OnPremises",
+                  "name": "on_premises",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsHostingModel::Cloud",
+                  "name": "cloud",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsHostingModel::Saas",
+                  "name": "saas",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsHostingModel::Asp",
+                  "name": "asp",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "on_premises",
+                "cloud",
+                "saas",
+                "asp"
+              ]
+            },
+            "pacs_vendor": {
+              "name": "pacs_vendor",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Medical",
+                  "name": "medical",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Accelarad",
+                  "name": "accelarad",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Advance",
+                  "name": "advance",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Agfa",
+                  "name": "agfa",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Allscripts",
+                  "name": "allscripts",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Amicas",
+                  "name": "amicas",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Aspyra",
+                  "name": "aspyra",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Avreo",
+                  "name": "avreo",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Barco",
+                  "name": "barco",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::BritSystems",
+                  "name": "brit_systems",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Candelis",
+                  "name": "candelis",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::CarestreamHealth",
+                  "name": "carestream_health",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Cerner",
+                  "name": "cerner",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::CoactivMedicalSolutions",
+                  "name": "coactiv_medical_solutions",
+                  "type": "enum_value",
+                  "integer_value": 14,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::ConnectImaging",
+                  "name": "connect_imaging",
+                  "type": "enum_value",
+                  "integer_value": 15,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Cpsi",
+                  "name": "cpsi",
+                  "type": "enum_value",
+                  "integer_value": 16,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Elekta",
+                  "name": "elekta",
+                  "type": "enum_value",
+                  "integer_value": 17,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Erad",
+                  "name": "erad",
+                  "type": "enum_value",
+                  "integer_value": 18,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Esaote",
+                  "name": "esaote",
+                  "type": "enum_value",
+                  "integer_value": 19,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Fuji",
+                  "name": "fuji",
+                  "type": "enum_value",
+                  "integer_value": 20,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::FusionOne",
+                  "name": "fusion_one",
+                  "type": "enum_value",
+                  "integer_value": 21,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::GeHealthcare",
+                  "name": "ge_healthcare",
+                  "type": "enum_value",
+                  "integer_value": 22,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Homegrown",
+                  "name": "homegrown",
+                  "type": "enum_value",
+                  "integer_value": 23,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Infinitt",
+                  "name": "infinitt",
+                  "type": "enum_value",
+                  "integer_value": 24,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::InfinnieSmartPacs",
+                  "name": "infinnie_smart_pacs",
+                  "type": "enum_value",
+                  "integer_value": 25,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Insignia",
+                  "name": "insignia",
+                  "type": "enum_value",
+                  "integer_value": 26,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Intelerad",
+                  "name": "intelerad",
+                  "type": "enum_value",
+                  "integer_value": 27,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::IntuitiveImaging",
+                  "name": "intuitive_imaging",
+                  "type": "enum_value",
+                  "integer_value": 28,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::IqView",
+                  "name": "iq_view",
+                  "type": "enum_value",
+                  "integer_value": 29,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Isite",
+                  "name": "isite",
+                  "type": "enum_value",
+                  "integer_value": 30,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Lifeimage",
+                  "name": "lifeimage",
+                  "type": "enum_value",
+                  "integer_value": 31,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::ChangeHealthcare",
+                  "name": "change_healthcare",
+                  "type": "enum_value",
+                  "integer_value": 32,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Medstrat",
+                  "name": "medstrat",
+                  "type": "enum_value",
+                  "integer_value": 33,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Medweb",
+                  "name": "medweb",
+                  "type": "enum_value",
+                  "integer_value": 34,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::MergeHealthcare",
+                  "name": "merge_healthcare",
+                  "type": "enum_value",
+                  "integer_value": 35,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Mie",
+                  "name": "mie",
+                  "type": "enum_value",
+                  "integer_value": 36,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Newtom",
+                  "name": "newtom",
+                  "type": "enum_value",
+                  "integer_value": 37,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Novarad",
+                  "name": "novarad",
+                  "type": "enum_value",
+                  "integer_value": 38,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::OpalRad",
+                  "name": "opal_rad",
+                  "type": "enum_value",
+                  "integer_value": 39,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Orthanc",
+                  "name": "orthanc",
+                  "type": "enum_value",
+                  "integer_value": 40,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::OrthoView",
+                  "name": "ortho_view",
+                  "type": "enum_value",
+                  "integer_value": 41,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Osirix",
+                  "name": "osirix",
+                  "type": "enum_value",
+                  "integer_value": 42,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Paxeramed",
+                  "name": "paxeramed",
+                  "type": "enum_value",
+                  "integer_value": 43,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Philips",
+                  "name": "philips",
+                  "type": "enum_value",
+                  "integer_value": 44,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Radisphere",
+                  "name": "radisphere",
+                  "type": "enum_value",
+                  "integer_value": 45,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Radius",
+                  "name": "radius",
+                  "type": "enum_value",
+                  "integer_value": 46,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Radnet",
+                  "name": "radnet",
+                  "type": "enum_value",
+                  "integer_value": 47,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Radsource",
+                  "name": "radsource",
+                  "type": "enum_value",
+                  "integer_value": 48,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Ramsoft",
+                  "name": "ramsoft",
+                  "type": "enum_value",
+                  "integer_value": 49,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::RationalImaging",
+                  "name": "rational_imaging",
+                  "type": "enum_value",
+                  "integer_value": 50,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Raypax",
+                  "name": "raypax",
+                  "type": "enum_value",
+                  "integer_value": 51,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Sectra",
+                  "name": "sectra",
+                  "type": "enum_value",
+                  "integer_value": 52,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Sepstream",
+                  "name": "sepstream",
+                  "type": "enum_value",
+                  "integer_value": 53,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Smaart",
+                  "name": "smaart",
+                  "type": "enum_value",
+                  "integer_value": 54,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Solaris",
+                  "name": "solaris",
+                  "type": "enum_value",
+                  "integer_value": 55,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Telemis",
+                  "name": "telemis",
+                  "type": "enum_value",
+                  "integer_value": 56,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Ultrarad",
+                  "name": "ultrarad",
+                  "type": "enum_value",
+                  "integer_value": 57,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::VistaImagingSystem",
+                  "name": "vista_imaging_system",
+                  "type": "enum_value",
+                  "integer_value": 58,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Vario",
+                  "name": "vario",
+                  "type": "enum_value",
+                  "integer_value": 59,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Vepro",
+                  "name": "vepro",
+                  "type": "enum_value",
+                  "integer_value": 60,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Visage",
+                  "name": "visage",
+                  "type": "enum_value",
+                  "integer_value": 61,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Visus",
+                  "name": "visus",
+                  "type": "enum_value",
+                  "integer_value": 62,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::VitalImaging",
+                  "name": "vital_imaging",
+                  "type": "enum_value",
+                  "integer_value": 63,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Purview",
+                  "name": "purview",
+                  "type": "enum_value",
+                  "integer_value": 64,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Viztek",
+                  "name": "viztek",
+                  "type": "enum_value",
+                  "integer_value": 65,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::Vrad",
+                  "name": "vrad",
+                  "type": "enum_value",
+                  "integer_value": 66,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVendor::EhealthSolutions",
+                  "name": "ehealth_solutions",
+                  "type": "enum_value",
+                  "integer_value": 67,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "medical",
+                "accelarad",
+                "advance",
+                "agfa",
+                "allscripts",
+                "amicas",
+                "aspyra",
+                "avreo",
+                "barco",
+                "brit_systems",
+                "candelis",
+                "carestream_health",
+                "cerner",
+                "coactiv_medical_solutions",
+                "connect_imaging",
+                "cpsi",
+                "elekta",
+                "erad",
+                "esaote",
+                "fuji",
+                "fusion_one",
+                "ge_healthcare",
+                "homegrown",
+                "infinitt",
+                "infinnie_smart_pacs",
+                "insignia",
+                "intelerad",
+                "intuitive_imaging",
+                "iq_view",
+                "isite",
+                "lifeimage",
+                "change_healthcare",
+                "medstrat",
+                "medweb",
+                "merge_healthcare",
+                "mie",
+                "newtom",
+                "novarad",
+                "opal_rad",
+                "orthanc",
+                "ortho_view",
+                "osirix",
+                "paxeramed",
+                "philips",
+                "radisphere",
+                "radius",
+                "radnet",
+                "radsource",
+                "ramsoft",
+                "rational_imaging",
+                "raypax",
+                "sectra",
+                "sepstream",
+                "smaart",
+                "solaris",
+                "telemis",
+                "ultrarad",
+                "vista_imaging_system",
+                "vario",
+                "vepro",
+                "visage",
+                "visus",
+                "vital_imaging",
+                "purview",
+                "viztek",
+                "vrad",
+                "ehealth_solutions"
               ]
             },
             "provider_affiliation": {
@@ -23596,6 +25221,260 @@ module.exports = {
                 "mental_health",
                 "pharmacy",
                 "research"
+              ]
+            },
+            "specialty_group": {
+              "name": "specialty_group",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyGroup",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyGroup::Single",
+                  "name": "single",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyGroup::Multiple",
+                  "name": "multiple",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "single",
+                "multiple"
+              ]
+            },
+            "specialty_type": {
+              "name": "specialty_type",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::ImagingCenter",
+                  "name": "imaging_center",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::Ophthomology",
+                  "name": "ophthomology",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::Gastroenternology",
+                  "name": "gastroenternology",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::EarNoseThroat",
+                  "name": "ear_nose_throat",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::FamilyMedicine",
+                  "name": "family_medicine",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::Obgyn",
+                  "name": "obgyn",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::Pediatrics",
+                  "name": "pediatrics",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::MedicalOncology",
+                  "name": "medical_oncology",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::RadiationOncology",
+                  "name": "radiation_oncology",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::Pathology",
+                  "name": "pathology",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::Hemotology",
+                  "name": "hemotology",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::OrthopedicSurgery",
+                  "name": "orthopedic_surgery",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::CardiacSurgery",
+                  "name": "cardiac_surgery",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::Pharmacy",
+                  "name": "pharmacy",
+                  "type": "enum_value",
+                  "integer_value": 14,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyType::Cardiology",
+                  "name": "cardiology",
+                  "type": "enum_value",
+                  "integer_value": 15,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "imaging_center",
+                "ophthomology",
+                "gastroenternology",
+                "ear_nose_throat",
+                "family_medicine",
+                "obgyn",
+                "pediatrics",
+                "medical_oncology",
+                "radiation_oncology",
+                "pathology",
+                "hemotology",
+                "orthopedic_surgery",
+                "cardiac_surgery",
+                "pharmacy",
+                "cardiology"
+              ]
+            },
+            "subtype": {
+              "name": "subtype",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Provider",
+                  "name": "provider",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Payer",
+                  "name": "payer",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Supplier",
+                  "name": "supplier",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "provider",
+                "payer",
+                "supplier"
+              ]
+            },
+            "annual_revenue": {
+              "name": "annual_revenue",
+              "source": "Giza::Place::Fields::CustomFields::Fields::AnnualRevenue",
+              "type": "float"
+            },
+            "annual_studies_count": {
+              "name": "annual_studies_count",
+              "source": "Giza::Place::Fields::CustomFields::Fields::AnnualStudiesCount",
+              "type": "integer"
+            },
+            "it_employee_count": {
+              "name": "it_employee_count",
+              "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeCount",
+              "type": "integer"
+            },
+            "number_of_employees": {
+              "name": "number_of_employees",
+              "source": "Giza::Place::Fields::CustomFields::Fields::NumberOfEmployees",
+              "type": "integer"
+            },
+            "it_employee_affiliation": {
+              "name": "it_employee_affiliation",
+              "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeAffiliation",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeAffiliation::Internal",
+                  "name": "internal",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeAffiliation::External",
+                  "name": "external",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "internal",
+                "external"
               ]
             }
           }
@@ -28403,6 +30282,8 @@ module.exports = {
     }
   },
   "Spectacles": {
+    "MaterializedView": {
+    },
     "View": {
     }
   },
@@ -31042,7 +32923,8 @@ module.exports = {
                   "type": "Client::Imports::CompanyDemographicsImport",
                   "transformer_type": "Client::CompanyDemographicsImportHashTransformer",
                   "required_headers": [
-                    "name"
+                    "name",
+                    "kind"
                   ],
                   "supported_formats": [
                     "csv"
@@ -33600,6 +35482,16 @@ module.exports = {
                 "hex": "#000000",
                 "contrast": "white"
               }
+            },
+            {
+              "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+              "name": "cobalt_blue",
+              "type": "enum_value",
+              "integer_value": 12,
+              "attributes": {
+                "hex": "#003da5",
+                "contrast": "white"
+              }
             }
           ],
           "values": [
@@ -33613,7 +35505,8 @@ module.exports = {
             "violet",
             "purple",
             "grey",
-            "black"
+            "black",
+            "cobalt_blue"
           ]
         },
         "email_start_button_style": {
@@ -36272,6 +38165,8 @@ module.exports = {
     },
     "Place": {
     },
+    "Query": {
+    },
     "Report": {
       "kind": {
         "name": "kind",
@@ -36481,6 +38376,16 @@ module.exports = {
                   "hex": "#000000",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                "name": "cobalt_blue",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "hex": "#003da5",
+                  "contrast": "white"
+                }
               }
             ],
             "values": [
@@ -36494,7 +38399,8 @@ module.exports = {
               "violet",
               "purple",
               "grey",
-              "black"
+              "black",
+              "cobalt_blue"
             ],
             "default": {
             }
@@ -36505,6 +38411,8 @@ module.exports = {
         "Warehouse::Reports::Study",
         "Warehouse::Reports::OrganizationReport"
       ]
+    },
+    "ReportPdf": {
     },
     "ReportingCategorization": {
       "types": [
@@ -36754,6 +38662,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -36767,7 +38685,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -36984,6 +38903,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -36997,7 +38926,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -37214,6 +39144,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -37227,7 +39167,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -37448,6 +39389,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -37461,7 +39412,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -37681,6 +39633,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -37694,7 +39656,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -37914,6 +39877,16 @@ module.exports = {
                     "hex": "#000000",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
                 }
               ],
               "values": [
@@ -37927,7 +39900,8 @@ module.exports = {
                 "violet",
                 "purple",
                 "grey",
-                "black"
+                "black",
+                "cobalt_blue"
               ],
               "default": {
               }
@@ -37935,8 +39909,6 @@ module.exports = {
           }
         }
       }
-    },
-    "StudyPdf": {
     },
     "Views": {
       "BooleanAnswer": {
