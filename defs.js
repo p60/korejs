@@ -53,6 +53,14 @@ module.exports = {
             "integer_value": 6,
             "attributes": {
             }
+          },
+          {
+            "source": "Census::Answer::Fields::ValueType::JsonbValue",
+            "name": "jsonb_value",
+            "type": "enum_value",
+            "integer_value": 7,
+            "attributes": {
+            }
           }
         ],
         "values": [
@@ -61,7 +69,8 @@ module.exports = {
           "integer_value",
           "boolean_value",
           "array_value",
-          "decimal_value"
+          "decimal_value",
+          "jsonb_value"
         ]
       },
       "custom_fields": {
@@ -81,6 +90,11 @@ module.exports = {
             "source": "Census::Answer::Fields::ImportData::Fields::ImportedAt",
             "type": "time"
           },
+          "answer_data": {
+            "name": "answer_data",
+            "source": "Census::Answer::Fields::ImportData::Fields::AnswerData",
+            "type": "json"
+          },
           "notes": {
             "name": "notes",
             "source": "Census::Answer::Fields::ImportData::Fields::Notes",
@@ -88,16 +102,12 @@ module.exports = {
             "default": [
 
             ]
-          },
-          "answer_data": {
-            "name": "answer_data",
-            "source": "Census::Answer::Fields::ImportData::Fields::AnswerData",
-            "type": "json"
           }
         }
       },
       "types": [
         "Census::Answers::BooleanAnswer",
+        "Census::Answers::MatrixAnswer",
         "Census::Answers::MultipleChoiceAnswer",
         "Census::Answers::MultipleChoiceImageAnswer",
         "Census::Answers::MultipleChoiceManyAnswer",
@@ -161,6 +171,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::BooleanAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -169,7 +187,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -189,6 +208,11 @@ module.exports = {
               "source": "Census::Answers::BooleanAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::BooleanAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::BooleanAnswer::Fields::ImportData::Fields::Notes",
@@ -196,17 +220,118 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::BooleanAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         },
         "types": [
           "Census::Answers::PostCaseAreYouSatisfiedAnswer"
         ]
+      },
+      "MatrixAnswer": {
+        "value_type": {
+          "name": "value_type",
+          "source": "Census::Answers::MatrixAnswer::Fields::ValueType",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Census::Answers::MatrixAnswer::Fields::ValueType::UuidValue",
+              "name": "uuid_value",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Census::Answers::MatrixAnswer::Fields::ValueType::TextValue",
+              "name": "text_value",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Census::Answers::MatrixAnswer::Fields::ValueType::IntegerValue",
+              "name": "integer_value",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Census::Answers::MatrixAnswer::Fields::ValueType::BooleanValue",
+              "name": "boolean_value",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Census::Answers::MatrixAnswer::Fields::ValueType::ArrayValue",
+              "name": "array_value",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Census::Answers::MatrixAnswer::Fields::ValueType::DecimalValue",
+              "name": "decimal_value",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Census::Answers::MatrixAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "uuid_value",
+            "text_value",
+            "integer_value",
+            "boolean_value",
+            "array_value",
+            "decimal_value",
+            "jsonb_value"
+          ]
+        },
+        "custom_fields": {
+          "source": "Census::Answers::MatrixAnswer::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+          }
+        },
+        "import_data": {
+          "source": "Census::Answers::MatrixAnswer::Fields::ImportData",
+          "name": "import_data",
+          "type": "struct",
+          "fields": {
+            "imported_at": {
+              "name": "imported_at",
+              "source": "Census::Answers::MatrixAnswer::Fields::ImportData::Fields::ImportedAt",
+              "type": "time"
+            },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::MatrixAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
+            "notes": {
+              "name": "notes",
+              "source": "Census::Answers::MatrixAnswer::Fields::ImportData::Fields::Notes",
+              "type": "array",
+              "default": [
+
+              ]
+            }
+          }
+        }
       },
       "MultipleChoiceAnswer": {
         "value_type": {
@@ -261,6 +386,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::MultipleChoiceAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -269,7 +402,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -294,6 +428,11 @@ module.exports = {
               "source": "Census::Answers::MultipleChoiceAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::MultipleChoiceAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::MultipleChoiceAnswer::Fields::ImportData::Fields::Notes",
@@ -301,11 +440,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::MultipleChoiceAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         },
@@ -368,6 +502,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::MultipleChoiceImageAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -376,7 +518,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -396,6 +539,11 @@ module.exports = {
               "source": "Census::Answers::MultipleChoiceImageAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::MultipleChoiceImageAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::MultipleChoiceImageAnswer::Fields::ImportData::Fields::Notes",
@@ -403,11 +551,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::MultipleChoiceImageAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -465,6 +608,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::MultipleChoiceManyAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -473,7 +624,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -498,6 +650,11 @@ module.exports = {
               "source": "Census::Answers::MultipleChoiceManyAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::MultipleChoiceManyAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::MultipleChoiceManyAnswer::Fields::ImportData::Fields::Notes",
@@ -505,11 +662,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::MultipleChoiceManyAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         },
@@ -572,6 +724,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::NpsNumberScaleAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -580,7 +740,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -600,6 +761,11 @@ module.exports = {
               "source": "Census::Answers::NpsNumberScaleAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::NpsNumberScaleAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::NpsNumberScaleAnswer::Fields::ImportData::Fields::Notes",
@@ -607,11 +773,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::NpsNumberScaleAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -669,6 +830,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::NpsTextAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -677,7 +846,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -697,6 +867,11 @@ module.exports = {
               "source": "Census::Answers::NpsTextAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::NpsTextAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::NpsTextAnswer::Fields::ImportData::Fields::Notes",
@@ -704,11 +879,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::NpsTextAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -766,6 +936,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::NumberScaleAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -774,7 +952,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -794,6 +973,11 @@ module.exports = {
               "source": "Census::Answers::NumberScaleAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::NumberScaleAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::NumberScaleAnswer::Fields::ImportData::Fields::Notes",
@@ -801,11 +985,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::NumberScaleAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         },
@@ -867,6 +1046,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::PostCaseAreYouSatisfiedAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -875,7 +1062,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -895,6 +1083,11 @@ module.exports = {
               "source": "Census::Answers::PostCaseAreYouSatisfiedAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::PostCaseAreYouSatisfiedAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::PostCaseAreYouSatisfiedAnswer::Fields::ImportData::Fields::Notes",
@@ -902,11 +1095,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::PostCaseAreYouSatisfiedAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -964,6 +1152,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::PostCaseWhatCouldWeHaveDoneBetterAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -972,7 +1168,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -997,6 +1194,11 @@ module.exports = {
               "source": "Census::Answers::PostCaseWhatCouldWeHaveDoneBetterAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::PostCaseWhatCouldWeHaveDoneBetterAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::PostCaseWhatCouldWeHaveDoneBetterAnswer::Fields::ImportData::Fields::Notes",
@@ -1004,11 +1206,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::PostCaseWhatCouldWeHaveDoneBetterAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -1066,6 +1263,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::PostCaseWhatDidWeDoWellAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1074,7 +1279,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -1099,6 +1305,11 @@ module.exports = {
               "source": "Census::Answers::PostCaseWhatDidWeDoWellAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::PostCaseWhatDidWeDoWellAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::PostCaseWhatDidWeDoWellAnswer::Fields::ImportData::Fields::Notes",
@@ -1106,11 +1317,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::PostCaseWhatDidWeDoWellAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -1168,6 +1374,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::RankingAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1176,7 +1390,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -1201,6 +1416,11 @@ module.exports = {
               "source": "Census::Answers::RankingAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::RankingAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::RankingAnswer::Fields::ImportData::Fields::Notes",
@@ -1208,11 +1428,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::RankingAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -1270,6 +1485,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::TextAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1278,7 +1501,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -1298,6 +1522,11 @@ module.exports = {
               "source": "Census::Answers::TextAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::TextAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::TextAnswer::Fields::ImportData::Fields::Notes",
@@ -1305,11 +1534,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::TextAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         },
@@ -1371,6 +1595,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::WinLossAnalysisLossRateExperienceAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1379,7 +1611,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -1399,6 +1632,11 @@ module.exports = {
               "source": "Census::Answers::WinLossAnalysisLossRateExperienceAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::WinLossAnalysisLossRateExperienceAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisLossRateExperienceAnswer::Fields::ImportData::Fields::Notes",
@@ -1406,11 +1644,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::WinLossAnalysisLossRateExperienceAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -1468,6 +1701,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::WinLossAnalysisLossReasonForNotPurchasingAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1476,7 +1717,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -1501,6 +1743,11 @@ module.exports = {
               "source": "Census::Answers::WinLossAnalysisLossReasonForNotPurchasingAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::WinLossAnalysisLossReasonForNotPurchasingAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisLossReasonForNotPurchasingAnswer::Fields::ImportData::Fields::Notes",
@@ -1508,11 +1755,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::WinLossAnalysisLossReasonForNotPurchasingAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -1570,6 +1812,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::WinLossAnalysisLossWhichCompetitorWouldYouChooseAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1578,7 +1828,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -1603,6 +1854,11 @@ module.exports = {
               "source": "Census::Answers::WinLossAnalysisLossWhichCompetitorWouldYouChooseAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::WinLossAnalysisLossWhichCompetitorWouldYouChooseAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisLossWhichCompetitorWouldYouChooseAnswer::Fields::ImportData::Fields::Notes",
@@ -1610,11 +1866,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::WinLossAnalysisLossWhichCompetitorWouldYouChooseAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -1672,6 +1923,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::WinLossAnalysisWinFeatureExcitementAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1680,7 +1939,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -1705,6 +1965,11 @@ module.exports = {
               "source": "Census::Answers::WinLossAnalysisWinFeatureExcitementAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::WinLossAnalysisWinFeatureExcitementAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisWinFeatureExcitementAnswer::Fields::ImportData::Fields::Notes",
@@ -1712,11 +1977,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::WinLossAnalysisWinFeatureExcitementAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -1774,6 +2034,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::WinLossAnalysisWinReasonForChoiceOverCompetitionAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1782,7 +2050,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -1807,6 +2076,11 @@ module.exports = {
               "source": "Census::Answers::WinLossAnalysisWinReasonForChoiceOverCompetitionAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::WinLossAnalysisWinReasonForChoiceOverCompetitionAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisWinReasonForChoiceOverCompetitionAnswer::Fields::ImportData::Fields::Notes",
@@ -1814,11 +2088,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::WinLossAnalysisWinReasonForChoiceOverCompetitionAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -1876,6 +2145,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::WinLossAnalysisWinWhoIsBestContactAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1884,7 +2161,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -1904,6 +2182,11 @@ module.exports = {
               "source": "Census::Answers::WinLossAnalysisWinWhoIsBestContactAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::WinLossAnalysisWinWhoIsBestContactAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisWinWhoIsBestContactAnswer::Fields::ImportData::Fields::Notes",
@@ -1911,11 +2194,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::WinLossAnalysisWinWhoIsBestContactAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -1973,6 +2251,14 @@ module.exports = {
               "integer_value": 6,
               "attributes": {
               }
+            },
+            {
+              "source": "Census::Answers::WinLossAnalysisWonOrLostAnswer::Fields::ValueType::JsonbValue",
+              "name": "jsonb_value",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+              }
             }
           ],
           "values": [
@@ -1981,7 +2267,8 @@ module.exports = {
             "integer_value",
             "boolean_value",
             "array_value",
-            "decimal_value"
+            "decimal_value",
+            "jsonb_value"
           ]
         },
         "custom_fields": {
@@ -2001,6 +2288,11 @@ module.exports = {
               "source": "Census::Answers::WinLossAnalysisWonOrLostAnswer::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
             },
+            "answer_data": {
+              "name": "answer_data",
+              "source": "Census::Answers::WinLossAnalysisWonOrLostAnswer::Fields::ImportData::Fields::AnswerData",
+              "type": "json"
+            },
             "notes": {
               "name": "notes",
               "source": "Census::Answers::WinLossAnalysisWonOrLostAnswer::Fields::ImportData::Fields::Notes",
@@ -2008,11 +2300,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "answer_data": {
-              "name": "answer_data",
-              "source": "Census::Answers::WinLossAnalysisWonOrLostAnswer::Fields::ImportData::Fields::AnswerData",
-              "type": "json"
             }
           }
         }
@@ -2046,15 +2333,15 @@ module.exports = {
             "source": "Census::Choice::Fields::ImportData::Fields::ImportedAt",
             "type": "time"
           },
-          "choice_stream_id": {
-            "name": "choice_stream_id",
-            "source": "Census::Choice::Fields::ImportData::Fields::ChoiceStreamId",
-            "type": "string"
-          },
           "choice_data": {
             "name": "choice_data",
             "source": "Census::Choice::Fields::ImportData::Fields::ChoiceData",
             "type": "json"
+          },
+          "choice_stream_id": {
+            "name": "choice_stream_id",
+            "source": "Census::Choice::Fields::ImportData::Fields::ChoiceStreamId",
+            "type": "string"
           }
         }
       }
@@ -2292,291 +2579,6 @@ module.exports = {
       "kickbox_score": null
     },
     "GlobalParticipant": {
-      "gender": {
-        "name": "gender",
-        "source": "Census::GlobalParticipant::Fields::Gender",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Census::Fields::Gender::Unknown",
-            "name": "unknown",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Census::Fields::Gender::Male",
-            "name": "male",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Census::Fields::Gender::Female",
-            "name": "female",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Census::Fields::Gender::Other",
-            "name": "other",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "unknown",
-          "male",
-          "female",
-          "other"
-        ]
-      },
-      "locale": {
-        "name": "locale",
-        "source": "Census::GlobalParticipant::Fields::Locale",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::Locale::Cs",
-            "name": "cs",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "label": "čeština",
-              "englishLabel": "Czech"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Da",
-            "name": "da",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-              "label": "Dansk",
-              "englishLabel": "Danish"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::De",
-            "name": "de",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-              "label": "Deutsch",
-              "englishLabel": "German"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::El",
-            "name": "el",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-              "label": "ελληνικά",
-              "englishLabel": "Greek"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::En",
-            "name": "en",
-            "type": "enum_value",
-            "integer_value": 5,
-            "attributes": {
-              "label": "English",
-              "englishLabel": "English"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Es",
-            "name": "es",
-            "type": "enum_value",
-            "integer_value": 10,
-            "attributes": {
-              "label": "Español",
-              "englishLabel": "Spanish"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Et",
-            "name": "et",
-            "type": "enum_value",
-            "integer_value": 11,
-            "attributes": {
-              "label": "Eesti Keel",
-              "englishLabel": "Estonian"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Fi",
-            "name": "fi",
-            "type": "enum_value",
-            "integer_value": 12,
-            "attributes": {
-              "label": "Suomi",
-              "englishLabel": "Finnish"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Fr",
-            "name": "fr",
-            "type": "enum_value",
-            "integer_value": 13,
-            "attributes": {
-              "label": "Français",
-              "englishLabel": "French"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Hu",
-            "name": "hu",
-            "type": "enum_value",
-            "integer_value": 14,
-            "attributes": {
-              "label": "Magyar",
-              "englishLabel": "Hungarian"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Is",
-            "name": "is",
-            "type": "enum_value",
-            "integer_value": 15,
-            "attributes": {
-              "label": "Islenska",
-              "englishLabel": "Icelandic"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::It",
-            "name": "it",
-            "type": "enum_value",
-            "integer_value": 16,
-            "attributes": {
-              "label": "Italiano",
-              "englishLabel": "Italian"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Nb",
-            "name": "nb",
-            "type": "enum_value",
-            "integer_value": 17,
-            "attributes": {
-              "label": "Norsk Bokmål",
-              "englishLabel": "Norwegion (Bokmål)"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Nl",
-            "name": "nl",
-            "type": "enum_value",
-            "integer_value": 18,
-            "attributes": {
-              "label": "Nederlands",
-              "englishLabel": "Dutch"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Pl",
-            "name": "pl",
-            "type": "enum_value",
-            "integer_value": 19,
-            "attributes": {
-              "label": "Polski",
-              "englishLabel": "Polish"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Pt",
-            "name": "pt",
-            "type": "enum_value",
-            "integer_value": 20,
-            "attributes": {
-              "label": "Português",
-              "englishLabel": "Portuguese"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Ro",
-            "name": "ro",
-            "type": "enum_value",
-            "integer_value": 21,
-            "attributes": {
-              "label": "Română",
-              "englishLabel": "Romanian"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Sk",
-            "name": "sk",
-            "type": "enum_value",
-            "integer_value": 22,
-            "attributes": {
-              "label": "Slovenčina",
-              "englishLabel": "Slovak"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Sv",
-            "name": "sv",
-            "type": "enum_value",
-            "integer_value": 23,
-            "attributes": {
-              "label": "Svenska",
-              "englishLabel": "Swedish"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Ja",
-            "name": "ja",
-            "type": "enum_value",
-            "integer_value": 24,
-            "attributes": {
-              "label": "日本語",
-              "englishLabel": "Japanese"
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Locale::Zh",
-            "name": "zh",
-            "type": "enum_value",
-            "integer_value": 25,
-            "attributes": {
-              "label": "中文",
-              "englishLabel": "Chinese"
-            }
-          }
-        ],
-        "values": [
-          "cs",
-          "da",
-          "de",
-          "el",
-          "en",
-          "es",
-          "et",
-          "fi",
-          "fr",
-          "hu",
-          "is",
-          "it",
-          "nb",
-          "nl",
-          "pl",
-          "pt",
-          "ro",
-          "sk",
-          "sv",
-          "ja",
-          "zh"
-        ]
-      },
       "clearbit_discovery_status": {
         "name": "clearbit_discovery_status",
         "source": "Census::GlobalParticipant::Fields::ClearbitDiscoveryStatus",
@@ -2620,6 +2622,51 @@ module.exports = {
           "failure",
           "success",
           "pending"
+        ]
+      },
+      "gender": {
+        "name": "gender",
+        "source": "Census::GlobalParticipant::Fields::Gender",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Unknown",
+            "name": "unknown",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Male",
+            "name": "male",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Female",
+            "name": "female",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Other",
+            "name": "other",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "unknown",
+          "male",
+          "female",
+          "other"
         ]
       },
       "role": {
@@ -2870,24 +2917,254 @@ module.exports = {
           "none"
         ]
       },
+      "locale": {
+        "name": "locale",
+        "source": "Census::GlobalParticipant::Fields::Locale",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::Locale::Cs",
+            "name": "cs",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "label": "čeština",
+              "englishLabel": "Czech"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Da",
+            "name": "da",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "label": "Dansk",
+              "englishLabel": "Danish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::De",
+            "name": "de",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "label": "Deutsch",
+              "englishLabel": "German"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::El",
+            "name": "el",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "label": "ελληνικά",
+              "englishLabel": "Greek"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::En",
+            "name": "en",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+              "label": "English",
+              "englishLabel": "English"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Es",
+            "name": "es",
+            "type": "enum_value",
+            "integer_value": 10,
+            "attributes": {
+              "label": "Español",
+              "englishLabel": "Spanish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Et",
+            "name": "et",
+            "type": "enum_value",
+            "integer_value": 11,
+            "attributes": {
+              "label": "Eesti Keel",
+              "englishLabel": "Estonian"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Fi",
+            "name": "fi",
+            "type": "enum_value",
+            "integer_value": 12,
+            "attributes": {
+              "label": "Suomi",
+              "englishLabel": "Finnish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Fr",
+            "name": "fr",
+            "type": "enum_value",
+            "integer_value": 13,
+            "attributes": {
+              "label": "Français",
+              "englishLabel": "French"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Hu",
+            "name": "hu",
+            "type": "enum_value",
+            "integer_value": 14,
+            "attributes": {
+              "label": "Magyar",
+              "englishLabel": "Hungarian"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Is",
+            "name": "is",
+            "type": "enum_value",
+            "integer_value": 15,
+            "attributes": {
+              "label": "Islenska",
+              "englishLabel": "Icelandic"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::It",
+            "name": "it",
+            "type": "enum_value",
+            "integer_value": 16,
+            "attributes": {
+              "label": "Italiano",
+              "englishLabel": "Italian"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Nb",
+            "name": "nb",
+            "type": "enum_value",
+            "integer_value": 17,
+            "attributes": {
+              "label": "Norsk Bokmål",
+              "englishLabel": "Norwegion (Bokmål)"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Nl",
+            "name": "nl",
+            "type": "enum_value",
+            "integer_value": 18,
+            "attributes": {
+              "label": "Nederlands",
+              "englishLabel": "Dutch"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Pl",
+            "name": "pl",
+            "type": "enum_value",
+            "integer_value": 19,
+            "attributes": {
+              "label": "Polski",
+              "englishLabel": "Polish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Pt",
+            "name": "pt",
+            "type": "enum_value",
+            "integer_value": 20,
+            "attributes": {
+              "label": "Português",
+              "englishLabel": "Portuguese"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Ro",
+            "name": "ro",
+            "type": "enum_value",
+            "integer_value": 21,
+            "attributes": {
+              "label": "Română",
+              "englishLabel": "Romanian"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Sk",
+            "name": "sk",
+            "type": "enum_value",
+            "integer_value": 22,
+            "attributes": {
+              "label": "Slovenčina",
+              "englishLabel": "Slovak"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Sv",
+            "name": "sv",
+            "type": "enum_value",
+            "integer_value": 23,
+            "attributes": {
+              "label": "Svenska",
+              "englishLabel": "Swedish"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Ja",
+            "name": "ja",
+            "type": "enum_value",
+            "integer_value": 24,
+            "attributes": {
+              "label": "日本語",
+              "englishLabel": "Japanese"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Locale::Zh",
+            "name": "zh",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "中文",
+              "englishLabel": "Chinese"
+            }
+          }
+        ],
+        "values": [
+          "cs",
+          "da",
+          "de",
+          "el",
+          "en",
+          "es",
+          "et",
+          "fi",
+          "fr",
+          "hu",
+          "is",
+          "it",
+          "nb",
+          "nl",
+          "pl",
+          "pt",
+          "ro",
+          "sk",
+          "sv",
+          "ja",
+          "zh"
+        ]
+      },
       "profile": {
         "source": "Census::GlobalParticipant::Fields::Profile",
         "name": "profile",
         "type": "struct",
         "fields": {
-          "image_url": {
-            "name": "image_url",
-            "source": "Census::GlobalParticipant::Fields::Profile::Fields::ImageUrl",
-            "type": "string"
-          },
-          "twitter": {
-            "name": "twitter",
-            "source": "Census::GlobalParticipant::Fields::Profile::Fields::Twitter",
-            "type": "string"
-          },
-          "linkedin": {
-            "name": "linkedin",
-            "source": "Census::GlobalParticipant::Fields::Profile::Fields::Linkedin",
+          "facebook": {
+            "name": "facebook",
+            "source": "Census::GlobalParticipant::Fields::Profile::Fields::Facebook",
             "type": "string"
           },
           "googleplus": {
@@ -2895,9 +3172,19 @@ module.exports = {
             "source": "Census::GlobalParticipant::Fields::Profile::Fields::Googleplus",
             "type": "string"
           },
-          "facebook": {
-            "name": "facebook",
-            "source": "Census::GlobalParticipant::Fields::Profile::Fields::Facebook",
+          "image_url": {
+            "name": "image_url",
+            "source": "Census::GlobalParticipant::Fields::Profile::Fields::ImageUrl",
+            "type": "string"
+          },
+          "site": {
+            "name": "site",
+            "source": "Census::GlobalParticipant::Fields::Profile::Fields::Site",
+            "type": "string"
+          },
+          "twitter": {
+            "name": "twitter",
+            "source": "Census::GlobalParticipant::Fields::Profile::Fields::Twitter",
             "type": "string"
           },
           "bio": {
@@ -2910,9 +3197,9 @@ module.exports = {
             "source": "Census::GlobalParticipant::Fields::Profile::Fields::ClearbitId",
             "type": "string"
           },
-          "site": {
-            "name": "site",
-            "source": "Census::GlobalParticipant::Fields::Profile::Fields::Site",
+          "linkedin": {
+            "name": "linkedin",
+            "source": "Census::GlobalParticipant::Fields::Profile::Fields::Linkedin",
             "type": "string"
           }
         }
@@ -3125,51 +3412,6 @@ module.exports = {
           "visited_with_javascript_disabled"
         ]
       },
-      "gender": {
-        "name": "gender",
-        "source": "Census::Participation::Fields::Gender",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Census::Fields::Gender::Unknown",
-            "name": "unknown",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Census::Fields::Gender::Male",
-            "name": "male",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Census::Fields::Gender::Female",
-            "name": "female",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Census::Fields::Gender::Other",
-            "name": "other",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "unknown",
-          "male",
-          "female",
-          "other"
-        ]
-      },
       "role": {
         "name": "role",
         "source": "Census::Participation::Fields::Role",
@@ -3357,6 +3599,51 @@ module.exports = {
           "recruiting",
           "research",
           "sales"
+        ]
+      },
+      "gender": {
+        "name": "gender",
+        "source": "Census::Participation::Fields::Gender",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Unknown",
+            "name": "unknown",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Male",
+            "name": "male",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Female",
+            "name": "female",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Fields::Gender::Other",
+            "name": "other",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "unknown",
+          "male",
+          "female",
+          "other"
         ]
       },
       "seniority": {
@@ -3568,6 +3855,60 @@ module.exports = {
             "attributes": {
               "type": "Census::Questions::RankingQuestion"
             }
+          },
+          {
+            "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+            "name": "matrix",
+            "type": "enum_value",
+            "integer_value": 13,
+            "attributes": {
+              "type": "Census::Questions::MatrixQuestion"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+            "name": "matrix_boolean",
+            "type": "enum_value",
+            "integer_value": 14,
+            "attributes": {
+              "type": "Census::Questions::Matrix::BooleanQuestion"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+            "name": "matrix_number_scale",
+            "type": "enum_value",
+            "integer_value": 15,
+            "attributes": {
+              "type": "Census::Questions::Matrix::NumberScaleQuestion"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+            "name": "matrix_multiple_choice",
+            "type": "enum_value",
+            "integer_value": 16,
+            "attributes": {
+              "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+            "name": "matrix_text",
+            "type": "enum_value",
+            "integer_value": 17,
+            "attributes": {
+              "type": "Census::Questions::Matrix::TextQuestion"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+            "name": "matrix_multiple_choice_many",
+            "type": "enum_value",
+            "integer_value": 18,
+            "attributes": {
+              "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+            }
           }
         ],
         "values": [
@@ -3582,7 +3923,13 @@ module.exports = {
           "post_case_what_could_we_have_done_better",
           "post_case_what_did_we_do_well",
           "text",
-          "ranking"
+          "ranking",
+          "matrix",
+          "matrix_boolean",
+          "matrix_number_scale",
+          "matrix_multiple_choice",
+          "matrix_text",
+          "matrix_multiple_choice_many"
         ]
       },
       "custom_fields": {
@@ -3609,10 +3956,20 @@ module.exports = {
         "name": "import_data",
         "type": "struct",
         "fields": {
+          "question_reaction_id": {
+            "name": "question_reaction_id",
+            "source": "Census::Question::Fields::ImportData::Fields::QuestionReactionId",
+            "type": "integer"
+          },
           "imported_at": {
             "name": "imported_at",
             "source": "Census::Question::Fields::ImportData::Fields::ImportedAt",
             "type": "time"
+          },
+          "question_stream_id": {
+            "name": "question_stream_id",
+            "source": "Census::Question::Fields::ImportData::Fields::QuestionStreamId",
+            "type": "string"
           },
           "notes": {
             "name": "notes",
@@ -3621,16 +3978,6 @@ module.exports = {
             "default": [
 
             ]
-          },
-          "question_reaction_id": {
-            "name": "question_reaction_id",
-            "source": "Census::Question::Fields::ImportData::Fields::QuestionReactionId",
-            "type": "integer"
-          },
-          "question_stream_id": {
-            "name": "question_stream_id",
-            "source": "Census::Question::Fields::ImportData::Fields::QuestionStreamId",
-            "type": "string"
           },
           "question_data": {
             "name": "question_data",
@@ -3641,14 +3988,15 @@ module.exports = {
       },
       "types": [
         "Census::Questions::BooleanQuestion",
-        "Census::Questions::MultipleChoiceImageQuestion",
         "Census::Questions::MultipleChoiceManyQuestion",
         "Census::Questions::MultipleChoiceQuestion",
+        "Census::Questions::NumberScaleQuestion",
+        "Census::Questions::TextQuestion",
+        "Census::Questions::MatrixQuestion",
+        "Census::Questions::MultipleChoiceImageQuestion",
         "Census::Questions::NpsNumberScaleQuestion",
         "Census::Questions::NpsTextQuestion",
-        "Census::Questions::NumberScaleQuestion",
-        "Census::Questions::RankingQuestion",
-        "Census::Questions::TextQuestion"
+        "Census::Questions::RankingQuestion"
       ]
     },
     "Questions": {
@@ -3765,6 +4113,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -3779,7 +4181,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -3787,17 +4195,17 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "true_value_name": {
-              "name": "true_value_name",
-              "source": "Census::Questions::BooleanQuestion::Fields::CustomFields::Fields::TrueValueName",
-              "type": "string",
-              "default": "Yes"
-            },
             "false_value_name": {
               "name": "false_value_name",
               "source": "Census::Questions::BooleanQuestion::Fields::CustomFields::Fields::FalseValueName",
               "type": "string",
               "default": "No"
+            },
+            "true_value_name": {
+              "name": "true_value_name",
+              "source": "Census::Questions::BooleanQuestion::Fields::CustomFields::Fields::TrueValueName",
+              "type": "string",
+              "default": "Yes"
             },
             "introduction": {
               "name": "introduction",
@@ -3818,10 +4226,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::BooleanQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::BooleanQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::BooleanQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -3831,16 +4249,6 @@ module.exports = {
 
               ]
             },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::BooleanQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::BooleanQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
-            },
             "question_data": {
               "name": "question_data",
               "source": "Census::Questions::BooleanQuestion::Fields::ImportData::Fields::QuestionData",
@@ -3849,9 +4257,1602 @@ module.exports = {
           }
         },
         "types": [
+          "Census::Questions::Matrix::BooleanQuestion",
           "Census::Questions::PostCaseAreYouSatisfiedQuestion",
           "Census::Questions::WinLossAnalysisWonOrLostQuestion"
         ]
+      },
+      "Matrix": {
+        "BooleanQuestion": {
+          "kind": {
+            "name": "kind",
+            "source": "Census::Questions::Matrix::BooleanQuestion::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Boolean",
+                "name": "boolean",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Census::Questions::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceImage",
+                "name": "multiple_choice_image",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceImageQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceMany",
+                "name": "multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceManyQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoice",
+                "name": "multiple_choice",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsNumberScale",
+                "name": "nps_number_scale",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "type": "Census::Questions::NpsNumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsText",
+                "name": "nps_text",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "type": "Census::Questions::NpsTextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NumberScale",
+                "name": "number_scale",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "type": "Census::Questions::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseAreYouSatisfied",
+                "name": "post_case_are_you_satisfied",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseAreYouSatisfiedQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatCouldWeHaveDoneBetter",
+                "name": "post_case_what_could_we_have_done_better",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatDidWeDoWell",
+                "name": "post_case_what_did_we_do_well",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatDidWeDoWellQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Text",
+                "name": "text",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Census::Questions::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Ranking",
+                "name": "ranking",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Census::Questions::RankingQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Census::Questions::MatrixQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+                "name": "matrix_boolean",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+                "name": "matrix_number_scale",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+                "name": "matrix_multiple_choice",
+                "type": "enum_value",
+                "integer_value": 16,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+                "name": "matrix_text",
+                "type": "enum_value",
+                "integer_value": 17,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+                "name": "matrix_multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 18,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+                }
+              }
+            ],
+            "values": [
+              "boolean",
+              "multiple_choice_image",
+              "multiple_choice_many",
+              "multiple_choice",
+              "nps_number_scale",
+              "nps_text",
+              "number_scale",
+              "post_case_are_you_satisfied",
+              "post_case_what_could_we_have_done_better",
+              "post_case_what_did_we_do_well",
+              "text",
+              "ranking",
+              "matrix",
+              "matrix_boolean",
+              "matrix_number_scale",
+              "matrix_multiple_choice",
+              "matrix_text",
+              "matrix_multiple_choice_many"
+            ]
+          },
+          "custom_fields": {
+            "source": "Census::Questions::Matrix::BooleanQuestion::Fields::CustomFields",
+            "name": "custom_fields",
+            "type": "struct",
+            "fields": {
+              "false_value_name": {
+                "name": "false_value_name",
+                "source": "Census::Questions::Matrix::BooleanQuestion::Fields::CustomFields::Fields::FalseValueName",
+                "type": "string",
+                "default": "No"
+              },
+              "true_value_name": {
+                "name": "true_value_name",
+                "source": "Census::Questions::Matrix::BooleanQuestion::Fields::CustomFields::Fields::TrueValueName",
+                "type": "string",
+                "default": "Yes"
+              },
+              "introduction": {
+                "name": "introduction",
+                "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
+                "type": "string",
+                "default": ""
+              },
+              "conclusion": {
+                "name": "conclusion",
+                "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
+                "type": "string",
+                "default": ""
+              }
+            }
+          },
+          "import_data": {
+            "source": "Census::Questions::Matrix::BooleanQuestion::Fields::ImportData",
+            "name": "import_data",
+            "type": "struct",
+            "fields": {
+              "question_reaction_id": {
+                "name": "question_reaction_id",
+                "source": "Census::Questions::Matrix::BooleanQuestion::Fields::ImportData::Fields::QuestionReactionId",
+                "type": "integer"
+              },
+              "imported_at": {
+                "name": "imported_at",
+                "source": "Census::Questions::Matrix::BooleanQuestion::Fields::ImportData::Fields::ImportedAt",
+                "type": "time"
+              },
+              "question_stream_id": {
+                "name": "question_stream_id",
+                "source": "Census::Questions::Matrix::BooleanQuestion::Fields::ImportData::Fields::QuestionStreamId",
+                "type": "string"
+              },
+              "notes": {
+                "name": "notes",
+                "source": "Census::Questions::Matrix::BooleanQuestion::Fields::ImportData::Fields::Notes",
+                "type": "array",
+                "default": [
+
+                ]
+              },
+              "question_data": {
+                "name": "question_data",
+                "source": "Census::Questions::Matrix::BooleanQuestion::Fields::ImportData::Fields::QuestionData",
+                "type": "json"
+              }
+            }
+          }
+        },
+        "MultipleChoiceManyQuestion": {
+          "kind": {
+            "name": "kind",
+            "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Boolean",
+                "name": "boolean",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Census::Questions::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceImage",
+                "name": "multiple_choice_image",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceImageQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceMany",
+                "name": "multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceManyQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoice",
+                "name": "multiple_choice",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsNumberScale",
+                "name": "nps_number_scale",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "type": "Census::Questions::NpsNumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsText",
+                "name": "nps_text",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "type": "Census::Questions::NpsTextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NumberScale",
+                "name": "number_scale",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "type": "Census::Questions::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseAreYouSatisfied",
+                "name": "post_case_are_you_satisfied",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseAreYouSatisfiedQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatCouldWeHaveDoneBetter",
+                "name": "post_case_what_could_we_have_done_better",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatDidWeDoWell",
+                "name": "post_case_what_did_we_do_well",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatDidWeDoWellQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Text",
+                "name": "text",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Census::Questions::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Ranking",
+                "name": "ranking",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Census::Questions::RankingQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Census::Questions::MatrixQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+                "name": "matrix_boolean",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+                "name": "matrix_number_scale",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+                "name": "matrix_multiple_choice",
+                "type": "enum_value",
+                "integer_value": 16,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+                "name": "matrix_text",
+                "type": "enum_value",
+                "integer_value": 17,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+                "name": "matrix_multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 18,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+                }
+              }
+            ],
+            "values": [
+              "boolean",
+              "multiple_choice_image",
+              "multiple_choice_many",
+              "multiple_choice",
+              "nps_number_scale",
+              "nps_text",
+              "number_scale",
+              "post_case_are_you_satisfied",
+              "post_case_what_could_we_have_done_better",
+              "post_case_what_did_we_do_well",
+              "text",
+              "ranking",
+              "matrix",
+              "matrix_boolean",
+              "matrix_number_scale",
+              "matrix_multiple_choice",
+              "matrix_text",
+              "matrix_multiple_choice_many"
+            ]
+          },
+          "custom_fields": {
+            "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::CustomFields",
+            "name": "custom_fields",
+            "type": "struct",
+            "fields": {
+              "randomize_choices": {
+                "name": "randomize_choices",
+                "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+                "type": "boolean",
+                "default": false,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "answer_max_choices": {
+                "name": "answer_max_choices",
+                "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::AnswerMaxChoices",
+                "type": "integer"
+              },
+              "choices_order": {
+                "name": "choices_order",
+                "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+                "type": "array"
+              },
+              "introduction": {
+                "name": "introduction",
+                "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
+                "type": "string",
+                "default": ""
+              },
+              "conclusion": {
+                "name": "conclusion",
+                "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
+                "type": "string",
+                "default": ""
+              }
+            }
+          },
+          "import_data": {
+            "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::ImportData",
+            "name": "import_data",
+            "type": "struct",
+            "fields": {
+              "question_reaction_id": {
+                "name": "question_reaction_id",
+                "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::ImportData::Fields::QuestionReactionId",
+                "type": "integer"
+              },
+              "imported_at": {
+                "name": "imported_at",
+                "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::ImportData::Fields::ImportedAt",
+                "type": "time"
+              },
+              "question_stream_id": {
+                "name": "question_stream_id",
+                "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::ImportData::Fields::QuestionStreamId",
+                "type": "string"
+              },
+              "notes": {
+                "name": "notes",
+                "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::ImportData::Fields::Notes",
+                "type": "array",
+                "default": [
+
+                ]
+              },
+              "question_data": {
+                "name": "question_data",
+                "source": "Census::Questions::Matrix::MultipleChoiceManyQuestion::Fields::ImportData::Fields::QuestionData",
+                "type": "json"
+              }
+            }
+          }
+        },
+        "MultipleChoiceQuestion": {
+          "kind": {
+            "name": "kind",
+            "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Boolean",
+                "name": "boolean",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Census::Questions::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceImage",
+                "name": "multiple_choice_image",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceImageQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceMany",
+                "name": "multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceManyQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoice",
+                "name": "multiple_choice",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsNumberScale",
+                "name": "nps_number_scale",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "type": "Census::Questions::NpsNumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsText",
+                "name": "nps_text",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "type": "Census::Questions::NpsTextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NumberScale",
+                "name": "number_scale",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "type": "Census::Questions::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseAreYouSatisfied",
+                "name": "post_case_are_you_satisfied",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseAreYouSatisfiedQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatCouldWeHaveDoneBetter",
+                "name": "post_case_what_could_we_have_done_better",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatDidWeDoWell",
+                "name": "post_case_what_did_we_do_well",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatDidWeDoWellQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Text",
+                "name": "text",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Census::Questions::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Ranking",
+                "name": "ranking",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Census::Questions::RankingQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Census::Questions::MatrixQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+                "name": "matrix_boolean",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+                "name": "matrix_number_scale",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+                "name": "matrix_multiple_choice",
+                "type": "enum_value",
+                "integer_value": 16,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+                "name": "matrix_text",
+                "type": "enum_value",
+                "integer_value": 17,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+                "name": "matrix_multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 18,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+                }
+              }
+            ],
+            "values": [
+              "boolean",
+              "multiple_choice_image",
+              "multiple_choice_many",
+              "multiple_choice",
+              "nps_number_scale",
+              "nps_text",
+              "number_scale",
+              "post_case_are_you_satisfied",
+              "post_case_what_could_we_have_done_better",
+              "post_case_what_did_we_do_well",
+              "text",
+              "ranking",
+              "matrix",
+              "matrix_boolean",
+              "matrix_number_scale",
+              "matrix_multiple_choice",
+              "matrix_text",
+              "matrix_multiple_choice_many"
+            ]
+          },
+          "custom_fields": {
+            "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::CustomFields",
+            "name": "custom_fields",
+            "type": "struct",
+            "fields": {
+              "randomize_choices": {
+                "name": "randomize_choices",
+                "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::CustomFields::Fields::RandomizeChoices",
+                "type": "boolean",
+                "default": false,
+                "values": [
+                  true,
+                  false
+                ]
+              },
+              "choices_order": {
+                "name": "choices_order",
+                "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+                "type": "array"
+              },
+              "introduction": {
+                "name": "introduction",
+                "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
+                "type": "string",
+                "default": ""
+              },
+              "conclusion": {
+                "name": "conclusion",
+                "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
+                "type": "string",
+                "default": ""
+              }
+            }
+          },
+          "import_data": {
+            "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::ImportData",
+            "name": "import_data",
+            "type": "struct",
+            "fields": {
+              "question_reaction_id": {
+                "name": "question_reaction_id",
+                "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::ImportData::Fields::QuestionReactionId",
+                "type": "integer"
+              },
+              "imported_at": {
+                "name": "imported_at",
+                "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::ImportData::Fields::ImportedAt",
+                "type": "time"
+              },
+              "question_stream_id": {
+                "name": "question_stream_id",
+                "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::ImportData::Fields::QuestionStreamId",
+                "type": "string"
+              },
+              "notes": {
+                "name": "notes",
+                "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::ImportData::Fields::Notes",
+                "type": "array",
+                "default": [
+
+                ]
+              },
+              "question_data": {
+                "name": "question_data",
+                "source": "Census::Questions::Matrix::MultipleChoiceQuestion::Fields::ImportData::Fields::QuestionData",
+                "type": "json"
+              }
+            }
+          }
+        },
+        "NumberScaleQuestion": {
+          "kind": {
+            "name": "kind",
+            "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Boolean",
+                "name": "boolean",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Census::Questions::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceImage",
+                "name": "multiple_choice_image",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceImageQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceMany",
+                "name": "multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceManyQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoice",
+                "name": "multiple_choice",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsNumberScale",
+                "name": "nps_number_scale",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "type": "Census::Questions::NpsNumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsText",
+                "name": "nps_text",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "type": "Census::Questions::NpsTextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NumberScale",
+                "name": "number_scale",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "type": "Census::Questions::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseAreYouSatisfied",
+                "name": "post_case_are_you_satisfied",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseAreYouSatisfiedQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatCouldWeHaveDoneBetter",
+                "name": "post_case_what_could_we_have_done_better",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatDidWeDoWell",
+                "name": "post_case_what_did_we_do_well",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatDidWeDoWellQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Text",
+                "name": "text",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Census::Questions::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Ranking",
+                "name": "ranking",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Census::Questions::RankingQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Census::Questions::MatrixQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+                "name": "matrix_boolean",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+                "name": "matrix_number_scale",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+                "name": "matrix_multiple_choice",
+                "type": "enum_value",
+                "integer_value": 16,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+                "name": "matrix_text",
+                "type": "enum_value",
+                "integer_value": 17,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+                "name": "matrix_multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 18,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+                }
+              }
+            ],
+            "values": [
+              "boolean",
+              "multiple_choice_image",
+              "multiple_choice_many",
+              "multiple_choice",
+              "nps_number_scale",
+              "nps_text",
+              "number_scale",
+              "post_case_are_you_satisfied",
+              "post_case_what_could_we_have_done_better",
+              "post_case_what_did_we_do_well",
+              "text",
+              "ranking",
+              "matrix",
+              "matrix_boolean",
+              "matrix_number_scale",
+              "matrix_multiple_choice",
+              "matrix_text",
+              "matrix_multiple_choice_many"
+            ]
+          },
+          "custom_fields": {
+            "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::CustomFields",
+            "name": "custom_fields",
+            "type": "struct",
+            "fields": {
+              "answer_max_value": {
+                "name": "answer_max_value",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMaxValue",
+                "type": "integer",
+                "default": 10
+              },
+              "answer_max_value_label": {
+                "name": "answer_max_value_label",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMaxValueLabel",
+                "type": "string",
+                "default": "Maximum Value"
+              },
+              "display_format": {
+                "name": "display_format",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::CustomFields::Fields::DisplayFormat",
+                "type": "enum",
+                "choices": [
+                  {
+                    "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::CustomFields::Fields::DisplayFormat::Buttons",
+                    "name": "buttons",
+                    "type": "enum_value",
+                    "integer_value": 1,
+                    "attributes": {
+                    }
+                  },
+                  {
+                    "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::CustomFields::Fields::DisplayFormat::Slider",
+                    "name": "slider",
+                    "type": "enum_value",
+                    "integer_value": 2,
+                    "attributes": {
+                    }
+                  }
+                ],
+                "values": [
+                  "buttons",
+                  "slider"
+                ],
+                "default": "buttons"
+              },
+              "answer_min_value": {
+                "name": "answer_min_value",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMinValue",
+                "type": "integer",
+                "default": 0
+              },
+              "answer_min_value_label": {
+                "name": "answer_min_value_label",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMinValueLabel",
+                "type": "string",
+                "default": "Minimum Value"
+              },
+              "introduction": {
+                "name": "introduction",
+                "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
+                "type": "string",
+                "default": ""
+              },
+              "conclusion": {
+                "name": "conclusion",
+                "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
+                "type": "string",
+                "default": ""
+              }
+            }
+          },
+          "import_data": {
+            "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::ImportData",
+            "name": "import_data",
+            "type": "struct",
+            "fields": {
+              "question_reaction_id": {
+                "name": "question_reaction_id",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::ImportData::Fields::QuestionReactionId",
+                "type": "integer"
+              },
+              "imported_at": {
+                "name": "imported_at",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::ImportData::Fields::ImportedAt",
+                "type": "time"
+              },
+              "question_stream_id": {
+                "name": "question_stream_id",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::ImportData::Fields::QuestionStreamId",
+                "type": "string"
+              },
+              "notes": {
+                "name": "notes",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::ImportData::Fields::Notes",
+                "type": "array",
+                "default": [
+
+                ]
+              },
+              "question_data": {
+                "name": "question_data",
+                "source": "Census::Questions::Matrix::NumberScaleQuestion::Fields::ImportData::Fields::QuestionData",
+                "type": "json"
+              }
+            }
+          }
+        },
+        "TextQuestion": {
+          "kind": {
+            "name": "kind",
+            "source": "Census::Questions::Matrix::TextQuestion::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Boolean",
+                "name": "boolean",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Census::Questions::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceImage",
+                "name": "multiple_choice_image",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceImageQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceMany",
+                "name": "multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceManyQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoice",
+                "name": "multiple_choice",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "type": "Census::Questions::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsNumberScale",
+                "name": "nps_number_scale",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "type": "Census::Questions::NpsNumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NpsText",
+                "name": "nps_text",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "type": "Census::Questions::NpsTextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::NumberScale",
+                "name": "number_scale",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "type": "Census::Questions::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseAreYouSatisfied",
+                "name": "post_case_are_you_satisfied",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseAreYouSatisfiedQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatCouldWeHaveDoneBetter",
+                "name": "post_case_what_could_we_have_done_better",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatDidWeDoWell",
+                "name": "post_case_what_did_we_do_well",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "type": "Census::Questions::PostCaseWhatDidWeDoWellQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Text",
+                "name": "text",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Census::Questions::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Ranking",
+                "name": "ranking",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Census::Questions::RankingQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Census::Questions::MatrixQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+                "name": "matrix_boolean",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+                "name": "matrix_number_scale",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+                "name": "matrix_multiple_choice",
+                "type": "enum_value",
+                "integer_value": 16,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+                "name": "matrix_text",
+                "type": "enum_value",
+                "integer_value": 17,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+                "name": "matrix_multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 18,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+                }
+              }
+            ],
+            "values": [
+              "boolean",
+              "multiple_choice_image",
+              "multiple_choice_many",
+              "multiple_choice",
+              "nps_number_scale",
+              "nps_text",
+              "number_scale",
+              "post_case_are_you_satisfied",
+              "post_case_what_could_we_have_done_better",
+              "post_case_what_did_we_do_well",
+              "text",
+              "ranking",
+              "matrix",
+              "matrix_boolean",
+              "matrix_number_scale",
+              "matrix_multiple_choice",
+              "matrix_text",
+              "matrix_multiple_choice_many"
+            ]
+          },
+          "custom_fields": {
+            "source": "Census::Questions::Matrix::TextQuestion::Fields::CustomFields",
+            "name": "custom_fields",
+            "type": "struct",
+            "fields": {
+              "answer_max_length": {
+                "name": "answer_max_length",
+                "source": "Census::Questions::Matrix::TextQuestion::Fields::CustomFields::Fields::AnswerMaxLength",
+                "type": "integer",
+                "default": 1000
+              },
+              "introduction": {
+                "name": "introduction",
+                "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
+                "type": "string",
+                "default": ""
+              },
+              "conclusion": {
+                "name": "conclusion",
+                "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
+                "type": "string",
+                "default": ""
+              }
+            }
+          },
+          "import_data": {
+            "source": "Census::Questions::Matrix::TextQuestion::Fields::ImportData",
+            "name": "import_data",
+            "type": "struct",
+            "fields": {
+              "question_reaction_id": {
+                "name": "question_reaction_id",
+                "source": "Census::Questions::Matrix::TextQuestion::Fields::ImportData::Fields::QuestionReactionId",
+                "type": "integer"
+              },
+              "imported_at": {
+                "name": "imported_at",
+                "source": "Census::Questions::Matrix::TextQuestion::Fields::ImportData::Fields::ImportedAt",
+                "type": "time"
+              },
+              "question_stream_id": {
+                "name": "question_stream_id",
+                "source": "Census::Questions::Matrix::TextQuestion::Fields::ImportData::Fields::QuestionStreamId",
+                "type": "string"
+              },
+              "notes": {
+                "name": "notes",
+                "source": "Census::Questions::Matrix::TextQuestion::Fields::ImportData::Fields::Notes",
+                "type": "array",
+                "default": [
+
+                ]
+              },
+              "question_data": {
+                "name": "question_data",
+                "source": "Census::Questions::Matrix::TextQuestion::Fields::ImportData::Fields::QuestionData",
+                "type": "json"
+              }
+            }
+          }
+        }
+      },
+      "MatrixQuestion": {
+        "kind": {
+          "name": "kind",
+          "source": "Census::Questions::MatrixQuestion::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Boolean",
+              "name": "boolean",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Census::Questions::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceImage",
+              "name": "multiple_choice_image",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Census::Questions::MultipleChoiceImageQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoiceMany",
+              "name": "multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Census::Questions::MultipleChoiceManyQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MultipleChoice",
+              "name": "multiple_choice",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Census::Questions::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::NpsNumberScale",
+              "name": "nps_number_scale",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "type": "Census::Questions::NpsNumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::NpsText",
+              "name": "nps_text",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "type": "Census::Questions::NpsTextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::NumberScale",
+              "name": "number_scale",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "type": "Census::Questions::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseAreYouSatisfied",
+              "name": "post_case_are_you_satisfied",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "type": "Census::Questions::PostCaseAreYouSatisfiedQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatCouldWeHaveDoneBetter",
+              "name": "post_case_what_could_we_have_done_better",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "type": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::PostCaseWhatDidWeDoWell",
+              "name": "post_case_what_did_we_do_well",
+              "type": "enum_value",
+              "integer_value": 10,
+              "attributes": {
+                "type": "Census::Questions::PostCaseWhatDidWeDoWellQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Text",
+              "name": "text",
+              "type": "enum_value",
+              "integer_value": 11,
+              "attributes": {
+                "type": "Census::Questions::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Ranking",
+              "name": "ranking",
+              "type": "enum_value",
+              "integer_value": 12,
+              "attributes": {
+                "type": "Census::Questions::RankingQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
+            }
+          ],
+          "values": [
+            "boolean",
+            "multiple_choice_image",
+            "multiple_choice_many",
+            "multiple_choice",
+            "nps_number_scale",
+            "nps_text",
+            "number_scale",
+            "post_case_are_you_satisfied",
+            "post_case_what_could_we_have_done_better",
+            "post_case_what_did_we_do_well",
+            "text",
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
+          ]
+        },
+        "custom_fields": {
+          "source": "Census::Questions::MatrixQuestion::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "children_order": {
+              "name": "children_order",
+              "source": "Census::Questions::MatrixQuestion::Fields::CustomFields::Fields::ChildrenOrder",
+              "type": "set"
+            },
+            "hide_question_name": {
+              "name": "hide_question_name",
+              "source": "Census::Questions::MatrixQuestion::Fields::CustomFields::Fields::HideQuestionName",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "introduction": {
+              "name": "introduction",
+              "source": "Census::Question::Fields::CustomFields::Fields::Introduction",
+              "type": "string",
+              "default": ""
+            },
+            "conclusion": {
+              "name": "conclusion",
+              "source": "Census::Question::Fields::CustomFields::Fields::Conclusion",
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
+        "import_data": {
+          "source": "Census::Questions::MatrixQuestion::Fields::ImportData",
+          "name": "import_data",
+          "type": "struct",
+          "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::MatrixQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
+            "imported_at": {
+              "name": "imported_at",
+              "source": "Census::Questions::MatrixQuestion::Fields::ImportData::Fields::ImportedAt",
+              "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::MatrixQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
+            },
+            "notes": {
+              "name": "notes",
+              "source": "Census::Questions::MatrixQuestion::Fields::ImportData::Fields::Notes",
+              "type": "array",
+              "default": [
+
+              ]
+            },
+            "question_data": {
+              "name": "question_data",
+              "source": "Census::Questions::MatrixQuestion::Fields::ImportData::Fields::QuestionData",
+              "type": "json"
+            }
+          }
+        }
       },
       "MultipleChoiceImageQuestion": {
         "kind": {
@@ -3966,6 +5967,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -3980,7 +6035,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -4007,10 +6068,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::MultipleChoiceImageQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::MultipleChoiceImageQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::MultipleChoiceImageQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -4019,16 +6090,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::MultipleChoiceImageQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::MultipleChoiceImageQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -4151,6 +6212,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -4165,7 +6280,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -4173,11 +6294,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "choices_order": {
-              "name": "choices_order",
-              "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::ChoicesOrder",
-              "type": "array"
-            },
             "randomize_choices": {
               "name": "randomize_choices",
               "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::RandomizeChoices",
@@ -4192,6 +6308,11 @@ module.exports = {
               "name": "answer_max_choices",
               "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::AnswerMaxChoices",
               "type": "integer"
+            },
+            "choices_order": {
+              "name": "choices_order",
+              "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+              "type": "array"
             },
             "introduction": {
               "name": "introduction",
@@ -4212,10 +6333,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -4225,23 +6356,16 @@ module.exports = {
 
               ]
             },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
-            },
             "question_data": {
               "name": "question_data",
               "source": "Census::Questions::MultipleChoiceManyQuestion::Fields::ImportData::Fields::QuestionData",
               "type": "json"
             }
           }
-        }
+        },
+        "types": [
+          "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+        ]
       },
       "MultipleChoiceQuestion": {
         "kind": {
@@ -4356,6 +6480,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -4370,7 +6548,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -4378,11 +6562,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "choices_order": {
-              "name": "choices_order",
-              "source": "Census::Questions::MultipleChoiceQuestion::Fields::CustomFields::Fields::ChoicesOrder",
-              "type": "array"
-            },
             "randomize_choices": {
               "name": "randomize_choices",
               "source": "Census::Questions::MultipleChoiceQuestion::Fields::CustomFields::Fields::RandomizeChoices",
@@ -4392,6 +6571,11 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "choices_order": {
+              "name": "choices_order",
+              "source": "Census::Questions::MultipleChoiceQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+              "type": "array"
             },
             "introduction": {
               "name": "introduction",
@@ -4412,10 +6596,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::MultipleChoiceQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::MultipleChoiceQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::MultipleChoiceQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -4425,16 +6619,6 @@ module.exports = {
 
               ]
             },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::MultipleChoiceQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::MultipleChoiceQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
-            },
             "question_data": {
               "name": "question_data",
               "source": "Census::Questions::MultipleChoiceQuestion::Fields::ImportData::Fields::QuestionData",
@@ -4443,6 +6627,7 @@ module.exports = {
           }
         },
         "types": [
+          "Census::Questions::Matrix::MultipleChoiceQuestion",
           "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion",
           "Census::Questions::PostCaseWhatDidWeDoWellQuestion",
           "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion",
@@ -4563,6 +6748,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -4577,7 +6816,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -4604,10 +6849,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::NpsNumberScaleQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::NpsNumberScaleQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::NpsNumberScaleQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -4616,16 +6871,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::NpsNumberScaleQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::NpsNumberScaleQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -4748,6 +6993,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -4762,7 +7061,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -4789,19 +7094,6 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
-            "imported_at": {
-              "name": "imported_at",
-              "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::ImportedAt",
-              "type": "time"
-            },
-            "notes": {
-              "name": "notes",
-              "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::Notes",
-              "type": "array",
-              "default": [
-
-              ]
-            },
             "detractor_question_reaction_id": {
               "name": "detractor_question_reaction_id",
               "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::DetractorQuestionReactionId",
@@ -4827,6 +7119,11 @@ module.exports = {
               "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::PassiveQuestionStreamId",
               "type": "string"
             },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
+            },
             "passive_question_data": {
               "name": "passive_question_data",
               "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::PassiveQuestionData",
@@ -4846,6 +7143,19 @@ module.exports = {
               "name": "promoter_question_data",
               "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::PromoterQuestionData",
               "type": "json"
+            },
+            "imported_at": {
+              "name": "imported_at",
+              "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::ImportedAt",
+              "type": "time"
+            },
+            "notes": {
+              "name": "notes",
+              "source": "Census::Questions::NpsTextQuestion::Fields::ImportData::Fields::Notes",
+              "type": "array",
+              "default": [
+
+              ]
             }
           }
         }
@@ -4963,6 +7273,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -4977,7 +7341,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -4985,17 +7355,17 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "answer_min_value": {
-              "name": "answer_min_value",
-              "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMinValue",
-              "type": "integer",
-              "default": 0
-            },
             "answer_max_value": {
               "name": "answer_max_value",
               "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMaxValue",
               "type": "integer",
               "default": 10
+            },
+            "answer_max_value_label": {
+              "name": "answer_max_value_label",
+              "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMaxValueLabel",
+              "type": "string",
+              "default": "Maximum Value"
             },
             "display_format": {
               "name": "display_format",
@@ -5025,17 +7395,17 @@ module.exports = {
               ],
               "default": "buttons"
             },
+            "answer_min_value": {
+              "name": "answer_min_value",
+              "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMinValue",
+              "type": "integer",
+              "default": 0
+            },
             "answer_min_value_label": {
               "name": "answer_min_value_label",
               "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMinValueLabel",
               "type": "string",
               "default": "Minimum Value"
-            },
-            "answer_max_value_label": {
-              "name": "answer_max_value_label",
-              "source": "Census::Questions::NumberScaleQuestion::Fields::CustomFields::Fields::AnswerMaxValueLabel",
-              "type": "string",
-              "default": "Maximum Value"
             },
             "introduction": {
               "name": "introduction",
@@ -5056,10 +7426,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::NumberScaleQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::NumberScaleQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::NumberScaleQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -5069,16 +7449,6 @@ module.exports = {
 
               ]
             },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::NumberScaleQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::NumberScaleQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
-            },
             "question_data": {
               "name": "question_data",
               "source": "Census::Questions::NumberScaleQuestion::Fields::ImportData::Fields::QuestionData",
@@ -5087,6 +7457,7 @@ module.exports = {
           }
         },
         "types": [
+          "Census::Questions::Matrix::NumberScaleQuestion",
           "Census::Questions::WinLossAnalysisLossRateExperienceQuestion"
         ]
       },
@@ -5203,6 +7574,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -5217,7 +7642,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -5225,17 +7656,17 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "true_value_name": {
-              "name": "true_value_name",
-              "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::CustomFields::Fields::TrueValueName",
-              "type": "string",
-              "default": "Yes"
-            },
             "false_value_name": {
               "name": "false_value_name",
               "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::CustomFields::Fields::FalseValueName",
               "type": "string",
               "default": "No"
+            },
+            "true_value_name": {
+              "name": "true_value_name",
+              "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::CustomFields::Fields::TrueValueName",
+              "type": "string",
+              "default": "Yes"
             },
             "introduction": {
               "name": "introduction",
@@ -5256,10 +7687,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -5268,16 +7709,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::PostCaseAreYouSatisfiedQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -5400,6 +7831,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -5414,7 +7899,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -5422,11 +7913,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "choices_order": {
-              "name": "choices_order",
-              "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::CustomFields::Fields::ChoicesOrder",
-              "type": "array"
-            },
             "randomize_choices": {
               "name": "randomize_choices",
               "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::CustomFields::Fields::RandomizeChoices",
@@ -5436,6 +7922,11 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "choices_order": {
+              "name": "choices_order",
+              "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+              "type": "array"
             },
             "introduction": {
               "name": "introduction",
@@ -5456,10 +7947,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -5468,16 +7969,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::PostCaseWhatCouldWeHaveDoneBetterQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -5600,6 +8091,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -5614,7 +8159,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -5622,11 +8173,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "choices_order": {
-              "name": "choices_order",
-              "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::CustomFields::Fields::ChoicesOrder",
-              "type": "array"
-            },
             "randomize_choices": {
               "name": "randomize_choices",
               "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::CustomFields::Fields::RandomizeChoices",
@@ -5636,6 +8182,11 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "choices_order": {
+              "name": "choices_order",
+              "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+              "type": "array"
             },
             "introduction": {
               "name": "introduction",
@@ -5656,10 +8207,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -5668,16 +8229,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::PostCaseWhatDidWeDoWellQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -5800,6 +8351,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -5814,7 +8419,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -5822,11 +8433,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "choices_order": {
-              "name": "choices_order",
-              "source": "Census::Questions::RankingQuestion::Fields::CustomFields::Fields::ChoicesOrder",
-              "type": "array"
-            },
             "randomize_choices": {
               "name": "randomize_choices",
               "source": "Census::Questions::RankingQuestion::Fields::CustomFields::Fields::RandomizeChoices",
@@ -5841,6 +8447,11 @@ module.exports = {
               "name": "answer_max_choices",
               "source": "Census::Questions::RankingQuestion::Fields::CustomFields::Fields::AnswerMaxChoices",
               "type": "integer"
+            },
+            "choices_order": {
+              "name": "choices_order",
+              "source": "Census::Questions::RankingQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+              "type": "array"
             },
             "introduction": {
               "name": "introduction",
@@ -5861,10 +8472,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::RankingQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::RankingQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::RankingQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -5873,16 +8494,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::RankingQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::RankingQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -6005,6 +8616,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -6019,7 +8684,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -6031,7 +8702,7 @@ module.exports = {
               "name": "answer_max_length",
               "source": "Census::Questions::TextQuestion::Fields::CustomFields::Fields::AnswerMaxLength",
               "type": "integer",
-              "default": 250
+              "default": 1000
             },
             "introduction": {
               "name": "introduction",
@@ -6052,10 +8723,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::TextQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::TextQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::TextQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -6065,16 +8746,6 @@ module.exports = {
 
               ]
             },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::TextQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::TextQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
-            },
             "question_data": {
               "name": "question_data",
               "source": "Census::Questions::TextQuestion::Fields::ImportData::Fields::QuestionData",
@@ -6083,6 +8754,7 @@ module.exports = {
           }
         },
         "types": [
+          "Census::Questions::Matrix::TextQuestion",
           "Census::Questions::WinLossAnalysisWinReasonForChoiceOverCompetitionQuestion",
           "Census::Questions::WinLossAnalysisWinWhoIsBestContactQuestion"
         ]
@@ -6200,6 +8872,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -6214,7 +8940,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -6222,17 +8954,17 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "answer_min_value": {
-              "name": "answer_min_value",
-              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMinValue",
-              "type": "integer",
-              "default": 0
-            },
             "answer_max_value": {
               "name": "answer_max_value",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMaxValue",
               "type": "integer",
               "default": 10
+            },
+            "answer_max_value_label": {
+              "name": "answer_max_value_label",
+              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMaxValueLabel",
+              "type": "string",
+              "default": "Maximum Value"
             },
             "display_format": {
               "name": "display_format",
@@ -6262,17 +8994,17 @@ module.exports = {
               ],
               "default": "buttons"
             },
+            "answer_min_value": {
+              "name": "answer_min_value",
+              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMinValue",
+              "type": "integer",
+              "default": 0
+            },
             "answer_min_value_label": {
               "name": "answer_min_value_label",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMinValueLabel",
               "type": "string",
               "default": "Minimum Value"
-            },
-            "answer_max_value_label": {
-              "name": "answer_max_value_label",
-              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::CustomFields::Fields::AnswerMaxValueLabel",
-              "type": "string",
-              "default": "Maximum Value"
             },
             "introduction": {
               "name": "introduction",
@@ -6293,10 +9025,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -6305,16 +9047,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::WinLossAnalysisLossRateExperienceQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -6437,6 +9169,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -6451,7 +9237,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -6459,11 +9251,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "choices_order": {
-              "name": "choices_order",
-              "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::CustomFields::Fields::ChoicesOrder",
-              "type": "array"
-            },
             "randomize_choices": {
               "name": "randomize_choices",
               "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::CustomFields::Fields::RandomizeChoices",
@@ -6473,6 +9260,11 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "choices_order": {
+              "name": "choices_order",
+              "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+              "type": "array"
             },
             "introduction": {
               "name": "introduction",
@@ -6493,10 +9285,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -6505,16 +9307,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::WinLossAnalysisLossReasonForNotPurchasingQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -6637,6 +9429,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -6651,7 +9497,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -6659,11 +9511,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "choices_order": {
-              "name": "choices_order",
-              "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::CustomFields::Fields::ChoicesOrder",
-              "type": "array"
-            },
             "randomize_choices": {
               "name": "randomize_choices",
               "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::CustomFields::Fields::RandomizeChoices",
@@ -6673,6 +9520,11 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "choices_order": {
+              "name": "choices_order",
+              "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+              "type": "array"
             },
             "introduction": {
               "name": "introduction",
@@ -6693,10 +9545,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -6705,16 +9567,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::WinLossAnalysisLossWhichCompetitorWouldYouChooseQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -6837,6 +9689,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -6851,7 +9757,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -6859,11 +9771,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "choices_order": {
-              "name": "choices_order",
-              "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::CustomFields::Fields::ChoicesOrder",
-              "type": "array"
-            },
             "randomize_choices": {
               "name": "randomize_choices",
               "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::CustomFields::Fields::RandomizeChoices",
@@ -6873,6 +9780,11 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "choices_order": {
+              "name": "choices_order",
+              "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::CustomFields::Fields::ChoicesOrder",
+              "type": "array"
             },
             "introduction": {
               "name": "introduction",
@@ -6893,10 +9805,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -6905,16 +9827,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::WinLossAnalysisWinFeatureExcitementQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -7037,6 +9949,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -7051,7 +10017,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -7063,7 +10035,7 @@ module.exports = {
               "name": "answer_max_length",
               "source": "Census::Questions::WinLossAnalysisWinReasonForChoiceOverCompetitionQuestion::Fields::CustomFields::Fields::AnswerMaxLength",
               "type": "integer",
-              "default": 250
+              "default": 1000
             },
             "introduction": {
               "name": "introduction",
@@ -7084,10 +10056,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::WinLossAnalysisWinReasonForChoiceOverCompetitionQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::WinLossAnalysisWinReasonForChoiceOverCompetitionQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::WinLossAnalysisWinReasonForChoiceOverCompetitionQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -7096,16 +10078,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::WinLossAnalysisWinReasonForChoiceOverCompetitionQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::WinLossAnalysisWinReasonForChoiceOverCompetitionQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -7228,6 +10200,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -7242,7 +10268,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -7254,7 +10286,7 @@ module.exports = {
               "name": "answer_max_length",
               "source": "Census::Questions::WinLossAnalysisWinWhoIsBestContactQuestion::Fields::CustomFields::Fields::AnswerMaxLength",
               "type": "integer",
-              "default": 250
+              "default": 1000
             },
             "introduction": {
               "name": "introduction",
@@ -7275,10 +10307,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::WinLossAnalysisWinWhoIsBestContactQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::WinLossAnalysisWinWhoIsBestContactQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::WinLossAnalysisWinWhoIsBestContactQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -7287,16 +10329,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::WinLossAnalysisWinWhoIsBestContactQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::WinLossAnalysisWinWhoIsBestContactQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -7419,6 +10451,60 @@ module.exports = {
               "attributes": {
                 "type": "Census::Questions::RankingQuestion"
               }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Census::Questions::MatrixQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+              "name": "matrix_boolean",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Census::Questions::Matrix::BooleanQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+              "name": "matrix_number_scale",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Census::Questions::Matrix::NumberScaleQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+              "name": "matrix_multiple_choice",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+              "name": "matrix_text",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "type": "Census::Questions::Matrix::TextQuestion"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+              "name": "matrix_multiple_choice_many",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+              }
             }
           ],
           "values": [
@@ -7433,7 +10519,13 @@ module.exports = {
             "post_case_what_could_we_have_done_better",
             "post_case_what_did_we_do_well",
             "text",
-            "ranking"
+            "ranking",
+            "matrix",
+            "matrix_boolean",
+            "matrix_number_scale",
+            "matrix_multiple_choice",
+            "matrix_text",
+            "matrix_multiple_choice_many"
           ]
         },
         "custom_fields": {
@@ -7441,17 +10533,17 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "true_value_name": {
-              "name": "true_value_name",
-              "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::CustomFields::Fields::TrueValueName",
-              "type": "string",
-              "default": "Yes"
-            },
             "false_value_name": {
               "name": "false_value_name",
               "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::CustomFields::Fields::FalseValueName",
               "type": "string",
               "default": "No"
+            },
+            "true_value_name": {
+              "name": "true_value_name",
+              "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::CustomFields::Fields::TrueValueName",
+              "type": "string",
+              "default": "Yes"
             },
             "introduction": {
               "name": "introduction",
@@ -7472,10 +10564,20 @@ module.exports = {
           "name": "import_data",
           "type": "struct",
           "fields": {
+            "question_reaction_id": {
+              "name": "question_reaction_id",
+              "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::ImportData::Fields::QuestionReactionId",
+              "type": "integer"
+            },
             "imported_at": {
               "name": "imported_at",
               "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::ImportData::Fields::ImportedAt",
               "type": "time"
+            },
+            "question_stream_id": {
+              "name": "question_stream_id",
+              "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::ImportData::Fields::QuestionStreamId",
+              "type": "string"
             },
             "notes": {
               "name": "notes",
@@ -7484,16 +10586,6 @@ module.exports = {
               "default": [
 
               ]
-            },
-            "question_reaction_id": {
-              "name": "question_reaction_id",
-              "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::ImportData::Fields::QuestionReactionId",
-              "type": "integer"
-            },
-            "question_stream_id": {
-              "name": "question_stream_id",
-              "source": "Census::Questions::WinLossAnalysisWonOrLostQuestion::Fields::ImportData::Fields::QuestionStreamId",
-              "type": "string"
             },
             "question_data": {
               "name": "question_data",
@@ -7507,42 +10599,6 @@ module.exports = {
     "SharedVisualization": {
     },
     "Survey": {
-      "participation_creation_method": {
-        "name": "participation_creation_method",
-        "source": "Census::Survey::Fields::ParticipationCreationMethod",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
-            "name": "audience",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
-            "name": "trigger_based",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
-            "name": "contact_registration",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "audience",
-          "trigger_based",
-          "contact_registration"
-        ]
-      },
       "default_locale": {
         "name": "default_locale",
         "source": "Census::Survey::Fields::DefaultLocale",
@@ -7783,61 +10839,40 @@ module.exports = {
           "zh"
         ]
       },
-      "kind": {
-        "name": "kind",
-        "source": "Census::Survey::Fields::Kind",
+      "participation_creation_method": {
+        "name": "participation_creation_method",
+        "source": "Census::Survey::Fields::ParticipationCreationMethod",
         "type": "enum",
         "choices": [
           {
-            "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
-            "name": "freeform",
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+            "name": "audience",
             "type": "enum_value",
             "integer_value": 1,
             "attributes": {
-              "type": "Census::Surveys::FreeformSurvey",
-              "description": "Freeform",
-              "abbreviation": "FFM"
             }
           },
           {
-            "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
-            "name": "nps",
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+            "name": "trigger_based",
             "type": "enum_value",
             "integer_value": 2,
             "attributes": {
-              "type": "Census::Surveys::NpsSurvey",
-              "description": "Net Promoter Score",
-              "abbreviation": "NPS"
             }
           },
           {
-            "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
-            "name": "post_case",
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+            "name": "contact_registration",
             "type": "enum_value",
             "integer_value": 3,
             "attributes": {
-              "type": "Census::Surveys::PostCaseSurvey",
-              "description": "Post Case",
-              "abbreviation": "PCS"
-            }
-          },
-          {
-            "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
-            "name": "win_loss_analysis",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-              "type": "Census::Surveys::WinLossAnalysisSurvey",
-              "description": "Win Loss Analysis",
-              "abbreviation": "WLA"
             }
           }
         ],
         "values": [
-          "freeform",
-          "nps",
-          "post_case",
-          "win_loss_analysis"
+          "audience",
+          "trigger_based",
+          "contact_registration"
         ]
       },
       "status": {
@@ -7912,52 +10947,62 @@ module.exports = {
           "deleted"
         ]
       },
-      "custom_fields": {
-        "source": "Census::Survey::Fields::CustomFields",
-        "name": "custom_fields",
-        "type": "struct",
-        "fields": {
-          "questions_order": {
-            "name": "questions_order",
-            "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
-            "type": "array"
+      "kind": {
+        "name": "kind",
+        "source": "Census::Survey::Fields::Kind",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
+            "name": "freeform",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Census::Surveys::FreeformSurvey",
+              "description": "Freeform",
+              "abbreviation": "FFM"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
+            "name": "nps",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "type": "Census::Surveys::NpsSurvey",
+              "description": "Net Promoter Score",
+              "abbreviation": "NPS"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
+            "name": "post_case",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "type": "Census::Surveys::PostCaseSurvey",
+              "description": "Post Case",
+              "abbreviation": "PCS"
+            }
+          },
+          {
+            "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
+            "name": "win_loss_analysis",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "type": "Census::Surveys::WinLossAnalysisSurvey",
+              "description": "Win Loss Analysis",
+              "abbreviation": "WLA"
+            }
           }
-        }
-      },
-      "import_data": {
-        "source": "Census::Survey::Fields::ImportData",
-        "name": "import_data",
-        "type": "struct",
-        "fields": {
-          "imported_at": {
-            "name": "imported_at",
-            "source": "Census::Survey::Fields::ImportData::Fields::ImportedAt",
-            "type": "time"
-          },
-          "notes": {
-            "name": "notes",
-            "source": "Census::Survey::Fields::ImportData::Fields::Notes",
-            "type": "array",
-            "default": [
-
-            ]
-          },
-          "survey_reaction_id": {
-            "name": "survey_reaction_id",
-            "source": "Census::Survey::Fields::ImportData::Fields::SurveyReactionId",
-            "type": "integer"
-          },
-          "survey_stream_id": {
-            "name": "survey_stream_id",
-            "source": "Census::Survey::Fields::ImportData::Fields::SurveyStreamId",
-            "type": "string"
-          },
-          "survey_data": {
-            "name": "survey_data",
-            "source": "Census::Survey::Fields::ImportData::Fields::SurveyData",
-            "type": "json"
-          }
-        }
+        ],
+        "values": [
+          "freeform",
+          "nps",
+          "post_case",
+          "win_loss_analysis"
+        ]
       },
       "settings": {
         "source": "Census::Survey::Fields::Settings",
@@ -8124,147 +11169,6 @@ module.exports = {
         "name": "display_settings",
         "type": "struct",
         "fields": {
-          "primary_palette": {
-            "name": "primary_palette",
-            "source": "Census::Survey::Fields::DisplaySettings::Fields::PrimaryPalette",
-            "type": "enum",
-            "choices": [
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Red",
-                "name": "red",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                  "hex": "#db2828",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Orange",
-                "name": "orange",
-                "type": "enum_value",
-                "integer_value": 2,
-                "attributes": {
-                  "hex": "#f2711c",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Yellow",
-                "name": "yellow",
-                "type": "enum_value",
-                "integer_value": 3,
-                "attributes": {
-                  "hex": "#fbbd08",
-                  "contrast": "black"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Olive",
-                "name": "olive",
-                "type": "enum_value",
-                "integer_value": 4,
-                "attributes": {
-                  "hex": "#b5cc18",
-                  "contrast": "black"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Green",
-                "name": "green",
-                "type": "enum_value",
-                "integer_value": 5,
-                "attributes": {
-                  "hex": "#21ba45",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Teal",
-                "name": "teal",
-                "type": "enum_value",
-                "integer_value": 6,
-                "attributes": {
-                  "hex": "#00b5ad",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Blue",
-                "name": "blue",
-                "type": "enum_value",
-                "integer_value": 7,
-                "attributes": {
-                  "hex": "#2185d0",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Violet",
-                "name": "violet",
-                "type": "enum_value",
-                "integer_value": 8,
-                "attributes": {
-                  "hex": "#6435c9",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Purple",
-                "name": "purple",
-                "type": "enum_value",
-                "integer_value": 9,
-                "attributes": {
-                  "hex": "#a333c8",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Grey",
-                "name": "grey",
-                "type": "enum_value",
-                "integer_value": 10,
-                "attributes": {
-                  "hex": "#767676",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Black",
-                "name": "black",
-                "type": "enum_value",
-                "integer_value": 11,
-                "attributes": {
-                  "hex": "#000000",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
-                "name": "cobalt_blue",
-                "type": "enum_value",
-                "integer_value": 12,
-                "attributes": {
-                  "hex": "#003da5",
-                  "contrast": "white"
-                }
-              }
-            ],
-            "values": [
-              "red",
-              "orange",
-              "yellow",
-              "olive",
-              "green",
-              "teal",
-              "blue",
-              "violet",
-              "purple",
-              "grey",
-              "black",
-              "cobalt_blue"
-            ]
-          },
           "secondary_palette": {
             "name": "secondary_palette",
             "source": "Census::Survey::Fields::DisplaySettings::Fields::SecondaryPalette",
@@ -8405,6 +11309,194 @@ module.exports = {
               "black",
               "cobalt_blue"
             ]
+          },
+          "primary_palette": {
+            "name": "primary_palette",
+            "source": "Census::Survey::Fields::DisplaySettings::Fields::PrimaryPalette",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Red",
+                "name": "red",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "hex": "#db2828",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Orange",
+                "name": "orange",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "hex": "#f2711c",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                "name": "yellow",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "hex": "#fbbd08",
+                  "contrast": "black"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Olive",
+                "name": "olive",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "hex": "#b5cc18",
+                  "contrast": "black"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Green",
+                "name": "green",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "hex": "#21ba45",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Teal",
+                "name": "teal",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "hex": "#00b5ad",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Blue",
+                "name": "blue",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "hex": "#2185d0",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Violet",
+                "name": "violet",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "hex": "#6435c9",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Purple",
+                "name": "purple",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "hex": "#a333c8",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Grey",
+                "name": "grey",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "hex": "#767676",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Black",
+                "name": "black",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "hex": "#000000",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                "name": "cobalt_blue",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "hex": "#003da5",
+                  "contrast": "white"
+                }
+              }
+            ],
+            "values": [
+              "red",
+              "orange",
+              "yellow",
+              "olive",
+              "green",
+              "teal",
+              "blue",
+              "violet",
+              "purple",
+              "grey",
+              "black",
+              "cobalt_blue"
+            ]
+          }
+        }
+      },
+      "import_data": {
+        "source": "Census::Survey::Fields::ImportData",
+        "name": "import_data",
+        "type": "struct",
+        "fields": {
+          "imported_at": {
+            "name": "imported_at",
+            "source": "Census::Survey::Fields::ImportData::Fields::ImportedAt",
+            "type": "time"
+          },
+          "survey_reaction_id": {
+            "name": "survey_reaction_id",
+            "source": "Census::Survey::Fields::ImportData::Fields::SurveyReactionId",
+            "type": "integer"
+          },
+          "notes": {
+            "name": "notes",
+            "source": "Census::Survey::Fields::ImportData::Fields::Notes",
+            "type": "array",
+            "default": [
+
+            ]
+          },
+          "survey_stream_id": {
+            "name": "survey_stream_id",
+            "source": "Census::Survey::Fields::ImportData::Fields::SurveyStreamId",
+            "type": "string"
+          },
+          "survey_data": {
+            "name": "survey_data",
+            "source": "Census::Survey::Fields::ImportData::Fields::SurveyData",
+            "type": "json"
+          }
+        }
+      },
+      "custom_fields": {
+        "source": "Census::Survey::Fields::CustomFields",
+        "name": "custom_fields",
+        "type": "struct",
+        "fields": {
+          "questions_order": {
+            "name": "questions_order",
+            "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
+            "type": "array"
           }
         }
       },
@@ -8413,66 +11505,6 @@ module.exports = {
         "name": "supported_locales",
         "type": "struct",
         "fields": {
-          "cs": {
-            "name": "cs",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "da": {
-            "name": "da",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "de": {
-            "name": "de",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "el": {
-            "name": "el",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "en": {
-            "name": "en",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "es": {
-            "name": "es",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
           "et": {
             "name": "et",
             "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
@@ -8506,16 +11538,6 @@ module.exports = {
           "hu": {
             "name": "hu",
             "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "is": {
-            "name": "is",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
             "type": "boolean",
             "default": false,
             "values": [
@@ -8622,6 +11644,76 @@ module.exports = {
               true,
               false
             ]
+          },
+          "is": {
+            "name": "is",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "cs": {
+            "name": "cs",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "da": {
+            "name": "da",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "de": {
+            "name": "de",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "el": {
+            "name": "el",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en": {
+            "name": "en",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "es": {
+            "name": "es",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           }
         }
       },
@@ -8634,42 +11726,6 @@ module.exports = {
     },
     "Surveys": {
       "FreeformSurvey": {
-        "participation_creation_method": {
-          "name": "participation_creation_method",
-          "source": "Census::Surveys::FreeformSurvey::Fields::ParticipationCreationMethod",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
-              "name": "audience",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
-              "name": "trigger_based",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
-              "name": "contact_registration",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "audience",
-            "trigger_based",
-            "contact_registration"
-          ]
-        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::FreeformSurvey::Fields::DefaultLocale",
@@ -8910,61 +11966,40 @@ module.exports = {
             "zh"
           ]
         },
-        "kind": {
-          "name": "kind",
-          "source": "Census::Surveys::FreeformSurvey::Fields::Kind",
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::FreeformSurvey::Fields::ParticipationCreationMethod",
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
-              "name": "freeform",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Census::Surveys::FreeformSurvey",
-                "description": "Freeform",
-                "abbreviation": "FFM"
               }
             },
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
-              "name": "nps",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
-                "type": "Census::Surveys::NpsSurvey",
-                "description": "Net Promoter Score",
-                "abbreviation": "NPS"
               }
             },
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
-              "name": "post_case",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
               "type": "enum_value",
               "integer_value": 3,
               "attributes": {
-                "type": "Census::Surveys::PostCaseSurvey",
-                "description": "Post Case",
-                "abbreviation": "PCS"
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
-              "name": "win_loss_analysis",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Census::Surveys::WinLossAnalysisSurvey",
-                "description": "Win Loss Analysis",
-                "abbreviation": "WLA"
               }
             }
           ],
           "values": [
-            "freeform",
-            "nps",
-            "post_case",
-            "win_loss_analysis"
+            "audience",
+            "trigger_based",
+            "contact_registration"
           ]
         },
         "status": {
@@ -9039,57 +12074,62 @@ module.exports = {
             "deleted"
           ]
         },
-        "custom_fields": {
-          "source": "Census::Surveys::FreeformSurvey::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "subject_name": {
-              "name": "subject_name",
-              "source": "Census::Surveys::FreeformSurvey::Fields::CustomFields::Fields::SubjectName",
-              "type": "string"
+        "kind": {
+          "name": "kind",
+          "source": "Census::Surveys::FreeformSurvey::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
+              "name": "freeform",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Census::Surveys::FreeformSurvey",
+                "description": "Freeform",
+                "abbreviation": "FFM"
+              }
             },
-            "questions_order": {
-              "name": "questions_order",
-              "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
-              "type": "array"
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
+              "name": "nps",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Census::Surveys::NpsSurvey",
+                "description": "Net Promoter Score",
+                "abbreviation": "NPS"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
+              "name": "post_case",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Census::Surveys::PostCaseSurvey",
+                "description": "Post Case",
+                "abbreviation": "PCS"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
+              "name": "win_loss_analysis",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Census::Surveys::WinLossAnalysisSurvey",
+                "description": "Win Loss Analysis",
+                "abbreviation": "WLA"
+              }
             }
-          }
-        },
-        "import_data": {
-          "source": "Census::Surveys::FreeformSurvey::Fields::ImportData",
-          "name": "import_data",
-          "type": "struct",
-          "fields": {
-            "imported_at": {
-              "name": "imported_at",
-              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::ImportedAt",
-              "type": "time"
-            },
-            "notes": {
-              "name": "notes",
-              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::Notes",
-              "type": "array",
-              "default": [
-
-              ]
-            },
-            "survey_reaction_id": {
-              "name": "survey_reaction_id",
-              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::SurveyReactionId",
-              "type": "integer"
-            },
-            "survey_stream_id": {
-              "name": "survey_stream_id",
-              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::SurveyStreamId",
-              "type": "string"
-            },
-            "survey_data": {
-              "name": "survey_data",
-              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::SurveyData",
-              "type": "json"
-            }
-          }
+          ],
+          "values": [
+            "freeform",
+            "nps",
+            "post_case",
+            "win_loss_analysis"
+          ]
         },
         "settings": {
           "source": "Census::Surveys::FreeformSurvey::Fields::Settings",
@@ -9256,147 +12296,6 @@ module.exports = {
           "name": "display_settings",
           "type": "struct",
           "fields": {
-            "primary_palette": {
-              "name": "primary_palette",
-              "source": "Census::Surveys::FreeformSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
-              "type": "enum",
-              "choices": [
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Red",
-                  "name": "red",
-                  "type": "enum_value",
-                  "integer_value": 1,
-                  "attributes": {
-                    "hex": "#db2828",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Orange",
-                  "name": "orange",
-                  "type": "enum_value",
-                  "integer_value": 2,
-                  "attributes": {
-                    "hex": "#f2711c",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
-                  "name": "yellow",
-                  "type": "enum_value",
-                  "integer_value": 3,
-                  "attributes": {
-                    "hex": "#fbbd08",
-                    "contrast": "black"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Olive",
-                  "name": "olive",
-                  "type": "enum_value",
-                  "integer_value": 4,
-                  "attributes": {
-                    "hex": "#b5cc18",
-                    "contrast": "black"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Green",
-                  "name": "green",
-                  "type": "enum_value",
-                  "integer_value": 5,
-                  "attributes": {
-                    "hex": "#21ba45",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Teal",
-                  "name": "teal",
-                  "type": "enum_value",
-                  "integer_value": 6,
-                  "attributes": {
-                    "hex": "#00b5ad",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Blue",
-                  "name": "blue",
-                  "type": "enum_value",
-                  "integer_value": 7,
-                  "attributes": {
-                    "hex": "#2185d0",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Violet",
-                  "name": "violet",
-                  "type": "enum_value",
-                  "integer_value": 8,
-                  "attributes": {
-                    "hex": "#6435c9",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Purple",
-                  "name": "purple",
-                  "type": "enum_value",
-                  "integer_value": 9,
-                  "attributes": {
-                    "hex": "#a333c8",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Grey",
-                  "name": "grey",
-                  "type": "enum_value",
-                  "integer_value": 10,
-                  "attributes": {
-                    "hex": "#767676",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Black",
-                  "name": "black",
-                  "type": "enum_value",
-                  "integer_value": 11,
-                  "attributes": {
-                    "hex": "#000000",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
-                  "name": "cobalt_blue",
-                  "type": "enum_value",
-                  "integer_value": 12,
-                  "attributes": {
-                    "hex": "#003da5",
-                    "contrast": "white"
-                  }
-                }
-              ],
-              "values": [
-                "red",
-                "orange",
-                "yellow",
-                "olive",
-                "green",
-                "teal",
-                "blue",
-                "violet",
-                "purple",
-                "grey",
-                "black",
-                "cobalt_blue"
-              ]
-            },
             "secondary_palette": {
               "name": "secondary_palette",
               "source": "Census::Surveys::FreeformSurvey::Fields::DisplaySettings::Fields::SecondaryPalette",
@@ -9537,6 +12436,199 @@ module.exports = {
                 "black",
                 "cobalt_blue"
               ]
+            },
+            "primary_palette": {
+              "name": "primary_palette",
+              "source": "Census::Surveys::FreeformSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black",
+                "cobalt_blue"
+              ]
+            }
+          }
+        },
+        "import_data": {
+          "source": "Census::Surveys::FreeformSurvey::Fields::ImportData",
+          "name": "import_data",
+          "type": "struct",
+          "fields": {
+            "imported_at": {
+              "name": "imported_at",
+              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::ImportedAt",
+              "type": "time"
+            },
+            "survey_reaction_id": {
+              "name": "survey_reaction_id",
+              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::SurveyReactionId",
+              "type": "integer"
+            },
+            "notes": {
+              "name": "notes",
+              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::Notes",
+              "type": "array",
+              "default": [
+
+              ]
+            },
+            "survey_stream_id": {
+              "name": "survey_stream_id",
+              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::SurveyStreamId",
+              "type": "string"
+            },
+            "survey_data": {
+              "name": "survey_data",
+              "source": "Census::Surveys::FreeformSurvey::Fields::ImportData::Fields::SurveyData",
+              "type": "json"
+            }
+          }
+        },
+        "custom_fields": {
+          "source": "Census::Surveys::FreeformSurvey::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "subject_name": {
+              "name": "subject_name",
+              "source": "Census::Surveys::FreeformSurvey::Fields::CustomFields::Fields::SubjectName",
+              "type": "string"
+            },
+            "questions_order": {
+              "name": "questions_order",
+              "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
+              "type": "array"
             }
           }
         },
@@ -9545,66 +12637,6 @@ module.exports = {
           "name": "supported_locales",
           "type": "struct",
           "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "et": {
               "name": "et",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
@@ -9638,16 +12670,6 @@ module.exports = {
             "hu": {
               "name": "hu",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
               "type": "boolean",
               "default": false,
               "values": [
@@ -9754,47 +12776,81 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
       },
       "NpsSurvey": {
-        "participation_creation_method": {
-          "name": "participation_creation_method",
-          "source": "Census::Surveys::NpsSurvey::Fields::ParticipationCreationMethod",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
-              "name": "audience",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
-              "name": "trigger_based",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
-              "name": "contact_registration",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "audience",
-            "trigger_based",
-            "contact_registration"
-          ]
-        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::NpsSurvey::Fields::DefaultLocale",
@@ -10035,61 +13091,40 @@ module.exports = {
             "zh"
           ]
         },
-        "kind": {
-          "name": "kind",
-          "source": "Census::Surveys::NpsSurvey::Fields::Kind",
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::NpsSurvey::Fields::ParticipationCreationMethod",
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
-              "name": "freeform",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Census::Surveys::FreeformSurvey",
-                "description": "Freeform",
-                "abbreviation": "FFM"
               }
             },
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
-              "name": "nps",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
-                "type": "Census::Surveys::NpsSurvey",
-                "description": "Net Promoter Score",
-                "abbreviation": "NPS"
               }
             },
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
-              "name": "post_case",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
               "type": "enum_value",
               "integer_value": 3,
               "attributes": {
-                "type": "Census::Surveys::PostCaseSurvey",
-                "description": "Post Case",
-                "abbreviation": "PCS"
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
-              "name": "win_loss_analysis",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Census::Surveys::WinLossAnalysisSurvey",
-                "description": "Win Loss Analysis",
-                "abbreviation": "WLA"
               }
             }
           ],
           "values": [
-            "freeform",
-            "nps",
-            "post_case",
-            "win_loss_analysis"
+            "audience",
+            "trigger_based",
+            "contact_registration"
           ]
         },
         "status": {
@@ -10164,57 +13199,62 @@ module.exports = {
             "deleted"
           ]
         },
-        "custom_fields": {
-          "source": "Census::Surveys::NpsSurvey::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "subject_name": {
-              "name": "subject_name",
-              "source": "Census::Surveys::NpsSurvey::Fields::CustomFields::Fields::SubjectName",
-              "type": "string"
+        "kind": {
+          "name": "kind",
+          "source": "Census::Surveys::NpsSurvey::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
+              "name": "freeform",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Census::Surveys::FreeformSurvey",
+                "description": "Freeform",
+                "abbreviation": "FFM"
+              }
             },
-            "questions_order": {
-              "name": "questions_order",
-              "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
-              "type": "array"
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
+              "name": "nps",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Census::Surveys::NpsSurvey",
+                "description": "Net Promoter Score",
+                "abbreviation": "NPS"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
+              "name": "post_case",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Census::Surveys::PostCaseSurvey",
+                "description": "Post Case",
+                "abbreviation": "PCS"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
+              "name": "win_loss_analysis",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Census::Surveys::WinLossAnalysisSurvey",
+                "description": "Win Loss Analysis",
+                "abbreviation": "WLA"
+              }
             }
-          }
-        },
-        "import_data": {
-          "source": "Census::Surveys::NpsSurvey::Fields::ImportData",
-          "name": "import_data",
-          "type": "struct",
-          "fields": {
-            "imported_at": {
-              "name": "imported_at",
-              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::ImportedAt",
-              "type": "time"
-            },
-            "notes": {
-              "name": "notes",
-              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::Notes",
-              "type": "array",
-              "default": [
-
-              ]
-            },
-            "survey_reaction_id": {
-              "name": "survey_reaction_id",
-              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::SurveyReactionId",
-              "type": "integer"
-            },
-            "survey_stream_id": {
-              "name": "survey_stream_id",
-              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::SurveyStreamId",
-              "type": "string"
-            },
-            "survey_data": {
-              "name": "survey_data",
-              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::SurveyData",
-              "type": "json"
-            }
-          }
+          ],
+          "values": [
+            "freeform",
+            "nps",
+            "post_case",
+            "win_loss_analysis"
+          ]
         },
         "settings": {
           "source": "Census::Surveys::NpsSurvey::Fields::Settings",
@@ -10381,147 +13421,6 @@ module.exports = {
           "name": "display_settings",
           "type": "struct",
           "fields": {
-            "primary_palette": {
-              "name": "primary_palette",
-              "source": "Census::Surveys::NpsSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
-              "type": "enum",
-              "choices": [
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Red",
-                  "name": "red",
-                  "type": "enum_value",
-                  "integer_value": 1,
-                  "attributes": {
-                    "hex": "#db2828",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Orange",
-                  "name": "orange",
-                  "type": "enum_value",
-                  "integer_value": 2,
-                  "attributes": {
-                    "hex": "#f2711c",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
-                  "name": "yellow",
-                  "type": "enum_value",
-                  "integer_value": 3,
-                  "attributes": {
-                    "hex": "#fbbd08",
-                    "contrast": "black"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Olive",
-                  "name": "olive",
-                  "type": "enum_value",
-                  "integer_value": 4,
-                  "attributes": {
-                    "hex": "#b5cc18",
-                    "contrast": "black"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Green",
-                  "name": "green",
-                  "type": "enum_value",
-                  "integer_value": 5,
-                  "attributes": {
-                    "hex": "#21ba45",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Teal",
-                  "name": "teal",
-                  "type": "enum_value",
-                  "integer_value": 6,
-                  "attributes": {
-                    "hex": "#00b5ad",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Blue",
-                  "name": "blue",
-                  "type": "enum_value",
-                  "integer_value": 7,
-                  "attributes": {
-                    "hex": "#2185d0",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Violet",
-                  "name": "violet",
-                  "type": "enum_value",
-                  "integer_value": 8,
-                  "attributes": {
-                    "hex": "#6435c9",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Purple",
-                  "name": "purple",
-                  "type": "enum_value",
-                  "integer_value": 9,
-                  "attributes": {
-                    "hex": "#a333c8",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Grey",
-                  "name": "grey",
-                  "type": "enum_value",
-                  "integer_value": 10,
-                  "attributes": {
-                    "hex": "#767676",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Black",
-                  "name": "black",
-                  "type": "enum_value",
-                  "integer_value": 11,
-                  "attributes": {
-                    "hex": "#000000",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
-                  "name": "cobalt_blue",
-                  "type": "enum_value",
-                  "integer_value": 12,
-                  "attributes": {
-                    "hex": "#003da5",
-                    "contrast": "white"
-                  }
-                }
-              ],
-              "values": [
-                "red",
-                "orange",
-                "yellow",
-                "olive",
-                "green",
-                "teal",
-                "blue",
-                "violet",
-                "purple",
-                "grey",
-                "black",
-                "cobalt_blue"
-              ]
-            },
             "secondary_palette": {
               "name": "secondary_palette",
               "source": "Census::Surveys::NpsSurvey::Fields::DisplaySettings::Fields::SecondaryPalette",
@@ -10662,6 +13561,199 @@ module.exports = {
                 "black",
                 "cobalt_blue"
               ]
+            },
+            "primary_palette": {
+              "name": "primary_palette",
+              "source": "Census::Surveys::NpsSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black",
+                "cobalt_blue"
+              ]
+            }
+          }
+        },
+        "import_data": {
+          "source": "Census::Surveys::NpsSurvey::Fields::ImportData",
+          "name": "import_data",
+          "type": "struct",
+          "fields": {
+            "imported_at": {
+              "name": "imported_at",
+              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::ImportedAt",
+              "type": "time"
+            },
+            "survey_reaction_id": {
+              "name": "survey_reaction_id",
+              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::SurveyReactionId",
+              "type": "integer"
+            },
+            "notes": {
+              "name": "notes",
+              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::Notes",
+              "type": "array",
+              "default": [
+
+              ]
+            },
+            "survey_stream_id": {
+              "name": "survey_stream_id",
+              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::SurveyStreamId",
+              "type": "string"
+            },
+            "survey_data": {
+              "name": "survey_data",
+              "source": "Census::Surveys::NpsSurvey::Fields::ImportData::Fields::SurveyData",
+              "type": "json"
+            }
+          }
+        },
+        "custom_fields": {
+          "source": "Census::Surveys::NpsSurvey::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "subject_name": {
+              "name": "subject_name",
+              "source": "Census::Surveys::NpsSurvey::Fields::CustomFields::Fields::SubjectName",
+              "type": "string"
+            },
+            "questions_order": {
+              "name": "questions_order",
+              "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
+              "type": "array"
             }
           }
         },
@@ -10670,66 +13762,6 @@ module.exports = {
           "name": "supported_locales",
           "type": "struct",
           "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "et": {
               "name": "et",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
@@ -10763,16 +13795,6 @@ module.exports = {
             "hu": {
               "name": "hu",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
               "type": "boolean",
               "default": false,
               "values": [
@@ -10879,47 +13901,81 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
       },
       "PostCaseSurvey": {
-        "participation_creation_method": {
-          "name": "participation_creation_method",
-          "source": "Census::Surveys::PostCaseSurvey::Fields::ParticipationCreationMethod",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
-              "name": "audience",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
-              "name": "trigger_based",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
-              "name": "contact_registration",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "audience",
-            "trigger_based",
-            "contact_registration"
-          ]
-        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::PostCaseSurvey::Fields::DefaultLocale",
@@ -11160,61 +14216,40 @@ module.exports = {
             "zh"
           ]
         },
-        "kind": {
-          "name": "kind",
-          "source": "Census::Surveys::PostCaseSurvey::Fields::Kind",
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::PostCaseSurvey::Fields::ParticipationCreationMethod",
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
-              "name": "freeform",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Census::Surveys::FreeformSurvey",
-                "description": "Freeform",
-                "abbreviation": "FFM"
               }
             },
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
-              "name": "nps",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
-                "type": "Census::Surveys::NpsSurvey",
-                "description": "Net Promoter Score",
-                "abbreviation": "NPS"
               }
             },
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
-              "name": "post_case",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
               "type": "enum_value",
               "integer_value": 3,
               "attributes": {
-                "type": "Census::Surveys::PostCaseSurvey",
-                "description": "Post Case",
-                "abbreviation": "PCS"
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
-              "name": "win_loss_analysis",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Census::Surveys::WinLossAnalysisSurvey",
-                "description": "Win Loss Analysis",
-                "abbreviation": "WLA"
               }
             }
           ],
           "values": [
-            "freeform",
-            "nps",
-            "post_case",
-            "win_loss_analysis"
+            "audience",
+            "trigger_based",
+            "contact_registration"
           ]
         },
         "status": {
@@ -11289,57 +14324,62 @@ module.exports = {
             "deleted"
           ]
         },
-        "custom_fields": {
-          "source": "Census::Surveys::PostCaseSurvey::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "subject_name": {
-              "name": "subject_name",
-              "source": "Census::Surveys::PostCaseSurvey::Fields::CustomFields::Fields::SubjectName",
-              "type": "string"
+        "kind": {
+          "name": "kind",
+          "source": "Census::Surveys::PostCaseSurvey::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
+              "name": "freeform",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Census::Surveys::FreeformSurvey",
+                "description": "Freeform",
+                "abbreviation": "FFM"
+              }
             },
-            "questions_order": {
-              "name": "questions_order",
-              "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
-              "type": "array"
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
+              "name": "nps",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Census::Surveys::NpsSurvey",
+                "description": "Net Promoter Score",
+                "abbreviation": "NPS"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
+              "name": "post_case",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Census::Surveys::PostCaseSurvey",
+                "description": "Post Case",
+                "abbreviation": "PCS"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
+              "name": "win_loss_analysis",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Census::Surveys::WinLossAnalysisSurvey",
+                "description": "Win Loss Analysis",
+                "abbreviation": "WLA"
+              }
             }
-          }
-        },
-        "import_data": {
-          "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData",
-          "name": "import_data",
-          "type": "struct",
-          "fields": {
-            "imported_at": {
-              "name": "imported_at",
-              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::ImportedAt",
-              "type": "time"
-            },
-            "notes": {
-              "name": "notes",
-              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::Notes",
-              "type": "array",
-              "default": [
-
-              ]
-            },
-            "survey_reaction_id": {
-              "name": "survey_reaction_id",
-              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::SurveyReactionId",
-              "type": "integer"
-            },
-            "survey_stream_id": {
-              "name": "survey_stream_id",
-              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::SurveyStreamId",
-              "type": "string"
-            },
-            "survey_data": {
-              "name": "survey_data",
-              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::SurveyData",
-              "type": "json"
-            }
-          }
+          ],
+          "values": [
+            "freeform",
+            "nps",
+            "post_case",
+            "win_loss_analysis"
+          ]
         },
         "settings": {
           "source": "Census::Surveys::PostCaseSurvey::Fields::Settings",
@@ -11506,147 +14546,6 @@ module.exports = {
           "name": "display_settings",
           "type": "struct",
           "fields": {
-            "primary_palette": {
-              "name": "primary_palette",
-              "source": "Census::Surveys::PostCaseSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
-              "type": "enum",
-              "choices": [
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Red",
-                  "name": "red",
-                  "type": "enum_value",
-                  "integer_value": 1,
-                  "attributes": {
-                    "hex": "#db2828",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Orange",
-                  "name": "orange",
-                  "type": "enum_value",
-                  "integer_value": 2,
-                  "attributes": {
-                    "hex": "#f2711c",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
-                  "name": "yellow",
-                  "type": "enum_value",
-                  "integer_value": 3,
-                  "attributes": {
-                    "hex": "#fbbd08",
-                    "contrast": "black"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Olive",
-                  "name": "olive",
-                  "type": "enum_value",
-                  "integer_value": 4,
-                  "attributes": {
-                    "hex": "#b5cc18",
-                    "contrast": "black"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Green",
-                  "name": "green",
-                  "type": "enum_value",
-                  "integer_value": 5,
-                  "attributes": {
-                    "hex": "#21ba45",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Teal",
-                  "name": "teal",
-                  "type": "enum_value",
-                  "integer_value": 6,
-                  "attributes": {
-                    "hex": "#00b5ad",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Blue",
-                  "name": "blue",
-                  "type": "enum_value",
-                  "integer_value": 7,
-                  "attributes": {
-                    "hex": "#2185d0",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Violet",
-                  "name": "violet",
-                  "type": "enum_value",
-                  "integer_value": 8,
-                  "attributes": {
-                    "hex": "#6435c9",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Purple",
-                  "name": "purple",
-                  "type": "enum_value",
-                  "integer_value": 9,
-                  "attributes": {
-                    "hex": "#a333c8",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Grey",
-                  "name": "grey",
-                  "type": "enum_value",
-                  "integer_value": 10,
-                  "attributes": {
-                    "hex": "#767676",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Black",
-                  "name": "black",
-                  "type": "enum_value",
-                  "integer_value": 11,
-                  "attributes": {
-                    "hex": "#000000",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
-                  "name": "cobalt_blue",
-                  "type": "enum_value",
-                  "integer_value": 12,
-                  "attributes": {
-                    "hex": "#003da5",
-                    "contrast": "white"
-                  }
-                }
-              ],
-              "values": [
-                "red",
-                "orange",
-                "yellow",
-                "olive",
-                "green",
-                "teal",
-                "blue",
-                "violet",
-                "purple",
-                "grey",
-                "black",
-                "cobalt_blue"
-              ]
-            },
             "secondary_palette": {
               "name": "secondary_palette",
               "source": "Census::Surveys::PostCaseSurvey::Fields::DisplaySettings::Fields::SecondaryPalette",
@@ -11787,6 +14686,199 @@ module.exports = {
                 "black",
                 "cobalt_blue"
               ]
+            },
+            "primary_palette": {
+              "name": "primary_palette",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black",
+                "cobalt_blue"
+              ]
+            }
+          }
+        },
+        "import_data": {
+          "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData",
+          "name": "import_data",
+          "type": "struct",
+          "fields": {
+            "imported_at": {
+              "name": "imported_at",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::ImportedAt",
+              "type": "time"
+            },
+            "survey_reaction_id": {
+              "name": "survey_reaction_id",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::SurveyReactionId",
+              "type": "integer"
+            },
+            "notes": {
+              "name": "notes",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::Notes",
+              "type": "array",
+              "default": [
+
+              ]
+            },
+            "survey_stream_id": {
+              "name": "survey_stream_id",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::SurveyStreamId",
+              "type": "string"
+            },
+            "survey_data": {
+              "name": "survey_data",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::ImportData::Fields::SurveyData",
+              "type": "json"
+            }
+          }
+        },
+        "custom_fields": {
+          "source": "Census::Surveys::PostCaseSurvey::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "subject_name": {
+              "name": "subject_name",
+              "source": "Census::Surveys::PostCaseSurvey::Fields::CustomFields::Fields::SubjectName",
+              "type": "string"
+            },
+            "questions_order": {
+              "name": "questions_order",
+              "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
+              "type": "array"
             }
           }
         },
@@ -11795,66 +14887,6 @@ module.exports = {
           "name": "supported_locales",
           "type": "struct",
           "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "et": {
               "name": "et",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
@@ -11888,16 +14920,6 @@ module.exports = {
             "hu": {
               "name": "hu",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
               "type": "boolean",
               "default": false,
               "values": [
@@ -12004,47 +15026,81 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
             }
           }
         }
       },
       "WinLossAnalysisSurvey": {
-        "participation_creation_method": {
-          "name": "participation_creation_method",
-          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ParticipationCreationMethod",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
-              "name": "audience",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
-              "name": "trigger_based",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
-              "name": "contact_registration",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "audience",
-            "trigger_based",
-            "contact_registration"
-          ]
-        },
         "default_locale": {
           "name": "default_locale",
           "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::DefaultLocale",
@@ -12285,61 +15341,40 @@ module.exports = {
             "zh"
           ]
         },
-        "kind": {
-          "name": "kind",
-          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::Kind",
+        "participation_creation_method": {
+          "name": "participation_creation_method",
+          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ParticipationCreationMethod",
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
-              "name": "freeform",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+              "name": "audience",
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Census::Surveys::FreeformSurvey",
-                "description": "Freeform",
-                "abbreviation": "FFM"
               }
             },
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
-              "name": "nps",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+              "name": "trigger_based",
               "type": "enum_value",
               "integer_value": 2,
               "attributes": {
-                "type": "Census::Surveys::NpsSurvey",
-                "description": "Net Promoter Score",
-                "abbreviation": "NPS"
               }
             },
             {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
-              "name": "post_case",
+              "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+              "name": "contact_registration",
               "type": "enum_value",
               "integer_value": 3,
               "attributes": {
-                "type": "Census::Surveys::PostCaseSurvey",
-                "description": "Post Case",
-                "abbreviation": "PCS"
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
-              "name": "win_loss_analysis",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Census::Surveys::WinLossAnalysisSurvey",
-                "description": "Win Loss Analysis",
-                "abbreviation": "WLA"
               }
             }
           ],
           "values": [
-            "freeform",
-            "nps",
-            "post_case",
-            "win_loss_analysis"
+            "audience",
+            "trigger_based",
+            "contact_registration"
           ]
         },
         "status": {
@@ -12414,62 +15449,62 @@ module.exports = {
             "deleted"
           ]
         },
-        "custom_fields": {
-          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "company_name": {
-              "name": "company_name",
-              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::CustomFields::Fields::CompanyName",
-              "type": "string"
+        "kind": {
+          "name": "kind",
+          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::Freeform",
+              "name": "freeform",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Census::Surveys::FreeformSurvey",
+                "description": "Freeform",
+                "abbreviation": "FFM"
+              }
             },
-            "subject_name": {
-              "name": "subject_name",
-              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::CustomFields::Fields::SubjectName",
-              "type": "string"
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::Nps",
+              "name": "nps",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Census::Surveys::NpsSurvey",
+                "description": "Net Promoter Score",
+                "abbreviation": "NPS"
+              }
             },
-            "questions_order": {
-              "name": "questions_order",
-              "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
-              "type": "array"
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::PostCase",
+              "name": "post_case",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Census::Surveys::PostCaseSurvey",
+                "description": "Post Case",
+                "abbreviation": "PCS"
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Survey::Fields::Kind::WinLossAnalysis",
+              "name": "win_loss_analysis",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Census::Surveys::WinLossAnalysisSurvey",
+                "description": "Win Loss Analysis",
+                "abbreviation": "WLA"
+              }
             }
-          }
-        },
-        "import_data": {
-          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData",
-          "name": "import_data",
-          "type": "struct",
-          "fields": {
-            "imported_at": {
-              "name": "imported_at",
-              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::ImportedAt",
-              "type": "time"
-            },
-            "notes": {
-              "name": "notes",
-              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::Notes",
-              "type": "array",
-              "default": [
-
-              ]
-            },
-            "survey_reaction_id": {
-              "name": "survey_reaction_id",
-              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::SurveyReactionId",
-              "type": "integer"
-            },
-            "survey_stream_id": {
-              "name": "survey_stream_id",
-              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::SurveyStreamId",
-              "type": "string"
-            },
-            "survey_data": {
-              "name": "survey_data",
-              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::SurveyData",
-              "type": "json"
-            }
-          }
+          ],
+          "values": [
+            "freeform",
+            "nps",
+            "post_case",
+            "win_loss_analysis"
+          ]
         },
         "settings": {
           "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::Settings",
@@ -12636,147 +15671,6 @@ module.exports = {
           "name": "display_settings",
           "type": "struct",
           "fields": {
-            "primary_palette": {
-              "name": "primary_palette",
-              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
-              "type": "enum",
-              "choices": [
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Red",
-                  "name": "red",
-                  "type": "enum_value",
-                  "integer_value": 1,
-                  "attributes": {
-                    "hex": "#db2828",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Orange",
-                  "name": "orange",
-                  "type": "enum_value",
-                  "integer_value": 2,
-                  "attributes": {
-                    "hex": "#f2711c",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
-                  "name": "yellow",
-                  "type": "enum_value",
-                  "integer_value": 3,
-                  "attributes": {
-                    "hex": "#fbbd08",
-                    "contrast": "black"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Olive",
-                  "name": "olive",
-                  "type": "enum_value",
-                  "integer_value": 4,
-                  "attributes": {
-                    "hex": "#b5cc18",
-                    "contrast": "black"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Green",
-                  "name": "green",
-                  "type": "enum_value",
-                  "integer_value": 5,
-                  "attributes": {
-                    "hex": "#21ba45",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Teal",
-                  "name": "teal",
-                  "type": "enum_value",
-                  "integer_value": 6,
-                  "attributes": {
-                    "hex": "#00b5ad",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Blue",
-                  "name": "blue",
-                  "type": "enum_value",
-                  "integer_value": 7,
-                  "attributes": {
-                    "hex": "#2185d0",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Violet",
-                  "name": "violet",
-                  "type": "enum_value",
-                  "integer_value": 8,
-                  "attributes": {
-                    "hex": "#6435c9",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Purple",
-                  "name": "purple",
-                  "type": "enum_value",
-                  "integer_value": 9,
-                  "attributes": {
-                    "hex": "#a333c8",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Grey",
-                  "name": "grey",
-                  "type": "enum_value",
-                  "integer_value": 10,
-                  "attributes": {
-                    "hex": "#767676",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::Black",
-                  "name": "black",
-                  "type": "enum_value",
-                  "integer_value": 11,
-                  "attributes": {
-                    "hex": "#000000",
-                    "contrast": "white"
-                  }
-                },
-                {
-                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
-                  "name": "cobalt_blue",
-                  "type": "enum_value",
-                  "integer_value": 12,
-                  "attributes": {
-                    "hex": "#003da5",
-                    "contrast": "white"
-                  }
-                }
-              ],
-              "values": [
-                "red",
-                "orange",
-                "yellow",
-                "olive",
-                "green",
-                "teal",
-                "blue",
-                "violet",
-                "purple",
-                "grey",
-                "black",
-                "cobalt_blue"
-              ]
-            },
             "secondary_palette": {
               "name": "secondary_palette",
               "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::DisplaySettings::Fields::SecondaryPalette",
@@ -12917,6 +15811,204 @@ module.exports = {
                 "black",
                 "cobalt_blue"
               ]
+            },
+            "primary_palette": {
+              "name": "primary_palette",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::DisplaySettings::Fields::PrimaryPalette",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Red",
+                  "name": "red",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "hex": "#db2828",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Orange",
+                  "name": "orange",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "hex": "#f2711c",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                  "name": "yellow",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "hex": "#fbbd08",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Olive",
+                  "name": "olive",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "hex": "#b5cc18",
+                    "contrast": "black"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Green",
+                  "name": "green",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "hex": "#21ba45",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Teal",
+                  "name": "teal",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "hex": "#00b5ad",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Blue",
+                  "name": "blue",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "hex": "#2185d0",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Violet",
+                  "name": "violet",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "hex": "#6435c9",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Purple",
+                  "name": "purple",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "hex": "#a333c8",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Grey",
+                  "name": "grey",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "hex": "#767676",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::Black",
+                  "name": "black",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "hex": "#000000",
+                    "contrast": "white"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                  "name": "cobalt_blue",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "hex": "#003da5",
+                    "contrast": "white"
+                  }
+                }
+              ],
+              "values": [
+                "red",
+                "orange",
+                "yellow",
+                "olive",
+                "green",
+                "teal",
+                "blue",
+                "violet",
+                "purple",
+                "grey",
+                "black",
+                "cobalt_blue"
+              ]
+            }
+          }
+        },
+        "import_data": {
+          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData",
+          "name": "import_data",
+          "type": "struct",
+          "fields": {
+            "imported_at": {
+              "name": "imported_at",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::ImportedAt",
+              "type": "time"
+            },
+            "survey_reaction_id": {
+              "name": "survey_reaction_id",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::SurveyReactionId",
+              "type": "integer"
+            },
+            "notes": {
+              "name": "notes",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::Notes",
+              "type": "array",
+              "default": [
+
+              ]
+            },
+            "survey_stream_id": {
+              "name": "survey_stream_id",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::SurveyStreamId",
+              "type": "string"
+            },
+            "survey_data": {
+              "name": "survey_data",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::ImportData::Fields::SurveyData",
+              "type": "json"
+            }
+          }
+        },
+        "custom_fields": {
+          "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "subject_name": {
+              "name": "subject_name",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::CustomFields::Fields::SubjectName",
+              "type": "string"
+            },
+            "company_name": {
+              "name": "company_name",
+              "source": "Census::Surveys::WinLossAnalysisSurvey::Fields::CustomFields::Fields::CompanyName",
+              "type": "string"
+            },
+            "questions_order": {
+              "name": "questions_order",
+              "source": "Census::Survey::Fields::CustomFields::Fields::QuestionsOrder",
+              "type": "array"
             }
           }
         },
@@ -12925,66 +16017,6 @@ module.exports = {
           "name": "supported_locales",
           "type": "struct",
           "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "et": {
               "name": "et",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
@@ -13018,16 +16050,6 @@ module.exports = {
             "hu": {
               "name": "hu",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
               "type": "boolean",
               "default": false,
               "values": [
@@ -13128,6 +16150,76 @@ module.exports = {
             "zh": {
               "name": "zh",
               "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
               "type": "boolean",
               "default": false,
               "values": [
@@ -13269,14 +16361,14 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "client_id": {
-              "name": "client_id",
-              "source": "Client::Accounts::LookerAccount::Fields::CustomFields::Fields::ClientId",
-              "type": "string"
-            },
             "client_secret": {
               "name": "client_secret",
               "source": "Client::Accounts::LookerAccount::Fields::CustomFields::Fields::ClientSecret",
+              "type": "string"
+            },
+            "client_id": {
+              "name": "client_id",
+              "source": "Client::Accounts::LookerAccount::Fields::CustomFields::Fields::ClientId",
               "type": "string"
             },
             "is_active": {
@@ -13411,6 +16503,11 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
+            "encrypted_api_token_iv": {
+              "name": "encrypted_api_token_iv",
+              "source": "Client::Accounts::ReactionAccount::Fields::CustomFields::Fields::EncryptedApiTokenIv",
+              "type": "string"
+            },
             "encrypted_api_token": {
               "name": "encrypted_api_token",
               "source": "Client::Accounts::ReactionAccount::Fields::CustomFields::Fields::EncryptedApiToken",
@@ -13419,11 +16516,6 @@ module.exports = {
             "encrypted_api_token_salt": {
               "name": "encrypted_api_token_salt",
               "source": "Client::Accounts::ReactionAccount::Fields::CustomFields::Fields::EncryptedApiTokenSalt",
-              "type": "string"
-            },
-            "encrypted_api_token_iv": {
-              "name": "encrypted_api_token_iv",
-              "source": "Client::Accounts::ReactionAccount::Fields::CustomFields::Fields::EncryptedApiTokenIv",
               "type": "string"
             },
             "is_active": {
@@ -13487,10 +16579,30 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
+            "salesforce_username": {
+              "name": "salesforce_username",
+              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::SalesforceUsername",
+              "type": "string"
+            },
+            "include_custom_salesforce_fields": {
+              "name": "include_custom_salesforce_fields",
+              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::IncludeCustomSalesforceFields",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
             "email": {
               "name": "email",
               "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::Email",
               "type": "string"
+            },
+            "model_schemas": {
+              "name": "model_schemas",
+              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::ModelSchemas",
+              "type": "array_of"
             },
             "oauth_token": {
               "name": "oauth_token",
@@ -13527,26 +16639,6 @@ module.exports = {
               "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::SalesforceOrganizationId",
               "type": "string"
             },
-            "salesforce_username": {
-              "name": "salesforce_username",
-              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::SalesforceUsername",
-              "type": "string"
-            },
-            "include_custom_salesforce_fields": {
-              "name": "include_custom_salesforce_fields",
-              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::IncludeCustomSalesforceFields",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "model_schemas": {
-              "name": "model_schemas",
-              "source": "Client::Accounts::SalesforceAccount::Fields::CustomFields::Fields::ModelSchemas",
-              "type": "array_of"
-            },
             "is_active": {
               "name": "is_active",
               "source": "Client::Account::Fields::CustomFields::Fields::IsActive",
@@ -13564,70 +16656,6 @@ module.exports = {
     "EmailConfig": {
     },
     "Export": {
-      "kind": {
-        "name": "kind",
-        "source": "Client::Export::Fields::Kind",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Client::Export::Fields::Kind::Answers",
-            "name": "answers",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "type": "Client::Exports::AnswersExport",
-              "supported_formats": [
-                "csv",
-                "xslx"
-              ]
-            }
-          },
-          {
-            "source": "Kore::Types::Client::Export::Fields::Kind::Report",
-            "name": "report",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-              "type": "Client::Exports::ReportExport",
-              "supported_formats": [
-                "pdf"
-              ]
-            }
-          },
-          {
-            "source": "Kore::Types::Client::Export::Fields::Kind::Look",
-            "name": "look",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-              "type": "Client::Exports::LookExport",
-              "supported_formats": [
-                "png",
-                "csv"
-              ]
-            }
-          },
-          {
-            "source": "Kore::Types::Client::Export::Fields::Kind::Participations",
-            "name": "participations",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-              "type": "Client::Exports::ParticipationsExport",
-              "supported_formats": [
-                "csv",
-                "xslx"
-              ]
-            }
-          }
-        ],
-        "values": [
-          "answers",
-          "report",
-          "look",
-          "participations"
-        ]
-      },
       "status": {
         "name": "status",
         "source": "Client::Export::Fields::Status",
@@ -13745,6 +16773,70 @@ module.exports = {
           "pdf"
         ]
       },
+      "kind": {
+        "name": "kind",
+        "source": "Client::Export::Fields::Kind",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Client::Export::Fields::Kind::Answers",
+            "name": "answers",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Client::Exports::AnswersExport",
+              "supported_formats": [
+                "csv",
+                "xslx"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Export::Fields::Kind::Report",
+            "name": "report",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "type": "Client::Exports::ReportExport",
+              "supported_formats": [
+                "pdf"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Export::Fields::Kind::Look",
+            "name": "look",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "type": "Client::Exports::LookExport",
+              "supported_formats": [
+                "png",
+                "csv"
+              ]
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Export::Fields::Kind::Participations",
+            "name": "participations",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "type": "Client::Exports::ParticipationsExport",
+              "supported_formats": [
+                "csv",
+                "xslx"
+              ]
+            }
+          }
+        ],
+        "values": [
+          "answers",
+          "report",
+          "look",
+          "participations"
+        ]
+      },
       "log": {
         "name": "log",
         "source": "Client::Export::Fields::Log",
@@ -13765,72 +16857,218 @@ module.exports = {
         "Client::Exports::ReportExport"
       ]
     },
-    "Exports": {
-      "AnswersExport": {
+    "ExportTemplate": {
+      "kind": {
+        "name": "kind",
+        "source": "Client::ExportTemplate::Fields::Kind",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Client::ExportTemplate::Fields::Kind::SurveyParticipationsExportTemplate",
+            "name": "survey_participations_export_template",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Client::ExportTemplates::SurveyParticipationsExportTemplate"
+            }
+          }
+        ],
+        "values": [
+          "survey_participations_export_template"
+        ]
+      },
+      "types": [
+        "Client::ExportTemplates::SurveyParticipationsExportTemplate"
+      ]
+    },
+    "ExportTemplates": {
+      "SurveyParticipationsExportTemplate": {
         "kind": {
           "name": "kind",
-          "source": "Client::Exports::AnswersExport::Fields::Kind",
+          "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::Kind",
           "type": "enum",
           "choices": [
             {
-              "source": "Kore::Types::Client::Export::Fields::Kind::Answers",
-              "name": "answers",
+              "source": "Kore::Types::Client::ExportTemplate::Fields::Kind::SurveyParticipationsExportTemplate",
+              "name": "survey_participations_export_template",
               "type": "enum_value",
               "integer_value": 1,
               "attributes": {
-                "type": "Client::Exports::AnswersExport",
-                "supported_formats": [
-                  "csv",
-                  "xslx"
-                ]
-              }
-            },
-            {
-              "source": "Kore::Types::Client::Export::Fields::Kind::Report",
-              "name": "report",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-                "type": "Client::Exports::ReportExport",
-                "supported_formats": [
-                  "pdf"
-                ]
-              }
-            },
-            {
-              "source": "Kore::Types::Client::Export::Fields::Kind::Look",
-              "name": "look",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Client::Exports::LookExport",
-                "supported_formats": [
-                  "png",
-                  "csv"
-                ]
-              }
-            },
-            {
-              "source": "Kore::Types::Client::Export::Fields::Kind::Participations",
-              "name": "participations",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Client::Exports::ParticipationsExport",
-                "supported_formats": [
-                  "csv",
-                  "xslx"
-                ]
+                "type": "Client::ExportTemplates::SurveyParticipationsExportTemplate"
               }
             }
           ],
           "values": [
-            "answers",
-            "report",
-            "look",
-            "participations"
+            "survey_participations_export_template"
           ]
         },
+        "field_mappings": {
+          "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings",
+          "name": "field_mappings",
+          "type": "struct",
+          "fields": {
+            "email": {
+              "name": "email",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::Email",
+              "type": "string",
+              "default": "email"
+            },
+            "prefix": {
+              "name": "prefix",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::Prefix",
+              "type": "string",
+              "default": "prefix"
+            },
+            "first_name": {
+              "name": "first_name",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::FirstName",
+              "type": "string",
+              "default": "first_name"
+            },
+            "last_name": {
+              "name": "last_name",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::LastName",
+              "type": "string",
+              "default": "last_name"
+            },
+            "position_name": {
+              "name": "position_name",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::PositionName",
+              "type": "string",
+              "default": "position_name"
+            },
+            "custom_position_name": {
+              "name": "custom_position_name",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::CustomPositionName",
+              "type": "string",
+              "default": "custom_position_name"
+            },
+            "date_of_birth": {
+              "name": "date_of_birth",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::DateOfBirth",
+              "type": "string",
+              "default": "date_of_birth"
+            },
+            "position_category": {
+              "name": "position_category",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::PositionCategory",
+              "type": "string",
+              "default": "position_category"
+            },
+            "region": {
+              "name": "region",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::Region",
+              "type": "string",
+              "default": "region"
+            },
+            "postal_code": {
+              "name": "postal_code",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::PostalCode",
+              "type": "string",
+              "default": "postal_code"
+            },
+            "role": {
+              "name": "role",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::Role",
+              "type": "string",
+              "default": "role"
+            },
+            "country_code": {
+              "name": "country_code",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::CountryCode",
+              "type": "string",
+              "default": "country_code"
+            },
+            "company_name": {
+              "name": "company_name",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::CompanyName",
+              "type": "string",
+              "default": "company_name"
+            },
+            "custom_company_name": {
+              "name": "custom_company_name",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::CustomCompanyName",
+              "type": "string",
+              "default": "custom_company_name"
+            },
+            "provider_affiliation": {
+              "name": "provider_affiliation",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::ProviderAffiliation",
+              "type": "string",
+              "default": "provider_affiliation"
+            },
+            "idn_name": {
+              "name": "idn_name",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::IdnName",
+              "type": "string",
+              "default": "idn_name"
+            },
+            "place_name": {
+              "name": "place_name",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::PlaceName",
+              "type": "string",
+              "default": "place_name"
+            },
+            "provider_subtype": {
+              "name": "provider_subtype",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::ProviderSubtype",
+              "type": "string",
+              "default": "provider_subtype"
+            },
+            "facility_type": {
+              "name": "facility_type",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::FacilityType",
+              "type": "string",
+              "default": "facility_type"
+            },
+            "physician_count": {
+              "name": "physician_count",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::PhysicianCount",
+              "type": "string",
+              "default": "physician_count"
+            },
+            "status": {
+              "name": "status",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::Status",
+              "type": "string",
+              "default": "status"
+            },
+            "bed_count": {
+              "name": "bed_count",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::BedCount",
+              "type": "string",
+              "default": "bed_count"
+            },
+            "seniority": {
+              "name": "seniority",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::Seniority",
+              "type": "string",
+              "default": "seniority"
+            },
+            "survey_name": {
+              "name": "survey_name",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::SurveyName",
+              "type": "string",
+              "default": "survey_name"
+            },
+            "start_time": {
+              "name": "start_time",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::StartTime",
+              "type": "string",
+              "default": "start_time"
+            },
+            "end_time": {
+              "name": "end_time",
+              "source": "Client::ExportTemplates::SurveyParticipationsExportTemplate::Fields::FieldMappings::Fields::EndTime",
+              "type": "string",
+              "default": "end_time"
+            }
+          }
+        }
+      }
+    },
+    "Exports": {
+      "AnswersExport": {
         "status": {
           "name": "status",
           "source": "Client::Exports::AnswersExport::Fields::Status",
@@ -13948,23 +17186,9 @@ module.exports = {
             "pdf"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Exports::AnswersExport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Exports::AnswersExport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-          }
-        }
-      },
-      "EmailAddressesExport": {
         "kind": {
           "name": "kind",
-          "source": "Client::Exports::EmailAddressesExport::Fields::Kind",
+          "source": "Client::Exports::AnswersExport::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -14026,6 +17250,20 @@ module.exports = {
             "participations"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Exports::AnswersExport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Exports::AnswersExport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+          }
+        }
+      },
+      "EmailAddressesExport": {
         "status": {
           "name": "status",
           "source": "Client::Exports::EmailAddressesExport::Fields::Status",
@@ -14143,28 +17381,9 @@ module.exports = {
             "pdf"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Exports::EmailAddressesExport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Exports::EmailAddressesExport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "import_id": {
-              "name": "import_id",
-              "source": "Client::Exports::EmailAddressesExport::Fields::CustomFields::Fields::ImportId",
-              "type": "string"
-            }
-          }
-        }
-      },
-      "LookExport": {
         "kind": {
           "name": "kind",
-          "source": "Client::Exports::LookExport::Fields::Kind",
+          "source": "Client::Exports::EmailAddressesExport::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -14226,6 +17445,25 @@ module.exports = {
             "participations"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Exports::EmailAddressesExport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Exports::EmailAddressesExport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "import_id": {
+              "name": "import_id",
+              "source": "Client::Exports::EmailAddressesExport::Fields::CustomFields::Fields::ImportId",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "LookExport": {
         "status": {
           "name": "status",
           "source": "Client::Exports::LookExport::Fields::Status",
@@ -14343,28 +17581,9 @@ module.exports = {
             "pdf"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Exports::LookExport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Exports::LookExport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "looker_render_task_id": {
-              "name": "looker_render_task_id",
-              "source": "Client::Exports::LookExport::Fields::CustomFields::Fields::LookerRenderTaskId",
-              "type": "string"
-            }
-          }
-        }
-      },
-      "ParticipationsExport": {
         "kind": {
           "name": "kind",
-          "source": "Client::Exports::ParticipationsExport::Fields::Kind",
+          "source": "Client::Exports::LookExport::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -14426,6 +17645,25 @@ module.exports = {
             "participations"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Exports::LookExport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Exports::LookExport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "looker_render_task_id": {
+              "name": "looker_render_task_id",
+              "source": "Client::Exports::LookExport::Fields::CustomFields::Fields::LookerRenderTaskId",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ParticipationsExport": {
         "status": {
           "name": "status",
           "source": "Client::Exports::ParticipationsExport::Fields::Status",
@@ -14543,23 +17781,9 @@ module.exports = {
             "pdf"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Exports::ParticipationsExport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Exports::ParticipationsExport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-          }
-        }
-      },
-      "ReportExport": {
         "kind": {
           "name": "kind",
-          "source": "Client::Exports::ReportExport::Fields::Kind",
+          "source": "Client::Exports::ParticipationsExport::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -14621,6 +17845,20 @@ module.exports = {
             "participations"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Exports::ParticipationsExport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Exports::ParticipationsExport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+          }
+        }
+      },
+      "ReportExport": {
         "status": {
           "name": "status",
           "source": "Client::Exports::ReportExport::Fields::Status",
@@ -14738,6 +17976,70 @@ module.exports = {
             "pdf"
           ]
         },
+        "kind": {
+          "name": "kind",
+          "source": "Client::Exports::ReportExport::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Export::Fields::Kind::Answers",
+              "name": "answers",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Client::Exports::AnswersExport",
+                "supported_formats": [
+                  "csv",
+                  "xslx"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Export::Fields::Kind::Report",
+              "name": "report",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Client::Exports::ReportExport",
+                "supported_formats": [
+                  "pdf"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Export::Fields::Kind::Look",
+              "name": "look",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Client::Exports::LookExport",
+                "supported_formats": [
+                  "png",
+                  "csv"
+                ]
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Export::Fields::Kind::Participations",
+              "name": "participations",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Client::Exports::ParticipationsExport",
+                "supported_formats": [
+                  "csv",
+                  "xslx"
+                ]
+              }
+            }
+          ],
+          "values": [
+            "answers",
+            "report",
+            "look",
+            "participations"
+          ]
+        },
         "log": {
           "name": "log",
           "source": "Client::Exports::ReportExport::Fields::Log",
@@ -14748,14 +18050,14 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "pages_to_exclude": {
-              "name": "pages_to_exclude",
-              "source": "Client::Exports::ReportExport::Fields::CustomFields::Fields::PagesToExclude",
-              "type": "set"
-            },
             "pages_to_include": {
               "name": "pages_to_include",
               "source": "Client::Exports::ReportExport::Fields::CustomFields::Fields::PagesToInclude",
+              "type": "set"
+            },
+            "pages_to_exclude": {
+              "name": "pages_to_exclude",
+              "source": "Client::Exports::ReportExport::Fields::CustomFields::Fields::PagesToExclude",
               "type": "set"
             }
           }
@@ -14763,6 +18065,105 @@ module.exports = {
       }
     },
     "Import": {
+      "status": {
+        "name": "status",
+        "source": "Client::Import::Fields::Status",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Pending",
+            "name": "pending",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::InProgress",
+            "name": "in_progress",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+            "name": "cancelling",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+            "name": "cancelled",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Success",
+            "name": "success",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ActionStatus::Failed",
+            "name": "failed",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "pending",
+          "in_progress",
+          "cancelling",
+          "cancelled",
+          "success",
+          "failed"
+        ]
+      },
+      "file_format": {
+        "name": "file_format",
+        "source": "Client::Import::Fields::FileFormat",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+            "name": "json",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+            "name": "csv",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+            "name": "xslx",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "json",
+          "csv",
+          "xslx"
+        ]
+      },
       "kind": {
         "name": "kind",
         "source": "Client::Import::Fields::Kind",
@@ -14950,105 +18351,6 @@ module.exports = {
           "email_addresses"
         ]
       },
-      "status": {
-        "name": "status",
-        "source": "Client::Import::Fields::Status",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::ActionStatus::Pending",
-            "name": "pending",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ActionStatus::InProgress",
-            "name": "in_progress",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ActionStatus::Cancelling",
-            "name": "cancelling",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ActionStatus::Cancelled",
-            "name": "cancelled",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ActionStatus::Success",
-            "name": "success",
-            "type": "enum_value",
-            "integer_value": 5,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ActionStatus::Failed",
-            "name": "failed",
-            "type": "enum_value",
-            "integer_value": 6,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "pending",
-          "in_progress",
-          "cancelling",
-          "cancelled",
-          "success",
-          "failed"
-        ]
-      },
-      "file_format": {
-        "name": "file_format",
-        "source": "Client::Import::Fields::FileFormat",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
-            "name": "json",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
-            "name": "csv",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
-            "name": "xslx",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "json",
-          "csv",
-          "xslx"
-        ]
-      },
       "log": {
         "name": "log",
         "source": "Client::Import::Fields::Log",
@@ -15154,21 +18456,120 @@ module.exports = {
         "name": "custom_fields",
         "type": "struct",
         "fields": {
-          "row_number": {
-            "name": "row_number",
-            "source": "Client::ImportRow::Fields::CustomFields::Fields::RowNumber",
-            "type": "integer"
-          },
           "import_params": {
             "name": "import_params",
             "source": "Client::ImportRow::Fields::CustomFields::Fields::ImportParams",
             "type": "json"
+          },
+          "row_number": {
+            "name": "row_number",
+            "source": "Client::ImportRow::Fields::CustomFields::Fields::RowNumber",
+            "type": "integer"
           }
         }
       }
     },
     "Imports": {
       "CompanyDemographicsImport": {
+        "status": {
+          "name": "status",
+          "source": "Client::Imports::CompanyDemographicsImport::Fields::Status",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Pending",
+              "name": "pending",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::InProgress",
+              "name": "in_progress",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
+              "name": "cancelling",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
+              "name": "cancelled",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Success",
+              "name": "success",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Fields::ActionStatus::Failed",
+              "name": "failed",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "pending",
+            "in_progress",
+            "cancelling",
+            "cancelled",
+            "success",
+            "failed"
+          ]
+        },
+        "file_format": {
+          "name": "file_format",
+          "source": "Client::Imports::CompanyDemographicsImport::Fields::FileFormat",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+              "name": "json",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+              "name": "csv",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+              "name": "xslx",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "json",
+            "csv",
+            "xslx"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Client::Imports::CompanyDemographicsImport::Fields::Kind",
@@ -15356,9 +18757,93 @@ module.exports = {
             "email_addresses"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::CompanyDemographicsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "strategy": {
+                  "name": "strategy",
+                  "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy",
+                  "type": "enum",
+                  "choices": [
+                    {
+                      "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Fill",
+                      "name": "fill",
+                      "type": "enum_value",
+                      "integer_value": 1,
+                      "attributes": {
+                      }
+                    },
+                    {
+                      "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Overwrite",
+                      "name": "overwrite",
+                      "type": "enum_value",
+                      "integer_value": 2,
+                      "attributes": {
+                      }
+                    }
+                  ],
+                  "values": [
+                    "fill",
+                    "overwrite"
+                  ],
+                  "default": "fill"
+                },
+                "kind": {
+                  "name": "kind",
+                  "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Kind",
+                  "type": "enum",
+                  "choices": [
+                    {
+                      "source": "Kore::Types::Giza::Place::Fields::Kind::Bank",
+                      "name": "bank",
+                      "type": "enum_value",
+                      "integer_value": 1,
+                      "attributes": {
+                        "type": "Giza::Places::Bank"
+                      }
+                    },
+                    {
+                      "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
+                      "name": "healthcare",
+                      "type": "enum_value",
+                      "integer_value": 2,
+                      "attributes": {
+                        "type": "Giza::Places::Healthcare"
+                      }
+                    }
+                  ],
+                  "values": [
+                    "bank",
+                    "healthcare"
+                  ],
+                  "default": "healthcare"
+                }
+              }
+            }
+          }
+        }
+      },
+      "EmailAddressesImport": {
         "status": {
           "name": "status",
-          "source": "Client::Imports::CompanyDemographicsImport::Fields::Status",
+          "source": "Client::Imports::EmailAddressesImport::Fields::Status",
           "type": "enum",
           "choices": [
             {
@@ -15421,7 +18906,7 @@ module.exports = {
         },
         "file_format": {
           "name": "file_format",
-          "source": "Client::Imports::CompanyDemographicsImport::Fields::FileFormat",
+          "source": "Client::Imports::EmailAddressesImport::Fields::FileFormat",
           "type": "enum",
           "choices": [
             {
@@ -15455,90 +18940,6 @@ module.exports = {
             "xslx"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Imports::CompanyDemographicsImport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "md5": {
-              "name": "md5",
-              "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::Md5",
-              "type": "string"
-            },
-            "import_options": {
-              "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions",
-              "name": "import_options",
-              "type": "struct",
-              "fields": {
-                "kind": {
-                  "name": "kind",
-                  "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Kind",
-                  "type": "enum",
-                  "choices": [
-                    {
-                      "source": "Kore::Types::Giza::Place::Fields::Kind::Bank",
-                      "name": "bank",
-                      "type": "enum_value",
-                      "integer_value": 1,
-                      "attributes": {
-                        "type": "Giza::Places::Bank"
-                      }
-                    },
-                    {
-                      "source": "Kore::Types::Giza::Place::Fields::Kind::Healthcare",
-                      "name": "healthcare",
-                      "type": "enum_value",
-                      "integer_value": 2,
-                      "attributes": {
-                        "type": "Giza::Places::Healthcare"
-                      }
-                    }
-                  ],
-                  "values": [
-                    "bank",
-                    "healthcare"
-                  ],
-                  "default": "healthcare"
-                },
-                "strategy": {
-                  "name": "strategy",
-                  "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy",
-                  "type": "enum",
-                  "choices": [
-                    {
-                      "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Fill",
-                      "name": "fill",
-                      "type": "enum_value",
-                      "integer_value": 1,
-                      "attributes": {
-                      }
-                    },
-                    {
-                      "source": "Client::Imports::CompanyDemographicsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Overwrite",
-                      "name": "overwrite",
-                      "type": "enum_value",
-                      "integer_value": 2,
-                      "attributes": {
-                      }
-                    }
-                  ],
-                  "values": [
-                    "fill",
-                    "overwrite"
-                  ],
-                  "default": "fill"
-                }
-              }
-            }
-          }
-        }
-      },
-      "EmailAddressesImport": {
         "kind": {
           "name": "kind",
           "source": "Client::Imports::EmailAddressesImport::Fields::Kind",
@@ -15726,9 +19127,40 @@ module.exports = {
             "email_addresses"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::EmailAddressesImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "score_minimum_threshold": {
+                  "name": "score_minimum_threshold",
+                  "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields::Fields::ImportOptions::Fields::ScoreMinimumThreshold",
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GiftedParticipantsImport": {
         "status": {
           "name": "status",
-          "source": "Client::Imports::EmailAddressesImport::Fields::Status",
+          "source": "Client::Imports::GiftedParticipantsImport::Fields::Status",
           "type": "enum",
           "choices": [
             {
@@ -15791,7 +19223,7 @@ module.exports = {
         },
         "file_format": {
           "name": "file_format",
-          "source": "Client::Imports::EmailAddressesImport::Fields::FileFormat",
+          "source": "Client::Imports::GiftedParticipantsImport::Fields::FileFormat",
           "type": "enum",
           "choices": [
             {
@@ -15825,37 +19257,6 @@ module.exports = {
             "xslx"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Imports::EmailAddressesImport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "md5": {
-              "name": "md5",
-              "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields::Fields::Md5",
-              "type": "string"
-            },
-            "import_options": {
-              "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields::Fields::ImportOptions",
-              "name": "import_options",
-              "type": "struct",
-              "fields": {
-                "score_minimum_threshold": {
-                  "name": "score_minimum_threshold",
-                  "source": "Client::Imports::EmailAddressesImport::Fields::CustomFields::Fields::ImportOptions::Fields::ScoreMinimumThreshold",
-                  "type": "integer"
-                }
-              }
-            }
-          }
-        }
-      },
-      "GiftedParticipantsImport": {
         "kind": {
           "name": "kind",
           "source": "Client::Imports::GiftedParticipantsImport::Fields::Kind",
@@ -16043,9 +19444,40 @@ module.exports = {
             "email_addresses"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::GiftedParticipantsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "group_id": {
+                  "name": "group_id",
+                  "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::GroupId",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GlobalParticipantsImport": {
         "status": {
           "name": "status",
-          "source": "Client::Imports::GiftedParticipantsImport::Fields::Status",
+          "source": "Client::Imports::GlobalParticipantsImport::Fields::Status",
           "type": "enum",
           "choices": [
             {
@@ -16108,7 +19540,7 @@ module.exports = {
         },
         "file_format": {
           "name": "file_format",
-          "source": "Client::Imports::GiftedParticipantsImport::Fields::FileFormat",
+          "source": "Client::Imports::GlobalParticipantsImport::Fields::FileFormat",
           "type": "enum",
           "choices": [
             {
@@ -16142,37 +19574,6 @@ module.exports = {
             "xslx"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Imports::GiftedParticipantsImport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "md5": {
-              "name": "md5",
-              "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields::Fields::Md5",
-              "type": "string"
-            },
-            "import_options": {
-              "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields::Fields::ImportOptions",
-              "name": "import_options",
-              "type": "struct",
-              "fields": {
-                "group_id": {
-                  "name": "group_id",
-                  "source": "Client::Imports::GiftedParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::GroupId",
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "GlobalParticipantsImport": {
         "kind": {
           "name": "kind",
           "source": "Client::Imports::GlobalParticipantsImport::Fields::Kind",
@@ -16360,9 +19761,78 @@ module.exports = {
             "email_addresses"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::GlobalParticipantsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "strategy": {
+                  "name": "strategy",
+                  "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy",
+                  "type": "enum",
+                  "choices": [
+                    {
+                      "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Fill",
+                      "name": "fill",
+                      "type": "enum_value",
+                      "integer_value": 1,
+                      "attributes": {
+                      }
+                    },
+                    {
+                      "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Overwrite",
+                      "name": "overwrite",
+                      "type": "enum_value",
+                      "integer_value": 2,
+                      "attributes": {
+                      }
+                    }
+                  ],
+                  "values": [
+                    "fill",
+                    "overwrite"
+                  ],
+                  "default": "fill"
+                },
+                "update_participation_snapshots": {
+                  "name": "update_participation_snapshots",
+                  "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::UpdateParticipationSnapshots",
+                  "type": "boolean",
+                  "default": false,
+                  "values": [
+                    true,
+                    false
+                  ]
+                },
+                "default_creator_id": {
+                  "name": "default_creator_id",
+                  "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::DefaultCreatorId",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GlobalUnsubscriptionsImport": {
         "status": {
           "name": "status",
-          "source": "Client::Imports::GlobalParticipantsImport::Fields::Status",
+          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::Status",
           "type": "enum",
           "choices": [
             {
@@ -16425,7 +19895,7 @@ module.exports = {
         },
         "file_format": {
           "name": "file_format",
-          "source": "Client::Imports::GlobalParticipantsImport::Fields::FileFormat",
+          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::FileFormat",
           "type": "enum",
           "choices": [
             {
@@ -16459,75 +19929,6 @@ module.exports = {
             "xslx"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Imports::GlobalParticipantsImport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "md5": {
-              "name": "md5",
-              "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::Md5",
-              "type": "string"
-            },
-            "import_options": {
-              "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions",
-              "name": "import_options",
-              "type": "struct",
-              "fields": {
-                "default_creator_id": {
-                  "name": "default_creator_id",
-                  "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::DefaultCreatorId",
-                  "type": "string"
-                },
-                "update_participation_snapshots": {
-                  "name": "update_participation_snapshots",
-                  "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::UpdateParticipationSnapshots",
-                  "type": "boolean",
-                  "default": false,
-                  "values": [
-                    true,
-                    false
-                  ]
-                },
-                "strategy": {
-                  "name": "strategy",
-                  "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy",
-                  "type": "enum",
-                  "choices": [
-                    {
-                      "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Fill",
-                      "name": "fill",
-                      "type": "enum_value",
-                      "integer_value": 1,
-                      "attributes": {
-                      }
-                    },
-                    {
-                      "source": "Client::Imports::GlobalParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy::Overwrite",
-                      "name": "overwrite",
-                      "type": "enum_value",
-                      "integer_value": 2,
-                      "attributes": {
-                      }
-                    }
-                  ],
-                  "values": [
-                    "fill",
-                    "overwrite"
-                  ],
-                  "default": "fill"
-                }
-              }
-            }
-          }
-        }
-      },
-      "GlobalUnsubscriptionsImport": {
         "kind": {
           "name": "kind",
           "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::Kind",
@@ -16715,9 +20116,40 @@ module.exports = {
             "email_addresses"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "default_creator_id": {
+                  "name": "default_creator_id",
+                  "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields::Fields::ImportOptions::Fields::DefaultCreatorId",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "OrganizationUnsubscriptionsImport": {
         "status": {
           "name": "status",
-          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::Status",
+          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::Status",
           "type": "enum",
           "choices": [
             {
@@ -16780,7 +20212,7 @@ module.exports = {
         },
         "file_format": {
           "name": "file_format",
-          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::FileFormat",
+          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::FileFormat",
           "type": "enum",
           "choices": [
             {
@@ -16814,37 +20246,6 @@ module.exports = {
             "xslx"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "md5": {
-              "name": "md5",
-              "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields::Fields::Md5",
-              "type": "string"
-            },
-            "import_options": {
-              "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields::Fields::ImportOptions",
-              "name": "import_options",
-              "type": "struct",
-              "fields": {
-                "default_creator_id": {
-                  "name": "default_creator_id",
-                  "source": "Client::Imports::GlobalUnsubscriptionsImport::Fields::CustomFields::Fields::ImportOptions::Fields::DefaultCreatorId",
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "OrganizationUnsubscriptionsImport": {
         "kind": {
           "name": "kind",
           "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::Kind",
@@ -17032,9 +20433,35 @@ module.exports = {
             "email_addresses"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+              }
+            }
+          }
+        }
+      },
+      "ParticipantsImport": {
         "status": {
           "name": "status",
-          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::Status",
+          "source": "Client::Imports::ParticipantsImport::Fields::Status",
           "type": "enum",
           "choices": [
             {
@@ -17097,7 +20524,7 @@ module.exports = {
         },
         "file_format": {
           "name": "file_format",
-          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::FileFormat",
+          "source": "Client::Imports::ParticipantsImport::Fields::FileFormat",
           "type": "enum",
           "choices": [
             {
@@ -17131,32 +20558,6 @@ module.exports = {
             "xslx"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "md5": {
-              "name": "md5",
-              "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::CustomFields::Fields::Md5",
-              "type": "string"
-            },
-            "import_options": {
-              "source": "Client::Imports::OrganizationUnsubscriptionsImport::Fields::CustomFields::Fields::ImportOptions",
-              "name": "import_options",
-              "type": "struct",
-              "fields": {
-              }
-            }
-          }
-        }
-      },
-      "ParticipantsImport": {
         "kind": {
           "name": "kind",
           "source": "Client::Imports::ParticipantsImport::Fields::Kind",
@@ -17344,9 +20745,40 @@ module.exports = {
             "email_addresses"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::ParticipantsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::ParticipantsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::ParticipantsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::ParticipantsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "group_id": {
+                  "name": "group_id",
+                  "source": "Client::Imports::ParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::GroupId",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ParticipationDismissalsImport": {
         "status": {
           "name": "status",
-          "source": "Client::Imports::ParticipantsImport::Fields::Status",
+          "source": "Client::Imports::ParticipationDismissalsImport::Fields::Status",
           "type": "enum",
           "choices": [
             {
@@ -17409,7 +20841,7 @@ module.exports = {
         },
         "file_format": {
           "name": "file_format",
-          "source": "Client::Imports::ParticipantsImport::Fields::FileFormat",
+          "source": "Client::Imports::ParticipationDismissalsImport::Fields::FileFormat",
           "type": "enum",
           "choices": [
             {
@@ -17443,37 +20875,6 @@ module.exports = {
             "xslx"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Imports::ParticipantsImport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Imports::ParticipantsImport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "md5": {
-              "name": "md5",
-              "source": "Client::Imports::ParticipantsImport::Fields::CustomFields::Fields::Md5",
-              "type": "string"
-            },
-            "import_options": {
-              "source": "Client::Imports::ParticipantsImport::Fields::CustomFields::Fields::ImportOptions",
-              "name": "import_options",
-              "type": "struct",
-              "fields": {
-                "group_id": {
-                  "name": "group_id",
-                  "source": "Client::Imports::ParticipantsImport::Fields::CustomFields::Fields::ImportOptions::Fields::GroupId",
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "ParticipationDismissalsImport": {
         "kind": {
           "name": "kind",
           "source": "Client::Imports::ParticipationDismissalsImport::Fields::Kind",
@@ -17661,9 +21062,40 @@ module.exports = {
             "email_addresses"
           ]
         },
+        "log": {
+          "name": "log",
+          "source": "Client::Imports::ParticipationDismissalsImport::Fields::Log",
+          "type": "set"
+        },
+        "custom_fields": {
+          "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+            "md5": {
+              "name": "md5",
+              "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields::Fields::Md5",
+              "type": "string"
+            },
+            "import_options": {
+              "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields::Fields::ImportOptions",
+              "name": "import_options",
+              "type": "struct",
+              "fields": {
+                "survey_id": {
+                  "name": "survey_id",
+                  "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields::Fields::ImportOptions::Fields::SurveyId",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ParticipationSnapshotsImport": {
         "status": {
           "name": "status",
-          "source": "Client::Imports::ParticipationDismissalsImport::Fields::Status",
+          "source": "Client::Imports::ParticipationSnapshotsImport::Fields::Status",
           "type": "enum",
           "choices": [
             {
@@ -17726,7 +21158,7 @@ module.exports = {
         },
         "file_format": {
           "name": "file_format",
-          "source": "Client::Imports::ParticipationDismissalsImport::Fields::FileFormat",
+          "source": "Client::Imports::ParticipationSnapshotsImport::Fields::FileFormat",
           "type": "enum",
           "choices": [
             {
@@ -17760,37 +21192,6 @@ module.exports = {
             "xslx"
           ]
         },
-        "log": {
-          "name": "log",
-          "source": "Client::Imports::ParticipationDismissalsImport::Fields::Log",
-          "type": "set"
-        },
-        "custom_fields": {
-          "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-            "md5": {
-              "name": "md5",
-              "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields::Fields::Md5",
-              "type": "string"
-            },
-            "import_options": {
-              "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields::Fields::ImportOptions",
-              "name": "import_options",
-              "type": "struct",
-              "fields": {
-                "survey_id": {
-                  "name": "survey_id",
-                  "source": "Client::Imports::ParticipationDismissalsImport::Fields::CustomFields::Fields::ImportOptions::Fields::SurveyId",
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "ParticipationSnapshotsImport": {
         "kind": {
           "name": "kind",
           "source": "Client::Imports::ParticipationSnapshotsImport::Fields::Kind",
@@ -17978,105 +21379,6 @@ module.exports = {
             "email_addresses"
           ]
         },
-        "status": {
-          "name": "status",
-          "source": "Client::Imports::ParticipationSnapshotsImport::Fields::Status",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Fields::ActionStatus::Pending",
-              "name": "pending",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Fields::ActionStatus::InProgress",
-              "name": "in_progress",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Fields::ActionStatus::Cancelling",
-              "name": "cancelling",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Fields::ActionStatus::Cancelled",
-              "name": "cancelled",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Fields::ActionStatus::Success",
-              "name": "success",
-              "type": "enum_value",
-              "integer_value": 5,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Fields::ActionStatus::Failed",
-              "name": "failed",
-              "type": "enum_value",
-              "integer_value": 6,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "pending",
-            "in_progress",
-            "cancelling",
-            "cancelled",
-            "success",
-            "failed"
-          ]
-        },
-        "file_format": {
-          "name": "file_format",
-          "source": "Client::Imports::ParticipationSnapshotsImport::Fields::FileFormat",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
-              "name": "json",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
-              "name": "csv",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
-              "name": "xslx",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "json",
-            "csv",
-            "xslx"
-          ]
-        },
         "log": {
           "name": "log",
           "source": "Client::Imports::ParticipationSnapshotsImport::Fields::Log",
@@ -18097,11 +21399,6 @@ module.exports = {
               "name": "import_options",
               "type": "struct",
               "fields": {
-                "survey_id": {
-                  "name": "survey_id",
-                  "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields::Fields::ImportOptions::Fields::SurveyId",
-                  "type": "string"
-                },
                 "strategy": {
                   "name": "strategy",
                   "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields::Fields::ImportOptions::Fields::Strategy",
@@ -18129,6 +21426,11 @@ module.exports = {
                     "overwrite"
                   ],
                   "default": "fill"
+                },
+                "survey_id": {
+                  "name": "survey_id",
+                  "source": "Client::Imports::ParticipationSnapshotsImport::Fields::CustomFields::Fields::ImportOptions::Fields::SurveyId",
+                  "type": "string"
                 }
               }
             }
@@ -18413,24 +21715,14 @@ module.exports = {
           "zh"
         ]
       },
-      "general_settings": {
-        "source": "Client::Organization::Fields::GeneralSettings",
-        "name": "general_settings",
+      "experimental_features": {
+        "source": "Client::Organization::Fields::ExperimentalFeatures",
+        "name": "experimental_features",
         "type": "struct",
         "fields": {
-          "has_translations_enabled": {
-            "name": "has_translations_enabled",
-            "source": "Client::Organization::Fields::GeneralSettings::Fields::HasTranslationsEnabled",
-            "type": "boolean",
-            "default": true,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "participant_discovery_enabled": {
-            "name": "participant_discovery_enabled",
-            "source": "Client::Organization::Fields::GeneralSettings::Fields::ParticipantDiscoveryEnabled",
+          "copy_survey": {
+            "name": "copy_survey",
+            "source": "Client::Organization::Fields::ExperimentalFeatures::Fields::CopySurvey",
             "type": "boolean",
             "default": false,
             "values": [
@@ -18438,33 +21730,6 @@ module.exports = {
               false
             ]
           },
-          "email_service_provider": {
-            "name": "email_service_provider",
-            "source": "Client::Organization::Fields::GeneralSettings::Fields::EmailServiceProvider",
-            "type": "enum",
-            "choices": [
-              {
-                "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
-                "name": "send_grid",
-                "type": "enum_value",
-                "integer_value": 2,
-                "attributes": {
-                  "mailer_type": "Newman::SendGridMailer"
-                }
-              }
-            ],
-            "values": [
-              "send_grid"
-            ],
-            "default": "send_grid"
-          }
-        }
-      },
-      "experimental_features": {
-        "source": "Client::Organization::Fields::ExperimentalFeatures",
-        "name": "experimental_features",
-        "type": "struct",
-        "fields": {
           "previous_answer_text_piping": {
             "name": "previous_answer_text_piping",
             "source": "Client::Organization::Fields::ExperimentalFeatures::Fields::PreviousAnswerTextPiping",
@@ -18474,10 +21739,27 @@ module.exports = {
               true,
               false
             ]
+          }
+        }
+      },
+      "ui_settings": {
+        "source": "Client::Organization::Fields::UiSettings",
+        "name": "ui_settings",
+        "type": "struct",
+        "fields": {
+          "nps_dashboard_enabled": {
+            "name": "nps_dashboard_enabled",
+            "source": "Client::Organization::Fields::UiSettings::Fields::NpsDashboardEnabled",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           },
-          "copy_survey": {
-            "name": "copy_survey",
-            "source": "Client::Organization::Fields::ExperimentalFeatures::Fields::CopySurvey",
+          "response_rate_dashboard_enabled": {
+            "name": "response_rate_dashboard_enabled",
+            "source": "Client::Organization::Fields::UiSettings::Fields::ResponseRateDashboardEnabled",
             "type": "boolean",
             "default": false,
             "values": [
@@ -18492,6 +21774,101 @@ module.exports = {
         "name": "email_display_settings",
         "type": "struct",
         "fields": {
+          "start_button_style": {
+            "name": "start_button_style",
+            "source": "Client::Organization::Fields::EmailDisplaySettings::Fields::StartButtonStyle",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Ui::Fields::EmailStartButtonStyle::First",
+                "name": "first",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "display": "inline-block",
+                  "margin": "0.5em 0",
+                  "padding": "12px 24px",
+                  "font-weight": "400",
+                  "line-height": "14px",
+                  "box-shadow": "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
+                  "text-align": "center",
+                  "text-decoration": "none",
+                  "color": "#000000",
+                  "font-family": "Helvetica Neue, helvetica, arial, sans-serif",
+                  "font-size": "18px"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::EmailStartButtonStyle::Second",
+                "name": "second",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "display": "inline-block",
+                  "margin": "0.5em 0",
+                  "padding": "8px 40px",
+                  "font-weight": "300",
+                  "line-height": 1,
+                  "box-shadow": "0 0 0 1px transparent inset, 0 0 0 0 rgba(39, 41, 43, 0.15) inset",
+                  "text-align": "center",
+                  "text-decoration": "none",
+                  "color": "#000000",
+                  "font-family": "Helvetica Neue, helvetica, arial, sans-serif",
+                  "font-size": "16px",
+                  "letter-spacing": "1px",
+                  "border-radius": "14px"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::EmailStartButtonStyle::Third",
+                "name": "third",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "display": "inline-block",
+                  "margin": "0.5em 0",
+                  "padding": "14px 32px",
+                  "font-weight": "500",
+                  "line-height": 1,
+                  "box-shadow": "0 8px 17px rgba(0, 0, 0, 0.2);",
+                  "text-align": "center",
+                  "text-decoration": "none",
+                  "color": "#000000",
+                  "font-family": "Helvetica Neue, helvetica, arial, sans-serif",
+                  "font-size": "16px",
+                  "letter-spacing": "1.5px",
+                  "border-radius": "3px"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::EmailStartButtonStyle::Peer60",
+                "name": "peer60",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "display": "inline-block",
+                  "margin": "0.5em 0",
+                  "padding": "10px 24px",
+                  "font-weight": "400",
+                  "line-height": 1,
+                  "box-shadow": "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
+                  "text-align": "center",
+                  "text-decoration": "none",
+                  "color": "#000000",
+                  "font-family": "Helvetica Neue, helvetica, arial, sans-serif",
+                  "font-size": "18px",
+                  "border-radius": "25px"
+                }
+              }
+            ],
+            "values": [
+              "first",
+              "second",
+              "third",
+              "peer60"
+            ],
+            "default": "first"
+          },
           "start_button_background_color": {
             "name": "start_button_background_color",
             "source": "Client::Organization::Fields::EmailDisplaySettings::Fields::StartButtonBackgroundColor",
@@ -18633,101 +22010,270 @@ module.exports = {
               "cobalt_blue"
             ],
             "default": "teal"
-          },
-          "start_button_style": {
-            "name": "start_button_style",
-            "source": "Client::Organization::Fields::EmailDisplaySettings::Fields::StartButtonStyle",
+          }
+        }
+      },
+      "general_settings": {
+        "source": "Client::Organization::Fields::GeneralSettings",
+        "name": "general_settings",
+        "type": "struct",
+        "fields": {
+          "email_service_provider": {
+            "name": "email_service_provider",
+            "source": "Client::Organization::Fields::GeneralSettings::Fields::EmailServiceProvider",
             "type": "enum",
             "choices": [
               {
-                "source": "Kore::Types::Ui::Fields::EmailStartButtonStyle::First",
-                "name": "first",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                  "display": "inline-block",
-                  "margin": "0.5em 0",
-                  "padding": "12px 24px",
-                  "font-weight": "400",
-                  "line-height": "14px",
-                  "box-shadow": "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
-                  "text-align": "center",
-                  "text-decoration": "none",
-                  "color": "#000000",
-                  "font-family": "Helvetica Neue, helvetica, arial, sans-serif",
-                  "font-size": "18px"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::EmailStartButtonStyle::Second",
-                "name": "second",
+                "source": "Kore::Types::Fields::EmailServiceProvider::SendGrid",
+                "name": "send_grid",
                 "type": "enum_value",
                 "integer_value": 2,
                 "attributes": {
-                  "display": "inline-block",
-                  "margin": "0.5em 0",
-                  "padding": "8px 40px",
-                  "font-weight": "300",
-                  "line-height": 1,
-                  "box-shadow": "0 0 0 1px transparent inset, 0 0 0 0 rgba(39, 41, 43, 0.15) inset",
-                  "text-align": "center",
-                  "text-decoration": "none",
-                  "color": "#000000",
-                  "font-family": "Helvetica Neue, helvetica, arial, sans-serif",
-                  "font-size": "16px",
-                  "letter-spacing": "1px",
-                  "border-radius": "14px"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::EmailStartButtonStyle::Third",
-                "name": "third",
-                "type": "enum_value",
-                "integer_value": 3,
-                "attributes": {
-                  "display": "inline-block",
-                  "margin": "0.5em 0",
-                  "padding": "14px 32px",
-                  "font-weight": "500",
-                  "line-height": 1,
-                  "box-shadow": "0 8px 17px rgba(0, 0, 0, 0.2);",
-                  "text-align": "center",
-                  "text-decoration": "none",
-                  "color": "#000000",
-                  "font-family": "Helvetica Neue, helvetica, arial, sans-serif",
-                  "font-size": "16px",
-                  "letter-spacing": "1.5px",
-                  "border-radius": "3px"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::EmailStartButtonStyle::Peer60",
-                "name": "peer60",
-                "type": "enum_value",
-                "integer_value": 4,
-                "attributes": {
-                  "display": "inline-block",
-                  "margin": "0.5em 0",
-                  "padding": "10px 24px",
-                  "font-weight": "400",
-                  "line-height": 1,
-                  "box-shadow": "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
-                  "text-align": "center",
-                  "text-decoration": "none",
-                  "color": "#000000",
-                  "font-family": "Helvetica Neue, helvetica, arial, sans-serif",
-                  "font-size": "18px",
-                  "border-radius": "25px"
+                  "mailer_type": "Newman::SendGridMailer"
                 }
               }
             ],
             "values": [
-              "first",
-              "second",
-              "third",
-              "peer60"
+              "send_grid"
             ],
-            "default": "first"
+            "default": "send_grid"
+          },
+          "participant_discovery_enabled": {
+            "name": "participant_discovery_enabled",
+            "source": "Client::Organization::Fields::GeneralSettings::Fields::ParticipantDiscoveryEnabled",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "has_translations_enabled": {
+            "name": "has_translations_enabled",
+            "source": "Client::Organization::Fields::GeneralSettings::Fields::HasTranslationsEnabled",
+            "type": "boolean",
+            "default": true,
+            "values": [
+              true,
+              false
+            ]
+          }
+        }
+      },
+      "supported_locales": {
+        "source": "Client::Organization::Fields::SupportedLocales",
+        "name": "supported_locales",
+        "type": "struct",
+        "fields": {
+          "et": {
+            "name": "et",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "fi": {
+            "name": "fi",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Fi",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "fr": {
+            "name": "fr",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Fr",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "hu": {
+            "name": "hu",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "it": {
+            "name": "it",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::It",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "nb": {
+            "name": "nb",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Nb",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "nl": {
+            "name": "nl",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Nl",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "pl": {
+            "name": "pl",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Pl",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "pt": {
+            "name": "pt",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Pt",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "ro": {
+            "name": "ro",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Ro",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "sk": {
+            "name": "sk",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Sk",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "sv": {
+            "name": "sv",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Sv",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "ja": {
+            "name": "ja",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "is": {
+            "name": "is",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "cs": {
+            "name": "cs",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "da": {
+            "name": "da",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "de": {
+            "name": "de",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "el": {
+            "name": "el",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en": {
+            "name": "en",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "es": {
+            "name": "es",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           }
         }
       },
@@ -18736,148 +22282,6 @@ module.exports = {
         "name": "survey_display_settings",
         "type": "struct",
         "fields": {
-          "primary_palette": {
-            "name": "primary_palette",
-            "source": "Client::Organization::Fields::SurveyDisplaySettings::Fields::PrimaryPalette",
-            "type": "enum",
-            "choices": [
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Red",
-                "name": "red",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                  "hex": "#db2828",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Orange",
-                "name": "orange",
-                "type": "enum_value",
-                "integer_value": 2,
-                "attributes": {
-                  "hex": "#f2711c",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Yellow",
-                "name": "yellow",
-                "type": "enum_value",
-                "integer_value": 3,
-                "attributes": {
-                  "hex": "#fbbd08",
-                  "contrast": "black"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Olive",
-                "name": "olive",
-                "type": "enum_value",
-                "integer_value": 4,
-                "attributes": {
-                  "hex": "#b5cc18",
-                  "contrast": "black"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Green",
-                "name": "green",
-                "type": "enum_value",
-                "integer_value": 5,
-                "attributes": {
-                  "hex": "#21ba45",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Teal",
-                "name": "teal",
-                "type": "enum_value",
-                "integer_value": 6,
-                "attributes": {
-                  "hex": "#00b5ad",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Blue",
-                "name": "blue",
-                "type": "enum_value",
-                "integer_value": 7,
-                "attributes": {
-                  "hex": "#2185d0",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Violet",
-                "name": "violet",
-                "type": "enum_value",
-                "integer_value": 8,
-                "attributes": {
-                  "hex": "#6435c9",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Purple",
-                "name": "purple",
-                "type": "enum_value",
-                "integer_value": 9,
-                "attributes": {
-                  "hex": "#a333c8",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Grey",
-                "name": "grey",
-                "type": "enum_value",
-                "integer_value": 10,
-                "attributes": {
-                  "hex": "#767676",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::Black",
-                "name": "black",
-                "type": "enum_value",
-                "integer_value": 11,
-                "attributes": {
-                  "hex": "#000000",
-                  "contrast": "white"
-                }
-              },
-              {
-                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
-                "name": "cobalt_blue",
-                "type": "enum_value",
-                "integer_value": 12,
-                "attributes": {
-                  "hex": "#003da5",
-                  "contrast": "white"
-                }
-              }
-            ],
-            "values": [
-              "red",
-              "orange",
-              "yellow",
-              "olive",
-              "green",
-              "teal",
-              "blue",
-              "violet",
-              "purple",
-              "grey",
-              "black",
-              "cobalt_blue"
-            ],
-            "default": "green"
-          },
           "secondary_palette": {
             "name": "secondary_palette",
             "source": "Client::Organization::Fields::SurveyDisplaySettings::Fields::SecondaryPalette",
@@ -19019,250 +22423,148 @@ module.exports = {
               "cobalt_blue"
             ],
             "default": "blue"
-          }
-        }
-      },
-      "ui_settings": {
-        "source": "Client::Organization::Fields::UiSettings",
-        "name": "ui_settings",
-        "type": "struct",
-        "fields": {
-          "nps_dashboard_enabled": {
-            "name": "nps_dashboard_enabled",
-            "source": "Client::Organization::Fields::UiSettings::Fields::NpsDashboardEnabled",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
           },
-          "response_rate_dashboard_enabled": {
-            "name": "response_rate_dashboard_enabled",
-            "source": "Client::Organization::Fields::UiSettings::Fields::ResponseRateDashboardEnabled",
-            "type": "boolean",
-            "default": false,
+          "primary_palette": {
+            "name": "primary_palette",
+            "source": "Client::Organization::Fields::SurveyDisplaySettings::Fields::PrimaryPalette",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Red",
+                "name": "red",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "hex": "#db2828",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Orange",
+                "name": "orange",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "hex": "#f2711c",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Yellow",
+                "name": "yellow",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "hex": "#fbbd08",
+                  "contrast": "black"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Olive",
+                "name": "olive",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "hex": "#b5cc18",
+                  "contrast": "black"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Green",
+                "name": "green",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "hex": "#21ba45",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Teal",
+                "name": "teal",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "hex": "#00b5ad",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Blue",
+                "name": "blue",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "hex": "#2185d0",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Violet",
+                "name": "violet",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "hex": "#6435c9",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Purple",
+                "name": "purple",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "hex": "#a333c8",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Grey",
+                "name": "grey",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "hex": "#767676",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::Black",
+                "name": "black",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "hex": "#000000",
+                  "contrast": "white"
+                }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::CobaltBlue",
+                "name": "cobalt_blue",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "hex": "#003da5",
+                  "contrast": "white"
+                }
+              }
+            ],
             "values": [
-              true,
-              false
-            ]
-          }
-        }
-      },
-      "supported_locales": {
-        "source": "Client::Organization::Fields::SupportedLocales",
-        "name": "supported_locales",
-        "type": "struct",
-        "fields": {
-          "cs": {
-            "name": "cs",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "da": {
-            "name": "da",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "de": {
-            "name": "de",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "el": {
-            "name": "el",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "en": {
-            "name": "en",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "es": {
-            "name": "es",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "et": {
-            "name": "et",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "fi": {
-            "name": "fi",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Fi",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "fr": {
-            "name": "fr",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Fr",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "hu": {
-            "name": "hu",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "is": {
-            "name": "is",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "it": {
-            "name": "it",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::It",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "nb": {
-            "name": "nb",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Nb",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "nl": {
-            "name": "nl",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Nl",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "pl": {
-            "name": "pl",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Pl",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "pt": {
-            "name": "pt",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Pt",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "ro": {
-            "name": "ro",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Ro",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "sk": {
-            "name": "sk",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Sk",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "sv": {
-            "name": "sv",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Sv",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "ja": {
-            "name": "ja",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Ja",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "zh": {
-            "name": "zh",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Zh",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
+              "red",
+              "orange",
+              "yellow",
+              "olive",
+              "green",
+              "teal",
+              "blue",
+              "violet",
+              "purple",
+              "grey",
+              "black",
+              "cobalt_blue"
+            ],
+            "default": "green"
           }
         }
       },
@@ -19302,8 +22604,6 @@ module.exports = {
         "Mid-Atlantic",
         "Azores",
         "Cape Verde Is.",
-        "Casablanca",
-        "Dublin",
         "Edinburgh",
         "Lisbon",
         "London",
@@ -19316,7 +22616,9 @@ module.exports = {
         "Bratislava",
         "Brussels",
         "Budapest",
+        "Casablanca",
         "Copenhagen",
+        "Dublin",
         "Ljubljana",
         "Madrid",
         "Paris",
@@ -19350,13 +22652,13 @@ module.exports = {
         "Nairobi",
         "Riyadh",
         "St. Petersburg",
-        "Volgograd",
         "Tehran",
         "Abu Dhabi",
         "Baku",
         "Muscat",
         "Samara",
         "Tbilisi",
+        "Volgograd",
         "Yerevan",
         "Kabul",
         "Ekaterinburg",
@@ -19549,16 +22851,6 @@ module.exports = {
         "name": "can",
         "type": "struct",
         "fields": {
-          "create": {
-            "name": "create",
-            "source": "Client::Permission::Fields::Can::Fields::Create",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
           "read": {
             "name": "read",
             "source": "Client::Permission::Fields::Can::Fields::Read",
@@ -19569,9 +22861,9 @@ module.exports = {
               false
             ]
           },
-          "update": {
-            "name": "update",
-            "source": "Client::Permission::Fields::Can::Fields::Update",
+          "delete": {
+            "name": "delete",
+            "source": "Client::Permission::Fields::Can::Fields::Delete",
             "type": "boolean",
             "default": false,
             "values": [
@@ -19579,9 +22871,19 @@ module.exports = {
               false
             ]
           },
-          "delete": {
-            "name": "delete",
-            "source": "Client::Permission::Fields::Can::Fields::Delete",
+          "create": {
+            "name": "create",
+            "source": "Client::Permission::Fields::Can::Fields::Create",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "update": {
+            "name": "update",
+            "source": "Client::Permission::Fields::Can::Fields::Update",
             "type": "boolean",
             "default": false,
             "values": [
@@ -19735,16 +23037,6 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": {
-              "name": "create",
-              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Create",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "read": {
               "name": "read",
               "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Read",
@@ -19755,9 +23047,9 @@ module.exports = {
                 false
               ]
             },
-            "update": {
-              "name": "update",
-              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Update",
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Delete",
               "type": "boolean",
               "default": false,
               "values": [
@@ -19765,9 +23057,19 @@ module.exports = {
                 false
               ]
             },
-            "delete": {
-              "name": "delete",
-              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Delete",
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForCustomStudy::Fields::Can::Fields::Update",
               "type": "boolean",
               "default": false,
               "values": [
@@ -19909,16 +23211,6 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": {
-              "name": "create",
-              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Create",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "read": {
               "name": "read",
               "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Read",
@@ -19929,9 +23221,9 @@ module.exports = {
                 false
               ]
             },
-            "update": {
-              "name": "update",
-              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Update",
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Delete",
               "type": "boolean",
               "default": false,
               "values": [
@@ -19939,9 +23231,19 @@ module.exports = {
                 false
               ]
             },
-            "delete": {
-              "name": "delete",
-              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Delete",
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForGroup::Fields::Can::Fields::Update",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20083,16 +23385,6 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": {
-              "name": "create",
-              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Create",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "read": {
               "name": "read",
               "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Read",
@@ -20103,9 +23395,9 @@ module.exports = {
                 false
               ]
             },
-            "update": {
-              "name": "update",
-              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Update",
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Delete",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20113,9 +23405,19 @@ module.exports = {
                 false
               ]
             },
-            "delete": {
-              "name": "delete",
-              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Delete",
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForParticipant::Fields::Can::Fields::Update",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20257,16 +23559,6 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": {
-              "name": "create",
-              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Create",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "read": {
               "name": "read",
               "source": "Client::Permissions::ForReport::Fields::Can::Fields::Read",
@@ -20277,9 +23569,9 @@ module.exports = {
                 false
               ]
             },
-            "update": {
-              "name": "update",
-              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Update",
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Delete",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20287,9 +23579,19 @@ module.exports = {
                 false
               ]
             },
-            "delete": {
-              "name": "delete",
-              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Delete",
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForReport::Fields::Can::Fields::Update",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20431,36 +23733,6 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "access_data": {
-              "name": "access_data",
-              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::AccessData",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "download_with_limit": {
-              "name": "download_with_limit",
-              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::DownloadWithLimit",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
-            "download_without_limit": {
-              "name": "download_without_limit",
-              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::DownloadWithoutLimit",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "explore": {
               "name": "explore",
               "source": "Client::Permissions::ForReporting::Fields::Can::Fields::Explore",
@@ -20504,6 +23776,36 @@ module.exports = {
             "login_to_looker": {
               "name": "login_to_looker",
               "source": "Client::Permissions::ForReporting::Fields::Can::Fields::LoginToLooker",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "access_data": {
+              "name": "access_data",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::AccessData",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "download_with_limit": {
+              "name": "download_with_limit",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::DownloadWithLimit",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "download_without_limit": {
+              "name": "download_without_limit",
+              "source": "Client::Permissions::ForReporting::Fields::Can::Fields::DownloadWithoutLimit",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20645,16 +23947,6 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": {
-              "name": "create",
-              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Create",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "read": {
               "name": "read",
               "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Read",
@@ -20665,9 +23957,9 @@ module.exports = {
                 false
               ]
             },
-            "update": {
-              "name": "update",
-              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Update",
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Delete",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20675,9 +23967,19 @@ module.exports = {
                 false
               ]
             },
-            "delete": {
-              "name": "delete",
-              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Delete",
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForStudy::Fields::Can::Fields::Update",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20819,16 +24121,6 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": {
-              "name": "create",
-              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Create",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "read": {
               "name": "read",
               "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Read",
@@ -20839,9 +24131,9 @@ module.exports = {
                 false
               ]
             },
-            "update": {
-              "name": "update",
-              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Update",
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Delete",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20849,9 +24141,19 @@ module.exports = {
                 false
               ]
             },
-            "delete": {
-              "name": "delete",
-              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Delete",
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForSurvey::Fields::Can::Fields::Update",
               "type": "boolean",
               "default": false,
               "values": [
@@ -20993,16 +24295,6 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": {
-              "name": "create",
-              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Create",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "read": {
               "name": "read",
               "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Read",
@@ -21013,9 +24305,9 @@ module.exports = {
                 false
               ]
             },
-            "update": {
-              "name": "update",
-              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Update",
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Delete",
               "type": "boolean",
               "default": false,
               "values": [
@@ -21023,9 +24315,19 @@ module.exports = {
                 false
               ]
             },
-            "delete": {
-              "name": "delete",
-              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Delete",
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForTrigger::Fields::Can::Fields::Update",
               "type": "boolean",
               "default": false,
               "values": [
@@ -21167,16 +24469,6 @@ module.exports = {
           "name": "can",
           "type": "struct",
           "fields": {
-            "create": {
-              "name": "create",
-              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Create",
-              "type": "boolean",
-              "default": false,
-              "values": [
-                true,
-                false
-              ]
-            },
             "read": {
               "name": "read",
               "source": "Client::Permissions::ForUser::Fields::Can::Fields::Read",
@@ -21187,9 +24479,9 @@ module.exports = {
                 false
               ]
             },
-            "update": {
-              "name": "update",
-              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Update",
+            "delete": {
+              "name": "delete",
+              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Delete",
               "type": "boolean",
               "default": false,
               "values": [
@@ -21197,9 +24489,19 @@ module.exports = {
                 false
               ]
             },
-            "delete": {
-              "name": "delete",
-              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Delete",
+            "create": {
+              "name": "create",
+              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Create",
+              "type": "boolean",
+              "default": false,
+              "values": [
+                true,
+                false
+              ]
+            },
+            "update": {
+              "name": "update",
+              "source": "Client::Permissions::ForUser::Fields::Can::Fields::Update",
               "type": "boolean",
               "default": false,
               "values": [
@@ -21323,14 +24625,14 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "width": {
-              "name": "width",
-              "source": "Cms::Assets::Image::Fields::CustomFields::Fields::Width",
-              "type": "integer"
-            },
             "height": {
               "name": "height",
               "source": "Cms::Assets::Image::Fields::CustomFields::Fields::Height",
+              "type": "integer"
+            },
+            "width": {
+              "name": "width",
+              "source": "Cms::Assets::Image::Fields::CustomFields::Fields::Width",
               "type": "integer"
             }
           }
@@ -21435,16 +24737,6 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "file_size": {
-              "name": "file_size",
-              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileSize",
-              "type": "integer"
-            },
-            "file_filename": {
-              "name": "file_filename",
-              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileFilename",
-              "type": "string"
-            },
             "file_content_type": {
               "name": "file_content_type",
               "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileContentType",
@@ -21458,6 +24750,16 @@ module.exports = {
             "file_provided_type": {
               "name": "file_provided_type",
               "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileProvidedType",
+              "type": "string"
+            },
+            "file_size": {
+              "name": "file_size",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileSize",
+              "type": "integer"
+            },
+            "file_filename": {
+              "name": "file_filename",
+              "source": "Cms::Comments::FileComment::Fields::CustomFields::Fields::FileFilename",
               "type": "string"
             }
           }
@@ -21597,6 +24899,51 @@ module.exports = {
   },
   "Giza": {
     "Company": {
+      "clearbit_discovery_status": {
+        "name": "clearbit_discovery_status",
+        "source": "Giza::Company::Fields::ClearbitDiscoveryStatus",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::JobStatus::Unattempted",
+            "name": "unattempted",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::JobStatus::Failure",
+            "name": "failure",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::JobStatus::Success",
+            "name": "success",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::JobStatus::Pending",
+            "name": "pending",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "unattempted",
+          "failure",
+          "success",
+          "pending"
+        ]
+      },
       "status": {
         "name": "status",
         "source": "Giza::Company::Fields::Status",
@@ -21696,72 +25043,16 @@ module.exports = {
           "non_profit"
         ]
       },
-      "clearbit_discovery_status": {
-        "name": "clearbit_discovery_status",
-        "source": "Giza::Company::Fields::ClearbitDiscoveryStatus",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::JobStatus::Unattempted",
-            "name": "unattempted",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::JobStatus::Failure",
-            "name": "failure",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::JobStatus::Success",
-            "name": "success",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::JobStatus::Pending",
-            "name": "pending",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "unattempted",
-          "failure",
-          "success",
-          "pending"
-        ]
-      },
       "related_company_ids": {
         "name": "related_company_ids",
         "source": "Giza::Company::Fields::RelatedCompanyIds",
         "type": "set"
       },
-      "domain": null,
       "site": {
         "source": "Giza::Company::Fields::Site",
         "name": "site",
         "type": "struct",
         "fields": {
-          "url": {
-            "name": "url",
-            "source": "Giza::Company::Fields::Site::Fields::Url",
-            "type": "string"
-          },
-          "blog_url": {
-            "name": "blog_url",
-            "source": "Giza::Company::Fields::Site::Fields::BlogUrl",
-            "type": "string"
-          },
           "jobs_url": {
             "name": "jobs_url",
             "source": "Giza::Company::Fields::Site::Fields::JobsUrl",
@@ -21781,6 +25072,33 @@ module.exports = {
             "name": "email_addresses",
             "source": "Giza::Company::Fields::Site::Fields::EmailAddresses",
             "type": "set"
+          },
+          "url": {
+            "name": "url",
+            "source": "Giza::Company::Fields::Site::Fields::Url",
+            "type": "string"
+          },
+          "blog_url": {
+            "name": "blog_url",
+            "source": "Giza::Company::Fields::Site::Fields::BlogUrl",
+            "type": "string"
+          }
+        }
+      },
+      "crunchbase": {
+        "source": "Giza::Company::Fields::Crunchbase",
+        "name": "crunchbase",
+        "type": "struct",
+        "fields": {
+          "handle": {
+            "name": "handle",
+            "source": "Giza::Company::Fields::Crunchbase::Fields::Handle",
+            "type": "string"
+          },
+          "permalink": {
+            "name": "permalink",
+            "source": "Giza::Company::Fields::Crunchbase::Fields::Permalink",
+            "type": "string"
           }
         }
       },
@@ -21789,20 +25107,25 @@ module.exports = {
         "name": "stats",
         "type": "struct",
         "fields": {
-          "number_of_employees": {
-            "name": "number_of_employees",
-            "source": "Giza::Company::Fields::Stats::Fields::NumberOfEmployees",
-            "type": "integer"
-          },
           "dollars_raised": {
             "name": "dollars_raised",
             "source": "Giza::Company::Fields::Stats::Fields::DollarsRaised",
             "type": "float"
           },
+          "similarweb_traffic6_month": {
+            "name": "similarweb_traffic6_month",
+            "source": "Giza::Company::Fields::Stats::Fields::SimilarwebTraffic6Month",
+            "type": "integer"
+          },
           "annual_revenue": {
             "name": "annual_revenue",
             "source": "Giza::Company::Fields::Stats::Fields::AnnualRevenue",
             "type": "float"
+          },
+          "similarweb_traffic1_year": {
+            "name": "similarweb_traffic1_year",
+            "source": "Giza::Company::Fields::Stats::Fields::SimilarwebTraffic1Year",
+            "type": "integer"
           },
           "price_to_earnings_ratio": {
             "name": "price_to_earnings_ratio",
@@ -21829,75 +25152,14 @@ module.exports = {
             "source": "Giza::Company::Fields::Stats::Fields::MarketCap",
             "type": "integer"
           },
+          "number_of_employees": {
+            "name": "number_of_employees",
+            "source": "Giza::Company::Fields::Stats::Fields::NumberOfEmployees",
+            "type": "integer"
+          },
           "similarweb_traffic1_month": {
             "name": "similarweb_traffic1_month",
             "source": "Giza::Company::Fields::Stats::Fields::SimilarwebTraffic1Month",
-            "type": "integer"
-          },
-          "similarweb_traffic6_month": {
-            "name": "similarweb_traffic6_month",
-            "source": "Giza::Company::Fields::Stats::Fields::SimilarwebTraffic6Month",
-            "type": "integer"
-          },
-          "similarweb_traffic1_year": {
-            "name": "similarweb_traffic1_year",
-            "source": "Giza::Company::Fields::Stats::Fields::SimilarwebTraffic1Year",
-            "type": "integer"
-          }
-        }
-      },
-      "crunchbase": {
-        "source": "Giza::Company::Fields::Crunchbase",
-        "name": "crunchbase",
-        "type": "struct",
-        "fields": {
-          "handle": {
-            "name": "handle",
-            "source": "Giza::Company::Fields::Crunchbase::Fields::Handle",
-            "type": "string"
-          },
-          "permalink": {
-            "name": "permalink",
-            "source": "Giza::Company::Fields::Crunchbase::Fields::Permalink",
-            "type": "string"
-          }
-        }
-      },
-      "datafox": {
-        "source": "Giza::Company::Fields::Datafox",
-        "name": "datafox",
-        "type": "struct",
-        "fields": {
-          "top_keywords": {
-            "name": "top_keywords",
-            "source": "Giza::Company::Fields::Datafox::Fields::TopKeywords",
-            "type": "set"
-          },
-          "related_company_ids": {
-            "name": "related_company_ids",
-            "source": "Giza::Company::Fields::Datafox::Fields::RelatedCompanyIds",
-            "type": "set"
-          }
-        }
-      },
-      "twitter": {
-        "source": "Giza::Company::Fields::Twitter",
-        "name": "twitter",
-        "type": "struct",
-        "fields": {
-          "id": {
-            "name": "id",
-            "source": "Giza::Company::Fields::Twitter::Fields::Id",
-            "type": "string"
-          },
-          "handle": {
-            "name": "handle",
-            "source": "Giza::Company::Fields::Twitter::Fields::Handle",
-            "type": "string"
-          },
-          "number_of_followers": {
-            "name": "number_of_followers",
-            "source": "Giza::Company::Fields::Twitter::Fields::NumberOfFollowers",
             "type": "integer"
           }
         }
@@ -21924,6 +25186,7 @@ module.exports = {
           }
         }
       },
+      "domain": null,
       "angellist": {
         "source": "Giza::Company::Fields::Angellist",
         "name": "angellist",
@@ -21934,20 +25197,20 @@ module.exports = {
             "source": "Giza::Company::Fields::Angellist::Fields::Id",
             "type": "string"
           },
-          "slug": {
-            "name": "slug",
-            "source": "Giza::Company::Fields::Angellist::Fields::Slug",
-            "type": "string"
+          "number_of_followers": {
+            "name": "number_of_followers",
+            "source": "Giza::Company::Fields::Angellist::Fields::NumberOfFollowers",
+            "type": "integer"
           },
           "handle": {
             "name": "handle",
             "source": "Giza::Company::Fields::Angellist::Fields::Handle",
             "type": "string"
           },
-          "number_of_followers": {
-            "name": "number_of_followers",
-            "source": "Giza::Company::Fields::Angellist::Fields::NumberOfFollowers",
-            "type": "integer"
+          "slug": {
+            "name": "slug",
+            "source": "Giza::Company::Fields::Angellist::Fields::Slug",
+            "type": "string"
           }
         }
       },
@@ -21960,6 +25223,23 @@ module.exports = {
             "name": "handle",
             "source": "Giza::Company::Fields::Facebook::Fields::Handle",
             "type": "string"
+          }
+        }
+      },
+      "datafox": {
+        "source": "Giza::Company::Fields::Datafox",
+        "name": "datafox",
+        "type": "struct",
+        "fields": {
+          "top_keywords": {
+            "name": "top_keywords",
+            "source": "Giza::Company::Fields::Datafox::Fields::TopKeywords",
+            "type": "set"
+          },
+          "related_company_ids": {
+            "name": "related_company_ids",
+            "source": "Giza::Company::Fields::Datafox::Fields::RelatedCompanyIds",
+            "type": "set"
           }
         }
       },
@@ -21980,15 +25260,30 @@ module.exports = {
         "name": "profile",
         "type": "struct",
         "fields": {
+          "utc_offset": {
+            "name": "utc_offset",
+            "source": "Giza::Company::Fields::Profile::Fields::UtcOffset",
+            "type": "integer"
+          },
           "image_url": {
             "name": "image_url",
             "source": "Giza::Company::Fields::Profile::Fields::ImageUrl",
             "type": "string"
           },
+          "domain_aliases": {
+            "name": "domain_aliases",
+            "source": "Giza::Company::Fields::Profile::Fields::DomainAliases",
+            "type": "set"
+          },
           "short_description": {
             "name": "short_description",
             "source": "Giza::Company::Fields::Profile::Fields::ShortDescription",
             "type": "string"
+          },
+          "tech": {
+            "name": "tech",
+            "source": "Giza::Company::Fields::Profile::Fields::Tech",
+            "type": "set"
           },
           "long_description": {
             "name": "long_description",
@@ -22005,35 +25300,42 @@ module.exports = {
             "source": "Giza::Company::Fields::Profile::Fields::LegalName",
             "type": "string"
           },
-          "ticker": {
-            "name": "ticker",
-            "source": "Giza::Company::Fields::Profile::Fields::Ticker",
-            "type": "string"
-          },
           "time_zone": {
             "name": "time_zone",
             "source": "Giza::Company::Fields::Profile::Fields::TimeZone",
+            "type": "string"
+          },
+          "ticker": {
+            "name": "ticker",
+            "source": "Giza::Company::Fields::Profile::Fields::Ticker",
             "type": "string"
           },
           "founded_on": {
             "name": "founded_on",
             "source": "Giza::Company::Fields::Profile::Fields::FoundedOn",
             "type": "time"
+          }
+        }
+      },
+      "twitter": {
+        "source": "Giza::Company::Fields::Twitter",
+        "name": "twitter",
+        "type": "struct",
+        "fields": {
+          "id": {
+            "name": "id",
+            "source": "Giza::Company::Fields::Twitter::Fields::Id",
+            "type": "string"
           },
-          "utc_offset": {
-            "name": "utc_offset",
-            "source": "Giza::Company::Fields::Profile::Fields::UtcOffset",
+          "handle": {
+            "name": "handle",
+            "source": "Giza::Company::Fields::Twitter::Fields::Handle",
+            "type": "string"
+          },
+          "number_of_followers": {
+            "name": "number_of_followers",
+            "source": "Giza::Company::Fields::Twitter::Fields::NumberOfFollowers",
             "type": "integer"
-          },
-          "domain_aliases": {
-            "name": "domain_aliases",
-            "source": "Giza::Company::Fields::Profile::Fields::DomainAliases",
-            "type": "set"
-          },
-          "tech": {
-            "name": "tech",
-            "source": "Giza::Company::Fields::Profile::Fields::Tech",
-            "type": "set"
           }
         }
       }
@@ -22331,485 +25633,6 @@ module.exports = {
           "software_and_services",
           "technology_hardware_and_equipment",
           "transportation"
-        ]
-      },
-      "industry": {
-        "name": "industry",
-        "source": "Giza::IndustryClassification::Fields::Industry",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::AerospaceAndDefense",
-            "name": "aerospace_and_defense",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "label": "Aerospace & Defense"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::AirFreightAndLogistics",
-            "name": "air_freight_and_logistics",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-              "label": "Air Freight & Logistics"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Airlines",
-            "name": "airlines",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-              "label": "Airlines"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::AutoComponents",
-            "name": "auto_components",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-              "label": "Auto Components"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Automobiles",
-            "name": "automobiles",
-            "type": "enum_value",
-            "integer_value": 5,
-            "attributes": {
-              "label": "Automobiles"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Banks",
-            "name": "banks",
-            "type": "enum_value",
-            "integer_value": 6,
-            "attributes": {
-              "label": "Banks"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Beverages",
-            "name": "beverages",
-            "type": "enum_value",
-            "integer_value": 7,
-            "attributes": {
-              "label": "Beverages"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Biotechnology",
-            "name": "biotechnology",
-            "type": "enum_value",
-            "integer_value": 8,
-            "attributes": {
-              "label": "Biotechnology"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::BuildingProducts",
-            "name": "building_products",
-            "type": "enum_value",
-            "integer_value": 9,
-            "attributes": {
-              "label": "Building Products"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::CapitalMarkets",
-            "name": "capital_markets",
-            "type": "enum_value",
-            "integer_value": 10,
-            "attributes": {
-              "label": "Capital Markets"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::CommercialServicesAndSupplies",
-            "name": "commercial_services_and_supplies",
-            "type": "enum_value",
-            "integer_value": 11,
-            "attributes": {
-              "label": "Commercial Services & Supplies"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::ConstructionAndEngineering",
-            "name": "construction_and_engineering",
-            "type": "enum_value",
-            "integer_value": 12,
-            "attributes": {
-              "label": "Construction & Engineering"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::ConsumerFinance",
-            "name": "consumer_finance",
-            "type": "enum_value",
-            "integer_value": 13,
-            "attributes": {
-              "label": "Consumer Finance"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Distributors",
-            "name": "distributors",
-            "type": "enum_value",
-            "integer_value": 14,
-            "attributes": {
-              "label": "Distributors"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::DiversifiedConsumerServices",
-            "name": "diversified_consumer_services",
-            "type": "enum_value",
-            "integer_value": 15,
-            "attributes": {
-              "label": "Diversified Consumer Services"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::DiversifiedFinancialServices",
-            "name": "diversified_financial_services",
-            "type": "enum_value",
-            "integer_value": 16,
-            "attributes": {
-              "label": "Diversified Financial Services"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::ElectricalEquipment",
-            "name": "electrical_equipment",
-            "type": "enum_value",
-            "integer_value": 17,
-            "attributes": {
-              "label": "Electrical Equipment"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::EnergyEquipmentAndServices",
-            "name": "energy_equipment_and_services",
-            "type": "enum_value",
-            "integer_value": 18,
-            "attributes": {
-              "label": "Energy Equipment & Services"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::FoodAndStaplesRetailing",
-            "name": "food_and_staples_retailing",
-            "type": "enum_value",
-            "integer_value": 19,
-            "attributes": {
-              "label": "Food & Staples Retailing"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::FoodProducts",
-            "name": "food_products",
-            "type": "enum_value",
-            "integer_value": 20,
-            "attributes": {
-              "label": "Food Products"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::HealthCareEquipmentAndSupplies",
-            "name": "health_care_equipment_and_supplies",
-            "type": "enum_value",
-            "integer_value": 21,
-            "attributes": {
-              "label": "Health Care Equipment & Supplies"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::HealthCareProvidersAndServices",
-            "name": "health_care_providers_and_services",
-            "type": "enum_value",
-            "integer_value": 22,
-            "attributes": {
-              "label": "Health Care Providers & Services"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::HotelsRestaurantsAndLeisure",
-            "name": "hotels_restaurants_and_leisure",
-            "type": "enum_value",
-            "integer_value": 23,
-            "attributes": {
-              "label": "Hotels, Restaurants & Leisure"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::HouseholdDurables",
-            "name": "household_durables",
-            "type": "enum_value",
-            "integer_value": 24,
-            "attributes": {
-              "label": "Household Durables"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::HouseholdProducts",
-            "name": "household_products",
-            "type": "enum_value",
-            "integer_value": 25,
-            "attributes": {
-              "label": "Household Products"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::ItServices",
-            "name": "it_services",
-            "type": "enum_value",
-            "integer_value": 26,
-            "attributes": {
-              "label": "IT Services"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Insurance",
-            "name": "insurance",
-            "type": "enum_value",
-            "integer_value": 27,
-            "attributes": {
-              "label": "Insurance"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::InternetAndCatalogRetail",
-            "name": "internet_and_catalog_retail",
-            "type": "enum_value",
-            "integer_value": 28,
-            "attributes": {
-              "label": "Internet & Catalog Retail"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::LeisureProducts",
-            "name": "leisure_products",
-            "type": "enum_value",
-            "integer_value": 29,
-            "attributes": {
-              "label": "Leisure Products"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::LifeSciencesToolsAndServices",
-            "name": "life_sciences_tools_and_services",
-            "type": "enum_value",
-            "integer_value": 30,
-            "attributes": {
-              "label": "Life Sciences Tools & Services"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Machinery",
-            "name": "machinery",
-            "type": "enum_value",
-            "integer_value": 31,
-            "attributes": {
-              "label": "Machinery"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Marine",
-            "name": "marine",
-            "type": "enum_value",
-            "integer_value": 32,
-            "attributes": {
-              "label": "Marine"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Media",
-            "name": "media",
-            "type": "enum_value",
-            "integer_value": 33,
-            "attributes": {
-              "label": "Media"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::MultilineRetail",
-            "name": "multiline_retail",
-            "type": "enum_value",
-            "integer_value": 34,
-            "attributes": {
-              "label": "Multiline Retail"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::OilGasAndConsumableFuels",
-            "name": "oil_gas_and_consumable_fuels",
-            "type": "enum_value",
-            "integer_value": 35,
-            "attributes": {
-              "label": "Oil, Gas & Consumable Fuels"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Pharmaceuticals",
-            "name": "pharmaceuticals",
-            "type": "enum_value",
-            "integer_value": 36,
-            "attributes": {
-              "label": "Pharmaceuticals"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::ProfessionalServices",
-            "name": "professional_services",
-            "type": "enum_value",
-            "integer_value": 37,
-            "attributes": {
-              "label": "Professional Services"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::RealEstateInvestmentTrusts",
-            "name": "real_estate_investment_trusts",
-            "type": "enum_value",
-            "integer_value": 38,
-            "attributes": {
-              "label": "Real Estate Investment Trusts"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::RealEstateManagementAndDevelopment",
-            "name": "real_estate_management_and_development",
-            "type": "enum_value",
-            "integer_value": 39,
-            "attributes": {
-              "label": "Real Estate Management & Development"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::RoadAndRail",
-            "name": "road_and_rail",
-            "type": "enum_value",
-            "integer_value": 40,
-            "attributes": {
-              "label": "Road & Rail"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Software",
-            "name": "software",
-            "type": "enum_value",
-            "integer_value": 41,
-            "attributes": {
-              "label": "Software"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::SpecialityRetail",
-            "name": "speciality_retail",
-            "type": "enum_value",
-            "integer_value": 42,
-            "attributes": {
-              "label": "Speciality Retail"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::TechnologyHardwareStorageAndPeripherals",
-            "name": "technology_hardware_storage_and_peripherals",
-            "type": "enum_value",
-            "integer_value": 43,
-            "attributes": {
-              "label": "Technology Hardware, Storage & Peripherals"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::TextilesApparelAndLuxuryGoods",
-            "name": "textiles_apparel_and_luxury_goods",
-            "type": "enum_value",
-            "integer_value": 44,
-            "attributes": {
-              "label": "Textiles, Apparel & Luxury Goods"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::ThriftsAndMortgageFinance",
-            "name": "thrifts_and_mortgage_finance",
-            "type": "enum_value",
-            "integer_value": 45,
-            "attributes": {
-              "label": "Thrifts & Mortgage Finance"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::Tobacco",
-            "name": "tobacco",
-            "type": "enum_value",
-            "integer_value": 46,
-            "attributes": {
-              "label": "Tobacco"
-            }
-          },
-          {
-            "source": "Kore::Types::Giza::Fields::Industry::TradingCompaniesAndDistributors",
-            "name": "trading_companies_and_distributors",
-            "type": "enum_value",
-            "integer_value": 47,
-            "attributes": {
-              "label": "Trading Companies & Distributors"
-            }
-          }
-        ],
-        "values": [
-          "aerospace_and_defense",
-          "air_freight_and_logistics",
-          "airlines",
-          "auto_components",
-          "automobiles",
-          "banks",
-          "beverages",
-          "biotechnology",
-          "building_products",
-          "capital_markets",
-          "commercial_services_and_supplies",
-          "construction_and_engineering",
-          "consumer_finance",
-          "distributors",
-          "diversified_consumer_services",
-          "diversified_financial_services",
-          "electrical_equipment",
-          "energy_equipment_and_services",
-          "food_and_staples_retailing",
-          "food_products",
-          "health_care_equipment_and_supplies",
-          "health_care_providers_and_services",
-          "hotels_restaurants_and_leisure",
-          "household_durables",
-          "household_products",
-          "it_services",
-          "insurance",
-          "internet_and_catalog_retail",
-          "leisure_products",
-          "life_sciences_tools_and_services",
-          "machinery",
-          "marine",
-          "media",
-          "multiline_retail",
-          "oil_gas_and_consumable_fuels",
-          "pharmaceuticals",
-          "professional_services",
-          "real_estate_investment_trusts",
-          "real_estate_management_and_development",
-          "road_and_rail",
-          "software",
-          "speciality_retail",
-          "technology_hardware_storage_and_peripherals",
-          "textiles_apparel_and_luxury_goods",
-          "thrifts_and_mortgage_finance",
-          "tobacco",
-          "trading_companies_and_distributors"
         ]
       },
       "sub_industry": {
@@ -23520,6 +26343,485 @@ module.exports = {
           "trucking",
           "ground_transportation"
         ]
+      },
+      "industry": {
+        "name": "industry",
+        "source": "Giza::IndustryClassification::Fields::Industry",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::AerospaceAndDefense",
+            "name": "aerospace_and_defense",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "label": "Aerospace & Defense"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::AirFreightAndLogistics",
+            "name": "air_freight_and_logistics",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "label": "Air Freight & Logistics"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Airlines",
+            "name": "airlines",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "label": "Airlines"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::AutoComponents",
+            "name": "auto_components",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "label": "Auto Components"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Automobiles",
+            "name": "automobiles",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+              "label": "Automobiles"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Banks",
+            "name": "banks",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
+              "label": "Banks"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Beverages",
+            "name": "beverages",
+            "type": "enum_value",
+            "integer_value": 7,
+            "attributes": {
+              "label": "Beverages"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Biotechnology",
+            "name": "biotechnology",
+            "type": "enum_value",
+            "integer_value": 8,
+            "attributes": {
+              "label": "Biotechnology"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::BuildingProducts",
+            "name": "building_products",
+            "type": "enum_value",
+            "integer_value": 9,
+            "attributes": {
+              "label": "Building Products"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::CapitalMarkets",
+            "name": "capital_markets",
+            "type": "enum_value",
+            "integer_value": 10,
+            "attributes": {
+              "label": "Capital Markets"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::CommercialServicesAndSupplies",
+            "name": "commercial_services_and_supplies",
+            "type": "enum_value",
+            "integer_value": 11,
+            "attributes": {
+              "label": "Commercial Services & Supplies"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::ConstructionAndEngineering",
+            "name": "construction_and_engineering",
+            "type": "enum_value",
+            "integer_value": 12,
+            "attributes": {
+              "label": "Construction & Engineering"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::ConsumerFinance",
+            "name": "consumer_finance",
+            "type": "enum_value",
+            "integer_value": 13,
+            "attributes": {
+              "label": "Consumer Finance"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Distributors",
+            "name": "distributors",
+            "type": "enum_value",
+            "integer_value": 14,
+            "attributes": {
+              "label": "Distributors"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::DiversifiedConsumerServices",
+            "name": "diversified_consumer_services",
+            "type": "enum_value",
+            "integer_value": 15,
+            "attributes": {
+              "label": "Diversified Consumer Services"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::DiversifiedFinancialServices",
+            "name": "diversified_financial_services",
+            "type": "enum_value",
+            "integer_value": 16,
+            "attributes": {
+              "label": "Diversified Financial Services"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::ElectricalEquipment",
+            "name": "electrical_equipment",
+            "type": "enum_value",
+            "integer_value": 17,
+            "attributes": {
+              "label": "Electrical Equipment"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::EnergyEquipmentAndServices",
+            "name": "energy_equipment_and_services",
+            "type": "enum_value",
+            "integer_value": 18,
+            "attributes": {
+              "label": "Energy Equipment & Services"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::FoodAndStaplesRetailing",
+            "name": "food_and_staples_retailing",
+            "type": "enum_value",
+            "integer_value": 19,
+            "attributes": {
+              "label": "Food & Staples Retailing"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::FoodProducts",
+            "name": "food_products",
+            "type": "enum_value",
+            "integer_value": 20,
+            "attributes": {
+              "label": "Food Products"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::HealthCareEquipmentAndSupplies",
+            "name": "health_care_equipment_and_supplies",
+            "type": "enum_value",
+            "integer_value": 21,
+            "attributes": {
+              "label": "Health Care Equipment & Supplies"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::HealthCareProvidersAndServices",
+            "name": "health_care_providers_and_services",
+            "type": "enum_value",
+            "integer_value": 22,
+            "attributes": {
+              "label": "Health Care Providers & Services"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::HotelsRestaurantsAndLeisure",
+            "name": "hotels_restaurants_and_leisure",
+            "type": "enum_value",
+            "integer_value": 23,
+            "attributes": {
+              "label": "Hotels, Restaurants & Leisure"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::HouseholdDurables",
+            "name": "household_durables",
+            "type": "enum_value",
+            "integer_value": 24,
+            "attributes": {
+              "label": "Household Durables"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::HouseholdProducts",
+            "name": "household_products",
+            "type": "enum_value",
+            "integer_value": 25,
+            "attributes": {
+              "label": "Household Products"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::ItServices",
+            "name": "it_services",
+            "type": "enum_value",
+            "integer_value": 26,
+            "attributes": {
+              "label": "IT Services"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Insurance",
+            "name": "insurance",
+            "type": "enum_value",
+            "integer_value": 27,
+            "attributes": {
+              "label": "Insurance"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::InternetAndCatalogRetail",
+            "name": "internet_and_catalog_retail",
+            "type": "enum_value",
+            "integer_value": 28,
+            "attributes": {
+              "label": "Internet & Catalog Retail"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::LeisureProducts",
+            "name": "leisure_products",
+            "type": "enum_value",
+            "integer_value": 29,
+            "attributes": {
+              "label": "Leisure Products"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::LifeSciencesToolsAndServices",
+            "name": "life_sciences_tools_and_services",
+            "type": "enum_value",
+            "integer_value": 30,
+            "attributes": {
+              "label": "Life Sciences Tools & Services"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Machinery",
+            "name": "machinery",
+            "type": "enum_value",
+            "integer_value": 31,
+            "attributes": {
+              "label": "Machinery"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Marine",
+            "name": "marine",
+            "type": "enum_value",
+            "integer_value": 32,
+            "attributes": {
+              "label": "Marine"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Media",
+            "name": "media",
+            "type": "enum_value",
+            "integer_value": 33,
+            "attributes": {
+              "label": "Media"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::MultilineRetail",
+            "name": "multiline_retail",
+            "type": "enum_value",
+            "integer_value": 34,
+            "attributes": {
+              "label": "Multiline Retail"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::OilGasAndConsumableFuels",
+            "name": "oil_gas_and_consumable_fuels",
+            "type": "enum_value",
+            "integer_value": 35,
+            "attributes": {
+              "label": "Oil, Gas & Consumable Fuels"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Pharmaceuticals",
+            "name": "pharmaceuticals",
+            "type": "enum_value",
+            "integer_value": 36,
+            "attributes": {
+              "label": "Pharmaceuticals"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::ProfessionalServices",
+            "name": "professional_services",
+            "type": "enum_value",
+            "integer_value": 37,
+            "attributes": {
+              "label": "Professional Services"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::RealEstateInvestmentTrusts",
+            "name": "real_estate_investment_trusts",
+            "type": "enum_value",
+            "integer_value": 38,
+            "attributes": {
+              "label": "Real Estate Investment Trusts"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::RealEstateManagementAndDevelopment",
+            "name": "real_estate_management_and_development",
+            "type": "enum_value",
+            "integer_value": 39,
+            "attributes": {
+              "label": "Real Estate Management & Development"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::RoadAndRail",
+            "name": "road_and_rail",
+            "type": "enum_value",
+            "integer_value": 40,
+            "attributes": {
+              "label": "Road & Rail"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Software",
+            "name": "software",
+            "type": "enum_value",
+            "integer_value": 41,
+            "attributes": {
+              "label": "Software"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::SpecialityRetail",
+            "name": "speciality_retail",
+            "type": "enum_value",
+            "integer_value": 42,
+            "attributes": {
+              "label": "Speciality Retail"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::TechnologyHardwareStorageAndPeripherals",
+            "name": "technology_hardware_storage_and_peripherals",
+            "type": "enum_value",
+            "integer_value": 43,
+            "attributes": {
+              "label": "Technology Hardware, Storage & Peripherals"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::TextilesApparelAndLuxuryGoods",
+            "name": "textiles_apparel_and_luxury_goods",
+            "type": "enum_value",
+            "integer_value": 44,
+            "attributes": {
+              "label": "Textiles, Apparel & Luxury Goods"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::ThriftsAndMortgageFinance",
+            "name": "thrifts_and_mortgage_finance",
+            "type": "enum_value",
+            "integer_value": 45,
+            "attributes": {
+              "label": "Thrifts & Mortgage Finance"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::Tobacco",
+            "name": "tobacco",
+            "type": "enum_value",
+            "integer_value": 46,
+            "attributes": {
+              "label": "Tobacco"
+            }
+          },
+          {
+            "source": "Kore::Types::Giza::Fields::Industry::TradingCompaniesAndDistributors",
+            "name": "trading_companies_and_distributors",
+            "type": "enum_value",
+            "integer_value": 47,
+            "attributes": {
+              "label": "Trading Companies & Distributors"
+            }
+          }
+        ],
+        "values": [
+          "aerospace_and_defense",
+          "air_freight_and_logistics",
+          "airlines",
+          "auto_components",
+          "automobiles",
+          "banks",
+          "beverages",
+          "biotechnology",
+          "building_products",
+          "capital_markets",
+          "commercial_services_and_supplies",
+          "construction_and_engineering",
+          "consumer_finance",
+          "distributors",
+          "diversified_consumer_services",
+          "diversified_financial_services",
+          "electrical_equipment",
+          "energy_equipment_and_services",
+          "food_and_staples_retailing",
+          "food_products",
+          "health_care_equipment_and_supplies",
+          "health_care_providers_and_services",
+          "hotels_restaurants_and_leisure",
+          "household_durables",
+          "household_products",
+          "it_services",
+          "insurance",
+          "internet_and_catalog_retail",
+          "leisure_products",
+          "life_sciences_tools_and_services",
+          "machinery",
+          "marine",
+          "media",
+          "multiline_retail",
+          "oil_gas_and_consumable_fuels",
+          "pharmaceuticals",
+          "professional_services",
+          "real_estate_investment_trusts",
+          "real_estate_management_and_development",
+          "road_and_rail",
+          "software",
+          "speciality_retail",
+          "technology_hardware_storage_and_peripherals",
+          "textiles_apparel_and_luxury_goods",
+          "thrifts_and_mortgage_finance",
+          "tobacco",
+          "trading_companies_and_distributors"
+        ]
       }
     },
     "Place": {
@@ -23557,26 +26859,6 @@ module.exports = {
         "name": "custom_fields",
         "type": "struct",
         "fields": {
-          "annual_revenue": {
-            "name": "annual_revenue",
-            "source": "Giza::Place::Fields::CustomFields::Fields::AnnualRevenue",
-            "type": "float"
-          },
-          "annual_studies_count": {
-            "name": "annual_studies_count",
-            "source": "Giza::Place::Fields::CustomFields::Fields::AnnualStudiesCount",
-            "type": "integer"
-          },
-          "it_employee_count": {
-            "name": "it_employee_count",
-            "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeCount",
-            "type": "integer"
-          },
-          "number_of_employees": {
-            "name": "number_of_employees",
-            "source": "Giza::Place::Fields::CustomFields::Fields::NumberOfEmployees",
-            "type": "integer"
-          },
           "it_employee_affiliation": {
             "name": "it_employee_affiliation",
             "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeAffiliation",
@@ -23603,6 +26885,26 @@ module.exports = {
               "internal",
               "external"
             ]
+          },
+          "annual_revenue": {
+            "name": "annual_revenue",
+            "source": "Giza::Place::Fields::CustomFields::Fields::AnnualRevenue",
+            "type": "float"
+          },
+          "it_employee_count": {
+            "name": "it_employee_count",
+            "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeCount",
+            "type": "integer"
+          },
+          "annual_studies_count": {
+            "name": "annual_studies_count",
+            "source": "Giza::Place::Fields::CustomFields::Fields::AnnualStudiesCount",
+            "type": "integer"
+          },
+          "number_of_employees": {
+            "name": "number_of_employees",
+            "source": "Giza::Place::Fields::CustomFields::Fields::NumberOfEmployees",
+            "type": "integer"
           }
         }
       },
@@ -23690,35 +26992,59 @@ module.exports = {
           "name": "custom_fields",
           "type": "struct",
           "fields": {
-            "bed_count": {
-              "name": "bed_count",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::BedCount",
-              "type": "integer"
-            },
-            "physician_count": {
-              "name": "physician_count",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PhysicianCount",
-              "type": "integer"
-            },
-            "radiologist_count": {
-              "name": "radiologist_count",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::RadiologistCount",
-              "type": "integer"
-            },
-            "ehr_version": {
-              "name": "ehr_version",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVersion",
-              "type": "string"
-            },
-            "idn_name": {
-              "name": "idn_name",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::IdnName",
-              "type": "string"
-            },
-            "pacs_version": {
-              "name": "pacs_version",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVersion",
-              "type": "string"
+            "provider_affiliation": {
+              "name": "provider_affiliation",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::NotApplicable",
+                  "name": "not_applicable",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Other",
+                  "name": "other",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Idn",
+                  "name": "idn",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Independent",
+                  "name": "independent",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Trust",
+                  "name": "trust",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "not_applicable",
+                "other",
+                "idn",
+                "independent",
+                "trust"
+              ]
             },
             "ehr_hosting_model": {
               "name": "ehr_hosting_model",
@@ -24233,176 +27559,10 @@ module.exports = {
                 "medsphere"
               ]
             },
-            "facility_type": {
-              "name": "facility_type",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType",
-              "type": "enum",
-              "choices": [
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::ImagingCenter",
-                  "name": "imaging_center",
-                  "type": "enum_value",
-                  "integer_value": 1,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::MultipleSpecialtyClinic",
-                  "name": "multiple_specialty_clinic",
-                  "type": "enum_value",
-                  "integer_value": 2,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::SpecialtyClinic",
-                  "name": "specialty_clinic",
-                  "type": "enum_value",
-                  "integer_value": 3,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::AcademicMedicalCenter",
-                  "name": "academic_medical_center",
-                  "type": "enum_value",
-                  "integer_value": 5,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::ChildrensHospital",
-                  "name": "childrens_hospital",
-                  "type": "enum_value",
-                  "integer_value": 6,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::CancerHospital",
-                  "name": "cancer_hospital",
-                  "type": "enum_value",
-                  "integer_value": 7,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::LongTermCare",
-                  "name": "long_term_care",
-                  "type": "enum_value",
-                  "integer_value": 9,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::HomeHealthHospice",
-                  "name": "home_health_hospice",
-                  "type": "enum_value",
-                  "integer_value": 10,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::MentalHealth",
-                  "name": "mental_health",
-                  "type": "enum_value",
-                  "integer_value": 12,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::CriticalAccessHospital",
-                  "name": "critical_access_hospital",
-                  "type": "enum_value",
-                  "integer_value": 13,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::ReferenceLab",
-                  "name": "reference_lab",
-                  "type": "enum_value",
-                  "integer_value": 16,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::MilitaryHealth",
-                  "name": "military_health",
-                  "type": "enum_value",
-                  "integer_value": 17,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::VaHospital",
-                  "name": "va_hospital",
-                  "type": "enum_value",
-                  "integer_value": 18,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::Idn",
-                  "name": "idn",
-                  "type": "enum_value",
-                  "integer_value": 22,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::CommunityHospital",
-                  "name": "community_hospital",
-                  "type": "enum_value",
-                  "integer_value": 23,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::RetailPharmacy",
-                  "name": "retail_pharmacy",
-                  "type": "enum_value",
-                  "integer_value": 24,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::FamilyPractice",
-                  "name": "family_practice",
-                  "type": "enum_value",
-                  "integer_value": 25,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::RehabilitationHospital",
-                  "name": "rehabilitation_hospital",
-                  "type": "enum_value",
-                  "integer_value": 26,
-                  "attributes": {
-                  }
-                }
-              ],
-              "values": [
-                "imaging_center",
-                "multiple_specialty_clinic",
-                "specialty_clinic",
-                "academic_medical_center",
-                "childrens_hospital",
-                "cancer_hospital",
-                "long_term_care",
-                "home_health_hospice",
-                "mental_health",
-                "critical_access_hospital",
-                "reference_lab",
-                "military_health",
-                "va_hospital",
-                "idn",
-                "community_hospital",
-                "retail_pharmacy",
-                "family_practice",
-                "rehabilitation_hospital"
-              ]
+            "ehr_version": {
+              "name": "ehr_version",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::EhrVersion",
+              "type": "string"
             },
             "pacs_hosting_model": {
               "name": "pacs_hosting_model",
@@ -25061,58 +28221,185 @@ module.exports = {
                 "ehealth_solutions"
               ]
             },
-            "provider_affiliation": {
-              "name": "provider_affiliation",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation",
+            "pacs_version": {
+              "name": "pacs_version",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PacsVersion",
+              "type": "string"
+            },
+            "radiologist_count": {
+              "name": "radiologist_count",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::RadiologistCount",
+              "type": "integer"
+            },
+            "facility_type": {
+              "name": "facility_type",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType",
               "type": "enum",
               "choices": [
                 {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::NotApplicable",
-                  "name": "not_applicable",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::ImagingCenter",
+                  "name": "imaging_center",
                   "type": "enum_value",
                   "integer_value": 1,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Other",
-                  "name": "other",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::MultipleSpecialtyClinic",
+                  "name": "multiple_specialty_clinic",
                   "type": "enum_value",
                   "integer_value": 2,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Idn",
-                  "name": "idn",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::SpecialtyClinic",
+                  "name": "specialty_clinic",
                   "type": "enum_value",
                   "integer_value": 3,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Independent",
-                  "name": "independent",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::AcademicMedicalCenter",
+                  "name": "academic_medical_center",
                   "type": "enum_value",
-                  "integer_value": 4,
+                  "integer_value": 5,
                   "attributes": {
                   }
                 },
                 {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::ProviderAffiliation::Trust",
-                  "name": "trust",
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::ChildrensHospital",
+                  "name": "childrens_hospital",
                   "type": "enum_value",
-                  "integer_value": 5,
+                  "integer_value": 6,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::CancerHospital",
+                  "name": "cancer_hospital",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::LongTermCare",
+                  "name": "long_term_care",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::HomeHealthHospice",
+                  "name": "home_health_hospice",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::MentalHealth",
+                  "name": "mental_health",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::CriticalAccessHospital",
+                  "name": "critical_access_hospital",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::ReferenceLab",
+                  "name": "reference_lab",
+                  "type": "enum_value",
+                  "integer_value": 16,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::MilitaryHealth",
+                  "name": "military_health",
+                  "type": "enum_value",
+                  "integer_value": 17,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::VaHospital",
+                  "name": "va_hospital",
+                  "type": "enum_value",
+                  "integer_value": 18,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::Idn",
+                  "name": "idn",
+                  "type": "enum_value",
+                  "integer_value": 22,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::CommunityHospital",
+                  "name": "community_hospital",
+                  "type": "enum_value",
+                  "integer_value": 23,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::RetailPharmacy",
+                  "name": "retail_pharmacy",
+                  "type": "enum_value",
+                  "integer_value": 24,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::FamilyPractice",
+                  "name": "family_practice",
+                  "type": "enum_value",
+                  "integer_value": 25,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::FacilityType::RehabilitationHospital",
+                  "name": "rehabilitation_hospital",
+                  "type": "enum_value",
+                  "integer_value": 26,
                   "attributes": {
                   }
                 }
               ],
               "values": [
-                "not_applicable",
-                "other",
+                "imaging_center",
+                "multiple_specialty_clinic",
+                "specialty_clinic",
+                "academic_medical_center",
+                "childrens_hospital",
+                "cancer_hospital",
+                "long_term_care",
+                "home_health_hospice",
+                "mental_health",
+                "critical_access_hospital",
+                "reference_lab",
+                "military_health",
+                "va_hospital",
                 "idn",
-                "independent",
-                "trust"
+                "community_hospital",
+                "retail_pharmacy",
+                "family_practice",
+                "rehabilitation_hospital"
               ]
             },
             "provider_subtype": {
@@ -25223,6 +28510,11 @@ module.exports = {
                 "research"
               ]
             },
+            "physician_count": {
+              "name": "physician_count",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::PhysicianCount",
+              "type": "integer"
+            },
             "specialty_group": {
               "name": "specialty_group",
               "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::SpecialtyGroup",
@@ -25248,6 +28540,47 @@ module.exports = {
               "values": [
                 "single",
                 "multiple"
+              ]
+            },
+            "bed_count": {
+              "name": "bed_count",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::BedCount",
+              "type": "integer"
+            },
+            "subtype": {
+              "name": "subtype",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Provider",
+                  "name": "provider",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Payer",
+                  "name": "payer",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                  }
+                },
+                {
+                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Supplier",
+                  "name": "supplier",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                  }
+                }
+              ],
+              "values": [
+                "provider",
+                "payer",
+                "supplier"
               ]
             },
             "specialty_type": {
@@ -25394,61 +28727,10 @@ module.exports = {
                 "cardiology"
               ]
             },
-            "subtype": {
-              "name": "subtype",
-              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype",
-              "type": "enum",
-              "choices": [
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Provider",
-                  "name": "provider",
-                  "type": "enum_value",
-                  "integer_value": 1,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Payer",
-                  "name": "payer",
-                  "type": "enum_value",
-                  "integer_value": 2,
-                  "attributes": {
-                  }
-                },
-                {
-                  "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::Subtype::Supplier",
-                  "name": "supplier",
-                  "type": "enum_value",
-                  "integer_value": 3,
-                  "attributes": {
-                  }
-                }
-              ],
-              "values": [
-                "provider",
-                "payer",
-                "supplier"
-              ]
-            },
-            "annual_revenue": {
-              "name": "annual_revenue",
-              "source": "Giza::Place::Fields::CustomFields::Fields::AnnualRevenue",
-              "type": "float"
-            },
-            "annual_studies_count": {
-              "name": "annual_studies_count",
-              "source": "Giza::Place::Fields::CustomFields::Fields::AnnualStudiesCount",
-              "type": "integer"
-            },
-            "it_employee_count": {
-              "name": "it_employee_count",
-              "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeCount",
-              "type": "integer"
-            },
-            "number_of_employees": {
-              "name": "number_of_employees",
-              "source": "Giza::Place::Fields::CustomFields::Fields::NumberOfEmployees",
-              "type": "integer"
+            "idn_name": {
+              "name": "idn_name",
+              "source": "Giza::Places::Healthcare::Fields::CustomFields::Fields::IdnName",
+              "type": "string"
             },
             "it_employee_affiliation": {
               "name": "it_employee_affiliation",
@@ -25476,6 +28758,26 @@ module.exports = {
                 "internal",
                 "external"
               ]
+            },
+            "annual_revenue": {
+              "name": "annual_revenue",
+              "source": "Giza::Place::Fields::CustomFields::Fields::AnnualRevenue",
+              "type": "float"
+            },
+            "it_employee_count": {
+              "name": "it_employee_count",
+              "source": "Giza::Place::Fields::CustomFields::Fields::ItEmployeeCount",
+              "type": "integer"
+            },
+            "annual_studies_count": {
+              "name": "annual_studies_count",
+              "source": "Giza::Place::Fields::CustomFields::Fields::AnnualStudiesCount",
+              "type": "integer"
+            },
+            "number_of_employees": {
+              "name": "number_of_employees",
+              "source": "Giza::Place::Fields::CustomFields::Fields::NumberOfEmployees",
+              "type": "integer"
             }
           }
         }
@@ -25488,6 +28790,55 @@ module.exports = {
   },
   "Newman": {
     "Email": {
+      "kind": {
+        "name": "kind",
+        "source": "Newman::Email::Fields::Kind",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
+            "name": "survey_heads_up",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Newman::Emails::SurveyHeadsUpEmail"
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
+            "name": "survey_last_call",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "type": "Newman::Emails::SurveyLastCallEmail"
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLink",
+            "name": "survey_link",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "type": "Newman::Emails::SurveyLinkEmail"
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyReminder",
+            "name": "survey_reminder",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "type": "Newman::Emails::SurveyReminderEmail"
+            }
+          }
+        ],
+        "values": [
+          "survey_heads_up",
+          "survey_last_call",
+          "survey_link",
+          "survey_reminder"
+        ]
+      },
       "status": {
         "name": "status",
         "source": "Newman::Email::Fields::Status",
@@ -25542,90 +28893,123 @@ module.exports = {
           "bounced"
         ]
       },
-      "kind": {
-        "name": "kind",
-        "source": "Newman::Email::Fields::Kind",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-            "name": "survey_heads_up",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "type": "Newman::Emails::SurveyHeadsUpEmail"
-            }
+      "translations_for_body": {
+        "source": "Newman::Email::Fields::TranslationsForBody",
+        "name": "translations_for_body",
+        "type": "struct",
+        "fields": {
+          "et": {
+            "name": "et",
+            "source": "Kore::Types::Fields::Translations::Fields::Et",
+            "type": "string"
           },
-          {
-            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
-            "name": "survey_last_call",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-              "type": "Newman::Emails::SurveyLastCallEmail"
-            }
+          "fi": {
+            "name": "fi",
+            "source": "Kore::Types::Fields::Translations::Fields::Fi",
+            "type": "string"
           },
-          {
-            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLink",
-            "name": "survey_link",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-              "type": "Newman::Emails::SurveyLinkEmail"
-            }
+          "fr": {
+            "name": "fr",
+            "source": "Kore::Types::Fields::Translations::Fields::Fr",
+            "type": "string"
           },
-          {
-            "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyReminder",
-            "name": "survey_reminder",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-              "type": "Newman::Emails::SurveyReminderEmail"
-            }
+          "hu": {
+            "name": "hu",
+            "source": "Kore::Types::Fields::Translations::Fields::Hu",
+            "type": "string"
+          },
+          "it": {
+            "name": "it",
+            "source": "Kore::Types::Fields::Translations::Fields::It",
+            "type": "string"
+          },
+          "nb": {
+            "name": "nb",
+            "source": "Kore::Types::Fields::Translations::Fields::Nb",
+            "type": "string"
+          },
+          "nl": {
+            "name": "nl",
+            "source": "Kore::Types::Fields::Translations::Fields::Nl",
+            "type": "string"
+          },
+          "pl": {
+            "name": "pl",
+            "source": "Kore::Types::Fields::Translations::Fields::Pl",
+            "type": "string"
+          },
+          "pt": {
+            "name": "pt",
+            "source": "Kore::Types::Fields::Translations::Fields::Pt",
+            "type": "string"
+          },
+          "ro": {
+            "name": "ro",
+            "source": "Kore::Types::Fields::Translations::Fields::Ro",
+            "type": "string"
+          },
+          "sk": {
+            "name": "sk",
+            "source": "Kore::Types::Fields::Translations::Fields::Sk",
+            "type": "string"
+          },
+          "sv": {
+            "name": "sv",
+            "source": "Kore::Types::Fields::Translations::Fields::Sv",
+            "type": "string"
+          },
+          "ja": {
+            "name": "ja",
+            "source": "Kore::Types::Fields::Translations::Fields::Ja",
+            "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
+          },
+          "is": {
+            "name": "is",
+            "source": "Kore::Types::Fields::Translations::Fields::Is",
+            "type": "string"
+          },
+          "cs": {
+            "name": "cs",
+            "source": "Kore::Types::Fields::Translations::Fields::Cs",
+            "type": "string"
+          },
+          "da": {
+            "name": "da",
+            "source": "Kore::Types::Fields::Translations::Fields::Da",
+            "type": "string"
+          },
+          "de": {
+            "name": "de",
+            "source": "Kore::Types::Fields::Translations::Fields::De",
+            "type": "string"
+          },
+          "el": {
+            "name": "el",
+            "source": "Kore::Types::Fields::Translations::Fields::El",
+            "type": "string"
+          },
+          "en": {
+            "name": "en",
+            "source": "Kore::Types::Fields::Translations::Fields::En",
+            "type": "string"
+          },
+          "es": {
+            "name": "es",
+            "source": "Kore::Types::Fields::Translations::Fields::Es",
+            "type": "string"
           }
-        ],
-        "values": [
-          "survey_heads_up",
-          "survey_last_call",
-          "survey_link",
-          "survey_reminder"
-        ]
+        }
       },
       "translations_for_subject": {
         "source": "Newman::Email::Fields::TranslationsForSubject",
         "name": "translations_for_subject",
         "type": "struct",
         "fields": {
-          "cs": {
-            "name": "cs",
-            "source": "Kore::Types::Fields::Translations::Fields::Cs",
-            "type": "string"
-          },
-          "da": {
-            "name": "da",
-            "source": "Kore::Types::Fields::Translations::Fields::Da",
-            "type": "string"
-          },
-          "de": {
-            "name": "de",
-            "source": "Kore::Types::Fields::Translations::Fields::De",
-            "type": "string"
-          },
-          "el": {
-            "name": "el",
-            "source": "Kore::Types::Fields::Translations::Fields::El",
-            "type": "string"
-          },
-          "en": {
-            "name": "en",
-            "source": "Kore::Types::Fields::Translations::Fields::En",
-            "type": "string"
-          },
-          "es": {
-            "name": "es",
-            "source": "Kore::Types::Fields::Translations::Fields::Es",
-            "type": "string"
-          },
           "et": {
             "name": "et",
             "source": "Kore::Types::Fields::Translations::Fields::Et",
@@ -25644,11 +29028,6 @@ module.exports = {
           "hu": {
             "name": "hu",
             "source": "Kore::Types::Fields::Translations::Fields::Hu",
-            "type": "string"
-          },
-          "is": {
-            "name": "is",
-            "source": "Kore::Types::Fields::Translations::Fields::Is",
             "type": "string"
           },
           "it": {
@@ -25700,14 +29079,12 @@ module.exports = {
             "name": "zh",
             "source": "Kore::Types::Fields::Translations::Fields::Zh",
             "type": "string"
-          }
-        }
-      },
-      "translations_for_body": {
-        "source": "Newman::Email::Fields::TranslationsForBody",
-        "name": "translations_for_body",
-        "type": "struct",
-        "fields": {
+          },
+          "is": {
+            "name": "is",
+            "source": "Kore::Types::Fields::Translations::Fields::Is",
+            "type": "string"
+          },
           "cs": {
             "name": "cs",
             "source": "Kore::Types::Fields::Translations::Fields::Cs",
@@ -25736,81 +29113,6 @@ module.exports = {
           "es": {
             "name": "es",
             "source": "Kore::Types::Fields::Translations::Fields::Es",
-            "type": "string"
-          },
-          "et": {
-            "name": "et",
-            "source": "Kore::Types::Fields::Translations::Fields::Et",
-            "type": "string"
-          },
-          "fi": {
-            "name": "fi",
-            "source": "Kore::Types::Fields::Translations::Fields::Fi",
-            "type": "string"
-          },
-          "fr": {
-            "name": "fr",
-            "source": "Kore::Types::Fields::Translations::Fields::Fr",
-            "type": "string"
-          },
-          "hu": {
-            "name": "hu",
-            "source": "Kore::Types::Fields::Translations::Fields::Hu",
-            "type": "string"
-          },
-          "is": {
-            "name": "is",
-            "source": "Kore::Types::Fields::Translations::Fields::Is",
-            "type": "string"
-          },
-          "it": {
-            "name": "it",
-            "source": "Kore::Types::Fields::Translations::Fields::It",
-            "type": "string"
-          },
-          "nb": {
-            "name": "nb",
-            "source": "Kore::Types::Fields::Translations::Fields::Nb",
-            "type": "string"
-          },
-          "nl": {
-            "name": "nl",
-            "source": "Kore::Types::Fields::Translations::Fields::Nl",
-            "type": "string"
-          },
-          "pl": {
-            "name": "pl",
-            "source": "Kore::Types::Fields::Translations::Fields::Pl",
-            "type": "string"
-          },
-          "pt": {
-            "name": "pt",
-            "source": "Kore::Types::Fields::Translations::Fields::Pt",
-            "type": "string"
-          },
-          "ro": {
-            "name": "ro",
-            "source": "Kore::Types::Fields::Translations::Fields::Ro",
-            "type": "string"
-          },
-          "sk": {
-            "name": "sk",
-            "source": "Kore::Types::Fields::Translations::Fields::Sk",
-            "type": "string"
-          },
-          "sv": {
-            "name": "sv",
-            "source": "Kore::Types::Fields::Translations::Fields::Sv",
-            "type": "string"
-          },
-          "ja": {
-            "name": "ja",
-            "source": "Kore::Types::Fields::Translations::Fields::Ja",
-            "type": "string"
-          },
-          "zh": {
-            "name": "zh",
-            "source": "Kore::Types::Fields::Translations::Fields::Zh",
             "type": "string"
           }
         }
@@ -25821,6 +29123,55 @@ module.exports = {
     },
     "Emails": {
       "SurveyEmail": {
+        "kind": {
+          "name": "kind",
+          "source": "Newman::Emails::SurveyEmail::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Emails::SurveyHeadsUpEmail"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
+              "name": "survey_last_call",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Newman::Emails::SurveyLastCallEmail"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLink",
+              "name": "survey_link",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Newman::Emails::SurveyLinkEmail"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyReminder",
+              "name": "survey_reminder",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Newman::Emails::SurveyReminderEmail"
+              }
+            }
+          ],
+          "values": [
+            "survey_heads_up",
+            "survey_last_call",
+            "survey_link",
+            "survey_reminder"
+          ]
+        },
         "status": {
           "name": "status",
           "source": "Newman::Emails::SurveyEmail::Fields::Status",
@@ -25875,9 +29226,241 @@ module.exports = {
             "bounced"
           ]
         },
+        "translations_for_body": {
+          "source": "Newman::Emails::SurveyEmail::Fields::TranslationsForBody",
+          "name": "translations_for_body",
+          "type": "struct",
+          "fields": {
+            "et": {
+              "name": "et",
+              "source": "Kore::Types::Fields::Translations::Fields::Et",
+              "type": "string"
+            },
+            "fi": {
+              "name": "fi",
+              "source": "Kore::Types::Fields::Translations::Fields::Fi",
+              "type": "string"
+            },
+            "fr": {
+              "name": "fr",
+              "source": "Kore::Types::Fields::Translations::Fields::Fr",
+              "type": "string"
+            },
+            "hu": {
+              "name": "hu",
+              "source": "Kore::Types::Fields::Translations::Fields::Hu",
+              "type": "string"
+            },
+            "it": {
+              "name": "it",
+              "source": "Kore::Types::Fields::Translations::Fields::It",
+              "type": "string"
+            },
+            "nb": {
+              "name": "nb",
+              "source": "Kore::Types::Fields::Translations::Fields::Nb",
+              "type": "string"
+            },
+            "nl": {
+              "name": "nl",
+              "source": "Kore::Types::Fields::Translations::Fields::Nl",
+              "type": "string"
+            },
+            "pl": {
+              "name": "pl",
+              "source": "Kore::Types::Fields::Translations::Fields::Pl",
+              "type": "string"
+            },
+            "pt": {
+              "name": "pt",
+              "source": "Kore::Types::Fields::Translations::Fields::Pt",
+              "type": "string"
+            },
+            "ro": {
+              "name": "ro",
+              "source": "Kore::Types::Fields::Translations::Fields::Ro",
+              "type": "string"
+            },
+            "sk": {
+              "name": "sk",
+              "source": "Kore::Types::Fields::Translations::Fields::Sk",
+              "type": "string"
+            },
+            "sv": {
+              "name": "sv",
+              "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::Translations::Fields::Cs",
+              "type": "string"
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::Translations::Fields::Da",
+              "type": "string"
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::Translations::Fields::De",
+              "type": "string"
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::Translations::Fields::El",
+              "type": "string"
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::Translations::Fields::En",
+              "type": "string"
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::Translations::Fields::Es",
+              "type": "string"
+            }
+          }
+        },
+        "translations_for_subject": {
+          "source": "Newman::Emails::SurveyEmail::Fields::TranslationsForSubject",
+          "name": "translations_for_subject",
+          "type": "struct",
+          "fields": {
+            "et": {
+              "name": "et",
+              "source": "Kore::Types::Fields::Translations::Fields::Et",
+              "type": "string"
+            },
+            "fi": {
+              "name": "fi",
+              "source": "Kore::Types::Fields::Translations::Fields::Fi",
+              "type": "string"
+            },
+            "fr": {
+              "name": "fr",
+              "source": "Kore::Types::Fields::Translations::Fields::Fr",
+              "type": "string"
+            },
+            "hu": {
+              "name": "hu",
+              "source": "Kore::Types::Fields::Translations::Fields::Hu",
+              "type": "string"
+            },
+            "it": {
+              "name": "it",
+              "source": "Kore::Types::Fields::Translations::Fields::It",
+              "type": "string"
+            },
+            "nb": {
+              "name": "nb",
+              "source": "Kore::Types::Fields::Translations::Fields::Nb",
+              "type": "string"
+            },
+            "nl": {
+              "name": "nl",
+              "source": "Kore::Types::Fields::Translations::Fields::Nl",
+              "type": "string"
+            },
+            "pl": {
+              "name": "pl",
+              "source": "Kore::Types::Fields::Translations::Fields::Pl",
+              "type": "string"
+            },
+            "pt": {
+              "name": "pt",
+              "source": "Kore::Types::Fields::Translations::Fields::Pt",
+              "type": "string"
+            },
+            "ro": {
+              "name": "ro",
+              "source": "Kore::Types::Fields::Translations::Fields::Ro",
+              "type": "string"
+            },
+            "sk": {
+              "name": "sk",
+              "source": "Kore::Types::Fields::Translations::Fields::Sk",
+              "type": "string"
+            },
+            "sv": {
+              "name": "sv",
+              "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::Translations::Fields::Cs",
+              "type": "string"
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::Translations::Fields::Da",
+              "type": "string"
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::Translations::Fields::De",
+              "type": "string"
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::Translations::Fields::El",
+              "type": "string"
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::Translations::Fields::En",
+              "type": "string"
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::Translations::Fields::Es",
+              "type": "string"
+            }
+          }
+        },
+        "types": [
+          "Newman::Emails::SurveyHeadsUpEmail",
+          "Newman::Emails::SurveyLastCallEmail",
+          "Newman::Emails::SurveyLinkEmail",
+          "Newman::Emails::SurveyReminderEmail"
+        ]
+      },
+      "SurveyHeadsUpEmail": {
         "kind": {
           "name": "kind",
-          "source": "Newman::Emails::SurveyEmail::Fields::Kind",
+          "source": "Newman::Emails::SurveyHeadsUpEmail::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -25924,238 +29507,6 @@ module.exports = {
             "survey_reminder"
           ]
         },
-        "translations_for_subject": {
-          "source": "Newman::Emails::SurveyEmail::Fields::TranslationsForSubject",
-          "name": "translations_for_subject",
-          "type": "struct",
-          "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::Translations::Fields::Cs",
-              "type": "string"
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::Translations::Fields::Da",
-              "type": "string"
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::Translations::Fields::De",
-              "type": "string"
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::Translations::Fields::El",
-              "type": "string"
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::Translations::Fields::En",
-              "type": "string"
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
-            "et": {
-              "name": "et",
-              "source": "Kore::Types::Fields::Translations::Fields::Et",
-              "type": "string"
-            },
-            "fi": {
-              "name": "fi",
-              "source": "Kore::Types::Fields::Translations::Fields::Fi",
-              "type": "string"
-            },
-            "fr": {
-              "name": "fr",
-              "source": "Kore::Types::Fields::Translations::Fields::Fr",
-              "type": "string"
-            },
-            "hu": {
-              "name": "hu",
-              "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
-              "type": "string"
-            },
-            "it": {
-              "name": "it",
-              "source": "Kore::Types::Fields::Translations::Fields::It",
-              "type": "string"
-            },
-            "nb": {
-              "name": "nb",
-              "source": "Kore::Types::Fields::Translations::Fields::Nb",
-              "type": "string"
-            },
-            "nl": {
-              "name": "nl",
-              "source": "Kore::Types::Fields::Translations::Fields::Nl",
-              "type": "string"
-            },
-            "pl": {
-              "name": "pl",
-              "source": "Kore::Types::Fields::Translations::Fields::Pl",
-              "type": "string"
-            },
-            "pt": {
-              "name": "pt",
-              "source": "Kore::Types::Fields::Translations::Fields::Pt",
-              "type": "string"
-            },
-            "ro": {
-              "name": "ro",
-              "source": "Kore::Types::Fields::Translations::Fields::Ro",
-              "type": "string"
-            },
-            "sk": {
-              "name": "sk",
-              "source": "Kore::Types::Fields::Translations::Fields::Sk",
-              "type": "string"
-            },
-            "sv": {
-              "name": "sv",
-              "source": "Kore::Types::Fields::Translations::Fields::Sv",
-              "type": "string"
-            },
-            "ja": {
-              "name": "ja",
-              "source": "Kore::Types::Fields::Translations::Fields::Ja",
-              "type": "string"
-            },
-            "zh": {
-              "name": "zh",
-              "source": "Kore::Types::Fields::Translations::Fields::Zh",
-              "type": "string"
-            }
-          }
-        },
-        "translations_for_body": {
-          "source": "Newman::Emails::SurveyEmail::Fields::TranslationsForBody",
-          "name": "translations_for_body",
-          "type": "struct",
-          "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::Translations::Fields::Cs",
-              "type": "string"
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::Translations::Fields::Da",
-              "type": "string"
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::Translations::Fields::De",
-              "type": "string"
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::Translations::Fields::El",
-              "type": "string"
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::Translations::Fields::En",
-              "type": "string"
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
-            "et": {
-              "name": "et",
-              "source": "Kore::Types::Fields::Translations::Fields::Et",
-              "type": "string"
-            },
-            "fi": {
-              "name": "fi",
-              "source": "Kore::Types::Fields::Translations::Fields::Fi",
-              "type": "string"
-            },
-            "fr": {
-              "name": "fr",
-              "source": "Kore::Types::Fields::Translations::Fields::Fr",
-              "type": "string"
-            },
-            "hu": {
-              "name": "hu",
-              "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
-              "type": "string"
-            },
-            "it": {
-              "name": "it",
-              "source": "Kore::Types::Fields::Translations::Fields::It",
-              "type": "string"
-            },
-            "nb": {
-              "name": "nb",
-              "source": "Kore::Types::Fields::Translations::Fields::Nb",
-              "type": "string"
-            },
-            "nl": {
-              "name": "nl",
-              "source": "Kore::Types::Fields::Translations::Fields::Nl",
-              "type": "string"
-            },
-            "pl": {
-              "name": "pl",
-              "source": "Kore::Types::Fields::Translations::Fields::Pl",
-              "type": "string"
-            },
-            "pt": {
-              "name": "pt",
-              "source": "Kore::Types::Fields::Translations::Fields::Pt",
-              "type": "string"
-            },
-            "ro": {
-              "name": "ro",
-              "source": "Kore::Types::Fields::Translations::Fields::Ro",
-              "type": "string"
-            },
-            "sk": {
-              "name": "sk",
-              "source": "Kore::Types::Fields::Translations::Fields::Sk",
-              "type": "string"
-            },
-            "sv": {
-              "name": "sv",
-              "source": "Kore::Types::Fields::Translations::Fields::Sv",
-              "type": "string"
-            },
-            "ja": {
-              "name": "ja",
-              "source": "Kore::Types::Fields::Translations::Fields::Ja",
-              "type": "string"
-            },
-            "zh": {
-              "name": "zh",
-              "source": "Kore::Types::Fields::Translations::Fields::Zh",
-              "type": "string"
-            }
-          }
-        },
-        "types": [
-          "Newman::Emails::SurveyHeadsUpEmail",
-          "Newman::Emails::SurveyLastCallEmail",
-          "Newman::Emails::SurveyLinkEmail",
-          "Newman::Emails::SurveyReminderEmail"
-        ]
-      },
-      "SurveyHeadsUpEmail": {
         "status": {
           "name": "status",
           "source": "Newman::Emails::SurveyHeadsUpEmail::Fields::Status",
@@ -26210,9 +29561,235 @@ module.exports = {
             "bounced"
           ]
         },
+        "translations_for_body": {
+          "source": "Newman::Emails::SurveyHeadsUpEmail::Fields::TranslationsForBody",
+          "name": "translations_for_body",
+          "type": "struct",
+          "fields": {
+            "et": {
+              "name": "et",
+              "source": "Kore::Types::Fields::Translations::Fields::Et",
+              "type": "string"
+            },
+            "fi": {
+              "name": "fi",
+              "source": "Kore::Types::Fields::Translations::Fields::Fi",
+              "type": "string"
+            },
+            "fr": {
+              "name": "fr",
+              "source": "Kore::Types::Fields::Translations::Fields::Fr",
+              "type": "string"
+            },
+            "hu": {
+              "name": "hu",
+              "source": "Kore::Types::Fields::Translations::Fields::Hu",
+              "type": "string"
+            },
+            "it": {
+              "name": "it",
+              "source": "Kore::Types::Fields::Translations::Fields::It",
+              "type": "string"
+            },
+            "nb": {
+              "name": "nb",
+              "source": "Kore::Types::Fields::Translations::Fields::Nb",
+              "type": "string"
+            },
+            "nl": {
+              "name": "nl",
+              "source": "Kore::Types::Fields::Translations::Fields::Nl",
+              "type": "string"
+            },
+            "pl": {
+              "name": "pl",
+              "source": "Kore::Types::Fields::Translations::Fields::Pl",
+              "type": "string"
+            },
+            "pt": {
+              "name": "pt",
+              "source": "Kore::Types::Fields::Translations::Fields::Pt",
+              "type": "string"
+            },
+            "ro": {
+              "name": "ro",
+              "source": "Kore::Types::Fields::Translations::Fields::Ro",
+              "type": "string"
+            },
+            "sk": {
+              "name": "sk",
+              "source": "Kore::Types::Fields::Translations::Fields::Sk",
+              "type": "string"
+            },
+            "sv": {
+              "name": "sv",
+              "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::Translations::Fields::Cs",
+              "type": "string"
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::Translations::Fields::Da",
+              "type": "string"
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::Translations::Fields::De",
+              "type": "string"
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::Translations::Fields::El",
+              "type": "string"
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::Translations::Fields::En",
+              "type": "string"
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::Translations::Fields::Es",
+              "type": "string"
+            }
+          }
+        },
+        "translations_for_subject": {
+          "source": "Newman::Emails::SurveyHeadsUpEmail::Fields::TranslationsForSubject",
+          "name": "translations_for_subject",
+          "type": "struct",
+          "fields": {
+            "et": {
+              "name": "et",
+              "source": "Kore::Types::Fields::Translations::Fields::Et",
+              "type": "string"
+            },
+            "fi": {
+              "name": "fi",
+              "source": "Kore::Types::Fields::Translations::Fields::Fi",
+              "type": "string"
+            },
+            "fr": {
+              "name": "fr",
+              "source": "Kore::Types::Fields::Translations::Fields::Fr",
+              "type": "string"
+            },
+            "hu": {
+              "name": "hu",
+              "source": "Kore::Types::Fields::Translations::Fields::Hu",
+              "type": "string"
+            },
+            "it": {
+              "name": "it",
+              "source": "Kore::Types::Fields::Translations::Fields::It",
+              "type": "string"
+            },
+            "nb": {
+              "name": "nb",
+              "source": "Kore::Types::Fields::Translations::Fields::Nb",
+              "type": "string"
+            },
+            "nl": {
+              "name": "nl",
+              "source": "Kore::Types::Fields::Translations::Fields::Nl",
+              "type": "string"
+            },
+            "pl": {
+              "name": "pl",
+              "source": "Kore::Types::Fields::Translations::Fields::Pl",
+              "type": "string"
+            },
+            "pt": {
+              "name": "pt",
+              "source": "Kore::Types::Fields::Translations::Fields::Pt",
+              "type": "string"
+            },
+            "ro": {
+              "name": "ro",
+              "source": "Kore::Types::Fields::Translations::Fields::Ro",
+              "type": "string"
+            },
+            "sk": {
+              "name": "sk",
+              "source": "Kore::Types::Fields::Translations::Fields::Sk",
+              "type": "string"
+            },
+            "sv": {
+              "name": "sv",
+              "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::Translations::Fields::Cs",
+              "type": "string"
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::Translations::Fields::Da",
+              "type": "string"
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::Translations::Fields::De",
+              "type": "string"
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::Translations::Fields::El",
+              "type": "string"
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::Translations::Fields::En",
+              "type": "string"
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::Translations::Fields::Es",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "SurveyLastCallEmail": {
         "kind": {
           "name": "kind",
-          "source": "Newman::Emails::SurveyHeadsUpEmail::Fields::Kind",
+          "source": "Newman::Emails::SurveyLastCallEmail::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -26259,232 +29836,6 @@ module.exports = {
             "survey_reminder"
           ]
         },
-        "translations_for_subject": {
-          "source": "Newman::Emails::SurveyHeadsUpEmail::Fields::TranslationsForSubject",
-          "name": "translations_for_subject",
-          "type": "struct",
-          "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::Translations::Fields::Cs",
-              "type": "string"
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::Translations::Fields::Da",
-              "type": "string"
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::Translations::Fields::De",
-              "type": "string"
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::Translations::Fields::El",
-              "type": "string"
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::Translations::Fields::En",
-              "type": "string"
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
-            "et": {
-              "name": "et",
-              "source": "Kore::Types::Fields::Translations::Fields::Et",
-              "type": "string"
-            },
-            "fi": {
-              "name": "fi",
-              "source": "Kore::Types::Fields::Translations::Fields::Fi",
-              "type": "string"
-            },
-            "fr": {
-              "name": "fr",
-              "source": "Kore::Types::Fields::Translations::Fields::Fr",
-              "type": "string"
-            },
-            "hu": {
-              "name": "hu",
-              "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
-              "type": "string"
-            },
-            "it": {
-              "name": "it",
-              "source": "Kore::Types::Fields::Translations::Fields::It",
-              "type": "string"
-            },
-            "nb": {
-              "name": "nb",
-              "source": "Kore::Types::Fields::Translations::Fields::Nb",
-              "type": "string"
-            },
-            "nl": {
-              "name": "nl",
-              "source": "Kore::Types::Fields::Translations::Fields::Nl",
-              "type": "string"
-            },
-            "pl": {
-              "name": "pl",
-              "source": "Kore::Types::Fields::Translations::Fields::Pl",
-              "type": "string"
-            },
-            "pt": {
-              "name": "pt",
-              "source": "Kore::Types::Fields::Translations::Fields::Pt",
-              "type": "string"
-            },
-            "ro": {
-              "name": "ro",
-              "source": "Kore::Types::Fields::Translations::Fields::Ro",
-              "type": "string"
-            },
-            "sk": {
-              "name": "sk",
-              "source": "Kore::Types::Fields::Translations::Fields::Sk",
-              "type": "string"
-            },
-            "sv": {
-              "name": "sv",
-              "source": "Kore::Types::Fields::Translations::Fields::Sv",
-              "type": "string"
-            },
-            "ja": {
-              "name": "ja",
-              "source": "Kore::Types::Fields::Translations::Fields::Ja",
-              "type": "string"
-            },
-            "zh": {
-              "name": "zh",
-              "source": "Kore::Types::Fields::Translations::Fields::Zh",
-              "type": "string"
-            }
-          }
-        },
-        "translations_for_body": {
-          "source": "Newman::Emails::SurveyHeadsUpEmail::Fields::TranslationsForBody",
-          "name": "translations_for_body",
-          "type": "struct",
-          "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::Translations::Fields::Cs",
-              "type": "string"
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::Translations::Fields::Da",
-              "type": "string"
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::Translations::Fields::De",
-              "type": "string"
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::Translations::Fields::El",
-              "type": "string"
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::Translations::Fields::En",
-              "type": "string"
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
-            "et": {
-              "name": "et",
-              "source": "Kore::Types::Fields::Translations::Fields::Et",
-              "type": "string"
-            },
-            "fi": {
-              "name": "fi",
-              "source": "Kore::Types::Fields::Translations::Fields::Fi",
-              "type": "string"
-            },
-            "fr": {
-              "name": "fr",
-              "source": "Kore::Types::Fields::Translations::Fields::Fr",
-              "type": "string"
-            },
-            "hu": {
-              "name": "hu",
-              "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
-              "type": "string"
-            },
-            "it": {
-              "name": "it",
-              "source": "Kore::Types::Fields::Translations::Fields::It",
-              "type": "string"
-            },
-            "nb": {
-              "name": "nb",
-              "source": "Kore::Types::Fields::Translations::Fields::Nb",
-              "type": "string"
-            },
-            "nl": {
-              "name": "nl",
-              "source": "Kore::Types::Fields::Translations::Fields::Nl",
-              "type": "string"
-            },
-            "pl": {
-              "name": "pl",
-              "source": "Kore::Types::Fields::Translations::Fields::Pl",
-              "type": "string"
-            },
-            "pt": {
-              "name": "pt",
-              "source": "Kore::Types::Fields::Translations::Fields::Pt",
-              "type": "string"
-            },
-            "ro": {
-              "name": "ro",
-              "source": "Kore::Types::Fields::Translations::Fields::Ro",
-              "type": "string"
-            },
-            "sk": {
-              "name": "sk",
-              "source": "Kore::Types::Fields::Translations::Fields::Sk",
-              "type": "string"
-            },
-            "sv": {
-              "name": "sv",
-              "source": "Kore::Types::Fields::Translations::Fields::Sv",
-              "type": "string"
-            },
-            "ja": {
-              "name": "ja",
-              "source": "Kore::Types::Fields::Translations::Fields::Ja",
-              "type": "string"
-            },
-            "zh": {
-              "name": "zh",
-              "source": "Kore::Types::Fields::Translations::Fields::Zh",
-              "type": "string"
-            }
-          }
-        }
-      },
-      "SurveyLastCallEmail": {
         "status": {
           "name": "status",
           "source": "Newman::Emails::SurveyLastCallEmail::Fields::Status",
@@ -26539,9 +29890,235 @@ module.exports = {
             "bounced"
           ]
         },
+        "translations_for_body": {
+          "source": "Newman::Emails::SurveyLastCallEmail::Fields::TranslationsForBody",
+          "name": "translations_for_body",
+          "type": "struct",
+          "fields": {
+            "et": {
+              "name": "et",
+              "source": "Kore::Types::Fields::Translations::Fields::Et",
+              "type": "string"
+            },
+            "fi": {
+              "name": "fi",
+              "source": "Kore::Types::Fields::Translations::Fields::Fi",
+              "type": "string"
+            },
+            "fr": {
+              "name": "fr",
+              "source": "Kore::Types::Fields::Translations::Fields::Fr",
+              "type": "string"
+            },
+            "hu": {
+              "name": "hu",
+              "source": "Kore::Types::Fields::Translations::Fields::Hu",
+              "type": "string"
+            },
+            "it": {
+              "name": "it",
+              "source": "Kore::Types::Fields::Translations::Fields::It",
+              "type": "string"
+            },
+            "nb": {
+              "name": "nb",
+              "source": "Kore::Types::Fields::Translations::Fields::Nb",
+              "type": "string"
+            },
+            "nl": {
+              "name": "nl",
+              "source": "Kore::Types::Fields::Translations::Fields::Nl",
+              "type": "string"
+            },
+            "pl": {
+              "name": "pl",
+              "source": "Kore::Types::Fields::Translations::Fields::Pl",
+              "type": "string"
+            },
+            "pt": {
+              "name": "pt",
+              "source": "Kore::Types::Fields::Translations::Fields::Pt",
+              "type": "string"
+            },
+            "ro": {
+              "name": "ro",
+              "source": "Kore::Types::Fields::Translations::Fields::Ro",
+              "type": "string"
+            },
+            "sk": {
+              "name": "sk",
+              "source": "Kore::Types::Fields::Translations::Fields::Sk",
+              "type": "string"
+            },
+            "sv": {
+              "name": "sv",
+              "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::Translations::Fields::Cs",
+              "type": "string"
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::Translations::Fields::Da",
+              "type": "string"
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::Translations::Fields::De",
+              "type": "string"
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::Translations::Fields::El",
+              "type": "string"
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::Translations::Fields::En",
+              "type": "string"
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::Translations::Fields::Es",
+              "type": "string"
+            }
+          }
+        },
+        "translations_for_subject": {
+          "source": "Newman::Emails::SurveyLastCallEmail::Fields::TranslationsForSubject",
+          "name": "translations_for_subject",
+          "type": "struct",
+          "fields": {
+            "et": {
+              "name": "et",
+              "source": "Kore::Types::Fields::Translations::Fields::Et",
+              "type": "string"
+            },
+            "fi": {
+              "name": "fi",
+              "source": "Kore::Types::Fields::Translations::Fields::Fi",
+              "type": "string"
+            },
+            "fr": {
+              "name": "fr",
+              "source": "Kore::Types::Fields::Translations::Fields::Fr",
+              "type": "string"
+            },
+            "hu": {
+              "name": "hu",
+              "source": "Kore::Types::Fields::Translations::Fields::Hu",
+              "type": "string"
+            },
+            "it": {
+              "name": "it",
+              "source": "Kore::Types::Fields::Translations::Fields::It",
+              "type": "string"
+            },
+            "nb": {
+              "name": "nb",
+              "source": "Kore::Types::Fields::Translations::Fields::Nb",
+              "type": "string"
+            },
+            "nl": {
+              "name": "nl",
+              "source": "Kore::Types::Fields::Translations::Fields::Nl",
+              "type": "string"
+            },
+            "pl": {
+              "name": "pl",
+              "source": "Kore::Types::Fields::Translations::Fields::Pl",
+              "type": "string"
+            },
+            "pt": {
+              "name": "pt",
+              "source": "Kore::Types::Fields::Translations::Fields::Pt",
+              "type": "string"
+            },
+            "ro": {
+              "name": "ro",
+              "source": "Kore::Types::Fields::Translations::Fields::Ro",
+              "type": "string"
+            },
+            "sk": {
+              "name": "sk",
+              "source": "Kore::Types::Fields::Translations::Fields::Sk",
+              "type": "string"
+            },
+            "sv": {
+              "name": "sv",
+              "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::Translations::Fields::Cs",
+              "type": "string"
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::Translations::Fields::Da",
+              "type": "string"
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::Translations::Fields::De",
+              "type": "string"
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::Translations::Fields::El",
+              "type": "string"
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::Translations::Fields::En",
+              "type": "string"
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::Translations::Fields::Es",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "SurveyLinkEmail": {
         "kind": {
           "name": "kind",
-          "source": "Newman::Emails::SurveyLastCallEmail::Fields::Kind",
+          "source": "Newman::Emails::SurveyLinkEmail::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -26588,232 +30165,6 @@ module.exports = {
             "survey_reminder"
           ]
         },
-        "translations_for_subject": {
-          "source": "Newman::Emails::SurveyLastCallEmail::Fields::TranslationsForSubject",
-          "name": "translations_for_subject",
-          "type": "struct",
-          "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::Translations::Fields::Cs",
-              "type": "string"
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::Translations::Fields::Da",
-              "type": "string"
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::Translations::Fields::De",
-              "type": "string"
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::Translations::Fields::El",
-              "type": "string"
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::Translations::Fields::En",
-              "type": "string"
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
-            "et": {
-              "name": "et",
-              "source": "Kore::Types::Fields::Translations::Fields::Et",
-              "type": "string"
-            },
-            "fi": {
-              "name": "fi",
-              "source": "Kore::Types::Fields::Translations::Fields::Fi",
-              "type": "string"
-            },
-            "fr": {
-              "name": "fr",
-              "source": "Kore::Types::Fields::Translations::Fields::Fr",
-              "type": "string"
-            },
-            "hu": {
-              "name": "hu",
-              "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
-              "type": "string"
-            },
-            "it": {
-              "name": "it",
-              "source": "Kore::Types::Fields::Translations::Fields::It",
-              "type": "string"
-            },
-            "nb": {
-              "name": "nb",
-              "source": "Kore::Types::Fields::Translations::Fields::Nb",
-              "type": "string"
-            },
-            "nl": {
-              "name": "nl",
-              "source": "Kore::Types::Fields::Translations::Fields::Nl",
-              "type": "string"
-            },
-            "pl": {
-              "name": "pl",
-              "source": "Kore::Types::Fields::Translations::Fields::Pl",
-              "type": "string"
-            },
-            "pt": {
-              "name": "pt",
-              "source": "Kore::Types::Fields::Translations::Fields::Pt",
-              "type": "string"
-            },
-            "ro": {
-              "name": "ro",
-              "source": "Kore::Types::Fields::Translations::Fields::Ro",
-              "type": "string"
-            },
-            "sk": {
-              "name": "sk",
-              "source": "Kore::Types::Fields::Translations::Fields::Sk",
-              "type": "string"
-            },
-            "sv": {
-              "name": "sv",
-              "source": "Kore::Types::Fields::Translations::Fields::Sv",
-              "type": "string"
-            },
-            "ja": {
-              "name": "ja",
-              "source": "Kore::Types::Fields::Translations::Fields::Ja",
-              "type": "string"
-            },
-            "zh": {
-              "name": "zh",
-              "source": "Kore::Types::Fields::Translations::Fields::Zh",
-              "type": "string"
-            }
-          }
-        },
-        "translations_for_body": {
-          "source": "Newman::Emails::SurveyLastCallEmail::Fields::TranslationsForBody",
-          "name": "translations_for_body",
-          "type": "struct",
-          "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::Translations::Fields::Cs",
-              "type": "string"
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::Translations::Fields::Da",
-              "type": "string"
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::Translations::Fields::De",
-              "type": "string"
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::Translations::Fields::El",
-              "type": "string"
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::Translations::Fields::En",
-              "type": "string"
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
-            "et": {
-              "name": "et",
-              "source": "Kore::Types::Fields::Translations::Fields::Et",
-              "type": "string"
-            },
-            "fi": {
-              "name": "fi",
-              "source": "Kore::Types::Fields::Translations::Fields::Fi",
-              "type": "string"
-            },
-            "fr": {
-              "name": "fr",
-              "source": "Kore::Types::Fields::Translations::Fields::Fr",
-              "type": "string"
-            },
-            "hu": {
-              "name": "hu",
-              "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
-              "type": "string"
-            },
-            "it": {
-              "name": "it",
-              "source": "Kore::Types::Fields::Translations::Fields::It",
-              "type": "string"
-            },
-            "nb": {
-              "name": "nb",
-              "source": "Kore::Types::Fields::Translations::Fields::Nb",
-              "type": "string"
-            },
-            "nl": {
-              "name": "nl",
-              "source": "Kore::Types::Fields::Translations::Fields::Nl",
-              "type": "string"
-            },
-            "pl": {
-              "name": "pl",
-              "source": "Kore::Types::Fields::Translations::Fields::Pl",
-              "type": "string"
-            },
-            "pt": {
-              "name": "pt",
-              "source": "Kore::Types::Fields::Translations::Fields::Pt",
-              "type": "string"
-            },
-            "ro": {
-              "name": "ro",
-              "source": "Kore::Types::Fields::Translations::Fields::Ro",
-              "type": "string"
-            },
-            "sk": {
-              "name": "sk",
-              "source": "Kore::Types::Fields::Translations::Fields::Sk",
-              "type": "string"
-            },
-            "sv": {
-              "name": "sv",
-              "source": "Kore::Types::Fields::Translations::Fields::Sv",
-              "type": "string"
-            },
-            "ja": {
-              "name": "ja",
-              "source": "Kore::Types::Fields::Translations::Fields::Ja",
-              "type": "string"
-            },
-            "zh": {
-              "name": "zh",
-              "source": "Kore::Types::Fields::Translations::Fields::Zh",
-              "type": "string"
-            }
-          }
-        }
-      },
-      "SurveyLinkEmail": {
         "status": {
           "name": "status",
           "source": "Newman::Emails::SurveyLinkEmail::Fields::Status",
@@ -26868,9 +30219,235 @@ module.exports = {
             "bounced"
           ]
         },
+        "translations_for_body": {
+          "source": "Newman::Emails::SurveyLinkEmail::Fields::TranslationsForBody",
+          "name": "translations_for_body",
+          "type": "struct",
+          "fields": {
+            "et": {
+              "name": "et",
+              "source": "Kore::Types::Fields::Translations::Fields::Et",
+              "type": "string"
+            },
+            "fi": {
+              "name": "fi",
+              "source": "Kore::Types::Fields::Translations::Fields::Fi",
+              "type": "string"
+            },
+            "fr": {
+              "name": "fr",
+              "source": "Kore::Types::Fields::Translations::Fields::Fr",
+              "type": "string"
+            },
+            "hu": {
+              "name": "hu",
+              "source": "Kore::Types::Fields::Translations::Fields::Hu",
+              "type": "string"
+            },
+            "it": {
+              "name": "it",
+              "source": "Kore::Types::Fields::Translations::Fields::It",
+              "type": "string"
+            },
+            "nb": {
+              "name": "nb",
+              "source": "Kore::Types::Fields::Translations::Fields::Nb",
+              "type": "string"
+            },
+            "nl": {
+              "name": "nl",
+              "source": "Kore::Types::Fields::Translations::Fields::Nl",
+              "type": "string"
+            },
+            "pl": {
+              "name": "pl",
+              "source": "Kore::Types::Fields::Translations::Fields::Pl",
+              "type": "string"
+            },
+            "pt": {
+              "name": "pt",
+              "source": "Kore::Types::Fields::Translations::Fields::Pt",
+              "type": "string"
+            },
+            "ro": {
+              "name": "ro",
+              "source": "Kore::Types::Fields::Translations::Fields::Ro",
+              "type": "string"
+            },
+            "sk": {
+              "name": "sk",
+              "source": "Kore::Types::Fields::Translations::Fields::Sk",
+              "type": "string"
+            },
+            "sv": {
+              "name": "sv",
+              "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::Translations::Fields::Cs",
+              "type": "string"
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::Translations::Fields::Da",
+              "type": "string"
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::Translations::Fields::De",
+              "type": "string"
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::Translations::Fields::El",
+              "type": "string"
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::Translations::Fields::En",
+              "type": "string"
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::Translations::Fields::Es",
+              "type": "string"
+            }
+          }
+        },
+        "translations_for_subject": {
+          "source": "Newman::Emails::SurveyLinkEmail::Fields::TranslationsForSubject",
+          "name": "translations_for_subject",
+          "type": "struct",
+          "fields": {
+            "et": {
+              "name": "et",
+              "source": "Kore::Types::Fields::Translations::Fields::Et",
+              "type": "string"
+            },
+            "fi": {
+              "name": "fi",
+              "source": "Kore::Types::Fields::Translations::Fields::Fi",
+              "type": "string"
+            },
+            "fr": {
+              "name": "fr",
+              "source": "Kore::Types::Fields::Translations::Fields::Fr",
+              "type": "string"
+            },
+            "hu": {
+              "name": "hu",
+              "source": "Kore::Types::Fields::Translations::Fields::Hu",
+              "type": "string"
+            },
+            "it": {
+              "name": "it",
+              "source": "Kore::Types::Fields::Translations::Fields::It",
+              "type": "string"
+            },
+            "nb": {
+              "name": "nb",
+              "source": "Kore::Types::Fields::Translations::Fields::Nb",
+              "type": "string"
+            },
+            "nl": {
+              "name": "nl",
+              "source": "Kore::Types::Fields::Translations::Fields::Nl",
+              "type": "string"
+            },
+            "pl": {
+              "name": "pl",
+              "source": "Kore::Types::Fields::Translations::Fields::Pl",
+              "type": "string"
+            },
+            "pt": {
+              "name": "pt",
+              "source": "Kore::Types::Fields::Translations::Fields::Pt",
+              "type": "string"
+            },
+            "ro": {
+              "name": "ro",
+              "source": "Kore::Types::Fields::Translations::Fields::Ro",
+              "type": "string"
+            },
+            "sk": {
+              "name": "sk",
+              "source": "Kore::Types::Fields::Translations::Fields::Sk",
+              "type": "string"
+            },
+            "sv": {
+              "name": "sv",
+              "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::Translations::Fields::Cs",
+              "type": "string"
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::Translations::Fields::Da",
+              "type": "string"
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::Translations::Fields::De",
+              "type": "string"
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::Translations::Fields::El",
+              "type": "string"
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::Translations::Fields::En",
+              "type": "string"
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::Translations::Fields::Es",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "SurveyReminderEmail": {
         "kind": {
           "name": "kind",
-          "source": "Newman::Emails::SurveyLinkEmail::Fields::Kind",
+          "source": "Newman::Emails::SurveyReminderEmail::Fields::Kind",
           "type": "enum",
           "choices": [
             {
@@ -26917,232 +30494,6 @@ module.exports = {
             "survey_reminder"
           ]
         },
-        "translations_for_subject": {
-          "source": "Newman::Emails::SurveyLinkEmail::Fields::TranslationsForSubject",
-          "name": "translations_for_subject",
-          "type": "struct",
-          "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::Translations::Fields::Cs",
-              "type": "string"
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::Translations::Fields::Da",
-              "type": "string"
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::Translations::Fields::De",
-              "type": "string"
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::Translations::Fields::El",
-              "type": "string"
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::Translations::Fields::En",
-              "type": "string"
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
-            "et": {
-              "name": "et",
-              "source": "Kore::Types::Fields::Translations::Fields::Et",
-              "type": "string"
-            },
-            "fi": {
-              "name": "fi",
-              "source": "Kore::Types::Fields::Translations::Fields::Fi",
-              "type": "string"
-            },
-            "fr": {
-              "name": "fr",
-              "source": "Kore::Types::Fields::Translations::Fields::Fr",
-              "type": "string"
-            },
-            "hu": {
-              "name": "hu",
-              "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
-              "type": "string"
-            },
-            "it": {
-              "name": "it",
-              "source": "Kore::Types::Fields::Translations::Fields::It",
-              "type": "string"
-            },
-            "nb": {
-              "name": "nb",
-              "source": "Kore::Types::Fields::Translations::Fields::Nb",
-              "type": "string"
-            },
-            "nl": {
-              "name": "nl",
-              "source": "Kore::Types::Fields::Translations::Fields::Nl",
-              "type": "string"
-            },
-            "pl": {
-              "name": "pl",
-              "source": "Kore::Types::Fields::Translations::Fields::Pl",
-              "type": "string"
-            },
-            "pt": {
-              "name": "pt",
-              "source": "Kore::Types::Fields::Translations::Fields::Pt",
-              "type": "string"
-            },
-            "ro": {
-              "name": "ro",
-              "source": "Kore::Types::Fields::Translations::Fields::Ro",
-              "type": "string"
-            },
-            "sk": {
-              "name": "sk",
-              "source": "Kore::Types::Fields::Translations::Fields::Sk",
-              "type": "string"
-            },
-            "sv": {
-              "name": "sv",
-              "source": "Kore::Types::Fields::Translations::Fields::Sv",
-              "type": "string"
-            },
-            "ja": {
-              "name": "ja",
-              "source": "Kore::Types::Fields::Translations::Fields::Ja",
-              "type": "string"
-            },
-            "zh": {
-              "name": "zh",
-              "source": "Kore::Types::Fields::Translations::Fields::Zh",
-              "type": "string"
-            }
-          }
-        },
-        "translations_for_body": {
-          "source": "Newman::Emails::SurveyLinkEmail::Fields::TranslationsForBody",
-          "name": "translations_for_body",
-          "type": "struct",
-          "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::Translations::Fields::Cs",
-              "type": "string"
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::Translations::Fields::Da",
-              "type": "string"
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::Translations::Fields::De",
-              "type": "string"
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::Translations::Fields::El",
-              "type": "string"
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::Translations::Fields::En",
-              "type": "string"
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
-            "et": {
-              "name": "et",
-              "source": "Kore::Types::Fields::Translations::Fields::Et",
-              "type": "string"
-            },
-            "fi": {
-              "name": "fi",
-              "source": "Kore::Types::Fields::Translations::Fields::Fi",
-              "type": "string"
-            },
-            "fr": {
-              "name": "fr",
-              "source": "Kore::Types::Fields::Translations::Fields::Fr",
-              "type": "string"
-            },
-            "hu": {
-              "name": "hu",
-              "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
-              "type": "string"
-            },
-            "it": {
-              "name": "it",
-              "source": "Kore::Types::Fields::Translations::Fields::It",
-              "type": "string"
-            },
-            "nb": {
-              "name": "nb",
-              "source": "Kore::Types::Fields::Translations::Fields::Nb",
-              "type": "string"
-            },
-            "nl": {
-              "name": "nl",
-              "source": "Kore::Types::Fields::Translations::Fields::Nl",
-              "type": "string"
-            },
-            "pl": {
-              "name": "pl",
-              "source": "Kore::Types::Fields::Translations::Fields::Pl",
-              "type": "string"
-            },
-            "pt": {
-              "name": "pt",
-              "source": "Kore::Types::Fields::Translations::Fields::Pt",
-              "type": "string"
-            },
-            "ro": {
-              "name": "ro",
-              "source": "Kore::Types::Fields::Translations::Fields::Ro",
-              "type": "string"
-            },
-            "sk": {
-              "name": "sk",
-              "source": "Kore::Types::Fields::Translations::Fields::Sk",
-              "type": "string"
-            },
-            "sv": {
-              "name": "sv",
-              "source": "Kore::Types::Fields::Translations::Fields::Sv",
-              "type": "string"
-            },
-            "ja": {
-              "name": "ja",
-              "source": "Kore::Types::Fields::Translations::Fields::Ja",
-              "type": "string"
-            },
-            "zh": {
-              "name": "zh",
-              "source": "Kore::Types::Fields::Translations::Fields::Zh",
-              "type": "string"
-            }
-          }
-        }
-      },
-      "SurveyReminderEmail": {
         "status": {
           "name": "status",
           "source": "Newman::Emails::SurveyReminderEmail::Fields::Status",
@@ -27197,90 +30548,123 @@ module.exports = {
             "bounced"
           ]
         },
-        "kind": {
-          "name": "kind",
-          "source": "Newman::Emails::SurveyReminderEmail::Fields::Kind",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Emails::SurveyHeadsUpEmail"
-              }
+        "translations_for_body": {
+          "source": "Newman::Emails::SurveyReminderEmail::Fields::TranslationsForBody",
+          "name": "translations_for_body",
+          "type": "struct",
+          "fields": {
+            "et": {
+              "name": "et",
+              "source": "Kore::Types::Fields::Translations::Fields::Et",
+              "type": "string"
             },
-            {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLastCall",
-              "name": "survey_last_call",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-                "type": "Newman::Emails::SurveyLastCallEmail"
-              }
+            "fi": {
+              "name": "fi",
+              "source": "Kore::Types::Fields::Translations::Fields::Fi",
+              "type": "string"
             },
-            {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyLink",
-              "name": "survey_link",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Newman::Emails::SurveyLinkEmail"
-              }
+            "fr": {
+              "name": "fr",
+              "source": "Kore::Types::Fields::Translations::Fields::Fr",
+              "type": "string"
             },
-            {
-              "source": "Kore::Types::Newman::Email::Fields::Kind::SurveyReminder",
-              "name": "survey_reminder",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Newman::Emails::SurveyReminderEmail"
-              }
+            "hu": {
+              "name": "hu",
+              "source": "Kore::Types::Fields::Translations::Fields::Hu",
+              "type": "string"
+            },
+            "it": {
+              "name": "it",
+              "source": "Kore::Types::Fields::Translations::Fields::It",
+              "type": "string"
+            },
+            "nb": {
+              "name": "nb",
+              "source": "Kore::Types::Fields::Translations::Fields::Nb",
+              "type": "string"
+            },
+            "nl": {
+              "name": "nl",
+              "source": "Kore::Types::Fields::Translations::Fields::Nl",
+              "type": "string"
+            },
+            "pl": {
+              "name": "pl",
+              "source": "Kore::Types::Fields::Translations::Fields::Pl",
+              "type": "string"
+            },
+            "pt": {
+              "name": "pt",
+              "source": "Kore::Types::Fields::Translations::Fields::Pt",
+              "type": "string"
+            },
+            "ro": {
+              "name": "ro",
+              "source": "Kore::Types::Fields::Translations::Fields::Ro",
+              "type": "string"
+            },
+            "sk": {
+              "name": "sk",
+              "source": "Kore::Types::Fields::Translations::Fields::Sk",
+              "type": "string"
+            },
+            "sv": {
+              "name": "sv",
+              "source": "Kore::Types::Fields::Translations::Fields::Sv",
+              "type": "string"
+            },
+            "ja": {
+              "name": "ja",
+              "source": "Kore::Types::Fields::Translations::Fields::Ja",
+              "type": "string"
+            },
+            "zh": {
+              "name": "zh",
+              "source": "Kore::Types::Fields::Translations::Fields::Zh",
+              "type": "string"
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
+            "cs": {
+              "name": "cs",
+              "source": "Kore::Types::Fields::Translations::Fields::Cs",
+              "type": "string"
+            },
+            "da": {
+              "name": "da",
+              "source": "Kore::Types::Fields::Translations::Fields::Da",
+              "type": "string"
+            },
+            "de": {
+              "name": "de",
+              "source": "Kore::Types::Fields::Translations::Fields::De",
+              "type": "string"
+            },
+            "el": {
+              "name": "el",
+              "source": "Kore::Types::Fields::Translations::Fields::El",
+              "type": "string"
+            },
+            "en": {
+              "name": "en",
+              "source": "Kore::Types::Fields::Translations::Fields::En",
+              "type": "string"
+            },
+            "es": {
+              "name": "es",
+              "source": "Kore::Types::Fields::Translations::Fields::Es",
+              "type": "string"
             }
-          ],
-          "values": [
-            "survey_heads_up",
-            "survey_last_call",
-            "survey_link",
-            "survey_reminder"
-          ]
+          }
         },
         "translations_for_subject": {
           "source": "Newman::Emails::SurveyReminderEmail::Fields::TranslationsForSubject",
           "name": "translations_for_subject",
           "type": "struct",
           "fields": {
-            "cs": {
-              "name": "cs",
-              "source": "Kore::Types::Fields::Translations::Fields::Cs",
-              "type": "string"
-            },
-            "da": {
-              "name": "da",
-              "source": "Kore::Types::Fields::Translations::Fields::Da",
-              "type": "string"
-            },
-            "de": {
-              "name": "de",
-              "source": "Kore::Types::Fields::Translations::Fields::De",
-              "type": "string"
-            },
-            "el": {
-              "name": "el",
-              "source": "Kore::Types::Fields::Translations::Fields::El",
-              "type": "string"
-            },
-            "en": {
-              "name": "en",
-              "source": "Kore::Types::Fields::Translations::Fields::En",
-              "type": "string"
-            },
-            "es": {
-              "name": "es",
-              "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
             "et": {
               "name": "et",
               "source": "Kore::Types::Fields::Translations::Fields::Et",
@@ -27299,11 +30683,6 @@ module.exports = {
             "hu": {
               "name": "hu",
               "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
               "type": "string"
             },
             "it": {
@@ -27355,14 +30734,12 @@ module.exports = {
               "name": "zh",
               "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
-            }
-          }
-        },
-        "translations_for_body": {
-          "source": "Newman::Emails::SurveyReminderEmail::Fields::TranslationsForBody",
-          "name": "translations_for_body",
-          "type": "struct",
-          "fields": {
+            },
+            "is": {
+              "name": "is",
+              "source": "Kore::Types::Fields::Translations::Fields::Is",
+              "type": "string"
+            },
             "cs": {
               "name": "cs",
               "source": "Kore::Types::Fields::Translations::Fields::Cs",
@@ -27391,81 +30768,6 @@ module.exports = {
             "es": {
               "name": "es",
               "source": "Kore::Types::Fields::Translations::Fields::Es",
-              "type": "string"
-            },
-            "et": {
-              "name": "et",
-              "source": "Kore::Types::Fields::Translations::Fields::Et",
-              "type": "string"
-            },
-            "fi": {
-              "name": "fi",
-              "source": "Kore::Types::Fields::Translations::Fields::Fi",
-              "type": "string"
-            },
-            "fr": {
-              "name": "fr",
-              "source": "Kore::Types::Fields::Translations::Fields::Fr",
-              "type": "string"
-            },
-            "hu": {
-              "name": "hu",
-              "source": "Kore::Types::Fields::Translations::Fields::Hu",
-              "type": "string"
-            },
-            "is": {
-              "name": "is",
-              "source": "Kore::Types::Fields::Translations::Fields::Is",
-              "type": "string"
-            },
-            "it": {
-              "name": "it",
-              "source": "Kore::Types::Fields::Translations::Fields::It",
-              "type": "string"
-            },
-            "nb": {
-              "name": "nb",
-              "source": "Kore::Types::Fields::Translations::Fields::Nb",
-              "type": "string"
-            },
-            "nl": {
-              "name": "nl",
-              "source": "Kore::Types::Fields::Translations::Fields::Nl",
-              "type": "string"
-            },
-            "pl": {
-              "name": "pl",
-              "source": "Kore::Types::Fields::Translations::Fields::Pl",
-              "type": "string"
-            },
-            "pt": {
-              "name": "pt",
-              "source": "Kore::Types::Fields::Translations::Fields::Pt",
-              "type": "string"
-            },
-            "ro": {
-              "name": "ro",
-              "source": "Kore::Types::Fields::Translations::Fields::Ro",
-              "type": "string"
-            },
-            "sk": {
-              "name": "sk",
-              "source": "Kore::Types::Fields::Translations::Fields::Sk",
-              "type": "string"
-            },
-            "sv": {
-              "name": "sv",
-              "source": "Kore::Types::Fields::Translations::Fields::Sv",
-              "type": "string"
-            },
-            "ja": {
-              "name": "ja",
-              "source": "Kore::Types::Fields::Translations::Fields::Ja",
-              "type": "string"
-            },
-            "zh": {
-              "name": "zh",
-              "source": "Kore::Types::Fields::Translations::Fields::Zh",
               "type": "string"
             }
           }
@@ -27544,55 +30846,6 @@ module.exports = {
           "delivered",
           "cancelled",
           "failed"
-        ]
-      },
-      "kind": {
-        "name": "kind",
-        "source": "Newman::Message::Fields::Kind",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-            "name": "survey_heads_up",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-              "type": "Newman::Messages::SurveyHeadsUpMessage"
-            }
-          },
-          {
-            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
-            "name": "survey_last_call",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-              "type": "Newman::Messages::SurveyLastCallMessage"
-            }
-          },
-          {
-            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
-            "name": "survey_link",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-              "type": "Newman::Messages::SurveyLinkMessage"
-            }
-          },
-          {
-            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
-            "name": "survey_reminder",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-              "type": "Newman::Messages::SurveyReminderMessage"
-            }
-          }
-        ],
-        "values": [
-          "survey_heads_up",
-          "survey_last_call",
-          "survey_link",
-          "survey_reminder"
         ]
       },
       "email_service_provider_status": {
@@ -27692,6 +30945,55 @@ module.exports = {
           "click",
           "spamreport",
           "unsubscribe"
+        ]
+      },
+      "kind": {
+        "name": "kind",
+        "source": "Newman::Message::Fields::Kind",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+            "name": "survey_heads_up",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "type": "Newman::Messages::SurveyHeadsUpMessage"
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
+            "name": "survey_last_call",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "type": "Newman::Messages::SurveyLastCallMessage"
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
+            "name": "survey_link",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+              "type": "Newman::Messages::SurveyLinkMessage"
+            }
+          },
+          {
+            "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
+            "name": "survey_reminder",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "type": "Newman::Messages::SurveyReminderMessage"
+            }
+          }
+        ],
+        "values": [
+          "survey_heads_up",
+          "survey_last_call",
+          "survey_link",
+          "survey_reminder"
         ]
       },
       "types": [
@@ -28133,55 +31435,6 @@ module.exports = {
             "failed"
           ]
         },
-        "kind": {
-          "name": "kind",
-          "source": "Newman::Messages::SurveyHeadsUpMessage::Fields::Kind",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
-              "name": "survey_last_call",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLastCallMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
-              "name": "survey_link",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLinkMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
-              "name": "survey_reminder",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Newman::Messages::SurveyReminderMessage"
-              }
-            }
-          ],
-          "values": [
-            "survey_heads_up",
-            "survey_last_call",
-            "survey_link",
-            "survey_reminder"
-          ]
-        },
         "email_service_provider_status": {
           "name": "email_service_provider_status",
           "source": "Newman::Messages::SurveyHeadsUpMessage::Fields::EmailServiceProviderStatus",
@@ -28280,6 +31533,55 @@ module.exports = {
             "spamreport",
             "unsubscribe"
           ]
+        },
+        "kind": {
+          "name": "kind",
+          "source": "Newman::Messages::SurveyHeadsUpMessage::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
+              "name": "survey_last_call",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLastCallMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
+              "name": "survey_link",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLinkMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
+              "name": "survey_reminder",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Newman::Messages::SurveyReminderMessage"
+              }
+            }
+          ],
+          "values": [
+            "survey_heads_up",
+            "survey_last_call",
+            "survey_link",
+            "survey_reminder"
+          ]
         }
       },
       "SurveyLastCallMessage": {
@@ -28354,55 +31656,6 @@ module.exports = {
             "delivered",
             "cancelled",
             "failed"
-          ]
-        },
-        "kind": {
-          "name": "kind",
-          "source": "Newman::Messages::SurveyLastCallMessage::Fields::Kind",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
-              "name": "survey_last_call",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLastCallMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
-              "name": "survey_link",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLinkMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
-              "name": "survey_reminder",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Newman::Messages::SurveyReminderMessage"
-              }
-            }
-          ],
-          "values": [
-            "survey_heads_up",
-            "survey_last_call",
-            "survey_link",
-            "survey_reminder"
           ]
         },
         "email_service_provider_status": {
@@ -28503,6 +31756,55 @@ module.exports = {
             "spamreport",
             "unsubscribe"
           ]
+        },
+        "kind": {
+          "name": "kind",
+          "source": "Newman::Messages::SurveyLastCallMessage::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
+              "name": "survey_last_call",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLastCallMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
+              "name": "survey_link",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLinkMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
+              "name": "survey_reminder",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Newman::Messages::SurveyReminderMessage"
+              }
+            }
+          ],
+          "values": [
+            "survey_heads_up",
+            "survey_last_call",
+            "survey_link",
+            "survey_reminder"
+          ]
         }
       },
       "SurveyLinkMessage": {
@@ -28577,55 +31879,6 @@ module.exports = {
             "delivered",
             "cancelled",
             "failed"
-          ]
-        },
-        "kind": {
-          "name": "kind",
-          "source": "Newman::Messages::SurveyLinkMessage::Fields::Kind",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
-              "name": "survey_last_call",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLastCallMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
-              "name": "survey_link",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLinkMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
-              "name": "survey_reminder",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Newman::Messages::SurveyReminderMessage"
-              }
-            }
-          ],
-          "values": [
-            "survey_heads_up",
-            "survey_last_call",
-            "survey_link",
-            "survey_reminder"
           ]
         },
         "email_service_provider_status": {
@@ -28726,6 +31979,55 @@ module.exports = {
             "spamreport",
             "unsubscribe"
           ]
+        },
+        "kind": {
+          "name": "kind",
+          "source": "Newman::Messages::SurveyLinkMessage::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
+              "name": "survey_last_call",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLastCallMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
+              "name": "survey_link",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLinkMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
+              "name": "survey_reminder",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Newman::Messages::SurveyReminderMessage"
+              }
+            }
+          ],
+          "values": [
+            "survey_heads_up",
+            "survey_last_call",
+            "survey_link",
+            "survey_reminder"
+          ]
         }
       },
       "SurveyMessage": {
@@ -28800,55 +32102,6 @@ module.exports = {
             "delivered",
             "cancelled",
             "failed"
-          ]
-        },
-        "kind": {
-          "name": "kind",
-          "source": "Newman::Messages::SurveyMessage::Fields::Kind",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
-              "name": "survey_last_call",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLastCallMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
-              "name": "survey_link",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLinkMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
-              "name": "survey_reminder",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Newman::Messages::SurveyReminderMessage"
-              }
-            }
-          ],
-          "values": [
-            "survey_heads_up",
-            "survey_last_call",
-            "survey_link",
-            "survey_reminder"
           ]
         },
         "email_service_provider_status": {
@@ -28950,6 +32203,55 @@ module.exports = {
             "unsubscribe"
           ]
         },
+        "kind": {
+          "name": "kind",
+          "source": "Newman::Messages::SurveyMessage::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
+              "name": "survey_last_call",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLastCallMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
+              "name": "survey_link",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLinkMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
+              "name": "survey_reminder",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Newman::Messages::SurveyReminderMessage"
+              }
+            }
+          ],
+          "values": [
+            "survey_heads_up",
+            "survey_last_call",
+            "survey_link",
+            "survey_reminder"
+          ]
+        },
         "types": [
           "Newman::Messages::SurveyHeadsUpMessage",
           "Newman::Messages::SurveyLastCallMessage",
@@ -29029,55 +32331,6 @@ module.exports = {
             "delivered",
             "cancelled",
             "failed"
-          ]
-        },
-        "kind": {
-          "name": "kind",
-          "source": "Newman::Messages::SurveyReminderMessage::Fields::Kind",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
-              "name": "survey_heads_up",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "type": "Newman::Messages::SurveyHeadsUpMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
-              "name": "survey_last_call",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLastCallMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
-              "name": "survey_link",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "type": "Newman::Messages::SurveyLinkMessage"
-              }
-            },
-            {
-              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
-              "name": "survey_reminder",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "type": "Newman::Messages::SurveyReminderMessage"
-              }
-            }
-          ],
-          "values": [
-            "survey_heads_up",
-            "survey_last_call",
-            "survey_link",
-            "survey_reminder"
           ]
         },
         "email_service_provider_status": {
@@ -29178,6 +32431,55 @@ module.exports = {
             "spamreport",
             "unsubscribe"
           ]
+        },
+        "kind": {
+          "name": "kind",
+          "source": "Newman::Messages::SurveyReminderMessage::Fields::Kind",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyHeadsUp",
+              "name": "survey_heads_up",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "type": "Newman::Messages::SurveyHeadsUpMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLastCall",
+              "name": "survey_last_call",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLastCallMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyLink",
+              "name": "survey_link",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "type": "Newman::Messages::SurveyLinkMessage"
+              }
+            },
+            {
+              "source": "Kore::Types::Newman::Message::Fields::Kind::SurveyReminder",
+              "name": "survey_reminder",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "type": "Newman::Messages::SurveyReminderMessage"
+              }
+            }
+          ],
+          "values": [
+            "survey_heads_up",
+            "survey_last_call",
+            "survey_link",
+            "survey_reminder"
+          ]
         }
       }
     }
@@ -29204,6 +32506,51 @@ module.exports = {
       }
     },
     "Reaction": {
+      "http_method": {
+        "name": "http_method",
+        "source": "Portal::Reaction::Fields::HttpMethod",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Portal::Reaction::Fields::HttpMethod::Post",
+            "name": "post",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Portal::Reaction::Fields::HttpMethod::Put",
+            "name": "put",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Portal::Reaction::Fields::HttpMethod::Get",
+            "name": "get",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Portal::Reaction::Fields::HttpMethod::Delete",
+            "name": "delete",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "post",
+          "put",
+          "get",
+          "delete"
+        ]
+      },
       "kind": {
         "name": "kind",
         "source": "Portal::Reaction::Fields::Kind",
@@ -29273,51 +32620,6 @@ module.exports = {
           "create_participations_from_salesforce_opportunity"
         ]
       },
-      "http_method": {
-        "name": "http_method",
-        "source": "Portal::Reaction::Fields::HttpMethod",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Portal::Reaction::Fields::HttpMethod::Post",
-            "name": "post",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Portal::Reaction::Fields::HttpMethod::Put",
-            "name": "put",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Portal::Reaction::Fields::HttpMethod::Get",
-            "name": "get",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Portal::Reaction::Fields::HttpMethod::Delete",
-            "name": "delete",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "post",
-          "put",
-          "get",
-          "delete"
-        ]
-      },
       "types": [
         "Portal::Reactions::AddParticipantToGroup",
         "Portal::Reactions::CreateEmailForParticipation",
@@ -29328,6 +32630,51 @@ module.exports = {
     },
     "Reactions": {
       "AddParticipantToGroup": {
+        "http_method": {
+          "name": "http_method",
+          "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod::Post",
+              "name": "post",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod::Put",
+              "name": "put",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod::Get",
+              "name": "get",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod::Delete",
+              "name": "delete",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "post",
+            "put",
+            "get",
+            "delete"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Portal::Reactions::AddParticipantToGroup::Fields::Kind",
@@ -29397,51 +32744,6 @@ module.exports = {
             "create_participations_from_salesforce_opportunity"
           ]
         },
-        "http_method": {
-          "name": "http_method",
-          "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod::Post",
-              "name": "post",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod::Put",
-              "name": "put",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod::Get",
-              "name": "get",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::AddParticipantToGroup::Fields::HttpMethod::Delete",
-              "name": "delete",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "post",
-            "put",
-            "get",
-            "delete"
-          ]
-        },
         "custom_fields": {
           "source": "Portal::Reactions::AddParticipantToGroup::Fields::CustomFields",
           "name": "custom_fields",
@@ -29457,6 +32759,51 @@ module.exports = {
         }
       },
       "CreateEmailForParticipation": {
+        "http_method": {
+          "name": "http_method",
+          "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod::Post",
+              "name": "post",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod::Put",
+              "name": "put",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod::Get",
+              "name": "get",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod::Delete",
+              "name": "delete",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "post",
+            "put",
+            "get",
+            "delete"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Portal::Reactions::CreateEmailForParticipation::Fields::Kind",
@@ -29526,51 +32873,6 @@ module.exports = {
             "create_participations_from_salesforce_opportunity"
           ]
         },
-        "http_method": {
-          "name": "http_method",
-          "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod::Post",
-              "name": "post",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod::Put",
-              "name": "put",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod::Get",
-              "name": "get",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::CreateEmailForParticipation::Fields::HttpMethod::Delete",
-              "name": "delete",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "post",
-            "put",
-            "get",
-            "delete"
-          ]
-        },
         "custom_fields": {
           "source": "Portal::Reactions::CreateEmailForParticipation::Fields::CustomFields",
           "name": "custom_fields",
@@ -29586,6 +32888,51 @@ module.exports = {
         }
       },
       "CreateParticipantFromSalesforceCase": {
+        "http_method": {
+          "name": "http_method",
+          "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod::Post",
+              "name": "post",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod::Put",
+              "name": "put",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod::Get",
+              "name": "get",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod::Delete",
+              "name": "delete",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "post",
+            "put",
+            "get",
+            "delete"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::Kind",
@@ -29655,13 +33002,22 @@ module.exports = {
             "create_participations_from_salesforce_opportunity"
           ]
         },
+        "custom_fields": {
+          "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::CustomFields",
+          "name": "custom_fields",
+          "type": "struct",
+          "fields": {
+          }
+        }
+      },
+      "CreateParticipationFromSalesforceCase": {
         "http_method": {
           "name": "http_method",
-          "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod",
+          "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod",
           "type": "enum",
           "choices": [
             {
-              "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod::Post",
+              "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod::Post",
               "name": "post",
               "type": "enum_value",
               "integer_value": 1,
@@ -29669,7 +33025,7 @@ module.exports = {
               }
             },
             {
-              "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod::Put",
+              "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod::Put",
               "name": "put",
               "type": "enum_value",
               "integer_value": 2,
@@ -29677,7 +33033,7 @@ module.exports = {
               }
             },
             {
-              "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod::Get",
+              "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod::Get",
               "name": "get",
               "type": "enum_value",
               "integer_value": 3,
@@ -29685,7 +33041,7 @@ module.exports = {
               }
             },
             {
-              "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::HttpMethod::Delete",
+              "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod::Delete",
               "name": "delete",
               "type": "enum_value",
               "integer_value": 4,
@@ -29700,15 +33056,6 @@ module.exports = {
             "delete"
           ]
         },
-        "custom_fields": {
-          "source": "Portal::Reactions::CreateParticipantFromSalesforceCase::Fields::CustomFields",
-          "name": "custom_fields",
-          "type": "struct",
-          "fields": {
-          }
-        }
-      },
-      "CreateParticipationFromSalesforceCase": {
         "kind": {
           "name": "kind",
           "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::Kind",
@@ -29778,51 +33125,6 @@ module.exports = {
             "create_participations_from_salesforce_opportunity"
           ]
         },
-        "http_method": {
-          "name": "http_method",
-          "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod::Post",
-              "name": "post",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod::Put",
-              "name": "put",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod::Get",
-              "name": "get",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::HttpMethod::Delete",
-              "name": "delete",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "post",
-            "put",
-            "get",
-            "delete"
-          ]
-        },
         "custom_fields": {
           "source": "Portal::Reactions::CreateParticipationFromSalesforceCase::Fields::CustomFields",
           "name": "custom_fields",
@@ -29837,6 +33139,51 @@ module.exports = {
         }
       },
       "CreateParticipationsFromSalesforceOpportunity": {
+        "http_method": {
+          "name": "http_method",
+          "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Post",
+              "name": "post",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Put",
+              "name": "put",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Get",
+              "name": "get",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Delete",
+              "name": "delete",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "post",
+            "put",
+            "get",
+            "delete"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::Kind",
@@ -29904,51 +33251,6 @@ module.exports = {
             "create_participant_from_salesforce_case",
             "add_participant_to_group",
             "create_participations_from_salesforce_opportunity"
-          ]
-        },
-        "http_method": {
-          "name": "http_method",
-          "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Post",
-              "name": "post",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Put",
-              "name": "put",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Get",
-              "name": "get",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Portal::Reactions::CreateParticipationsFromSalesforceOpportunity::Fields::HttpMethod::Delete",
-              "name": "delete",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "post",
-            "put",
-            "get",
-            "delete"
           ]
         },
         "custom_fields": {
@@ -30196,24 +33498,6 @@ module.exports = {
                 "type": "string",
                 "default": "CloseDate > {{ trigger.last_success_at | date: '%Y-%m-%d' }} AND IsClosed = true "
               },
-              "additional_where_params": {
-                "name": "additional_where_params",
-                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::AdditionalWhereParams",
-                "type": "string",
-                "default": ""
-              },
-              "seconds_until_repeat": {
-                "name": "seconds_until_repeat",
-                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::SecondsUntilRepeat",
-                "type": "integer",
-                "attributes": {
-                  "choices": {
-                    "Day": 86400,
-                    "Week": 604800
-                  }
-                },
-                "default": 86400
-              },
               "primary_contact_only": {
                 "name": "primary_contact_only",
                 "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::PrimaryContactOnly",
@@ -30223,6 +33507,12 @@ module.exports = {
                   true,
                   false
                 ]
+              },
+              "additional_where_params": {
+                "name": "additional_where_params",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::AdditionalWhereParams",
+                "type": "string",
+                "default": ""
               },
               "contact_roles": {
                 "name": "contact_roles",
@@ -30274,6 +33564,18 @@ module.exports = {
                   "loss"
                 ],
                 "default": "win"
+              },
+              "seconds_until_repeat": {
+                "name": "seconds_until_repeat",
+                "source": "Portal::Triggers::Timers::SalesforceOpportunityClosedTimer::Fields::CustomFields::Fields::SecondsUntilRepeat",
+                "type": "integer",
+                "attributes": {
+                  "choices": {
+                    "Day": 86400,
+                    "Week": 604800
+                  }
+                },
+                "default": 86400
               }
             }
           }
@@ -30330,36 +33632,6 @@ module.exports = {
         "name": "translations",
         "type": "struct",
         "fields": {
-          "cs": {
-            "name": "cs",
-            "source": "Kore::Types::Fields::Translations::Fields::Cs",
-            "type": "string"
-          },
-          "da": {
-            "name": "da",
-            "source": "Kore::Types::Fields::Translations::Fields::Da",
-            "type": "string"
-          },
-          "de": {
-            "name": "de",
-            "source": "Kore::Types::Fields::Translations::Fields::De",
-            "type": "string"
-          },
-          "el": {
-            "name": "el",
-            "source": "Kore::Types::Fields::Translations::Fields::El",
-            "type": "string"
-          },
-          "en": {
-            "name": "en",
-            "source": "Kore::Types::Fields::Translations::Fields::En",
-            "type": "string"
-          },
-          "es": {
-            "name": "es",
-            "source": "Kore::Types::Fields::Translations::Fields::Es",
-            "type": "string"
-          },
           "et": {
             "name": "et",
             "source": "Kore::Types::Fields::Translations::Fields::Et",
@@ -30378,11 +33650,6 @@ module.exports = {
           "hu": {
             "name": "hu",
             "source": "Kore::Types::Fields::Translations::Fields::Hu",
-            "type": "string"
-          },
-          "is": {
-            "name": "is",
-            "source": "Kore::Types::Fields::Translations::Fields::Is",
             "type": "string"
           },
           "it": {
@@ -30434,6 +33701,41 @@ module.exports = {
             "name": "zh",
             "source": "Kore::Types::Fields::Translations::Fields::Zh",
             "type": "string"
+          },
+          "is": {
+            "name": "is",
+            "source": "Kore::Types::Fields::Translations::Fields::Is",
+            "type": "string"
+          },
+          "cs": {
+            "name": "cs",
+            "source": "Kore::Types::Fields::Translations::Fields::Cs",
+            "type": "string"
+          },
+          "da": {
+            "name": "da",
+            "source": "Kore::Types::Fields::Translations::Fields::Da",
+            "type": "string"
+          },
+          "de": {
+            "name": "de",
+            "source": "Kore::Types::Fields::Translations::Fields::De",
+            "type": "string"
+          },
+          "el": {
+            "name": "el",
+            "source": "Kore::Types::Fields::Translations::Fields::El",
+            "type": "string"
+          },
+          "en": {
+            "name": "en",
+            "source": "Kore::Types::Fields::Translations::Fields::En",
+            "type": "string"
+          },
+          "es": {
+            "name": "es",
+            "source": "Kore::Types::Fields::Translations::Fields::Es",
+            "type": "string"
           }
         }
       }
@@ -30444,6 +33746,184 @@ module.exports = {
     "name": "types",
     "type": "struct",
     "fields": {
+      "integration": {
+        "name": "integration",
+        "source": "Kore::Types::Fields::Integration",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::Integration::Reaction",
+            "name": "reaction",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+              "account_type": "Client::Accounts::ReactionAccount"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Integration::Salesforce",
+            "name": "salesforce",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+              "account_type": "Client::Accounts::SalesforceAccount"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Integration::Looker",
+            "name": "looker",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+              "account_type": "Client::Accounts::LookerAccount"
+            }
+          }
+        ],
+        "values": [
+          "reaction",
+          "salesforce",
+          "looker"
+        ]
+      },
+      "vertical": {
+        "name": "vertical",
+        "source": "Kore::Types::Fields::Vertical",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::Vertical::Healthcare",
+            "name": "healthcare",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Vertical::Finance",
+            "name": "finance",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "healthcare",
+          "finance"
+        ]
+      },
+      "translations": {
+        "source": "Kore::Types::Fields::Translations",
+        "name": "translations",
+        "type": "struct",
+        "fields": {
+          "et": {
+            "name": "et",
+            "source": "Kore::Types::Fields::Translations::Fields::Et",
+            "type": "string"
+          },
+          "fi": {
+            "name": "fi",
+            "source": "Kore::Types::Fields::Translations::Fields::Fi",
+            "type": "string"
+          },
+          "fr": {
+            "name": "fr",
+            "source": "Kore::Types::Fields::Translations::Fields::Fr",
+            "type": "string"
+          },
+          "hu": {
+            "name": "hu",
+            "source": "Kore::Types::Fields::Translations::Fields::Hu",
+            "type": "string"
+          },
+          "it": {
+            "name": "it",
+            "source": "Kore::Types::Fields::Translations::Fields::It",
+            "type": "string"
+          },
+          "nb": {
+            "name": "nb",
+            "source": "Kore::Types::Fields::Translations::Fields::Nb",
+            "type": "string"
+          },
+          "nl": {
+            "name": "nl",
+            "source": "Kore::Types::Fields::Translations::Fields::Nl",
+            "type": "string"
+          },
+          "pl": {
+            "name": "pl",
+            "source": "Kore::Types::Fields::Translations::Fields::Pl",
+            "type": "string"
+          },
+          "pt": {
+            "name": "pt",
+            "source": "Kore::Types::Fields::Translations::Fields::Pt",
+            "type": "string"
+          },
+          "ro": {
+            "name": "ro",
+            "source": "Kore::Types::Fields::Translations::Fields::Ro",
+            "type": "string"
+          },
+          "sk": {
+            "name": "sk",
+            "source": "Kore::Types::Fields::Translations::Fields::Sk",
+            "type": "string"
+          },
+          "sv": {
+            "name": "sv",
+            "source": "Kore::Types::Fields::Translations::Fields::Sv",
+            "type": "string"
+          },
+          "ja": {
+            "name": "ja",
+            "source": "Kore::Types::Fields::Translations::Fields::Ja",
+            "type": "string"
+          },
+          "zh": {
+            "name": "zh",
+            "source": "Kore::Types::Fields::Translations::Fields::Zh",
+            "type": "string"
+          },
+          "is": {
+            "name": "is",
+            "source": "Kore::Types::Fields::Translations::Fields::Is",
+            "type": "string"
+          },
+          "cs": {
+            "name": "cs",
+            "source": "Kore::Types::Fields::Translations::Fields::Cs",
+            "type": "string"
+          },
+          "da": {
+            "name": "da",
+            "source": "Kore::Types::Fields::Translations::Fields::Da",
+            "type": "string"
+          },
+          "de": {
+            "name": "de",
+            "source": "Kore::Types::Fields::Translations::Fields::De",
+            "type": "string"
+          },
+          "el": {
+            "name": "el",
+            "source": "Kore::Types::Fields::Translations::Fields::El",
+            "type": "string"
+          },
+          "en": {
+            "name": "en",
+            "source": "Kore::Types::Fields::Translations::Fields::En",
+            "type": "string"
+          },
+          "es": {
+            "name": "es",
+            "source": "Kore::Types::Fields::Translations::Fields::Es",
+            "type": "string"
+          }
+        }
+      },
       "action_status": {
         "name": "action_status",
         "source": "Kore::Types::Fields::ActionStatus",
@@ -30507,43 +33987,67 @@ module.exports = {
           "failed"
         ]
       },
-      "integration": {
-        "name": "integration",
-        "source": "Kore::Types::Fields::Integration",
+      "operator": {
+        "name": "operator",
+        "source": "Kore::Types::Fields::Operator",
         "type": "enum",
         "choices": [
           {
-            "source": "Kore::Types::Fields::Integration::Reaction",
-            "name": "reaction",
+            "source": "Kore::Types::Fields::Operator::All",
+            "name": "all",
             "type": "enum_value",
             "integer_value": 1,
             "attributes": {
-              "account_type": "Client::Accounts::ReactionAccount"
             }
           },
           {
-            "source": "Kore::Types::Fields::Integration::Salesforce",
-            "name": "salesforce",
+            "source": "Kore::Types::Fields::Operator::Any",
+            "name": "any",
             "type": "enum_value",
             "integer_value": 2,
             "attributes": {
-              "account_type": "Client::Accounts::SalesforceAccount"
             }
           },
           {
-            "source": "Kore::Types::Fields::Integration::Looker",
-            "name": "looker",
+            "source": "Kore::Types::Fields::Operator::Equal",
+            "name": "equal",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Operator::Present",
+            "name": "present",
             "type": "enum_value",
             "integer_value": 4,
             "attributes": {
-              "account_type": "Client::Accounts::LookerAccount"
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Operator::Subset",
+            "name": "subset",
+            "type": "enum_value",
+            "integer_value": 5,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::Operator::Superset",
+            "name": "superset",
+            "type": "enum_value",
+            "integer_value": 6,
+            "attributes": {
             }
           }
         ],
         "values": [
-          "reaction",
-          "salesforce",
-          "looker"
+          "all",
+          "any",
+          "equal",
+          "present",
+          "subset",
+          "superset"
         ]
       },
       "event": {
@@ -30585,6 +34089,105 @@ module.exports = {
           "reaction_participation_completed"
         ]
       },
+      "comparison_binary_operators": {
+        "name": "comparison_binary_operators",
+        "source": "Kore::Types::Fields::ComparisonBinaryOperators",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::ComparisonBinaryOperators::Equal",
+            "name": "equal",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ComparisonBinaryOperators::Subset",
+            "name": "subset",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ComparisonBinaryOperators::Superset",
+            "name": "superset",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "equal",
+          "subset",
+          "superset"
+        ]
+      },
+      "comparison_unary_operators": {
+        "name": "comparison_unary_operators",
+        "source": "Kore::Types::Fields::ComparisonUnaryOperators",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::ComparisonUnaryOperators::Present",
+            "name": "present",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "present"
+        ]
+      },
+      "comparison_operators": {
+        "name": "comparison_operators",
+        "source": "Kore::Types::Fields::ComparisonOperators",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::ComparisonOperators::Equal",
+            "name": "equal",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ComparisonOperators::Present",
+            "name": "present",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ComparisonOperators::Subset",
+            "name": "subset",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::ComparisonOperators::Superset",
+            "name": "superset",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "equal",
+          "present",
+          "subset",
+          "superset"
+        ]
+      },
       "email_service_provider": {
         "name": "email_service_provider",
         "source": "Kore::Types::Fields::EmailServiceProvider",
@@ -30602,6 +34205,51 @@ module.exports = {
         ],
         "values": [
           "send_grid"
+        ]
+      },
+      "task_status": {
+        "name": "task_status",
+        "source": "Kore::Types::Fields::TaskStatus",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::TaskStatus::Incomplete",
+            "name": "incomplete",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::TaskStatus::InProgress",
+            "name": "in_progress",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::TaskStatus::UnderReview",
+            "name": "under_review",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::TaskStatus::Completed",
+            "name": "completed",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "incomplete",
+          "in_progress",
+          "under_review",
+          "completed"
         ]
       },
       "locale": {
@@ -30844,462 +34492,11 @@ module.exports = {
           "zh"
         ]
       },
-      "operator": {
-        "name": "operator",
-        "source": "Kore::Types::Fields::Operator",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::Operator::All",
-            "name": "all",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Operator::Any",
-            "name": "any",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Operator::Equal",
-            "name": "equal",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Operator::Present",
-            "name": "present",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Operator::Subset",
-            "name": "subset",
-            "type": "enum_value",
-            "integer_value": 5,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Operator::Superset",
-            "name": "superset",
-            "type": "enum_value",
-            "integer_value": 6,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "all",
-          "any",
-          "equal",
-          "present",
-          "subset",
-          "superset"
-        ]
-      },
-      "comparison_binary_operators": {
-        "name": "comparison_binary_operators",
-        "source": "Kore::Types::Fields::ComparisonBinaryOperators",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::ComparisonBinaryOperators::Equal",
-            "name": "equal",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ComparisonBinaryOperators::Subset",
-            "name": "subset",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ComparisonBinaryOperators::Superset",
-            "name": "superset",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "equal",
-          "subset",
-          "superset"
-        ]
-      },
-      "comparison_unary_operators": {
-        "name": "comparison_unary_operators",
-        "source": "Kore::Types::Fields::ComparisonUnaryOperators",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::ComparisonUnaryOperators::Present",
-            "name": "present",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "present"
-        ]
-      },
-      "comparison_operators": {
-        "name": "comparison_operators",
-        "source": "Kore::Types::Fields::ComparisonOperators",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::ComparisonOperators::Equal",
-            "name": "equal",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ComparisonOperators::Present",
-            "name": "present",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ComparisonOperators::Subset",
-            "name": "subset",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::ComparisonOperators::Superset",
-            "name": "superset",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "equal",
-          "present",
-          "subset",
-          "superset"
-        ]
-      },
-      "task_status": {
-        "name": "task_status",
-        "source": "Kore::Types::Fields::TaskStatus",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::TaskStatus::Incomplete",
-            "name": "incomplete",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::TaskStatus::InProgress",
-            "name": "in_progress",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::TaskStatus::UnderReview",
-            "name": "under_review",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::TaskStatus::Completed",
-            "name": "completed",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "incomplete",
-          "in_progress",
-          "under_review",
-          "completed"
-        ]
-      },
-      "job_status": {
-        "name": "job_status",
-        "source": "Kore::Types::Fields::JobStatus",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::JobStatus::Unattempted",
-            "name": "unattempted",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::JobStatus::Failure",
-            "name": "failure",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::JobStatus::Success",
-            "name": "success",
-            "type": "enum_value",
-            "integer_value": 3,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::JobStatus::Pending",
-            "name": "pending",
-            "type": "enum_value",
-            "integer_value": 4,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "unattempted",
-          "failure",
-          "success",
-          "pending"
-        ]
-      },
-      "vertical": {
-        "name": "vertical",
-        "source": "Kore::Types::Fields::Vertical",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Fields::Vertical::Healthcare",
-            "name": "healthcare",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Fields::Vertical::Finance",
-            "name": "finance",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "healthcare",
-          "finance"
-        ]
-      },
-      "translations": {
-        "source": "Kore::Types::Fields::Translations",
-        "name": "translations",
-        "type": "struct",
-        "fields": {
-          "cs": {
-            "name": "cs",
-            "source": "Kore::Types::Fields::Translations::Fields::Cs",
-            "type": "string"
-          },
-          "da": {
-            "name": "da",
-            "source": "Kore::Types::Fields::Translations::Fields::Da",
-            "type": "string"
-          },
-          "de": {
-            "name": "de",
-            "source": "Kore::Types::Fields::Translations::Fields::De",
-            "type": "string"
-          },
-          "el": {
-            "name": "el",
-            "source": "Kore::Types::Fields::Translations::Fields::El",
-            "type": "string"
-          },
-          "en": {
-            "name": "en",
-            "source": "Kore::Types::Fields::Translations::Fields::En",
-            "type": "string"
-          },
-          "es": {
-            "name": "es",
-            "source": "Kore::Types::Fields::Translations::Fields::Es",
-            "type": "string"
-          },
-          "et": {
-            "name": "et",
-            "source": "Kore::Types::Fields::Translations::Fields::Et",
-            "type": "string"
-          },
-          "fi": {
-            "name": "fi",
-            "source": "Kore::Types::Fields::Translations::Fields::Fi",
-            "type": "string"
-          },
-          "fr": {
-            "name": "fr",
-            "source": "Kore::Types::Fields::Translations::Fields::Fr",
-            "type": "string"
-          },
-          "hu": {
-            "name": "hu",
-            "source": "Kore::Types::Fields::Translations::Fields::Hu",
-            "type": "string"
-          },
-          "is": {
-            "name": "is",
-            "source": "Kore::Types::Fields::Translations::Fields::Is",
-            "type": "string"
-          },
-          "it": {
-            "name": "it",
-            "source": "Kore::Types::Fields::Translations::Fields::It",
-            "type": "string"
-          },
-          "nb": {
-            "name": "nb",
-            "source": "Kore::Types::Fields::Translations::Fields::Nb",
-            "type": "string"
-          },
-          "nl": {
-            "name": "nl",
-            "source": "Kore::Types::Fields::Translations::Fields::Nl",
-            "type": "string"
-          },
-          "pl": {
-            "name": "pl",
-            "source": "Kore::Types::Fields::Translations::Fields::Pl",
-            "type": "string"
-          },
-          "pt": {
-            "name": "pt",
-            "source": "Kore::Types::Fields::Translations::Fields::Pt",
-            "type": "string"
-          },
-          "ro": {
-            "name": "ro",
-            "source": "Kore::Types::Fields::Translations::Fields::Ro",
-            "type": "string"
-          },
-          "sk": {
-            "name": "sk",
-            "source": "Kore::Types::Fields::Translations::Fields::Sk",
-            "type": "string"
-          },
-          "sv": {
-            "name": "sv",
-            "source": "Kore::Types::Fields::Translations::Fields::Sv",
-            "type": "string"
-          },
-          "ja": {
-            "name": "ja",
-            "source": "Kore::Types::Fields::Translations::Fields::Ja",
-            "type": "string"
-          },
-          "zh": {
-            "name": "zh",
-            "source": "Kore::Types::Fields::Translations::Fields::Zh",
-            "type": "string"
-          }
-        }
-      },
       "supported_locales": {
         "source": "Kore::Types::Fields::SupportedLocales",
         "name": "supported_locales",
         "type": "struct",
         "fields": {
-          "cs": {
-            "name": "cs",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "da": {
-            "name": "da",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "de": {
-            "name": "de",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "el": {
-            "name": "el",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "en": {
-            "name": "en",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "es": {
-            "name": "es",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
           "et": {
             "name": "et",
             "source": "Kore::Types::Fields::SupportedLocales::Fields::Et",
@@ -31333,16 +34530,6 @@ module.exports = {
           "hu": {
             "name": "hu",
             "source": "Kore::Types::Fields::SupportedLocales::Fields::Hu",
-            "type": "boolean",
-            "default": false,
-            "values": [
-              true,
-              false
-            ]
-          },
-          "is": {
-            "name": "is",
-            "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
             "type": "boolean",
             "default": false,
             "values": [
@@ -31449,8 +34636,123 @@ module.exports = {
               true,
               false
             ]
+          },
+          "is": {
+            "name": "is",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Is",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "cs": {
+            "name": "cs",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Cs",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "da": {
+            "name": "da",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Da",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "de": {
+            "name": "de",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::De",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "el": {
+            "name": "el",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::El",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "en": {
+            "name": "en",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::En",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
+          },
+          "es": {
+            "name": "es",
+            "source": "Kore::Types::Fields::SupportedLocales::Fields::Es",
+            "type": "boolean",
+            "default": false,
+            "values": [
+              true,
+              false
+            ]
           }
         }
+      },
+      "job_status": {
+        "name": "job_status",
+        "source": "Kore::Types::Fields::JobStatus",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Fields::JobStatus::Unattempted",
+            "name": "unattempted",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::JobStatus::Failure",
+            "name": "failure",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::JobStatus::Success",
+            "name": "success",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Fields::JobStatus::Pending",
+            "name": "pending",
+            "type": "enum_value",
+            "integer_value": 4,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "unattempted",
+          "failure",
+          "success",
+          "pending"
+        ]
       }
     },
     "Census": {
@@ -31458,51 +34760,6 @@ module.exports = {
       "name": "census",
       "type": "struct",
       "fields": {
-        "gender": {
-          "name": "gender",
-          "source": "Kore::Types::Census::Fields::Gender",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Census::Fields::Gender::Unknown",
-              "name": "unknown",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Fields::Gender::Male",
-              "name": "male",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Fields::Gender::Female",
-              "name": "female",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Census::Fields::Gender::Other",
-              "name": "other",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "unknown",
-            "male",
-            "female",
-            "other"
-          ]
-        },
         "role": {
           "name": "role",
           "source": "Kore::Types::Census::Fields::Role",
@@ -31751,11 +35008,66 @@ module.exports = {
             "none"
           ]
         },
+        "gender": {
+          "name": "gender",
+          "source": "Kore::Types::Census::Fields::Gender",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Census::Fields::Gender::Unknown",
+              "name": "unknown",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Fields::Gender::Male",
+              "name": "male",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Fields::Gender::Female",
+              "name": "female",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Census::Fields::Gender::Other",
+              "name": "other",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "unknown",
+            "male",
+            "female",
+            "other"
+          ]
+        },
+        "participant_filter_condition_set": {
+          "name": "participant_filter_condition_set",
+          "source": "Kore::Types::Census::Fields::ParticipantFilterConditionSet",
+          "type": "set"
+        },
         "participant_filter_condition": {
           "source": "Kore::Types::Census::Fields::ParticipantFilterCondition",
           "name": "participant_filter_condition",
           "type": "struct",
           "fields": {
+            "values": {
+              "name": "values",
+              "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Values",
+              "type": "array"
+            },
             "key": {
               "name": "key",
               "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Key",
@@ -31977,18 +35289,8 @@ module.exports = {
                 "by_healthcare_subtype",
                 "by_healthcare_provider_subtype"
               ]
-            },
-            "values": {
-              "name": "values",
-              "source": "Kore::Types::Census::Fields::ParticipantFilterCondition::Fields::Values",
-              "type": "array"
             }
           }
-        },
-        "participant_filter_condition_set": {
-          "name": "participant_filter_condition_set",
-          "source": "Kore::Types::Census::Fields::ParticipantFilterConditionSet",
-          "type": "set"
         }
       },
       "EmailAddress": {
@@ -32225,6 +35527,15 @@ module.exports = {
                 "attributes": {
                   "type": "Census::Questions::TextQuestion"
                 }
+              },
+              {
+                "source": "Kore::Types::Census::FreeformSurvey::Fields::QuestionKinds::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Census::Questions::MatrixQuestion"
+                }
               }
             ],
             "values": [
@@ -32233,7 +35544,8 @@ module.exports = {
               "multiple_choice",
               "number_scale",
               "ranking",
-              "text"
+              "text",
+              "matrix"
             ]
           }
         }
@@ -32270,6 +35582,72 @@ module.exports = {
             "values": [
               "static",
               "dynamic"
+            ]
+          }
+        }
+      },
+      "MatrixQuestion": {
+        "source": "Kore::Types::Census::MatrixQuestion",
+        "name": "matrix_question",
+        "type": "struct",
+        "fields": {
+          "kind": {
+            "name": "kind",
+            "source": "Kore::Types::Census::MatrixQuestion::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::MatrixQuestion::Fields::Kind::Boolean",
+                "name": "boolean",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::MatrixQuestion::Fields::Kind::NumberScale",
+                "name": "number_scale",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::MatrixQuestion::Fields::Kind::MultipleChoice",
+                "name": "multiple_choice",
+                "type": "enum_value",
+                "integer_value": 16,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::MatrixQuestion::Fields::Kind::Text",
+                "name": "text",
+                "type": "enum_value",
+                "integer_value": 17,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::MatrixQuestion::Fields::Kind::MultipleChoiceMany",
+                "name": "multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 18,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+                }
+              }
+            ],
+            "values": [
+              "boolean",
+              "number_scale",
+              "multiple_choice",
+              "text",
+              "multiple_choice_many"
             ]
           }
         }
@@ -32473,6 +35851,60 @@ module.exports = {
                 "attributes": {
                   "type": "Census::Questions::RankingQuestion"
                 }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Census::Questions::MatrixQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixBoolean",
+                "name": "matrix_boolean",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::BooleanQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixNumberScale",
+                "name": "matrix_number_scale",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::NumberScaleQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoice",
+                "name": "matrix_multiple_choice",
+                "type": "enum_value",
+                "integer_value": 16,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixText",
+                "name": "matrix_text",
+                "type": "enum_value",
+                "integer_value": 17,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::TextQuestion"
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Question::Fields::Kind::MatrixMultipleChoiceMany",
+                "name": "matrix_multiple_choice_many",
+                "type": "enum_value",
+                "integer_value": 18,
+                "attributes": {
+                  "type": "Census::Questions::Matrix::MultipleChoiceManyQuestion"
+                }
               }
             ],
             "values": [
@@ -32487,7 +35919,13 @@ module.exports = {
               "post_case_what_could_we_have_done_better",
               "post_case_what_did_we_do_well",
               "text",
-              "ranking"
+              "ranking",
+              "matrix",
+              "matrix_boolean",
+              "matrix_number_scale",
+              "matrix_multiple_choice",
+              "matrix_text",
+              "matrix_multiple_choice_many"
             ]
           }
         }
@@ -32497,6 +35935,42 @@ module.exports = {
         "name": "survey",
         "type": "struct",
         "fields": {
+          "participation_creation_method": {
+            "name": "participation_creation_method",
+            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
+                "name": "audience",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
+                "name": "trigger_based",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
+                "name": "contact_registration",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                }
+              }
+            ],
+            "values": [
+              "audience",
+              "trigger_based",
+              "contact_registration"
+            ]
+          },
           "kind": {
             "name": "kind",
             "source": "Kore::Types::Census::Survey::Fields::Kind",
@@ -32552,42 +36026,6 @@ module.exports = {
               "nps",
               "post_case",
               "win_loss_analysis"
-            ]
-          },
-          "participation_creation_method": {
-            "name": "participation_creation_method",
-            "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod",
-            "type": "enum",
-            "choices": [
-              {
-                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::Audience",
-                "name": "audience",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                }
-              },
-              {
-                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::TriggerBased",
-                "name": "trigger_based",
-                "type": "enum_value",
-                "integer_value": 2,
-                "attributes": {
-                }
-              },
-              {
-                "source": "Kore::Types::Census::Survey::Fields::ParticipationCreationMethod::ContactRegistration",
-                "name": "contact_registration",
-                "type": "enum_value",
-                "integer_value": 3,
-                "attributes": {
-                }
-              }
-            ],
-            "values": [
-              "audience",
-              "trigger_based",
-              "contact_registration"
             ]
           }
         }
@@ -32653,6 +36091,60 @@ module.exports = {
         "name": "export",
         "type": "struct",
         "fields": {
+          "file_format": {
+            "name": "file_format",
+            "source": "Kore::Types::Client::Export::Fields::FileFormat",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Client::Export::Fields::FileFormat::Csv",
+                "name": "csv",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Export::Fields::FileFormat::Xslx",
+                "name": "xslx",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Export::Fields::FileFormat::Png",
+                "name": "png",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Export::Fields::FileFormat::Json",
+                "name": "json",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Export::Fields::FileFormat::Pdf",
+                "name": "pdf",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                }
+              }
+            ],
+            "values": [
+              "csv",
+              "xslx",
+              "png",
+              "json",
+              "pdf"
+            ]
+          },
           "kind": {
             "name": "kind",
             "source": "Kore::Types::Client::Export::Fields::Kind",
@@ -32716,59 +36208,31 @@ module.exports = {
               "look",
               "participations"
             ]
-          },
-          "file_format": {
-            "name": "file_format",
-            "source": "Kore::Types::Client::Export::Fields::FileFormat",
+          }
+        }
+      },
+      "ExportTemplate": {
+        "source": "Kore::Types::Client::ExportTemplate",
+        "name": "export_template",
+        "type": "struct",
+        "fields": {
+          "kind": {
+            "name": "kind",
+            "source": "Kore::Types::Client::ExportTemplate::Fields::Kind",
             "type": "enum",
             "choices": [
               {
-                "source": "Kore::Types::Client::Export::Fields::FileFormat::Csv",
-                "name": "csv",
+                "source": "Kore::Types::Client::ExportTemplate::Fields::Kind::SurveyParticipationsExportTemplate",
+                "name": "survey_participations_export_template",
                 "type": "enum_value",
                 "integer_value": 1,
                 "attributes": {
-                }
-              },
-              {
-                "source": "Kore::Types::Client::Export::Fields::FileFormat::Xslx",
-                "name": "xslx",
-                "type": "enum_value",
-                "integer_value": 2,
-                "attributes": {
-                }
-              },
-              {
-                "source": "Kore::Types::Client::Export::Fields::FileFormat::Png",
-                "name": "png",
-                "type": "enum_value",
-                "integer_value": 3,
-                "attributes": {
-                }
-              },
-              {
-                "source": "Kore::Types::Client::Export::Fields::FileFormat::Json",
-                "name": "json",
-                "type": "enum_value",
-                "integer_value": 4,
-                "attributes": {
-                }
-              },
-              {
-                "source": "Kore::Types::Client::Export::Fields::FileFormat::Pdf",
-                "name": "pdf",
-                "type": "enum_value",
-                "integer_value": 5,
-                "attributes": {
+                  "type": "Client::ExportTemplates::SurveyParticipationsExportTemplate"
                 }
               }
             ],
             "values": [
-              "csv",
-              "xslx",
-              "png",
-              "json",
-              "pdf"
+              "survey_participations_export_template"
             ]
           }
         }
@@ -32778,6 +36242,42 @@ module.exports = {
         "name": "import",
         "type": "struct",
         "fields": {
+          "file_format": {
+            "name": "file_format",
+            "source": "Kore::Types::Client::Import::Fields::FileFormat",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
+                "name": "json",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
+                "name": "csv",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
+                "name": "xslx",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                }
+              }
+            ],
+            "values": [
+              "json",
+              "csv",
+              "xslx"
+            ]
+          },
           "kind": {
             "name": "kind",
             "source": "Kore::Types::Client::Import::Fields::Kind",
@@ -32963,42 +36463,6 @@ module.exports = {
               "organization_unsubscriptions",
               "company_demographics",
               "email_addresses"
-            ]
-          },
-          "file_format": {
-            "name": "file_format",
-            "source": "Kore::Types::Client::Import::Fields::FileFormat",
-            "type": "enum",
-            "choices": [
-              {
-                "source": "Kore::Types::Client::Import::Fields::FileFormat::Json",
-                "name": "json",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                }
-              },
-              {
-                "source": "Kore::Types::Client::Import::Fields::FileFormat::Csv",
-                "name": "csv",
-                "type": "enum_value",
-                "integer_value": 2,
-                "attributes": {
-                }
-              },
-              {
-                "source": "Kore::Types::Client::Import::Fields::FileFormat::Xslx",
-                "name": "xslx",
-                "type": "enum_value",
-                "integer_value": 3,
-                "attributes": {
-                }
-              }
-            ],
-            "values": [
-              "json",
-              "csv",
-              "xslx"
             ]
           }
         }
@@ -33496,485 +36960,6 @@ module.exports = {
             "software_and_services",
             "technology_hardware_and_equipment",
             "transportation"
-          ]
-        },
-        "industry": {
-          "name": "industry",
-          "source": "Kore::Types::Giza::Fields::Industry",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::AerospaceAndDefense",
-              "name": "aerospace_and_defense",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-                "label": "Aerospace & Defense"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::AirFreightAndLogistics",
-              "name": "air_freight_and_logistics",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-                "label": "Air Freight & Logistics"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Airlines",
-              "name": "airlines",
-              "type": "enum_value",
-              "integer_value": 3,
-              "attributes": {
-                "label": "Airlines"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::AutoComponents",
-              "name": "auto_components",
-              "type": "enum_value",
-              "integer_value": 4,
-              "attributes": {
-                "label": "Auto Components"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Automobiles",
-              "name": "automobiles",
-              "type": "enum_value",
-              "integer_value": 5,
-              "attributes": {
-                "label": "Automobiles"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Banks",
-              "name": "banks",
-              "type": "enum_value",
-              "integer_value": 6,
-              "attributes": {
-                "label": "Banks"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Beverages",
-              "name": "beverages",
-              "type": "enum_value",
-              "integer_value": 7,
-              "attributes": {
-                "label": "Beverages"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Biotechnology",
-              "name": "biotechnology",
-              "type": "enum_value",
-              "integer_value": 8,
-              "attributes": {
-                "label": "Biotechnology"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::BuildingProducts",
-              "name": "building_products",
-              "type": "enum_value",
-              "integer_value": 9,
-              "attributes": {
-                "label": "Building Products"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::CapitalMarkets",
-              "name": "capital_markets",
-              "type": "enum_value",
-              "integer_value": 10,
-              "attributes": {
-                "label": "Capital Markets"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::CommercialServicesAndSupplies",
-              "name": "commercial_services_and_supplies",
-              "type": "enum_value",
-              "integer_value": 11,
-              "attributes": {
-                "label": "Commercial Services & Supplies"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::ConstructionAndEngineering",
-              "name": "construction_and_engineering",
-              "type": "enum_value",
-              "integer_value": 12,
-              "attributes": {
-                "label": "Construction & Engineering"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::ConsumerFinance",
-              "name": "consumer_finance",
-              "type": "enum_value",
-              "integer_value": 13,
-              "attributes": {
-                "label": "Consumer Finance"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Distributors",
-              "name": "distributors",
-              "type": "enum_value",
-              "integer_value": 14,
-              "attributes": {
-                "label": "Distributors"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::DiversifiedConsumerServices",
-              "name": "diversified_consumer_services",
-              "type": "enum_value",
-              "integer_value": 15,
-              "attributes": {
-                "label": "Diversified Consumer Services"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::DiversifiedFinancialServices",
-              "name": "diversified_financial_services",
-              "type": "enum_value",
-              "integer_value": 16,
-              "attributes": {
-                "label": "Diversified Financial Services"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::ElectricalEquipment",
-              "name": "electrical_equipment",
-              "type": "enum_value",
-              "integer_value": 17,
-              "attributes": {
-                "label": "Electrical Equipment"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::EnergyEquipmentAndServices",
-              "name": "energy_equipment_and_services",
-              "type": "enum_value",
-              "integer_value": 18,
-              "attributes": {
-                "label": "Energy Equipment & Services"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::FoodAndStaplesRetailing",
-              "name": "food_and_staples_retailing",
-              "type": "enum_value",
-              "integer_value": 19,
-              "attributes": {
-                "label": "Food & Staples Retailing"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::FoodProducts",
-              "name": "food_products",
-              "type": "enum_value",
-              "integer_value": 20,
-              "attributes": {
-                "label": "Food Products"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::HealthCareEquipmentAndSupplies",
-              "name": "health_care_equipment_and_supplies",
-              "type": "enum_value",
-              "integer_value": 21,
-              "attributes": {
-                "label": "Health Care Equipment & Supplies"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::HealthCareProvidersAndServices",
-              "name": "health_care_providers_and_services",
-              "type": "enum_value",
-              "integer_value": 22,
-              "attributes": {
-                "label": "Health Care Providers & Services"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::HotelsRestaurantsAndLeisure",
-              "name": "hotels_restaurants_and_leisure",
-              "type": "enum_value",
-              "integer_value": 23,
-              "attributes": {
-                "label": "Hotels, Restaurants & Leisure"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::HouseholdDurables",
-              "name": "household_durables",
-              "type": "enum_value",
-              "integer_value": 24,
-              "attributes": {
-                "label": "Household Durables"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::HouseholdProducts",
-              "name": "household_products",
-              "type": "enum_value",
-              "integer_value": 25,
-              "attributes": {
-                "label": "Household Products"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::ItServices",
-              "name": "it_services",
-              "type": "enum_value",
-              "integer_value": 26,
-              "attributes": {
-                "label": "IT Services"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Insurance",
-              "name": "insurance",
-              "type": "enum_value",
-              "integer_value": 27,
-              "attributes": {
-                "label": "Insurance"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::InternetAndCatalogRetail",
-              "name": "internet_and_catalog_retail",
-              "type": "enum_value",
-              "integer_value": 28,
-              "attributes": {
-                "label": "Internet & Catalog Retail"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::LeisureProducts",
-              "name": "leisure_products",
-              "type": "enum_value",
-              "integer_value": 29,
-              "attributes": {
-                "label": "Leisure Products"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::LifeSciencesToolsAndServices",
-              "name": "life_sciences_tools_and_services",
-              "type": "enum_value",
-              "integer_value": 30,
-              "attributes": {
-                "label": "Life Sciences Tools & Services"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Machinery",
-              "name": "machinery",
-              "type": "enum_value",
-              "integer_value": 31,
-              "attributes": {
-                "label": "Machinery"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Marine",
-              "name": "marine",
-              "type": "enum_value",
-              "integer_value": 32,
-              "attributes": {
-                "label": "Marine"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Media",
-              "name": "media",
-              "type": "enum_value",
-              "integer_value": 33,
-              "attributes": {
-                "label": "Media"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::MultilineRetail",
-              "name": "multiline_retail",
-              "type": "enum_value",
-              "integer_value": 34,
-              "attributes": {
-                "label": "Multiline Retail"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::OilGasAndConsumableFuels",
-              "name": "oil_gas_and_consumable_fuels",
-              "type": "enum_value",
-              "integer_value": 35,
-              "attributes": {
-                "label": "Oil, Gas & Consumable Fuels"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Pharmaceuticals",
-              "name": "pharmaceuticals",
-              "type": "enum_value",
-              "integer_value": 36,
-              "attributes": {
-                "label": "Pharmaceuticals"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::ProfessionalServices",
-              "name": "professional_services",
-              "type": "enum_value",
-              "integer_value": 37,
-              "attributes": {
-                "label": "Professional Services"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::RealEstateInvestmentTrusts",
-              "name": "real_estate_investment_trusts",
-              "type": "enum_value",
-              "integer_value": 38,
-              "attributes": {
-                "label": "Real Estate Investment Trusts"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::RealEstateManagementAndDevelopment",
-              "name": "real_estate_management_and_development",
-              "type": "enum_value",
-              "integer_value": 39,
-              "attributes": {
-                "label": "Real Estate Management & Development"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::RoadAndRail",
-              "name": "road_and_rail",
-              "type": "enum_value",
-              "integer_value": 40,
-              "attributes": {
-                "label": "Road & Rail"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Software",
-              "name": "software",
-              "type": "enum_value",
-              "integer_value": 41,
-              "attributes": {
-                "label": "Software"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::SpecialityRetail",
-              "name": "speciality_retail",
-              "type": "enum_value",
-              "integer_value": 42,
-              "attributes": {
-                "label": "Speciality Retail"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::TechnologyHardwareStorageAndPeripherals",
-              "name": "technology_hardware_storage_and_peripherals",
-              "type": "enum_value",
-              "integer_value": 43,
-              "attributes": {
-                "label": "Technology Hardware, Storage & Peripherals"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::TextilesApparelAndLuxuryGoods",
-              "name": "textiles_apparel_and_luxury_goods",
-              "type": "enum_value",
-              "integer_value": 44,
-              "attributes": {
-                "label": "Textiles, Apparel & Luxury Goods"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::ThriftsAndMortgageFinance",
-              "name": "thrifts_and_mortgage_finance",
-              "type": "enum_value",
-              "integer_value": 45,
-              "attributes": {
-                "label": "Thrifts & Mortgage Finance"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::Tobacco",
-              "name": "tobacco",
-              "type": "enum_value",
-              "integer_value": 46,
-              "attributes": {
-                "label": "Tobacco"
-              }
-            },
-            {
-              "source": "Kore::Types::Giza::Fields::Industry::TradingCompaniesAndDistributors",
-              "name": "trading_companies_and_distributors",
-              "type": "enum_value",
-              "integer_value": 47,
-              "attributes": {
-                "label": "Trading Companies & Distributors"
-              }
-            }
-          ],
-          "values": [
-            "aerospace_and_defense",
-            "air_freight_and_logistics",
-            "airlines",
-            "auto_components",
-            "automobiles",
-            "banks",
-            "beverages",
-            "biotechnology",
-            "building_products",
-            "capital_markets",
-            "commercial_services_and_supplies",
-            "construction_and_engineering",
-            "consumer_finance",
-            "distributors",
-            "diversified_consumer_services",
-            "diversified_financial_services",
-            "electrical_equipment",
-            "energy_equipment_and_services",
-            "food_and_staples_retailing",
-            "food_products",
-            "health_care_equipment_and_supplies",
-            "health_care_providers_and_services",
-            "hotels_restaurants_and_leisure",
-            "household_durables",
-            "household_products",
-            "it_services",
-            "insurance",
-            "internet_and_catalog_retail",
-            "leisure_products",
-            "life_sciences_tools_and_services",
-            "machinery",
-            "marine",
-            "media",
-            "multiline_retail",
-            "oil_gas_and_consumable_fuels",
-            "pharmaceuticals",
-            "professional_services",
-            "real_estate_investment_trusts",
-            "real_estate_management_and_development",
-            "road_and_rail",
-            "software",
-            "speciality_retail",
-            "technology_hardware_storage_and_peripherals",
-            "textiles_apparel_and_luxury_goods",
-            "thrifts_and_mortgage_finance",
-            "tobacco",
-            "trading_companies_and_distributors"
           ]
         },
         "sub_industry": {
@@ -34685,6 +37670,485 @@ module.exports = {
             "trucking",
             "ground_transportation"
           ]
+        },
+        "industry": {
+          "name": "industry",
+          "source": "Kore::Types::Giza::Fields::Industry",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::AerospaceAndDefense",
+              "name": "aerospace_and_defense",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+                "label": "Aerospace & Defense"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::AirFreightAndLogistics",
+              "name": "air_freight_and_logistics",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+                "label": "Air Freight & Logistics"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Airlines",
+              "name": "airlines",
+              "type": "enum_value",
+              "integer_value": 3,
+              "attributes": {
+                "label": "Airlines"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::AutoComponents",
+              "name": "auto_components",
+              "type": "enum_value",
+              "integer_value": 4,
+              "attributes": {
+                "label": "Auto Components"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Automobiles",
+              "name": "automobiles",
+              "type": "enum_value",
+              "integer_value": 5,
+              "attributes": {
+                "label": "Automobiles"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Banks",
+              "name": "banks",
+              "type": "enum_value",
+              "integer_value": 6,
+              "attributes": {
+                "label": "Banks"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Beverages",
+              "name": "beverages",
+              "type": "enum_value",
+              "integer_value": 7,
+              "attributes": {
+                "label": "Beverages"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Biotechnology",
+              "name": "biotechnology",
+              "type": "enum_value",
+              "integer_value": 8,
+              "attributes": {
+                "label": "Biotechnology"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::BuildingProducts",
+              "name": "building_products",
+              "type": "enum_value",
+              "integer_value": 9,
+              "attributes": {
+                "label": "Building Products"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::CapitalMarkets",
+              "name": "capital_markets",
+              "type": "enum_value",
+              "integer_value": 10,
+              "attributes": {
+                "label": "Capital Markets"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::CommercialServicesAndSupplies",
+              "name": "commercial_services_and_supplies",
+              "type": "enum_value",
+              "integer_value": 11,
+              "attributes": {
+                "label": "Commercial Services & Supplies"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::ConstructionAndEngineering",
+              "name": "construction_and_engineering",
+              "type": "enum_value",
+              "integer_value": 12,
+              "attributes": {
+                "label": "Construction & Engineering"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::ConsumerFinance",
+              "name": "consumer_finance",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "label": "Consumer Finance"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Distributors",
+              "name": "distributors",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "label": "Distributors"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::DiversifiedConsumerServices",
+              "name": "diversified_consumer_services",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "label": "Diversified Consumer Services"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::DiversifiedFinancialServices",
+              "name": "diversified_financial_services",
+              "type": "enum_value",
+              "integer_value": 16,
+              "attributes": {
+                "label": "Diversified Financial Services"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::ElectricalEquipment",
+              "name": "electrical_equipment",
+              "type": "enum_value",
+              "integer_value": 17,
+              "attributes": {
+                "label": "Electrical Equipment"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::EnergyEquipmentAndServices",
+              "name": "energy_equipment_and_services",
+              "type": "enum_value",
+              "integer_value": 18,
+              "attributes": {
+                "label": "Energy Equipment & Services"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::FoodAndStaplesRetailing",
+              "name": "food_and_staples_retailing",
+              "type": "enum_value",
+              "integer_value": 19,
+              "attributes": {
+                "label": "Food & Staples Retailing"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::FoodProducts",
+              "name": "food_products",
+              "type": "enum_value",
+              "integer_value": 20,
+              "attributes": {
+                "label": "Food Products"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::HealthCareEquipmentAndSupplies",
+              "name": "health_care_equipment_and_supplies",
+              "type": "enum_value",
+              "integer_value": 21,
+              "attributes": {
+                "label": "Health Care Equipment & Supplies"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::HealthCareProvidersAndServices",
+              "name": "health_care_providers_and_services",
+              "type": "enum_value",
+              "integer_value": 22,
+              "attributes": {
+                "label": "Health Care Providers & Services"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::HotelsRestaurantsAndLeisure",
+              "name": "hotels_restaurants_and_leisure",
+              "type": "enum_value",
+              "integer_value": 23,
+              "attributes": {
+                "label": "Hotels, Restaurants & Leisure"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::HouseholdDurables",
+              "name": "household_durables",
+              "type": "enum_value",
+              "integer_value": 24,
+              "attributes": {
+                "label": "Household Durables"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::HouseholdProducts",
+              "name": "household_products",
+              "type": "enum_value",
+              "integer_value": 25,
+              "attributes": {
+                "label": "Household Products"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::ItServices",
+              "name": "it_services",
+              "type": "enum_value",
+              "integer_value": 26,
+              "attributes": {
+                "label": "IT Services"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Insurance",
+              "name": "insurance",
+              "type": "enum_value",
+              "integer_value": 27,
+              "attributes": {
+                "label": "Insurance"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::InternetAndCatalogRetail",
+              "name": "internet_and_catalog_retail",
+              "type": "enum_value",
+              "integer_value": 28,
+              "attributes": {
+                "label": "Internet & Catalog Retail"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::LeisureProducts",
+              "name": "leisure_products",
+              "type": "enum_value",
+              "integer_value": 29,
+              "attributes": {
+                "label": "Leisure Products"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::LifeSciencesToolsAndServices",
+              "name": "life_sciences_tools_and_services",
+              "type": "enum_value",
+              "integer_value": 30,
+              "attributes": {
+                "label": "Life Sciences Tools & Services"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Machinery",
+              "name": "machinery",
+              "type": "enum_value",
+              "integer_value": 31,
+              "attributes": {
+                "label": "Machinery"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Marine",
+              "name": "marine",
+              "type": "enum_value",
+              "integer_value": 32,
+              "attributes": {
+                "label": "Marine"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Media",
+              "name": "media",
+              "type": "enum_value",
+              "integer_value": 33,
+              "attributes": {
+                "label": "Media"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::MultilineRetail",
+              "name": "multiline_retail",
+              "type": "enum_value",
+              "integer_value": 34,
+              "attributes": {
+                "label": "Multiline Retail"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::OilGasAndConsumableFuels",
+              "name": "oil_gas_and_consumable_fuels",
+              "type": "enum_value",
+              "integer_value": 35,
+              "attributes": {
+                "label": "Oil, Gas & Consumable Fuels"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Pharmaceuticals",
+              "name": "pharmaceuticals",
+              "type": "enum_value",
+              "integer_value": 36,
+              "attributes": {
+                "label": "Pharmaceuticals"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::ProfessionalServices",
+              "name": "professional_services",
+              "type": "enum_value",
+              "integer_value": 37,
+              "attributes": {
+                "label": "Professional Services"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::RealEstateInvestmentTrusts",
+              "name": "real_estate_investment_trusts",
+              "type": "enum_value",
+              "integer_value": 38,
+              "attributes": {
+                "label": "Real Estate Investment Trusts"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::RealEstateManagementAndDevelopment",
+              "name": "real_estate_management_and_development",
+              "type": "enum_value",
+              "integer_value": 39,
+              "attributes": {
+                "label": "Real Estate Management & Development"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::RoadAndRail",
+              "name": "road_and_rail",
+              "type": "enum_value",
+              "integer_value": 40,
+              "attributes": {
+                "label": "Road & Rail"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Software",
+              "name": "software",
+              "type": "enum_value",
+              "integer_value": 41,
+              "attributes": {
+                "label": "Software"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::SpecialityRetail",
+              "name": "speciality_retail",
+              "type": "enum_value",
+              "integer_value": 42,
+              "attributes": {
+                "label": "Speciality Retail"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::TechnologyHardwareStorageAndPeripherals",
+              "name": "technology_hardware_storage_and_peripherals",
+              "type": "enum_value",
+              "integer_value": 43,
+              "attributes": {
+                "label": "Technology Hardware, Storage & Peripherals"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::TextilesApparelAndLuxuryGoods",
+              "name": "textiles_apparel_and_luxury_goods",
+              "type": "enum_value",
+              "integer_value": 44,
+              "attributes": {
+                "label": "Textiles, Apparel & Luxury Goods"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::ThriftsAndMortgageFinance",
+              "name": "thrifts_and_mortgage_finance",
+              "type": "enum_value",
+              "integer_value": 45,
+              "attributes": {
+                "label": "Thrifts & Mortgage Finance"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::Tobacco",
+              "name": "tobacco",
+              "type": "enum_value",
+              "integer_value": 46,
+              "attributes": {
+                "label": "Tobacco"
+              }
+            },
+            {
+              "source": "Kore::Types::Giza::Fields::Industry::TradingCompaniesAndDistributors",
+              "name": "trading_companies_and_distributors",
+              "type": "enum_value",
+              "integer_value": 47,
+              "attributes": {
+                "label": "Trading Companies & Distributors"
+              }
+            }
+          ],
+          "values": [
+            "aerospace_and_defense",
+            "air_freight_and_logistics",
+            "airlines",
+            "auto_components",
+            "automobiles",
+            "banks",
+            "beverages",
+            "biotechnology",
+            "building_products",
+            "capital_markets",
+            "commercial_services_and_supplies",
+            "construction_and_engineering",
+            "consumer_finance",
+            "distributors",
+            "diversified_consumer_services",
+            "diversified_financial_services",
+            "electrical_equipment",
+            "energy_equipment_and_services",
+            "food_and_staples_retailing",
+            "food_products",
+            "health_care_equipment_and_supplies",
+            "health_care_providers_and_services",
+            "hotels_restaurants_and_leisure",
+            "household_durables",
+            "household_products",
+            "it_services",
+            "insurance",
+            "internet_and_catalog_retail",
+            "leisure_products",
+            "life_sciences_tools_and_services",
+            "machinery",
+            "marine",
+            "media",
+            "multiline_retail",
+            "oil_gas_and_consumable_fuels",
+            "pharmaceuticals",
+            "professional_services",
+            "real_estate_investment_trusts",
+            "real_estate_management_and_development",
+            "road_and_rail",
+            "software",
+            "speciality_retail",
+            "technology_hardware_storage_and_peripherals",
+            "textiles_apparel_and_luxury_goods",
+            "thrifts_and_mortgage_finance",
+            "tobacco",
+            "trading_companies_and_distributors"
+          ]
         }
       },
       "Place": {
@@ -35231,24 +38695,36 @@ module.exports = {
       "name": "salesforce",
       "type": "struct",
       "fields": {
+        "model": {
+          "source": "Kore::Types::Salesforce::Fields::Model",
+          "name": "model",
+          "type": "struct",
+          "fields": {
+            "name": {
+              "name": "name",
+              "source": "Kore::Types::Salesforce::Fields::Model::Fields::Name",
+              "type": "string"
+            },
+            "fields": {
+              "name": "fields",
+              "source": "Kore::Types::Salesforce::Fields::Model::Fields::Fields",
+              "type": "array_of"
+            }
+          }
+        },
         "field": {
           "source": "Kore::Types::Salesforce::Fields::Field",
           "name": "field",
           "type": "struct",
           "fields": {
-            "name": {
-              "name": "name",
-              "source": "Kore::Types::Salesforce::Fields::Field::Fields::Name",
-              "type": "string"
-            },
             "from": {
               "name": "from",
               "source": "Kore::Types::Salesforce::Fields::Field::Fields::From",
               "type": "string"
             },
-            "model": {
-              "name": "model",
-              "source": "Kore::Types::Salesforce::Fields::Field::Fields::Model",
+            "name": {
+              "name": "name",
+              "source": "Kore::Types::Salesforce::Fields::Field::Fields::Name",
               "type": "string"
             },
             "is_custom": {
@@ -35260,6 +38736,11 @@ module.exports = {
                 true,
                 false
               ]
+            },
+            "model": {
+              "name": "model",
+              "source": "Kore::Types::Salesforce::Fields::Field::Fields::Model",
+              "type": "string"
             },
             "as": {
               "name": "as",
@@ -35341,23 +38822,6 @@ module.exports = {
                 "string",
                 "base64"
               ]
-            }
-          }
-        },
-        "model": {
-          "source": "Kore::Types::Salesforce::Fields::Model",
-          "name": "model",
-          "type": "struct",
-          "fields": {
-            "name": {
-              "name": "name",
-              "source": "Kore::Types::Salesforce::Fields::Model::Fields::Name",
-              "type": "string"
-            },
-            "fields": {
-              "name": "fields",
-              "source": "Kore::Types::Salesforce::Fields::Model::Fields::Fields",
-              "type": "array_of"
             }
           }
         }
@@ -35740,6 +39204,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -35752,7 +39276,12 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
           }
         }
@@ -35762,6 +39291,33 @@ module.exports = {
         "name": "report",
         "type": "struct",
         "fields": {
+          "looker_model": {
+            "name": "looker_model",
+            "source": "Kore::Types::Warehouse::Report::Fields::LookerModel",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+                "name": "organization",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+                "name": "research",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                }
+              }
+            ],
+            "values": [
+              "organization",
+              "research"
+            ]
+          },
           "kind": {
             "name": "kind",
             "source": "Kore::Types::Warehouse::Report::Fields::Kind",
@@ -35796,8 +39352,8 @@ module.exports = {
                 "integer_value": 3,
                 "attributes": {
                   "type": "Warehouse::Reports::Study",
-                  "description": "Smart Data Report",
-                  "abbreviation": "SMT"
+                  "description": "Market Pulse Report",
+                  "abbreviation": "MPR"
                 }
               },
               {
@@ -35807,7 +39363,7 @@ module.exports = {
                 "integer_value": 4,
                 "attributes": {
                   "type": "Warehouse::Reports::CustomStudy",
-                  "description": "Custom Smart Data Report",
+                  "description": "Custom Market Pulse Report",
                   "abbreviation": "CST"
                 }
               }
@@ -35817,33 +39373,6 @@ module.exports = {
               "custom_report",
               "study",
               "custom_study"
-            ]
-          },
-          "looker_model": {
-            "name": "looker_model",
-            "source": "Kore::Types::Warehouse::Report::Fields::LookerModel",
-            "type": "enum",
-            "choices": [
-              {
-                "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
-                "name": "organization",
-                "type": "enum_value",
-                "integer_value": 1,
-                "attributes": {
-                }
-              },
-              {
-                "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
-                "name": "research",
-                "type": "enum_value",
-                "integer_value": 2,
-                "attributes": {
-                }
-              }
-            ],
-            "values": [
-              "organization",
-              "research"
             ]
           }
         }
@@ -36099,6 +39628,66 @@ module.exports = {
               "reportable_kind": "ranking",
               "super_kind": "question_page"
             }
+          },
+          {
+            "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+            "name": "matrix_boolean_question_page",
+            "type": "enum_value",
+            "integer_value": 11,
+            "attributes": {
+              "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+              "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+              "reportable_kind": "matrix_boolean",
+              "super_kind": "question_page"
+            }
+          },
+          {
+            "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+            "name": "matrix_multiple_choice_question_page",
+            "type": "enum_value",
+            "integer_value": 12,
+            "attributes": {
+              "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+              "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+              "reportable_kind": "matrix_multiple_choice",
+              "super_kind": "question_page"
+            }
+          },
+          {
+            "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+            "name": "matrix_number_scale_question_page",
+            "type": "enum_value",
+            "integer_value": 13,
+            "attributes": {
+              "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+              "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+              "reportable_kind": "matrix_number_scale",
+              "super_kind": "question_page"
+            }
+          },
+          {
+            "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+            "name": "matrix_text_question_page",
+            "type": "enum_value",
+            "integer_value": 14,
+            "attributes": {
+              "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+              "reportable_type": "Census::Questions::Matrix::TextQuestion",
+              "reportable_kind": "matrix_text",
+              "super_kind": "question_page"
+            }
+          },
+          {
+            "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+            "name": "matrix",
+            "type": "enum_value",
+            "integer_value": 15,
+            "attributes": {
+              "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+              "reportable_type": "Census::Questions::MatrixQuestion",
+              "reportable_kind": "matrix",
+              "super_kind": "question_page"
+            }
           }
         ],
         "values": [
@@ -36111,7 +39700,12 @@ module.exports = {
           "text_question_page",
           "freeform_survey_page",
           "nps_survey_page",
-          "ranking_question_page"
+          "ranking_question_page",
+          "matrix_boolean_question_page",
+          "matrix_multiple_choice_question_page",
+          "matrix_number_scale_question_page",
+          "matrix_text_question_page",
+          "matrix"
         ]
       },
       "looks_order": {
@@ -36250,6 +39844,66 @@ module.exports = {
                 "reportable_kind": "ranking",
                 "super_kind": "question_page"
               }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+              "name": "matrix_boolean_question_page",
+              "type": "enum_value",
+              "integer_value": 11,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                "reportable_kind": "matrix_boolean",
+                "super_kind": "question_page"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+              "name": "matrix_multiple_choice_question_page",
+              "type": "enum_value",
+              "integer_value": 12,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                "reportable_kind": "matrix_multiple_choice",
+                "super_kind": "question_page"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+              "name": "matrix_number_scale_question_page",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                "reportable_kind": "matrix_number_scale",
+                "super_kind": "question_page"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+              "name": "matrix_text_question_page",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                "reportable_kind": "matrix_text",
+                "super_kind": "question_page"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                "reportable_type": "Census::Questions::MatrixQuestion",
+                "reportable_kind": "matrix",
+                "super_kind": "question_page"
+              }
             }
           ],
           "values": [
@@ -36262,7 +39916,12 @@ module.exports = {
             "text_question_page",
             "freeform_survey_page",
             "nps_survey_page",
-            "ranking_question_page"
+            "ranking_question_page",
+            "matrix_boolean_question_page",
+            "matrix_multiple_choice_question_page",
+            "matrix_number_scale_question_page",
+            "matrix_text_question_page",
+            "matrix"
           ]
         },
         "looks_order": {
@@ -36274,11 +39933,12 @@ module.exports = {
           "Warehouse::Pages::Questions::BooleanQuestionPage",
           "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage",
           "Warehouse::Pages::Questions::MultipleChoiceQuestionPage",
+          "Warehouse::Pages::Questions::NumberScaleQuestionPage",
+          "Warehouse::Pages::Questions::TextQuestionPage",
+          "Warehouse::Pages::Questions::MatrixQuestionPage",
           "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage",
           "Warehouse::Pages::Questions::NpsTextQuestionPage",
-          "Warehouse::Pages::Questions::NumberScaleQuestionPage",
-          "Warehouse::Pages::Questions::RankingQuestionPage",
-          "Warehouse::Pages::Questions::TextQuestionPage"
+          "Warehouse::Pages::Questions::RankingQuestionPage"
         ]
       },
       "Questions": {
@@ -36407,6 +40067,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -36419,29 +40139,19 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": {
-                "name": "dashboard",
-                "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
-                "type": "boolean",
-                "default": true,
-                "values": [
-                  true,
-                  false
-                ]
-              },
               "explore_builder": {
                 "name": "explore_builder",
                 "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
@@ -36451,8 +40161,1429 @@ module.exports = {
                   true,
                   false
                 ]
+              },
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
               }
             }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::BooleanQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
+          "types": [
+            "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage"
+          ]
+        },
+        "Matrix": {
+          "BooleanQuestionPage": {
+            "kind": {
+              "name": "kind",
+              "source": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage::Fields::Kind",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::BooleanQuestionPage",
+                  "name": "boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::BooleanQuestion",
+                    "reportable_kind": "boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceManyQuestionPage",
+                  "name": "multiple_choice_many_question_page",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceManyQuestion",
+                    "reportable_kind": "multiple_choice_many",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceQuestionPage",
+                  "name": "multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceQuestion",
+                    "reportable_kind": "multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsNumberScaleQuestionPage",
+                  "name": "nps_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NpsNumberScaleQuestion",
+                    "reportable_kind": "nps_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsTextQuestionPage",
+                  "name": "nps_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsTextQuestionPage",
+                    "reportable_type": "Census::Questions::NpsTextQuestion",
+                    "reportable_kind": "nps_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NumberScaleQuestionPage",
+                  "name": "number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NumberScaleQuestion",
+                    "reportable_kind": "number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::TextQuestionPage",
+                  "name": "text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::TextQuestionPage",
+                    "reportable_type": "Census::Questions::TextQuestion",
+                    "reportable_kind": "text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::FreeformSurveyPage",
+                  "name": "freeform_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::FreeformSurveyPage",
+                    "reportable_type": "Census::Surveys::FreeformSurvey",
+                    "reportable_kind": "freeform",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsSurveyPage",
+                  "name": "nps_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::NpsSurveyPage",
+                    "reportable_type": "Census::Surveys::NpsSurvey",
+                    "reportable_kind": "nps",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::RankingQuestionPage",
+                  "name": "ranking_question_page",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::RankingQuestionPage",
+                    "reportable_type": "Census::Questions::RankingQuestion",
+                    "reportable_kind": "ranking",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                  "name": "matrix_boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                    "reportable_kind": "matrix_boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                  "name": "matrix_multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                    "reportable_kind": "matrix_multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                  "name": "matrix_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                    "reportable_kind": "matrix_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                  "name": "matrix_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 14,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                    "reportable_kind": "matrix_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                  "name": "matrix",
+                  "type": "enum_value",
+                  "integer_value": 15,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                    "reportable_type": "Census::Questions::MatrixQuestion",
+                    "reportable_kind": "matrix",
+                    "super_kind": "question_page"
+                  }
+                }
+              ],
+              "values": [
+                "boolean_question_page",
+                "multiple_choice_many_question_page",
+                "multiple_choice_question_page",
+                "nps_number_scale_question_page",
+                "nps_text_question_page",
+                "number_scale_question_page",
+                "text_question_page",
+                "freeform_survey_page",
+                "nps_survey_page",
+                "ranking_question_page",
+                "matrix_boolean_question_page",
+                "matrix_multiple_choice_question_page",
+                "matrix_number_scale_question_page",
+                "matrix_text_question_page",
+                "matrix"
+              ]
+            },
+            "visible_looks": {
+              "source": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage::Fields::VisibleLooks",
+              "name": "visible_looks",
+              "type": "struct",
+              "fields": {
+                "explore_builder": {
+                  "name": "explore_builder",
+                  "source": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                },
+                "dashboard": {
+                  "name": "dashboard",
+                  "source": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                }
+              }
+            },
+            "looks_order": {
+              "name": "looks_order",
+              "source": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage::Fields::LooksOrder",
+              "type": "set"
+            }
+          },
+          "MultipleChoiceManyQuestionPage": {
+            "kind": {
+              "name": "kind",
+              "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceManyQuestionPage::Fields::Kind",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::BooleanQuestionPage",
+                  "name": "boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::BooleanQuestion",
+                    "reportable_kind": "boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceManyQuestionPage",
+                  "name": "multiple_choice_many_question_page",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceManyQuestion",
+                    "reportable_kind": "multiple_choice_many",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceQuestionPage",
+                  "name": "multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceQuestion",
+                    "reportable_kind": "multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsNumberScaleQuestionPage",
+                  "name": "nps_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NpsNumberScaleQuestion",
+                    "reportable_kind": "nps_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsTextQuestionPage",
+                  "name": "nps_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsTextQuestionPage",
+                    "reportable_type": "Census::Questions::NpsTextQuestion",
+                    "reportable_kind": "nps_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NumberScaleQuestionPage",
+                  "name": "number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NumberScaleQuestion",
+                    "reportable_kind": "number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::TextQuestionPage",
+                  "name": "text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::TextQuestionPage",
+                    "reportable_type": "Census::Questions::TextQuestion",
+                    "reportable_kind": "text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::FreeformSurveyPage",
+                  "name": "freeform_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::FreeformSurveyPage",
+                    "reportable_type": "Census::Surveys::FreeformSurvey",
+                    "reportable_kind": "freeform",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsSurveyPage",
+                  "name": "nps_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::NpsSurveyPage",
+                    "reportable_type": "Census::Surveys::NpsSurvey",
+                    "reportable_kind": "nps",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::RankingQuestionPage",
+                  "name": "ranking_question_page",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::RankingQuestionPage",
+                    "reportable_type": "Census::Questions::RankingQuestion",
+                    "reportable_kind": "ranking",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                  "name": "matrix_boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                    "reportable_kind": "matrix_boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                  "name": "matrix_multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                    "reportable_kind": "matrix_multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                  "name": "matrix_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                    "reportable_kind": "matrix_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                  "name": "matrix_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 14,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                    "reportable_kind": "matrix_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                  "name": "matrix",
+                  "type": "enum_value",
+                  "integer_value": 15,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                    "reportable_type": "Census::Questions::MatrixQuestion",
+                    "reportable_kind": "matrix",
+                    "super_kind": "question_page"
+                  }
+                }
+              ],
+              "values": [
+                "boolean_question_page",
+                "multiple_choice_many_question_page",
+                "multiple_choice_question_page",
+                "nps_number_scale_question_page",
+                "nps_text_question_page",
+                "number_scale_question_page",
+                "text_question_page",
+                "freeform_survey_page",
+                "nps_survey_page",
+                "ranking_question_page",
+                "matrix_boolean_question_page",
+                "matrix_multiple_choice_question_page",
+                "matrix_number_scale_question_page",
+                "matrix_text_question_page",
+                "matrix"
+              ]
+            },
+            "visible_looks": {
+              "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceManyQuestionPage::Fields::VisibleLooks",
+              "name": "visible_looks",
+              "type": "struct",
+              "fields": {
+                "explore_builder": {
+                  "name": "explore_builder",
+                  "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceManyQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                },
+                "dashboard": {
+                  "name": "dashboard",
+                  "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceManyQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                }
+              }
+            },
+            "looks_order": {
+              "name": "looks_order",
+              "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceManyQuestionPage::Fields::LooksOrder",
+              "type": "set"
+            }
+          },
+          "MultipleChoiceQuestionPage": {
+            "kind": {
+              "name": "kind",
+              "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage::Fields::Kind",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::BooleanQuestionPage",
+                  "name": "boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::BooleanQuestion",
+                    "reportable_kind": "boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceManyQuestionPage",
+                  "name": "multiple_choice_many_question_page",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceManyQuestion",
+                    "reportable_kind": "multiple_choice_many",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceQuestionPage",
+                  "name": "multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceQuestion",
+                    "reportable_kind": "multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsNumberScaleQuestionPage",
+                  "name": "nps_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NpsNumberScaleQuestion",
+                    "reportable_kind": "nps_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsTextQuestionPage",
+                  "name": "nps_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsTextQuestionPage",
+                    "reportable_type": "Census::Questions::NpsTextQuestion",
+                    "reportable_kind": "nps_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NumberScaleQuestionPage",
+                  "name": "number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NumberScaleQuestion",
+                    "reportable_kind": "number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::TextQuestionPage",
+                  "name": "text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::TextQuestionPage",
+                    "reportable_type": "Census::Questions::TextQuestion",
+                    "reportable_kind": "text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::FreeformSurveyPage",
+                  "name": "freeform_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::FreeformSurveyPage",
+                    "reportable_type": "Census::Surveys::FreeformSurvey",
+                    "reportable_kind": "freeform",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsSurveyPage",
+                  "name": "nps_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::NpsSurveyPage",
+                    "reportable_type": "Census::Surveys::NpsSurvey",
+                    "reportable_kind": "nps",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::RankingQuestionPage",
+                  "name": "ranking_question_page",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::RankingQuestionPage",
+                    "reportable_type": "Census::Questions::RankingQuestion",
+                    "reportable_kind": "ranking",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                  "name": "matrix_boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                    "reportable_kind": "matrix_boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                  "name": "matrix_multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                    "reportable_kind": "matrix_multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                  "name": "matrix_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                    "reportable_kind": "matrix_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                  "name": "matrix_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 14,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                    "reportable_kind": "matrix_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                  "name": "matrix",
+                  "type": "enum_value",
+                  "integer_value": 15,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                    "reportable_type": "Census::Questions::MatrixQuestion",
+                    "reportable_kind": "matrix",
+                    "super_kind": "question_page"
+                  }
+                }
+              ],
+              "values": [
+                "boolean_question_page",
+                "multiple_choice_many_question_page",
+                "multiple_choice_question_page",
+                "nps_number_scale_question_page",
+                "nps_text_question_page",
+                "number_scale_question_page",
+                "text_question_page",
+                "freeform_survey_page",
+                "nps_survey_page",
+                "ranking_question_page",
+                "matrix_boolean_question_page",
+                "matrix_multiple_choice_question_page",
+                "matrix_number_scale_question_page",
+                "matrix_text_question_page",
+                "matrix"
+              ]
+            },
+            "visible_looks": {
+              "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage::Fields::VisibleLooks",
+              "name": "visible_looks",
+              "type": "struct",
+              "fields": {
+                "explore_builder": {
+                  "name": "explore_builder",
+                  "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                },
+                "dashboard": {
+                  "name": "dashboard",
+                  "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                }
+              }
+            },
+            "looks_order": {
+              "name": "looks_order",
+              "source": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage::Fields::LooksOrder",
+              "type": "set"
+            }
+          },
+          "NumberScaleQuestionPage": {
+            "kind": {
+              "name": "kind",
+              "source": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage::Fields::Kind",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::BooleanQuestionPage",
+                  "name": "boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::BooleanQuestion",
+                    "reportable_kind": "boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceManyQuestionPage",
+                  "name": "multiple_choice_many_question_page",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceManyQuestion",
+                    "reportable_kind": "multiple_choice_many",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceQuestionPage",
+                  "name": "multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceQuestion",
+                    "reportable_kind": "multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsNumberScaleQuestionPage",
+                  "name": "nps_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NpsNumberScaleQuestion",
+                    "reportable_kind": "nps_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsTextQuestionPage",
+                  "name": "nps_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsTextQuestionPage",
+                    "reportable_type": "Census::Questions::NpsTextQuestion",
+                    "reportable_kind": "nps_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NumberScaleQuestionPage",
+                  "name": "number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NumberScaleQuestion",
+                    "reportable_kind": "number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::TextQuestionPage",
+                  "name": "text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::TextQuestionPage",
+                    "reportable_type": "Census::Questions::TextQuestion",
+                    "reportable_kind": "text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::FreeformSurveyPage",
+                  "name": "freeform_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::FreeformSurveyPage",
+                    "reportable_type": "Census::Surveys::FreeformSurvey",
+                    "reportable_kind": "freeform",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsSurveyPage",
+                  "name": "nps_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::NpsSurveyPage",
+                    "reportable_type": "Census::Surveys::NpsSurvey",
+                    "reportable_kind": "nps",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::RankingQuestionPage",
+                  "name": "ranking_question_page",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::RankingQuestionPage",
+                    "reportable_type": "Census::Questions::RankingQuestion",
+                    "reportable_kind": "ranking",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                  "name": "matrix_boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                    "reportable_kind": "matrix_boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                  "name": "matrix_multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                    "reportable_kind": "matrix_multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                  "name": "matrix_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                    "reportable_kind": "matrix_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                  "name": "matrix_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 14,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                    "reportable_kind": "matrix_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                  "name": "matrix",
+                  "type": "enum_value",
+                  "integer_value": 15,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                    "reportable_type": "Census::Questions::MatrixQuestion",
+                    "reportable_kind": "matrix",
+                    "super_kind": "question_page"
+                  }
+                }
+              ],
+              "values": [
+                "boolean_question_page",
+                "multiple_choice_many_question_page",
+                "multiple_choice_question_page",
+                "nps_number_scale_question_page",
+                "nps_text_question_page",
+                "number_scale_question_page",
+                "text_question_page",
+                "freeform_survey_page",
+                "nps_survey_page",
+                "ranking_question_page",
+                "matrix_boolean_question_page",
+                "matrix_multiple_choice_question_page",
+                "matrix_number_scale_question_page",
+                "matrix_text_question_page",
+                "matrix"
+              ]
+            },
+            "visible_looks": {
+              "source": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage::Fields::VisibleLooks",
+              "name": "visible_looks",
+              "type": "struct",
+              "fields": {
+                "explore_builder": {
+                  "name": "explore_builder",
+                  "source": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                },
+                "dashboard": {
+                  "name": "dashboard",
+                  "source": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                }
+              }
+            },
+            "looks_order": {
+              "name": "looks_order",
+              "source": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage::Fields::LooksOrder",
+              "type": "set"
+            }
+          },
+          "TextQuestionPage": {
+            "kind": {
+              "name": "kind",
+              "source": "Warehouse::Pages::Questions::Matrix::TextQuestionPage::Fields::Kind",
+              "type": "enum",
+              "choices": [
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::BooleanQuestionPage",
+                  "name": "boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 1,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::BooleanQuestion",
+                    "reportable_kind": "boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceManyQuestionPage",
+                  "name": "multiple_choice_many_question_page",
+                  "type": "enum_value",
+                  "integer_value": 2,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceManyQuestion",
+                    "reportable_kind": "multiple_choice_many",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceQuestionPage",
+                  "name": "multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 3,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::MultipleChoiceQuestion",
+                    "reportable_kind": "multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsNumberScaleQuestionPage",
+                  "name": "nps_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 4,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NpsNumberScaleQuestion",
+                    "reportable_kind": "nps_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsTextQuestionPage",
+                  "name": "nps_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 5,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NpsTextQuestionPage",
+                    "reportable_type": "Census::Questions::NpsTextQuestion",
+                    "reportable_kind": "nps_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NumberScaleQuestionPage",
+                  "name": "number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 6,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::NumberScaleQuestion",
+                    "reportable_kind": "number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::TextQuestionPage",
+                  "name": "text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 7,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::TextQuestionPage",
+                    "reportable_type": "Census::Questions::TextQuestion",
+                    "reportable_kind": "text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::FreeformSurveyPage",
+                  "name": "freeform_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 8,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::FreeformSurveyPage",
+                    "reportable_type": "Census::Surveys::FreeformSurvey",
+                    "reportable_kind": "freeform",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsSurveyPage",
+                  "name": "nps_survey_page",
+                  "type": "enum_value",
+                  "integer_value": 9,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Surveys::NpsSurveyPage",
+                    "reportable_type": "Census::Surveys::NpsSurvey",
+                    "reportable_kind": "nps",
+                    "super_kind": "survey_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::RankingQuestionPage",
+                  "name": "ranking_question_page",
+                  "type": "enum_value",
+                  "integer_value": 10,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::RankingQuestionPage",
+                    "reportable_type": "Census::Questions::RankingQuestion",
+                    "reportable_kind": "ranking",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                  "name": "matrix_boolean_question_page",
+                  "type": "enum_value",
+                  "integer_value": 11,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                    "reportable_kind": "matrix_boolean",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                  "name": "matrix_multiple_choice_question_page",
+                  "type": "enum_value",
+                  "integer_value": 12,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                    "reportable_kind": "matrix_multiple_choice",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                  "name": "matrix_number_scale_question_page",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                    "reportable_kind": "matrix_number_scale",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                  "name": "matrix_text_question_page",
+                  "type": "enum_value",
+                  "integer_value": 14,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                    "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                    "reportable_kind": "matrix_text",
+                    "super_kind": "question_page"
+                  }
+                },
+                {
+                  "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                  "name": "matrix",
+                  "type": "enum_value",
+                  "integer_value": 15,
+                  "attributes": {
+                    "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                    "reportable_type": "Census::Questions::MatrixQuestion",
+                    "reportable_kind": "matrix",
+                    "super_kind": "question_page"
+                  }
+                }
+              ],
+              "values": [
+                "boolean_question_page",
+                "multiple_choice_many_question_page",
+                "multiple_choice_question_page",
+                "nps_number_scale_question_page",
+                "nps_text_question_page",
+                "number_scale_question_page",
+                "text_question_page",
+                "freeform_survey_page",
+                "nps_survey_page",
+                "ranking_question_page",
+                "matrix_boolean_question_page",
+                "matrix_multiple_choice_question_page",
+                "matrix_number_scale_question_page",
+                "matrix_text_question_page",
+                "matrix"
+              ]
+            },
+            "visible_looks": {
+              "source": "Warehouse::Pages::Questions::Matrix::TextQuestionPage::Fields::VisibleLooks",
+              "name": "visible_looks",
+              "type": "struct",
+              "fields": {
+                "explore_builder": {
+                  "name": "explore_builder",
+                  "source": "Warehouse::Pages::Questions::Matrix::TextQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                },
+                "dashboard": {
+                  "name": "dashboard",
+                  "source": "Warehouse::Pages::Questions::Matrix::TextQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                  "type": "boolean",
+                  "default": true,
+                  "values": [
+                    true,
+                    false
+                  ]
+                }
+              }
+            },
+            "looks_order": {
+              "name": "looks_order",
+              "source": "Warehouse::Pages::Questions::Matrix::TextQuestionPage::Fields::LooksOrder",
+              "type": "set"
+            }
+          }
+        },
+        "MatrixQuestionPage": {
+          "kind": {
+            "name": "kind",
+            "source": "Warehouse::Pages::Questions::MatrixQuestionPage::Fields::Kind",
+            "type": "enum",
+            "choices": [
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::BooleanQuestionPage",
+                "name": "boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 1,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::BooleanQuestion",
+                  "reportable_kind": "boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceManyQuestionPage",
+                "name": "multiple_choice_many_question_page",
+                "type": "enum_value",
+                "integer_value": 2,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage",
+                  "reportable_type": "Census::Questions::MultipleChoiceManyQuestion",
+                  "reportable_kind": "multiple_choice_many",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MultipleChoiceQuestionPage",
+                "name": "multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 3,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::MultipleChoiceQuestion",
+                  "reportable_kind": "multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsNumberScaleQuestionPage",
+                "name": "nps_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 4,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::NpsNumberScaleQuestion",
+                  "reportable_kind": "nps_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsTextQuestionPage",
+                "name": "nps_text_question_page",
+                "type": "enum_value",
+                "integer_value": 5,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::NpsTextQuestionPage",
+                  "reportable_type": "Census::Questions::NpsTextQuestion",
+                  "reportable_kind": "nps_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::NumberScaleQuestionPage",
+                "name": "number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 6,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::NumberScaleQuestion",
+                  "reportable_kind": "number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::TextQuestionPage",
+                "name": "text_question_page",
+                "type": "enum_value",
+                "integer_value": 7,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::TextQuestionPage",
+                  "reportable_type": "Census::Questions::TextQuestion",
+                  "reportable_kind": "text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::FreeformSurveyPage",
+                "name": "freeform_survey_page",
+                "type": "enum_value",
+                "integer_value": 8,
+                "attributes": {
+                  "type": "Warehouse::Pages::Surveys::FreeformSurveyPage",
+                  "reportable_type": "Census::Surveys::FreeformSurvey",
+                  "reportable_kind": "freeform",
+                  "super_kind": "survey_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::NpsSurveyPage",
+                "name": "nps_survey_page",
+                "type": "enum_value",
+                "integer_value": 9,
+                "attributes": {
+                  "type": "Warehouse::Pages::Surveys::NpsSurveyPage",
+                  "reportable_type": "Census::Surveys::NpsSurvey",
+                  "reportable_kind": "nps",
+                  "super_kind": "survey_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::RankingQuestionPage",
+                "name": "ranking_question_page",
+                "type": "enum_value",
+                "integer_value": 10,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::RankingQuestionPage",
+                  "reportable_type": "Census::Questions::RankingQuestion",
+                  "reportable_kind": "ranking",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
+              }
+            ],
+            "values": [
+              "boolean_question_page",
+              "multiple_choice_many_question_page",
+              "multiple_choice_question_page",
+              "nps_number_scale_question_page",
+              "nps_text_question_page",
+              "number_scale_question_page",
+              "text_question_page",
+              "freeform_survey_page",
+              "nps_survey_page",
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
+            ]
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::MatrixQuestionPage::Fields::LooksOrder",
+            "type": "set"
           }
         },
         "MultipleChoiceManyQuestionPage": {
@@ -36580,6 +41711,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -36592,29 +41783,19 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": {
-                "name": "dashboard",
-                "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
-                "type": "boolean",
-                "default": true,
-                "values": [
-                  true,
-                  false
-                ]
-              },
               "explore_builder": {
                 "name": "explore_builder",
                 "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
@@ -36624,9 +41805,27 @@ module.exports = {
                   true,
                   false
                 ]
+              },
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
               }
             }
-          }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::MultipleChoiceManyQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
+          "types": [
+            "Warehouse::Pages::Questions::Matrix::MultipleChoiceManyQuestionPage"
+          ]
         },
         "MultipleChoiceQuestionPage": {
           "kind": {
@@ -36753,6 +41952,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -36765,29 +42024,19 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": {
-                "name": "dashboard",
-                "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
-                "type": "boolean",
-                "default": true,
-                "values": [
-                  true,
-                  false
-                ]
-              },
               "explore_builder": {
                 "name": "explore_builder",
                 "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
@@ -36797,9 +42046,27 @@ module.exports = {
                   true,
                   false
                 ]
+              },
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
               }
             }
-          }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::MultipleChoiceQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
+          "types": [
+            "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage"
+          ]
         },
         "NpsNumberScaleQuestionPage": {
           "kind": {
@@ -36926,6 +42193,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -36938,29 +42265,19 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": {
-                "name": "dashboard",
-                "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
-                "type": "boolean",
-                "default": true,
-                "values": [
-                  true,
-                  false
-                ]
-              },
               "explore_builder": {
                 "name": "explore_builder",
                 "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
@@ -36970,8 +42287,23 @@ module.exports = {
                   true,
                   false
                 ]
+              },
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
               }
             }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::NpsNumberScaleQuestionPage::Fields::LooksOrder",
+            "type": "set"
           }
         },
         "NpsTextQuestionPage": {
@@ -37099,6 +42431,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -37111,29 +42503,19 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": {
-                "name": "dashboard",
-                "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
-                "type": "boolean",
-                "default": true,
-                "values": [
-                  true,
-                  false
-                ]
-              },
               "explore_builder": {
                 "name": "explore_builder",
                 "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
@@ -37143,8 +42525,23 @@ module.exports = {
                   true,
                   false
                 ]
+              },
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
               }
             }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::NpsTextQuestionPage::Fields::LooksOrder",
+            "type": "set"
           }
         },
         "NumberScaleQuestionPage": {
@@ -37272,6 +42669,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -37284,29 +42741,19 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": {
-                "name": "dashboard",
-                "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
-                "type": "boolean",
-                "default": true,
-                "values": [
-                  true,
-                  false
-                ]
-              },
               "explore_builder": {
                 "name": "explore_builder",
                 "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
@@ -37316,9 +42763,27 @@ module.exports = {
                   true,
                   false
                 ]
+              },
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
               }
             }
-          }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::NumberScaleQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
+          "types": [
+            "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage"
+          ]
         },
         "RankingQuestionPage": {
           "kind": {
@@ -37445,6 +42910,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -37457,29 +42982,19 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": {
-                "name": "dashboard",
-                "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
-                "type": "boolean",
-                "default": true,
-                "values": [
-                  true,
-                  false
-                ]
-              },
               "explore_builder": {
                 "name": "explore_builder",
                 "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
@@ -37489,8 +43004,23 @@ module.exports = {
                   true,
                   false
                 ]
+              },
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
               }
             }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::RankingQuestionPage::Fields::LooksOrder",
+            "type": "set"
           }
         },
         "TextQuestionPage": {
@@ -37618,6 +43148,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -37630,29 +43220,19 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::VisibleLooks",
             "name": "visible_looks",
             "type": "struct",
             "fields": {
-              "dashboard": {
-                "name": "dashboard",
-                "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
-                "type": "boolean",
-                "default": true,
-                "values": [
-                  true,
-                  false
-                ]
-              },
               "explore_builder": {
                 "name": "explore_builder",
                 "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::VisibleLooks::Fields::ExploreBuilder",
@@ -37662,9 +43242,27 @@ module.exports = {
                   true,
                   false
                 ]
+              },
+              "dashboard": {
+                "name": "dashboard",
+                "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::VisibleLooks::Fields::Dashboard",
+                "type": "boolean",
+                "default": true,
+                "values": [
+                  true,
+                  false
+                ]
               }
             }
-          }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Questions::TextQuestionPage::Fields::LooksOrder",
+            "type": "set"
+          },
+          "types": [
+            "Warehouse::Pages::Questions::Matrix::TextQuestionPage"
+          ]
         }
       },
       "SurveyPage": {
@@ -37792,6 +43390,66 @@ module.exports = {
                 "reportable_kind": "ranking",
                 "super_kind": "question_page"
               }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+              "name": "matrix_boolean_question_page",
+              "type": "enum_value",
+              "integer_value": 11,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                "reportable_kind": "matrix_boolean",
+                "super_kind": "question_page"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+              "name": "matrix_multiple_choice_question_page",
+              "type": "enum_value",
+              "integer_value": 12,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                "reportable_kind": "matrix_multiple_choice",
+                "super_kind": "question_page"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+              "name": "matrix_number_scale_question_page",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                "reportable_kind": "matrix_number_scale",
+                "super_kind": "question_page"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+              "name": "matrix_text_question_page",
+              "type": "enum_value",
+              "integer_value": 14,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                "reportable_kind": "matrix_text",
+                "super_kind": "question_page"
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+              "name": "matrix",
+              "type": "enum_value",
+              "integer_value": 15,
+              "attributes": {
+                "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                "reportable_type": "Census::Questions::MatrixQuestion",
+                "reportable_kind": "matrix",
+                "super_kind": "question_page"
+              }
             }
           ],
           "values": [
@@ -37804,13 +43462,13 @@ module.exports = {
             "text_question_page",
             "freeform_survey_page",
             "nps_survey_page",
-            "ranking_question_page"
+            "ranking_question_page",
+            "matrix_boolean_question_page",
+            "matrix_multiple_choice_question_page",
+            "matrix_number_scale_question_page",
+            "matrix_text_question_page",
+            "matrix"
           ]
-        },
-        "looks_order": {
-          "name": "looks_order",
-          "source": "Warehouse::Pages::SurveyPage::Fields::LooksOrder",
-          "type": "set"
         },
         "visible_looks": {
           "source": "Warehouse::Pages::SurveyPage::Fields::VisibleLooks",
@@ -37828,6 +43486,11 @@ module.exports = {
               ]
             }
           }
+        },
+        "looks_order": {
+          "name": "looks_order",
+          "source": "Warehouse::Pages::SurveyPage::Fields::LooksOrder",
+          "type": "set"
         },
         "types": [
           "Warehouse::Pages::Surveys::FreeformSurveyPage",
@@ -37960,6 +43623,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -37972,13 +43695,13 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Surveys::FreeformSurveyPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Surveys::FreeformSurveyPage::Fields::VisibleLooks",
@@ -37996,6 +43719,11 @@ module.exports = {
                 ]
               }
             }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Surveys::FreeformSurveyPage::Fields::LooksOrder",
+            "type": "set"
           }
         },
         "NpsSurveyPage": {
@@ -38123,6 +43851,66 @@ module.exports = {
                   "reportable_kind": "ranking",
                   "super_kind": "question_page"
                 }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixBooleanQuestionPage",
+                "name": "matrix_boolean_question_page",
+                "type": "enum_value",
+                "integer_value": 11,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::BooleanQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::BooleanQuestion",
+                  "reportable_kind": "matrix_boolean",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixMultipleChoiceQuestionPage",
+                "name": "matrix_multiple_choice_question_page",
+                "type": "enum_value",
+                "integer_value": 12,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::MultipleChoiceQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::MultipleChoiceQuestion",
+                  "reportable_kind": "matrix_multiple_choice",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixNumberScaleQuestionPage",
+                "name": "matrix_number_scale_question_page",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::NumberScaleQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::NumberScaleQuestion",
+                  "reportable_kind": "matrix_number_scale",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::MatrixTextQuestionPage",
+                "name": "matrix_text_question_page",
+                "type": "enum_value",
+                "integer_value": 14,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::Matrix::TextQuestionPage",
+                  "reportable_type": "Census::Questions::Matrix::TextQuestion",
+                  "reportable_kind": "matrix_text",
+                  "super_kind": "question_page"
+                }
+              },
+              {
+                "source": "Kore::Types::Warehouse::Page::Fields::Kind::Matrix",
+                "name": "matrix",
+                "type": "enum_value",
+                "integer_value": 15,
+                "attributes": {
+                  "type": "Warehouse::Pages::Questions::MatrixQuestionPage",
+                  "reportable_type": "Census::Questions::MatrixQuestion",
+                  "reportable_kind": "matrix",
+                  "super_kind": "question_page"
+                }
               }
             ],
             "values": [
@@ -38135,13 +43923,13 @@ module.exports = {
               "text_question_page",
               "freeform_survey_page",
               "nps_survey_page",
-              "ranking_question_page"
+              "ranking_question_page",
+              "matrix_boolean_question_page",
+              "matrix_multiple_choice_question_page",
+              "matrix_number_scale_question_page",
+              "matrix_text_question_page",
+              "matrix"
             ]
-          },
-          "looks_order": {
-            "name": "looks_order",
-            "source": "Warehouse::Pages::Surveys::NpsSurveyPage::Fields::LooksOrder",
-            "type": "set"
           },
           "visible_looks": {
             "source": "Warehouse::Pages::Surveys::NpsSurveyPage::Fields::VisibleLooks",
@@ -38159,6 +43947,11 @@ module.exports = {
                 ]
               }
             }
+          },
+          "looks_order": {
+            "name": "looks_order",
+            "source": "Warehouse::Pages::Surveys::NpsSurveyPage::Fields::LooksOrder",
+            "type": "set"
           }
         }
       }
@@ -38168,6 +43961,33 @@ module.exports = {
     "Query": {
     },
     "Report": {
+      "looker_model": {
+        "name": "looker_model",
+        "source": "Warehouse::Report::Fields::LookerModel",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+            "name": "organization",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+            "name": "research",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "organization",
+          "research"
+        ]
+      },
       "kind": {
         "name": "kind",
         "source": "Warehouse::Report::Fields::Kind",
@@ -38202,8 +44022,8 @@ module.exports = {
             "integer_value": 3,
             "attributes": {
               "type": "Warehouse::Reports::Study",
-              "description": "Smart Data Report",
-              "abbreviation": "SMT"
+              "description": "Market Pulse Report",
+              "abbreviation": "MPR"
             }
           },
           {
@@ -38213,7 +44033,7 @@ module.exports = {
             "integer_value": 4,
             "attributes": {
               "type": "Warehouse::Reports::CustomStudy",
-              "description": "Custom Smart Data Report",
+              "description": "Custom Market Pulse Report",
               "abbreviation": "CST"
             }
           }
@@ -38223,33 +44043,6 @@ module.exports = {
           "custom_report",
           "study",
           "custom_study"
-        ]
-      },
-      "looker_model": {
-        "name": "looker_model",
-        "source": "Warehouse::Report::Fields::LookerModel",
-        "type": "enum",
-        "choices": [
-          {
-            "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
-            "name": "organization",
-            "type": "enum_value",
-            "integer_value": 1,
-            "attributes": {
-            }
-          },
-          {
-            "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
-            "name": "research",
-            "type": "enum_value",
-            "integer_value": 2,
-            "attributes": {
-            }
-          }
-        ],
-        "values": [
-          "organization",
-          "research"
         ]
       },
       "custom_fields": {
@@ -38450,10 +44243,73 @@ module.exports = {
           "healthcare",
           "finance"
         ]
+      },
+      "ui_section": {
+        "name": "ui_section",
+        "source": "Warehouse::ReportingCategory::Fields::UiSection",
+        "type": "enum",
+        "choices": [
+          {
+            "source": "Warehouse::ReportingCategory::Fields::UiSection::Smartdata",
+            "name": "smartdata",
+            "type": "enum_value",
+            "integer_value": 1,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Warehouse::ReportingCategory::Fields::UiSection::Benchmarks",
+            "name": "benchmarks",
+            "type": "enum_value",
+            "integer_value": 2,
+            "attributes": {
+            }
+          },
+          {
+            "source": "Warehouse::ReportingCategory::Fields::UiSection::Hidden",
+            "name": "hidden",
+            "type": "enum_value",
+            "integer_value": 3,
+            "attributes": {
+            }
+          }
+        ],
+        "values": [
+          "smartdata",
+          "benchmarks",
+          "hidden"
+        ]
       }
     },
     "Reports": {
       "CustomReport": {
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::CustomReport::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Warehouse::Reports::CustomReport::Fields::Kind",
@@ -38488,8 +44344,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Warehouse::Reports::Study",
-                "description": "Smart Data Report",
-                "abbreviation": "SMT"
+                "description": "Market Pulse Report",
+                "abbreviation": "MPR"
               }
             },
             {
@@ -38499,7 +44355,7 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Warehouse::Reports::CustomStudy",
-                "description": "Custom Smart Data Report",
+                "description": "Custom Market Pulse Report",
                 "abbreviation": "CST"
               }
             }
@@ -38509,33 +44365,6 @@ module.exports = {
             "custom_report",
             "study",
             "custom_study"
-          ]
-        },
-        "looker_model": {
-          "name": "looker_model",
-          "source": "Warehouse::Reports::CustomReport::Fields::LookerModel",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
-              "name": "organization",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
-              "name": "research",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "organization",
-            "research"
           ]
         },
         "custom_fields": {
@@ -38695,6 +44524,33 @@ module.exports = {
         }
       },
       "CustomStudy": {
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::CustomStudy::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Warehouse::Reports::CustomStudy::Fields::Kind",
@@ -38729,8 +44585,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Warehouse::Reports::Study",
-                "description": "Smart Data Report",
-                "abbreviation": "SMT"
+                "description": "Market Pulse Report",
+                "abbreviation": "MPR"
               }
             },
             {
@@ -38740,7 +44596,7 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Warehouse::Reports::CustomStudy",
-                "description": "Custom Smart Data Report",
+                "description": "Custom Market Pulse Report",
                 "abbreviation": "CST"
               }
             }
@@ -38750,33 +44606,6 @@ module.exports = {
             "custom_report",
             "study",
             "custom_study"
-          ]
-        },
-        "looker_model": {
-          "name": "looker_model",
-          "source": "Warehouse::Reports::CustomStudy::Fields::LookerModel",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
-              "name": "organization",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
-              "name": "research",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "organization",
-            "research"
           ]
         },
         "custom_fields": {
@@ -38936,6 +44765,33 @@ module.exports = {
         }
       },
       "OrganizationReport": {
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::OrganizationReport::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Warehouse::Reports::OrganizationReport::Fields::Kind",
@@ -38970,8 +44826,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Warehouse::Reports::Study",
-                "description": "Smart Data Report",
-                "abbreviation": "SMT"
+                "description": "Market Pulse Report",
+                "abbreviation": "MPR"
               }
             },
             {
@@ -38981,7 +44837,7 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Warehouse::Reports::CustomStudy",
-                "description": "Custom Smart Data Report",
+                "description": "Custom Market Pulse Report",
                 "abbreviation": "CST"
               }
             }
@@ -38991,33 +44847,6 @@ module.exports = {
             "custom_report",
             "study",
             "custom_study"
-          ]
-        },
-        "looker_model": {
-          "name": "looker_model",
-          "source": "Warehouse::Reports::OrganizationReport::Fields::LookerModel",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
-              "name": "organization",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
-              "name": "research",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "organization",
-            "research"
           ]
         },
         "custom_fields": {
@@ -39181,6 +45010,33 @@ module.exports = {
         ]
       },
       "OrganizationStudy": {
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::OrganizationStudy::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Warehouse::Reports::OrganizationStudy::Fields::Kind",
@@ -39215,8 +45071,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Warehouse::Reports::Study",
-                "description": "Smart Data Report",
-                "abbreviation": "SMT"
+                "description": "Market Pulse Report",
+                "abbreviation": "MPR"
               }
             },
             {
@@ -39226,7 +45082,7 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Warehouse::Reports::CustomStudy",
-                "description": "Custom Smart Data Report",
+                "description": "Custom Market Pulse Report",
                 "abbreviation": "CST"
               }
             }
@@ -39236,33 +45092,6 @@ module.exports = {
             "custom_report",
             "study",
             "custom_study"
-          ]
-        },
-        "looker_model": {
-          "name": "looker_model",
-          "source": "Warehouse::Reports::OrganizationStudy::Fields::LookerModel",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
-              "name": "organization",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
-              "name": "research",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "organization",
-            "research"
           ]
         },
         "custom_fields": {
@@ -39425,6 +45254,33 @@ module.exports = {
         ]
       },
       "Study": {
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::Study::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Warehouse::Reports::Study::Fields::Kind",
@@ -39459,8 +45315,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Warehouse::Reports::Study",
-                "description": "Smart Data Report",
-                "abbreviation": "SMT"
+                "description": "Market Pulse Report",
+                "abbreviation": "MPR"
               }
             },
             {
@@ -39470,7 +45326,7 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Warehouse::Reports::CustomStudy",
-                "description": "Custom Smart Data Report",
+                "description": "Custom Market Pulse Report",
                 "abbreviation": "CST"
               }
             }
@@ -39480,33 +45336,6 @@ module.exports = {
             "custom_report",
             "study",
             "custom_study"
-          ]
-        },
-        "looker_model": {
-          "name": "looker_model",
-          "source": "Warehouse::Reports::Study::Fields::LookerModel",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
-              "name": "organization",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
-              "name": "research",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "organization",
-            "research"
           ]
         },
         "custom_fields": {
@@ -39669,6 +45498,33 @@ module.exports = {
         ]
       },
       "SurveyReport": {
+        "looker_model": {
+          "name": "looker_model",
+          "source": "Warehouse::Reports::SurveyReport::Fields::LookerModel",
+          "type": "enum",
+          "choices": [
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
+              "name": "organization",
+              "type": "enum_value",
+              "integer_value": 1,
+              "attributes": {
+              }
+            },
+            {
+              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
+              "name": "research",
+              "type": "enum_value",
+              "integer_value": 2,
+              "attributes": {
+              }
+            }
+          ],
+          "values": [
+            "organization",
+            "research"
+          ]
+        },
         "kind": {
           "name": "kind",
           "source": "Warehouse::Reports::SurveyReport::Fields::Kind",
@@ -39703,8 +45559,8 @@ module.exports = {
               "integer_value": 3,
               "attributes": {
                 "type": "Warehouse::Reports::Study",
-                "description": "Smart Data Report",
-                "abbreviation": "SMT"
+                "description": "Market Pulse Report",
+                "abbreviation": "MPR"
               }
             },
             {
@@ -39714,7 +45570,7 @@ module.exports = {
               "integer_value": 4,
               "attributes": {
                 "type": "Warehouse::Reports::CustomStudy",
-                "description": "Custom Smart Data Report",
+                "description": "Custom Market Pulse Report",
                 "abbreviation": "CST"
               }
             }
@@ -39724,33 +45580,6 @@ module.exports = {
             "custom_report",
             "study",
             "custom_study"
-          ]
-        },
-        "looker_model": {
-          "name": "looker_model",
-          "source": "Warehouse::Reports::SurveyReport::Fields::LookerModel",
-          "type": "enum",
-          "choices": [
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Organization",
-              "name": "organization",
-              "type": "enum_value",
-              "integer_value": 1,
-              "attributes": {
-              }
-            },
-            {
-              "source": "Kore::Types::Warehouse::Report::Fields::LookerModel::Research",
-              "name": "research",
-              "type": "enum_value",
-              "integer_value": 2,
-              "attributes": {
-              }
-            }
-          ],
-          "values": [
-            "organization",
-            "research"
           ]
         },
         "custom_fields": {
