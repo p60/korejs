@@ -11143,6 +11143,16 @@ module.exports = {
                   "hex": "#003da5",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::White",
+                "name": "white",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "hex": "#ffffff",
+                  "contrast": "black"
+                }
               }
             ],
             "values": [
@@ -11157,7 +11167,8 @@ module.exports = {
               "purple",
               "grey",
               "black",
-              "cobalt_blue"
+              "cobalt_blue",
+              "white"
             ],
             "default": {
             }
@@ -11293,6 +11304,16 @@ module.exports = {
                   "hex": "#003da5",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::White",
+                "name": "white",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "hex": "#ffffff",
+                  "contrast": "black"
+                }
               }
             ],
             "values": [
@@ -11307,7 +11328,8 @@ module.exports = {
               "purple",
               "grey",
               "black",
-              "cobalt_blue"
+              "cobalt_blue",
+              "white"
             ]
           },
           "primary_palette": {
@@ -11434,6 +11456,16 @@ module.exports = {
                   "hex": "#003da5",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::White",
+                "name": "white",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "hex": "#ffffff",
+                  "contrast": "black"
+                }
               }
             ],
             "values": [
@@ -11448,7 +11480,8 @@ module.exports = {
               "purple",
               "grey",
               "black",
-              "cobalt_blue"
+              "cobalt_blue",
+              "white"
             ]
           }
         }
@@ -12270,6 +12303,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -12284,7 +12327,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
@@ -12420,6 +12464,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -12434,7 +12488,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ]
             },
             "primary_palette": {
@@ -12561,6 +12616,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -12575,7 +12640,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ]
             }
           }
@@ -13395,6 +13461,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -13409,7 +13485,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
@@ -13545,6 +13622,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -13559,7 +13646,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ]
             },
             "primary_palette": {
@@ -13686,6 +13774,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -13700,7 +13798,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ]
             }
           }
@@ -14520,6 +14619,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -14534,7 +14643,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
@@ -14670,6 +14780,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -14684,7 +14804,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ]
             },
             "primary_palette": {
@@ -14811,6 +14932,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -14825,7 +14956,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ]
             }
           }
@@ -15645,6 +15777,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -15659,7 +15801,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
@@ -15795,6 +15938,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -15809,7 +15962,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ]
             },
             "primary_palette": {
@@ -15936,6 +16090,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -15950,7 +16114,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ]
             }
           }
@@ -21993,6 +22158,16 @@ module.exports = {
                   "hex": "#003da5",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::White",
+                "name": "white",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "hex": "#ffffff",
+                  "contrast": "black"
+                }
               }
             ],
             "values": [
@@ -22007,7 +22182,8 @@ module.exports = {
               "purple",
               "grey",
               "black",
-              "cobalt_blue"
+              "cobalt_blue",
+              "white"
             ],
             "default": "teal"
           }
@@ -22406,6 +22582,16 @@ module.exports = {
                   "hex": "#003da5",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::White",
+                "name": "white",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "hex": "#ffffff",
+                  "contrast": "black"
+                }
               }
             ],
             "values": [
@@ -22420,7 +22606,8 @@ module.exports = {
               "purple",
               "grey",
               "black",
-              "cobalt_blue"
+              "cobalt_blue",
+              "white"
             ],
             "default": "blue"
           },
@@ -22548,6 +22735,16 @@ module.exports = {
                   "hex": "#003da5",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::White",
+                "name": "white",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "hex": "#ffffff",
+                  "contrast": "black"
+                }
               }
             ],
             "values": [
@@ -22562,7 +22759,8 @@ module.exports = {
               "purple",
               "grey",
               "black",
-              "cobalt_blue"
+              "cobalt_blue",
+              "white"
             ],
             "default": "green"
           }
@@ -38956,6 +39154,16 @@ module.exports = {
                 "hex": "#003da5",
                 "contrast": "white"
               }
+            },
+            {
+              "source": "Kore::Types::Ui::Fields::Color::White",
+              "name": "white",
+              "type": "enum_value",
+              "integer_value": 13,
+              "attributes": {
+                "hex": "#ffffff",
+                "contrast": "black"
+              }
             }
           ],
           "values": [
@@ -38970,7 +39178,8 @@ module.exports = {
             "purple",
             "grey",
             "black",
-            "cobalt_blue"
+            "cobalt_blue",
+            "white"
           ]
         },
         "email_start_button_style": {
@@ -44179,6 +44388,16 @@ module.exports = {
                   "hex": "#003da5",
                   "contrast": "white"
                 }
+              },
+              {
+                "source": "Kore::Types::Ui::Fields::Color::White",
+                "name": "white",
+                "type": "enum_value",
+                "integer_value": 13,
+                "attributes": {
+                  "hex": "#ffffff",
+                  "contrast": "black"
+                }
               }
             ],
             "values": [
@@ -44193,7 +44412,8 @@ module.exports = {
               "purple",
               "grey",
               "black",
-              "cobalt_blue"
+              "cobalt_blue",
+              "white"
             ],
             "default": {
             }
@@ -44501,6 +44721,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -44515,7 +44745,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
@@ -44742,6 +44973,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -44756,7 +44997,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
@@ -44983,6 +45225,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -44997,7 +45249,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
@@ -45228,6 +45481,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -45242,7 +45505,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
@@ -45472,6 +45736,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -45486,7 +45760,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
@@ -45716,6 +45991,16 @@ module.exports = {
                     "hex": "#003da5",
                     "contrast": "white"
                   }
+                },
+                {
+                  "source": "Kore::Types::Ui::Fields::Color::White",
+                  "name": "white",
+                  "type": "enum_value",
+                  "integer_value": 13,
+                  "attributes": {
+                    "hex": "#ffffff",
+                    "contrast": "black"
+                  }
                 }
               ],
               "values": [
@@ -45730,7 +46015,8 @@ module.exports = {
                 "purple",
                 "grey",
                 "black",
-                "cobalt_blue"
+                "cobalt_blue",
+                "white"
               ],
               "default": {
               }
